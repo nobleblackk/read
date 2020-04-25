@@ -7,6 +7,20 @@
 -->
 <html>
 	<head>
+	    <!--MathJax-->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                    config: ["MMLorHTML.js"],
+    extensions: ["mml2jax.js"],
+    jax: ["input/MathML"]
+
+        });
+
+        </script>
+        <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+
 		<title>Convex Optimization</title>
         <style>
             .dropdown {
@@ -84,9 +98,10 @@
                         <details open>
     			            <summary><b><a><span style="cursor:pointer;">Linear Algebra(pre requisite)</span></a></b></summary>
                             <dl><dd>
-                                <button  onclick="window.location.href = 'data/index/linear-algebra-prereq/vector-space.html';">Vector Space&nbsp;&nbsp;</button><br>
-                                <button  onclick="window.location.href = 'data/index/linear-algebra-prereq/column-space.html';">Column Space</button><br>
-                                <button  onclick="window.location.href = 'data/index/linear-algebra-prereq/null-space.html';">Null Space&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                <button  onclick="window.location.href = 'data/index/linear-algebra-prereq/vector-space.html';">Vector Space&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button><br><br>
+                                <button  onclick="window.location.href = 'data/index/linear-algebra-prereq/column-space.html';">Column Space&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button><br><br>
+                                <button  onclick="window.location.href = 'data/index/linear-algebra-prereq/null-space.html';">Null Space \((A\vec{x}=\vec{0})\)</button><br><br>
+                                <button  onclick="window.location.href = 'data/index/linear-algebra-prereq/general-space.html';">Solving \((A\vec{x}=\vec{b})\)</button><br><br>
                             </dd></dl>
                         </details>
                         <br><br><br><br><br><br>
