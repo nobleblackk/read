@@ -200,7 +200,7 @@ How does that <b>vector space</b> look like?<br>
 <summary><b><a style="color:blue" ><span style="cursor:pointer;">Does it fill a \(2\)-dimensional space?</span></a></b></summary>
     <dl><dd>
         Here you can see that \(\vec{w}=\vec{u}+\vec{v}\), so \(\vec{w}\) lives in vector space of \(\vec{u}\) and \(\vec{v}\)
-        and \(\vec{u}\) and \(\vec{v}\) are non-parallel vectors so vector space of \(\vec{u}\) and \(\vec{v}\) is a <b>plane</b>
+        , and, \(\vec{u}\) and \(\vec{v}\) are non-parallel vectors so vector space of \(\vec{u}\) and \(\vec{v}\) is a <b>plane</b>.<br>
         Combined all of that <b>vector space</b> of \(\vec{u}\), \(\vec{v}\) and \(\vec{w}\) is a <b>plane</b> \(\Rightarrow \) Column space of matrix \(A\) is a <b>plane</b>.<br>
         So answer is <b>Yes</b> vector space of \(\vec{u},\vec{v}\) and \(\vec{w}\) fills a \(2\)-dimensional space?
     </dd></dl>
@@ -213,9 +213,8 @@ Here we will denote the column space of matrix \(A\) as \(\mathbf{C}(A)\)<br>
 We saw how we can find Column space using columns as vectors.
 Now let's find Column space of some matrix \(A\) in matrix notation.<br>
 Say we have a matrix \(A\)<br>
-Now answer this, Does \(Ax=b\) always have a solution for every \(b\), and if the answer is No then which \(b\) do have a solution?<br>
-Here \(x\) is a weight vector.<br>
-if \(A\) is a \(n\times m\) matrix, then \(x\) is a \(m\times 1\) vector and \(b\) is \(n\times 1\) vector.<br>
+Now answer this, <b>Does \(A\vec{x}=\vec{b}\) always have a solution for every \(\vec{b}\)?</b>, and if the answer is No then <b>which \(\vec{b}\) do have a solution?</b><br>
+if \(A\) is a \(n\times m\) matrix, then \(\vec{x}\) is a \(m\times 1\) vector and \(\vec{b}\) is \(n\times 1\) vector.<br>
 <br>
 Say our matrix is
 \(A=\begin{bmatrix}
@@ -223,19 +222,19 @@ Say our matrix is
 2 & 4 & 6\\
 3 & 6 & 9\\
 4 & 8 & 12\\
-\end{bmatrix}\) then \(x=\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\   \end{bmatrix};\quad\) \(x_i\in\mathbb{R}\)
-and \(b=\begin{bmatrix} b_1 \\ b_2 \\ b_3 \\  b_4 \\ \end{bmatrix};\quad\) \(b_i\in\mathbb{R}\)
+\end{bmatrix}\) then \(\vec{x}=\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\   \end{bmatrix};\quad\) \(x_i\in\mathbb{R}\)
+and \(\vec{b}=\begin{bmatrix} b_1 \\ b_2 \\ b_3 \\  b_4 \\ \end{bmatrix};\quad\) \(b_i\in\mathbb{R}\)
 <details id='a'>
-<summary><b><a style="color:blue" ><span style="cursor:pointer;">Does \(Ax=b\) always have a solution for every \(b\)?</span></a></b></summary>
+<summary><b><a style="color:blue" ><span style="cursor:pointer;">Does \(A\vec{x}=\vec{b}\) always have a solution for every \(\vec{b}\)?</span></a></b></summary>
     <dl><dd>
         Here we have <b>3</b> variables \(x_1,x_2,x_3\) and <b>4</b> equations so, one of the \(b_i\) depends on one of \(b_j\) and \(i\neq j\)
-        So we can't have solution for every \(b\), because of this dependency. So it rules out the possibility of \(4\) dimensional column space.<br>
+        So we can't have solution for every \(\vec{b}\), because of this dependency. So it rules out the possibility of \(4\) dimensional column space.<br>
         Because to be a Column space we must get every vector in that column space by the linear combinations of column vectors.
     </dd></dl>
 </details>
 
-What are the \(b\) that are possible?<br>
-\(Ax=
+What are the \(\vec{b}\) that are possible?<br>
+\(A\vec{x}=
 \begin{bmatrix}
 1 & 1 & 2\\
 2 & 4 & 6\\
@@ -246,13 +245,13 @@ What are the \(b\) that are possible?<br>
  = \begin{bmatrix} b_1 \\ b_2 \\ b_3 \\  b_4 \\ \end{bmatrix}
 \)
 <br>
-Ok we can't solve it for every \(b\) but we can solve it for some \(b\).<br>
+Ok we can't solve it for every \(\vec{b}\) but we can solve it for some \(\vec{b}\).<br>
 For example:<br>
 <details>
-<summary><b><a style="color:blue" ><span style="cursor:pointer;">For \(b=\begin{bmatrix} 1 \\ 2 \\ 3 \\  4 \\ \end{bmatrix}  \)</span></a></b></summary>
+<summary><b><a style="color:blue" ><span style="cursor:pointer;">For \(\vec{b}=\begin{bmatrix} 1 \\ 2 \\ 3 \\  4 \\ \end{bmatrix}  \)</span></a></b></summary>
     <dl><dd><br>
-For \(b=\begin{bmatrix} 1 \\ 2 \\ 3 \\  4 \\ \end{bmatrix} \quad \) \(x=\begin{bmatrix} 1 \\ 0\\ 0\\   \end{bmatrix}\)<br>
-\(Ax=
+For \(\vec{b}=\begin{bmatrix} 1 \\ 2 \\ 3 \\  4 \\ \end{bmatrix} \quad \) \(\vec{x}=\begin{bmatrix} 1 \\ 0\\ 0\\   \end{bmatrix}\)<br>
+\(A\vec{x}=
 \begin{bmatrix}
 1 & 1 & 2\\
 2 & 4 & 6\\
@@ -266,24 +265,24 @@ For \(b=\begin{bmatrix} 1 \\ 2 \\ 3 \\  4 \\ \end{bmatrix} \quad \) \(x=\begin{b
 </details>
 
 <details>
-<summary><b><a style="color:blue" ><span style="cursor:pointer;">For \(b=\begin{bmatrix} 1 \\ 4 \\ 6 \\  8 \\ \end{bmatrix}  \)</span></a></b></summary>
+<summary><b><a style="color:blue" ><span style="cursor:pointer;">For \(\vec{b}=\begin{bmatrix} 1 \\ 4 \\ 6 \\  8 \\ \end{bmatrix}  \)</span></a></b></summary>
     <dl><dd><br>
-For \(b=\begin{bmatrix} 1 \\ 4 \\ 6 \\  8 \\ \end{bmatrix} \quad \) \(x=\begin{bmatrix} 0 \\ 1\\ 0\\   \end{bmatrix}\)<br>
-\(Ax=
+For \(\vec{b}=\begin{bmatrix} 1 \\ 4 \\ 6 \\  8 \\ \end{bmatrix} \quad \) \(\vec{x}=\begin{bmatrix} 0 \\ 1\\ 0\\   \end{bmatrix}\)<br>
+\(A\vec{x}=
 \begin{bmatrix}
 1 & 1 & 2\\
 2 & 4 & 6\\
 3 & 6 & 9\\
 4 & 8 & 12\\
-\end{bmatrix}     
+\end{bmatrix}
 \begin{bmatrix} 0\\ 1\\ 0\\   \end{bmatrix}
 = \begin{bmatrix} 1\\ 4\\ 6\\  8\\ \end{bmatrix}
 \)
     </dd></dl>
 </details>
-Now you can see that the \(b\) that <b>can solve</b> this system of equation is the \(b\) that is <b>in the</b> column space of matrix \(A\).<br>
-So \(b\) is the linear combination of columns of matrix \(A\)<br>
-
+Now you can see that the \(\vec{b}\) that <b>can solve</b> this system of equation is the \(\vec{b}\) that is <b>in the</b> column space of matrix \(A\).<br>
+So \(\vec{b}\) is the linear combination of columns of matrix \(A\)<br>
+<br>
 <h3>Dependency</h3>
 You can see that in our matrix
 \(A=\begin{bmatrix}
@@ -303,7 +302,7 @@ So say \(A'=\begin{bmatrix}
 3 & 6 \\
 4 & 8 \\
 \end{bmatrix}\)<br>
-Then \(A'x\) will also give all possible \(b\) that \(Ax\) can.<br>
+Then \(A'\vec{x}\) will also give all possible \(\vec{b}\) that \(A\vec{x}\) can.<br>
 So we can say that Column space of \(A\) and \(A'\) are same, \(\mathbf{C}(A) = \mathbf{C}(A')\)<br>
 <br>
 But we can't drop two columns from \(A\) because any two columns in our matrix \(A\) are independent of each other.<br>
