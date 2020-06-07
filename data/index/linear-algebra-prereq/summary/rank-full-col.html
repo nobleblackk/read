@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--Code By Webdevtrick ( https://webdevtrick.com )-->
+<html lang="en" >
+<head>
+    <!--MathJax-->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        extensions: ["mml2jax.js"],
+        jax: ["input/MathML"]
+    });
+
+    </script>
+    <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Adding a scrollbar in math formula-->
+    <style>
+        .math-container {
+        overflow-x: auto;
+        display: block;
+    }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>Summary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="../../../assets/css/popupcard.css">
+</head>
+<body>
+
+<div class="container" id="popup">
+    <div class="modal">
+        <div class="details">
+            <p class="description">
+            <b>Full Column Rank </b> of matrix \(A\)<br>
+            </p>
+        </div>
+        
+        <p class="txt">
+            For a \(m\times n\) matrix \(A\) of rank \(r\) and \(m\gt n\).<br>
+            \(\text{Rank}(A)=r=n\) it means that all of the column vectors are independent.<br>
+            &#x25B6;&nbsp; <b>#</b> pivots \(=n\) \(\Rightarrow\) <b>#</b> dependent column vectors \(=0\).<br>
+            <br>
+            Here we have no dependent column vectors here so,<br>
+            &#x25B6;&nbsp; <b>Null Space</b> of \(A\) is just \(\vec{0}\).<br>
+            <br>
+            So complete solution is just a single vector \(\vec{x}_p\) <b>if it exists</b>.<br>
+            <b>#</b> solution = \(\left\{\begin{matrix}
+            1 & \text{ if there is a solution} \\
+            0 & \text{ otherwise} \\
+            \end{matrix}\right.\)<br>
+            <br>
+            &larr;&nbsp; <u><a style="color:red" href="rank.html#popup">Rank of a matrix(<i>summary</i>)</a></u><br>
+            <u><a style="color:red" href="rank-full-row.html#popup">Full row rank matrix(<i>summary</i>)</a></u>  &nbsp;&rarr; <br>
+            <u><a style="color:red" href="rank-full.html#popup">Full rank matrix(<i>summary</i>)</a></u>  &nbsp;&rarr; <br>
+            <u><a style="color:red" href="rank-dim-basis.html#popup">Dimensions and Basis(<i>summary</i>)</a></u> &nbsp;&rarr; <br>
+            <u><a style="color:red" href="../rank.html#col">Visit Chapter</a></u> &nbsp;&rarr; <br>
+            
+        </p>
+        <br>        
+        <button class="btn" onclick="window.location.href = 'rank.html#popup';">&larr;&nbsp;Rank</button>
+        <button style="float: right;" class="btn" onclick="window.location.href = 'rank-full-row.html#popup';">Full row rank matrix&nbsp;&rarr;</button>
+
+        <a href="../../../../index.html" class="link-2"></a>
+
+    </div>
+</div>
+</body>
+</html>
