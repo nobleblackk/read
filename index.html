@@ -21,7 +21,7 @@
         src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
 
-		<title>Convex Optimization</title>
+		<title>Linear Algebra</title>
         <style>
             .dropdown {
                 position: relative;
@@ -43,7 +43,7 @@
                 display: block;
             }
 
-            .dropdown-content a:hover {background-color: #ddd;}
+            .dropdown-content a:hover {background-color: #666666;}
 
             .dropdown:hover .dropdown-content {display: block;}
 
@@ -61,12 +61,8 @@
 
 				<!-- Intro -->
 					<div id="intro">
-						<!--
-						<h1>This is<br />
-						Massively</h1>
-						-->
-						<h1>Convex Optimization</h1>
-						<p>Open resource on Convex Optimization, Inspired by <b><a style="color:blue" href="https://www.edx.org/course/convex-optimization">Stanford Convex Optimization Course</a></b> </p>
+						<h1>Linear Algebra</h1>
+						<p>Open resource on Linear Algebra, Inspired by <b><a style="color:blue" href="https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/">MIT Linear Algebra Course</a></b> </p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
@@ -74,13 +70,13 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo">Convex Optimization</a>
+						<a href="index.html" class="logo">Linear Algebra</a>
 					</header>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li class="active"><a href="index.html">Convex Optimization</a></li>
+							<li class="active"><a href="index.html">Linear Algebra</a></li>
 							<li><a href="data/discussion.html">General Discussion</a></li>
                             <li><a href="data/contribution.html">Contribution</a></li>
                             <li><a href="data/thanks.html">Thanks</a></li>
@@ -95,16 +91,67 @@
 					<div id="main">
 					<section class="post">
 					<h2>Table of Content</h2>
-                        <details open>
-    			            <summary><b><a><span style="cursor:pointer;">Linear Algebra(pre requisite)</span></a></b></summary>
-                            <dl><dd>
-                                <button  onclick="window.location.href = 'data/index/linear-algebra-prereq/vector-space.html';">Vector Space&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button><br><br>
-                                <button  onclick="window.location.href = 'data/index/linear-algebra-prereq/column-space.html';">Column Space&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button><br><br>
-                                <button  onclick="window.location.href = 'data/index/linear-algebra-prereq/null-space.html';">Null Space \((A\vec{x}=\vec{0})\)</button><br><br>
-                                <button  onclick="window.location.href = 'data/index/linear-algebra-prereq/complete-space.html';">Solving \(A\vec{x}=\vec{b}\)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button><br><br>
-                            </dd></dl>
-                        </details>
-                        <br><br><br><br><br><br>
+                        <div class="dropdown">
+                            <button  style="font-family: inherit; margin-top:5px;" onclick="window.location.href = 'data/index/linear-algebra-prereq/vector-space.html';">Vector Space &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x25BC;</button>
+                            <a href="data/index/linear-algebra-prereq/summary/vector-space.html#popup" class="fa fa-info-circle" style="font-size:36px"></a><br>
+                            <div class="dropdown-content">
+                                    <a href="data/index/linear-algebra-prereq/vector-space.html#main">Vector Space</a>
+                                    <a href="data/index/linear-algebra-prereq/vector-space.html#properties">Vector Space Properties</a>
+                            </div>
+                        </div>
+                        
+                        <div class="dropdown">
+                            <button style="font-family: inherit; margin-top:5px;" onclick="window.location.href = 'data/index/linear-algebra-prereq/column-space.html';">Column Space &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x25BC;</button>
+                            <a href="data/index/linear-algebra-prereq/summary/column-space.html#popup" class="fa fa-info-circle" style="font-size:36px"></a><br>
+                            <div class="dropdown-content">
+                                    <a href="data/index/linear-algebra-prereq/column-space.html#main">Column Space</a>
+                                    <a href="data/index/linear-algebra-prereq/column-space.html#r3">Example in \(\mathbb{R}^3\)</a>
+                                    <a href="data/index/linear-algebra-prereq/column-space.html#r4">Example in \(\mathbb{R}^4\)</a>
+                                    <a href="data/index/linear-algebra-prereq/column-space.html#matrix-notation">Matrix Notation</a>
+                                    <a href="data/index/linear-algebra-prereq/column-space.html#dependency">Dependency</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown">
+                            <button  style="font-family: inherit; margin-top:5px;" onclick="window.location.href = 'data/index/linear-algebra-prereq/null-space.html';">Null Space \((A\vec{x}=\vec{0})\) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x25BC;</button>
+                            <a href="data/index/linear-algebra-prereq/summary/null-space.html#popup" class="fa fa-info-circle" style="font-size:36px"></a><br>
+                            <div class="dropdown-content">
+                                    <a href="data/index/linear-algebra-prereq/null-space.html#main">Null Space</a>
+                                    <a href="data/index/linear-algebra-prereq/null-space.html#r4">Example in \(\mathbb{R}^4\)</a>
+                                    <a href="data/index/linear-algebra-prereq/null-space.html#ax=0">&#x25B6; Is \(A\vec{x}=0\) a vector space?</a>
+                                    <a href="data/index/linear-algebra-prereq/null-space.html#elimination">&#x25B6; Elimination Technique</a>
+                                    <a href="data/index/linear-algebra-prereq/null-space.html#pivot-free-columns">&#x25B6; pivot column/free columns</a>
+                                    <a href="data/index/linear-algebra-prereq/null-space.html#special-solution">&#x25B6; Finding special solution</a>
+                                    <a href="data/index/linear-algebra-prereq/null-space.html#num-of-special-sol">&#x25B6; # special solutions</a>
+                                    <a href="data/index/linear-algebra-prereq/null-space.html#rref">&#x25B6; Reduced Row Echelon Form</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown">
+                            <button  style="font-family: inherit; margin-top:5px;" onclick="window.location.href = 'data/index/linear-algebra-prereq/complete-space.html';">Solving \(A\vec{x}=\vec{b}\) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x25BC;</button>
+                            <a href="data/index/linear-algebra-prereq/summary/complete-space.html#popup" class="fa fa-info-circle" style="font-size:36px"></a><br>
+                            <div class="dropdown-content">
+                                    <a href="data/index/linear-algebra-prereq/complete-space.html#main">Solving \(A\vec{x}=\vec{b}\)</a>
+                                    <a href="data/index/linear-algebra-prereq/complete-space.html#ax=b">Find \(\vec{x}\) that solves \(A\vec{x}=\vec{b}\)?</a>
+                                    <a href="data/index/linear-algebra-prereq/complete-space.html#main">Elimination Technique</a>
+                            </div>
+                        </div>
+
+                        <div class="dropdown">
+                           <button  style="font-family: inherit; margin-top:5px;" onclick="window.location.href = 'data/index/linear-algebra-prereq/rank.html';">Rank Of a Matrix &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x25BC;</button>
+                           <a href="data/index/linear-algebra-prereq/summary/rank.html#popup" class="fa fa-info-circle" style="font-size:36px"></a><br>
+                            <div class="dropdown-content">
+                                    <a href="data/index/linear-algebra-prereq/rank.html#main">Rank Of a Matrix</a>
+                                    <a href="data/index/linear-algebra-prereq/rank.html#col">Full column rank matrix</a>
+                                    <a href="data/index/linear-algebra-prereq/rank.html#row">Full row rank matrix</a>
+                                    <a href="data/index/linear-algebra-prereq/rank.html#full">Full rank matrix</a>
+                                    <a href="data/index/linear-algebra-prereq/rank.html#dim-basis">Dimensions and Basis</a>
+                                    <a href="data/index/linear-algebra-prereq/rank.html#cs">&#x25B6; &nbsp;Column Space</a>
+                                    <a href="data/index/linear-algebra-prereq/rank.html#ns">&#x25B6; &nbsp;Null Space</a>
+                            </div>
+                        </div>
+
+                        <br><br><br><br><br><br><br><br><br>
                     </section>
 					</div>
 
