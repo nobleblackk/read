@@ -92,7 +92,7 @@
 
                 <!-- Header -->
                     <header id="header">
-                        <a href="../../../index.html" class="logo">Convex Optimization</a>
+                        <a href="../../../index.html" class="logo">Linear Algebra</a>
                     </header>
 
                 <!-- Nav -->
@@ -108,19 +108,19 @@
                     <div id="main">
                         <section class="post">
 <div class='buttons'>
-    <button onclick="window.location.href = '../../../index.html';">\(\leftarrow\)&nbsp;&nbsp; Home</button>
-    <button style="float: right;" onclick="window.location.href = 'column-space.html';">Column Space&nbsp;&nbsp;\(\to\)</button>
+    <button onclick="window.location.href = '../../../index.html';">&#x25C0;&nbsp;&nbsp; Home</button>
+    <button style="float: right;" onclick="window.location.href = 'column-space.html';">Column Space&nbsp;&nbsp;&#x25B6;</button>
 </div><br>
 
 <p>
-<h1>Vector space</h1>
+<h1 id="main">Vector space</h1>
 
 Consider a vector \(\vec{v}\in\mathbb{R}^d\), here \(\vec{v}\) lives in \(d\) dimensional space this space is a <b>vector space</b>.<br>
 For example for \(d=3\),
 <br>
 <img src="img/1.png" width="557" height="334" alt="">
 <br>
-<details><summary><b><a style="color:blue" ><span style="cursor:pointer;">Code To plot this vector (python)</span></a></b></summary>
+<details><summary><b><span style="cursor:pointer; color:blue;">Code To plot this vector (python)</span></b></summary>
 <pre  class="brush: python">
 import MultiVariable as mvar
 import numpy as np
@@ -143,7 +143,7 @@ Example for \(d=3\)
 <br>
 <img src="img/2.png" width="557" height="334" alt="">
 <br>
-<details><summary><b><a style="color:blue" ><span style="cursor:pointer;">Code To plot this vector (python)</span></a></b></summary>
+<details><summary><b><span style="cursor:pointer; color:blue;">Code To plot this vector (python)</span></b></summary>
 <pre  class="brush: python">
 import MultiVariable as mvar
 import numpy as np
@@ -165,7 +165,7 @@ Now Consider a plane(passing through origin) inside a \(3\)-dimensional space, s
 <br>
 <img src="img/3.png" width="557" height="334" alt="">
 <br>
-<details><summary><b><a style="color:blue" ><span style="cursor:pointer;">Code To plot this plane (python)</span></a></b></summary>
+<details><summary><b><span style="cursor:pointer; color:blue;">Code To plot this plane (python)</span></b></summary>
 <pre  class="brush: python">
 import MultiVariable as mvar
 import numpy as np
@@ -193,7 +193,7 @@ Say the vectors are \(\vec{v} = \begin{bmatrix} 1 \\ 1\\ 1\\ \end{bmatrix}\) and
 <img src="img/6.png" width="600" height="350" alt=""><br>
 Then the vector space is just a line passing through these vectors.<br>
 <img src="img/7.png" width="600" height="350" alt=""><br>
-<details><summary><b><a style="color:blue" ><span style="cursor:pointer;">Code To plot this (python)</span></a></b></summary>
+<details><summary><b><span style="cursor:pointer; color:blue;">Code To plot this (python)</span></b></summary>
 <pre  class="brush: python">
 import MultiVariable as mvar
 import numpy as np
@@ -224,7 +224,7 @@ Say the vectors are \(\vec{v} = \begin{bmatrix} 2 \\ -1\\ -1\\ \end{bmatrix}\) a
 <img src="img/4.png" width="600" height="350" alt=""><br>
 Then the vector space is the plane passing through these vectors.<br>
 <img src="img/5.png" width="600" height="350" alt=""><br>
-<details><summary><b><a style="color:blue" ><span style="cursor:pointer;">Code To plot this (python)</span></a></b></summary>
+<details><summary><b><span style="cursor:pointer; color:blue;">Code To plot this (python)</span></b></summary>
 <pre  class="brush: python">
 import MultiVariable as mvar
 import numpy as np
@@ -246,7 +246,8 @@ m.set_axes_limit((-3,3))
 </pre>
 <change> You can get this MultiVariable class <a style="color:blue" href="">HERE</a>
 </details>
-<br>
+<br><br>
+<h2 id="properties">Vector Space Properties</h2>
 So when can we say that a <b>space</b> can be a <b>vector space</b>?<br>
 A space is a <b>vector space</b> if it full fill these conditions:<br>
 <ol>
@@ -261,7 +262,7 @@ What about multiplying a constant to a vector, take a vector in that space \(\ve
 <img src="img/10.png" width="600" height="300" alt=""><br>
 if we multiply \(\vec{v}\)  by \(-1\) then if goes out of space.<br>
 <img src="img/11.png" width="600" height="300" alt=""><br>
-<details><summary><b><a style="color:blue" ><span style="cursor:pointer;">Code To plot this (python)</span></a></b></summary>
+<details><summary><b><span style="cursor:pointer; color:blue;">Code To plot this (python)</span></b></summary>
 <pre  class="brush: python">
 import MultiVariable as mvar
 import numpy as np
@@ -319,8 +320,8 @@ Possible subspace of a \(2\)-dimensional space.<br>
 </div>
 <br><br>
 <div class='buttons'>
-    <button onclick="window.location.href = '../../../index.html';">\(\leftarrow\)&nbsp;&nbsp; Home</button>
-    <button style="float: right;" onclick="window.location.href = 'column-space.html';">Column Space&nbsp;&nbsp;\(\to\)</button>
+    <button onclick="window.location.href = '../../../index.html';">&#x25C0;&nbsp;&nbsp; Home</button>
+    <button style="float: right;" onclick="window.location.href = 'column-space.html';">Column Space&nbsp;&nbsp;&#x25B6;</button>
 </div><br>
                         </section>
                     </div>

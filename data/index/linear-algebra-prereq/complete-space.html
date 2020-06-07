@@ -139,7 +139,7 @@ It give us a set of equations:<br>
 must lie in the column space of \(A\). So<br>
 <blockquote>\(A\vec{x}=\vec{b}\) is solvable if \(\vec{b}\) lies in the column space of \(A\)</blockquote><br>
 
-<h3>How can we find all the \(\vec{x}\) that solves \(A\vec{x}=\vec{b}\)?</h3>
+<h3 id="ax=b">How can we find all the \(\vec{x}\) that solves \(A\vec{x}=\vec{b}\)?</h3>
 Let's find <b>a</b> solution for \(A\vec{x}=\vec{b}\)<br>
 Now we have to find a <b>particular</b> \(\vec{x}\) that solves \(A\vec{x}=\vec{b}\), say this <b>particular</b> solution be \(\vec{x}_p\)<br>
 Our matrix is \(A=\begin{bmatrix}
@@ -149,6 +149,7 @@ Our matrix is \(A=\begin{bmatrix}
 \end{bmatrix}\)<br>
 First we convert our matrix in <b>echelon form</b> using Elimination technique, and unlike in <b>null space</b> here we also have \(b_i\)'s so we use Augmented matrix.<br><br>
 So our Augmented matrix is:<br>
+<span id="elimination"></span>
 \(  \left[  \begin{array}{cccc|c}
 
 1 & 2 & 2 & 2  & b_1\\
