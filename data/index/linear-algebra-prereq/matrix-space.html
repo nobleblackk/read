@@ -1,0 +1,823 @@
+<!DOCTYPE HTML>
+<!--
+    "Thanks to HTML5 UP for this template".
+    Massively by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <!-- Code Render-->
+        <link rel="stylesheet" href="../../syntaxhighlighter/shCore.css">
+        <link rel="stylesheet" href="../../syntaxhighlighter/shThemeDefault.css">
+        <script type="text/javascript" src="../../syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="../../syntaxhighlighter/shBrushPython.js"></script>
+
+        <!--MathJax-->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                    config: ["MMLorHTML.js"],
+    extensions: ["mml2jax.js"],
+    jax: ["input/MathML"]
+
+        });
+
+        </script>
+        <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <style>
+            .math-container {
+            overflow-x: auto;
+            display: block;
+        }
+        </style>
+        <style>
+        .new_image {
+            width:100%;
+        }
+        img {
+            max-width:100%;
+        }
+        </style>
+
+<style>
+.accordion {
+    border: 0px solid black;
+    border-color: black;
+    background-color: #FFC2C2;
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+
+}
+
+.active, .accordion:hover {
+    background-color:#C2E7FF;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+</style>
+        <title>Matrix Space</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="../../assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <a href="../../../index.html" class="logo">Linear Algebra</a>
+                    </header>
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul class="links">
+                            <li class="active"><a href="vector-space.html">Matrix Space</a></li>
+                        </ul>
+                        <ul class="icons">
+                            <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+                            <li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                        </ul>					</nav>
+                <!-- Main -->
+                    <div id="main">
+                        <section class="post">
+<div class='buttons'>
+    <button onclick="window.location.href = '../../../index.html';">&#x25C0;&nbsp;&nbsp; Home</button>
+    <button style="float: right;" onclick="window.location.href = 'column-space.html';">Column Space&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+
+<p>
+<h1 id="main">Matrix Space</h1>
+<br>
+
+<h4 id="vector-interpretation">Vector Interpretation</h4>
+Our Interpretation of vectors is something like this,<br>
+<blockquote>
+Say we have a vector \(\vec{v}\in\mathbb{R}^3\)<!-- and say  \(\vec{v}=\begin{bmatrix} 1\\2\\3\\ \end{bmatrix}\).--><br>
+then each element of vector \(\vec{v}\) represent an <b>unique</b> axis (say \(x,y\) and \(z\)).<br>
+<i>these axis can be anything your salary, your SAT score, your running speed (anything which can be quantify in a number).</i><br>
+Assume a line passing thrown each element in that vector \(\vec{v}\).<br>
+\[\vec{v}=\begin{bmatrix} \color{red}{\bullet}\\ \color{blue}{\bullet}\\ \color{green}{\bullet}\\ \end{bmatrix}\].<br>
+interpret these (<span style="color:red">red \(\bullet\)</span>, <span style="color:blue">blue \(\bullet\)</span> 
+and <span style="color:green">green \(\bullet\)</span>) dots as real line \(\in\mathbb{R}^1\)
+</blockquote><br>
+<br>
+
+<h4 id="matrix-interpretation">Matrix Interpretation</h4>
+We can use our interpretation of <b>vectors</b> for <b>matrices</b>,<br>
+<blockquote>
+Say we have a \(m\times n\) matrix say \(A\in\mathbb{R}^{m\times n}\)<br>
+then each element of our matrix \(A\) represent an <b>unique</b> axis (say \(u,v,w,\cdots\)).<br>
+<i>These axis can be anything your salary, your SAT score, your average running speed, average temperature in past 20 days, (anything which can be quantify in a number).</i><br>
+Assume a line passing thrown each element in this matrix \(A\).<br>
+<div class="math-container">
+\[A=\begin{bmatrix}
+\color{red}{\bullet} & \color{brown}{\bullet} \\
+\color{green}{\bullet} & \color{blue}{\bullet} \\
+\end{bmatrix}
+\]
+</div>
+interpret these (<span style="color:red">red \(\bullet\)</span>, <span style="color:blue">blue \(\bullet\)</span> 
+, <span style="color:green">green \(\bullet\)</span> and <span style="color:brown">brown \(\bullet\)</span>) 
+dots as real line \(\in\mathbb{R}^1\)
+</blockquote><br>
+<br>
+<h4 id="matrix-as-vector">Vector interpretation of a Matrix</h4>
+We can interpret matrices as vectors.<br>
+<blockquote>
+Say we have a \(2\times 2\) matrix say \(A\in\mathbb{R}^{2\times 2}\)<br>
+<div class="math-container">
+\[A=\begin{bmatrix}
+\color{red}{\bullet} & \color{brown}{\bullet} \\
+\color{green}{\bullet} & \color{blue}{\bullet} \\
+\end{bmatrix}
+\]
+</div>
+We can interpret it as vector say \(\vec{v}\in\mathbb{R}^4\) as,<br>
+\[\vec{v}=\begin{bmatrix} \color{red}{\bullet}\\ \color{brown}{\bullet}\\ \color{green}{\bullet}\\ \color{blue}{\bullet}\\ \end{bmatrix}\].<br>
+</blockquote><br>
+So we can see that our <b>matrices are the vectors</b>.<br>
+<br>
+<h2>Matrix space</h2>
+Think of all \(3\times 3\) matrices, there are <b>not</b> any limitation to elements, they can be anything, there are \(\infty\) of them.<br>
+
+<blockquote>These \(3\times 3\) matrices can we written as vectors \(\vec{v}\in\mathbb{R}^9\)</blockquote>
+<br>
+<li>We can add those matrices, and if we add them we got another \(3\times 3\) matrix.</li> 
+<li>We can multiply matrices by a scaler, and if we multiply a scaler to a \(3\times 3\) matrix
+we get another \(3\times 3\) matrix.</li> 
+<li>We can take there linear combinations and the resultant matrix will still be a \(3\times 3\) matrix</li>
+<br>
+
+<blockquote>So the space of all \(3\times 3\) matrices is a <b>vector space</b></blockquote>
+<br>
+
+Let's denote this space of all \(3\times 3\) matrices as \(\mathcal{M}\).<br>
+Now let's see sub spaces of \(\mathcal{M}\).<br>
+<br>
+
+<h4>Lower Triangular</h4>
+All \(3\times 3\) Lower Triangular matrices \(\subset\) All \(3\times 3\) matrices.<br>
+Is the <b>space</b> of all \(3\times 3\) Lower Triangular matrices is a <b>subspace</b> of all \(3\times 3\) matrices<b>?</b><br>
+<blockquote>
+    We know that All \(3\times 3\) Lower Triangular matrices \(\subset\) All \(3\times 3\) matrices, then,<br>
+    Space of all Lower Triangular matrices <b>is a</b> subspace of all \(3\times 3\) matrices if,<br>
+    <li>All Lower Triangular \(3\times 3\) matrices form a <b>vector space</b>?</li>
+</blockquote>
+<br>
+<b>Do all Lower Triangular \(3\times 3\) matrices form a vector space?.</b><br>
+
+<li>We can <b>add</b> two \(3\times 3\) Lower Triangular matrices, we got another \(3\times 3\) Lower Triangular matrix.</li> 
+
+<blockquote>
+<div class="math-container">
+\[
+\begin{bmatrix}
+\mathbb{R}   &           0            & 0 \\
+\mathbb{R}   & \mathbb{R} & 0 \\
+\mathbb{R} & \mathbb{R}  & \mathbb{R} \\
+\end{bmatrix}
++
+\begin{bmatrix}
+\mathbb{R}   &           0            & 0 \\
+\mathbb{R}   & \mathbb{R} & 0 \\
+\mathbb{R} & \mathbb{R}  & \mathbb{R} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\mathbb{R}   &           0            & 0 \\
+\mathbb{R}   & \mathbb{R} & 0 \\
+\mathbb{R} & \mathbb{R}  & \mathbb{R} \\
+\end{bmatrix}
+\]
+</div>
+</blockquote>
+
+<li>We can <b>multiply</b> a \(3\times 3\) Lower Triangular matrices by <b>a scaler</b>,
+we get another \(3\times 3\) Lower Triangular matrix.</li> 
+
+<blockquote>
+<div class="math-container">
+\[ C\cdot
+\begin{bmatrix}
+\mathbb{R}   &           0            & 0 \\
+\mathbb{R}   & \mathbb{R} & 0 \\
+\mathbb{R} & \mathbb{R}  & \mathbb{R} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\mathbb{R}   &           0            & 0 \\
+\mathbb{R}   & \mathbb{R} & 0 \\
+\mathbb{R} & \mathbb{R}  & \mathbb{R} \\
+\end{bmatrix}
+\]
+</div>
+</blockquote>
+
+<li>We can take there <b>linear combinations</b> and the resultant matrix will still be a \(3\times 3\) matrix</li>
+
+
+<blockquote>
+<div class="math-container">
+\[\alpha\cdot
+\begin{bmatrix}
+\mathbb{R}   &           0            & 0 \\
+\mathbb{R}   & \mathbb{R} & 0 \\
+\mathbb{R} & \mathbb{R}  & \mathbb{R} \\
+\end{bmatrix}
++
+\beta\cdot
+\begin{bmatrix}
+\mathbb{R}   &           0            & 0 \\
+\mathbb{R}   & \mathbb{R} & 0 \\
+\mathbb{R} & \mathbb{R}  & \mathbb{R} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\mathbb{R}   &           0            & 0 \\
+\mathbb{R}   & \mathbb{R} & 0 \\
+\mathbb{R} & \mathbb{R}  & \mathbb{R} \\
+\end{bmatrix}
+\]
+</div>
+</blockquote>
+
+So collectively we can say that all \(3\times 3\) Lower Triangular matrices forms a <b>vector space</b>.<br>
+So 
+<blockquote>
+The <b>space</b> all \(3\times 3\) Lower Triangular matrices is a <b>subspace</b> of all \(3\times 3\) matrices .<br>
+</blockquote>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4>Symmetric Matrix</h4>
+All \(3\times 3\) Symmetric matrices \(\subset\) All \(3\times 3\) matrices.<br>
+Is the <b>space</b> of all \(3\times 3\) Symmetric matrices is a <b>subspace</b> of all \(3\times 3\) matrices<b>?</b><br>
+<blockquote>
+    We know that All \(3\times 3\) Symmetric matrices \(\subset\) All \(3\times 3\) matrices, then,<br>
+    Space of all Symmetric matrices <b>is a</b> subspace of all \(3\times 3\) matrices if,<br>
+    <li>All Symmetric \(3\times 3\) matrices form a <b>vector space</b>?</li>
+</blockquote>
+<br>
+<b>Do all Symmetric \(3\times 3\) matrices form a vector space?.</b><br>
+
+<li>We can <b>add</b> two \(3\times 3\) Symmetric matrices, we got another \(3\times 3\) Symmetric matrix.</li> 
+
+<blockquote>
+<div class="math-container">
+\[
+\begin{bmatrix}
+\color{}{\mathbb{R}}   & \color{red}{\mathbb{R}}  & \color{blue}{\mathbb{R}}  \\
+\color{red}{\mathbb{R}}   & \color{}{\mathbb{R}}  & \color{green}{\mathbb{R}}  \\
+\color{blue}{\mathbb{R}}   & \color{green}{\mathbb{R}}  & \color{}{\mathbb{R}}   \\
+\end{bmatrix}
++
+\begin{bmatrix}
+\color{}{\mathbb{R}}   & \color{brown}{\mathbb{R}}  & \color{magenta}{\mathbb{R}} \\
+\color{brown}{\mathbb{R}}   & \color{}{\mathbb{R}}  & \color{orange}{\mathbb{R}} \\
+\color{magenta}{\mathbb{R}}   & \color{orange}{\mathbb{R}}  & \color{}{\mathbb{R}}   \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\color{}{2\mathbb{R}}                       & \color{red}{\mathbb{R}}+\color{brown}{\mathbb{R}}  & \color{blue}{\mathbb{R}}+\color{magenta}{\mathbb{R}} \\
+\color{red}{\mathbb{R}}+\color{brown}{\mathbb{R}}   & \color{}{2\mathbb{R}}                      & \color{green}{\mathbb{R}}+\color{orange}{\mathbb{R}} \\
+\color{blue}{\mathbb{R}}+\color{magenta}{\mathbb{R}}   & \color{green}{\mathbb{R}}+\color{orange}{\mathbb{R}}  & \color{}{2\mathbb{R}} \\
+\end{bmatrix}
+\]
+</div>
+</blockquote>
+
+<li>We can <b>multiply</b> a \(3\times 3\) Symmetric matrices by <b>a scaler</b>,
+we get another \(3\times 3\) Symmetric matrix.</li> 
+
+<blockquote>
+<div class="math-container">
+\[ C\cdot
+\begin{bmatrix}
+\color{}{\mathbb{R}}   & \color{red}{\mathbb{R}}  & \color{blue}{\mathbb{R}}  \\
+\color{red}{\mathbb{R}}   & \color{}{\mathbb{R}}  & \color{green}{\mathbb{R}}  \\
+\color{blue}{\mathbb{R}}   & \color{green}{\mathbb{R}}  & \color{}{\mathbb{R}}   \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\color{}{C\cdot\mathbb{R}}   & \color{red}{C\cdot\mathbb{R}}  & \color{blue}{C\cdot\mathbb{R}}  \\
+\color{red}{C\cdot\mathbb{R}}   & \color{}{C\cdot\mathbb{R}}  & \color{green}{C\cdot\mathbb{R}}  \\
+\color{blue}{C\cdot\mathbb{R}}   & \color{green}{C\cdot\mathbb{R}}  & \color{}{C\cdot\mathbb{R}}   \\
+\end{bmatrix}
+\]
+</div>
+</blockquote>
+
+<li>We can take there <b>linear combinations</b> and the resultant matrix will still be a \(3\times 3\) matrix</li>
+
+
+<blockquote>
+<div class="math-container">
+\[\alpha\cdot
+\begin{bmatrix}
+\color{}{\mathbb{R}}   & \color{red}{\mathbb{R}}  & \color{blue}{\mathbb{R}}  \\
+\color{red}{\mathbb{R}}   & \color{}{\mathbb{R}}  & \color{green}{\mathbb{R}}  \\
+\color{blue}{\mathbb{R}}   & \color{green}{\mathbb{R}}  & \color{}{\mathbb{R}}   \\
+\end{bmatrix}
++
+\beta\cdot
+\begin{bmatrix}
+\color{}{\mathbb{R}}   & \color{brown}{\mathbb{R}}  & \color{magenta}{\mathbb{R}} \\
+\color{brown}{\mathbb{R}}   & \color{}{\mathbb{R}}  & \color{orange}{\mathbb{R}} \\
+\color{magenta}{\mathbb{R}}   & \color{orange}{\mathbb{R}}  & \color{}{\mathbb{R}}   \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\color{}{\alpha\cdot\mathbb{R} + \beta\cdot\mathbb{R}}                       & \color{red}{\alpha\cdot\mathbb{R}}+\color{brown}{\beta\cdot\mathbb{R}}  & \color{blue}{\alpha\cdot\mathbb{R}}+\color{magenta}{\beta\cdot\mathbb{R}} \\
+\color{red}{\alpha\cdot\mathbb{R}}+\color{brown}{\beta\cdot\mathbb{R}}   & \color{}{\alpha\cdot\mathbb{R} + \beta\cdot\mathbb{R}}                      & \color{green}{\alpha\cdot\mathbb{R}}+\color{orange}{\beta\cdot\mathbb{R}} \\
+\color{blue}{\alpha\cdot\mathbb{R}}+\color{magenta}{\beta\cdot\mathbb{R}}   & \color{green}{\alpha\cdot\mathbb{R}}+\color{orange}{\beta\cdot\mathbb{R}}  & \color{}{\alpha\cdot\mathbb{R} + \beta\cdot\mathbb{R}} \\
+\end{bmatrix}
+\]
+</div>
+</blockquote>
+
+So collectively we can say that all \(3\times 3\) Symmetric matrices forms a <b>vector space</b>.<br>
+So 
+<blockquote>
+The <b>space</b> all \(3\times 3\) Symmetric matrices is a <b>subspace</b> of all \(3\times 3\) matrices .<br>
+</blockquote><br>
+
+
+<blockquote>
+Similarly The <b>space</b> all \(3\times 3\) Diagonal matrices is a <b>subspace</b> of all \(3\times 3\) matrices .<br>
+</blockquote><br>
+<br>
+
+<h2 id="dim-basis">Dimension and Basis</h2>
+<h4 id="basis-3x3">Basis of all \(3\times 3\) matrices</h4>
+Our matrix space is something like,
+\[
+\begin{bmatrix}
+\mathbb{R} & \mathbb{R} & \mathbb{R} \\
+\mathbb{R} & \mathbb{R} & \mathbb{R} \\
+\mathbb{R} & \mathbb{R} & \mathbb{R} \\
+\end{bmatrix}
+\]
+We have \(9\) independent entities for a \(3\times 3\) matrix.<br>
+So there are \(9\) <b>basis</b>,<br>
+\[
+\begin{bmatrix}
+\color{red}{1} & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+
+\begin{bmatrix}
+0 & \color{red}{1} & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+
+\begin{bmatrix}
+0 & 0 & \color{red}{1} \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+\]
+
+\[
+\begin{bmatrix}
+0 & 0 & 0 \\
+\color{red}{1} & 0 & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & \color{red}{1} & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & \color{red}{1} \\
+0 & 0 & 0 \\
+\end{bmatrix}
+\]
+
+\[
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\color{red}{1} & 0 & 0 \\
+\end{bmatrix}
+
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & \color{red}{1} & 0 \\
+\end{bmatrix}
+
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 &  \color{red}{1} \\
+\end{bmatrix}
+\]
+
+<blockquote>We can get any matrix by the linear combination of these matrices</blockquote>
+<br>
+
+What is the Dimension of all \(3\times 3\) matrix?<br>
+<blockquote>
+There are \(9\) <b>basis</b> and by there linear combination we can get all other matrices.<br>
+So Dimension of all \(3\times 3\) matrices is \(9\).<br>
+</blockquote><br>
+
+
+<h4 id="basis-3x3-up">Basis of all \(3\times 3\) Lower Triangular matrices</h4>
+Our matrix space is something like,<br>
+\[
+\begin{bmatrix}
+\mathbb{R}   &           0            & 0 \\
+\mathbb{R}   & \mathbb{R} & 0 \\
+\mathbb{R} & \mathbb{R}  & \mathbb{R} \\
+\end{bmatrix}
+\]
+
+We have \(6\) independent entities for a \(3\times 3\) matrix.<br>
+So there are \(6\) <b>basis</b>,<br>
+\[
+\begin{bmatrix}
+\color{red}{1} & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+
+\begin{bmatrix}
+0 & 0 & 0 \\
+\color{red}{1} & 0 & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & \color{red}{1} & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+\]
+
+\[
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\color{red}{1} & 0 & 0 \\
+\end{bmatrix}
+
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & \color{red}{1} & 0 \\
+\end{bmatrix}
+
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & \color{red}{1} \\
+\end{bmatrix}
+\]
+
+
+<blockquote>We can get any Lower Triangular matrix by the linear combination of these matrices</blockquote>
+<br>
+
+What is the Dimension of all \(3\times 3\) Lower Triangular matrix?<br>
+<blockquote>
+There are \(6\) <b>basis</b> and by there linear combination we can get all other Lower Triangular matrices.<br>
+So Dimension of all \(3\times 3\) Lower Triangular matrices is \(6\).<br>
+</blockquote><br>
+
+
+
+<h4 id="basis-3x3-sym">Basis of all \(3\times 3\) Symmetric matrices</h4>
+Our matrix space is something like,<br>
+\[
+\begin{bmatrix}
+\color{}{\mathbb{R}}   & \color{red}{\mathbb{R}}  & \color{blue}{\mathbb{R}}  \\
+\color{red}{\mathbb{R}}   & \color{}{\mathbb{R}}  & \color{green}{\mathbb{R}}  \\
+\color{blue}{\mathbb{R}}   & \color{green}{\mathbb{R}}  & \color{}{\mathbb{R}}   \\
+\end{bmatrix}
+\]
+
+We have \(6\) independent entities for a \(3\times 3\) matrix.<br>
+So there are \(6\) <b>basis</b>,<br>
+\[
+\begin{bmatrix}
+\color{red}{1} & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+
+\begin{bmatrix}
+0 & 0 & 0 \\
+\color{red}{1} & 0 & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & \color{red}{1} & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+\]
+
+\[
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\color{red}{1} & 0 & 0 \\
+\end{bmatrix}
+
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & \color{red}{1} & 0 \\
+\end{bmatrix}
+
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & \color{red}{1} \\
+\end{bmatrix}
+\]
+
+
+<blockquote>We can get any Symmetric matrix by the linear combination of these matrices</blockquote>
+<br>
+
+What is the Dimension of all \(3\times 3\) Symmetric matrix?<br>
+<blockquote>
+There are \(6\) <b>basis</b> and by there linear combination we can get all other Symmetric matrices.<br>
+So Dimension of all \(3\times 3\) Symmetric matrices is \(6\).<br>
+</blockquote><br>
+<br>
+
+<h2 id="op">Operation on subspaces</h2>
+Say \(\mathcal{S}\) denotes the space of all \(3\times 3\) <b>symmetric</b> matrices.<br>
+Say \(\mathcal{U}\) denotes the space of all \(3\times 3\) <b>lower triangular</b> matrices.<br>
+<br>
+<li>\(\mathcal{S}\cap\mathcal{U}\)</li>
+What about matrices who are <b>lower triangular</b> <b>AND</b> <b>symmetric</b>.<br>
+We are asking for space contain by both \(\mathcal{U}\) and \(\mathcal{S}\),<br>
+Or say what is the space of \(\mathcal{S}\cap\mathcal{U}\).<br>
+And it's \(3\times 3\) <b>Diagonal matrix</b>.<br>
+And what is the <b>dimension</b> of a <b>diagonal matrix</b>.<br>
+<blockquote>
+    All \(3\times 3\) <b>diagonal matrices</b> is a <b>subspace</b> of All \(3\times 3\) <b>matrices</b>.<br>
+    It has \(3\) independent entities for a \(3\times 3\) matrix.<br>
+    So it's <b>dimension</b> is \(3\).
+</blockquote><br>
+
+<li>\(\mathcal{S}\cup\mathcal{U}\)</li>
+What about matrices who are <b>lower triangular</b> <b>OR</b> <b>symmetric</b>.<br>
+We are asking for space contain by both \(\mathcal{U}\) OR \(\mathcal{S}\),<br>
+Or say what is the space of \(\mathcal{S}\cup\mathcal{U}\).<br>
+<blockquote>
+    But all \(3\times 3\) <b>lower triangular</b> <b>OR</b> <b>symmetric</b> matrices <b>do not</b> 
+    form a <b>subspace</b> of All \(3\times 3\) <b>matrices</b>.<br> 
+    But Why?<br>
+    Let's say \(\mathcal{Q}=\mathcal{S}\cup\mathcal{U}\)<br>
+    Consider two matrices,<br>
+(symmetric)\(A=
+\begin{bmatrix}
+\color{red}{1}  & \color{red}{1} & 0 \\
+\color{red}{1} & 0 & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+\)
+and
+(lower triangular)\(B=
+\begin{bmatrix}
+0 & 0 & 0 \\
+\color{red}{-1} & 0 & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+\)<br>
+\(A\in\mathcal{Q}\) and \(B\in\mathcal{Q}\) so for \(\mathcal{Q}\) to be a <b>vector space</b>, 
+<b>linear combination</b> of \(A\) and \(B\) must \(\in\mathcal{Q}\).<br>
+\(A+B=
+\begin{bmatrix}
+\color{red}{1}  & \color{red}{1} & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+\)<br>
+And \(A+B\) is <b>neither</b> lower triangular and <b>nor</b> symmetric.<br>
+So \(A+B\notin \mathcal{Q}\).<br>
+So \(\mathcal{Q}\) is not a <b>vector space</b>.
+</blockquote><br>
+
+<li>\(\mathcal{S} + \mathcal{U}\)</li>
+Here we took any matrix in \(\mathcal{S}\) (say \(A\)) and any matrix in \(\mathcal{U}\) (say\(B\)), and <b>add</b> them.<br>
+<blockquote>
+You can say it's some sort to linear combinations of space \(\mathcal{S}\) and space \(\mathcal{U}\).<br>
+Say you have a matrix \(A\in\mathcal{S}\) and a matrix \(B\in\mathcal{U}\).<br>
+<li>If \(A\in\mathcal{S}\Rightarrow \alpha\cdot A\in \mathcal{S}\) because \(\mathcal{S}\) is a <b>vector space</b> </li>
+<li>If \(B\in\mathcal{U}\Rightarrow \beta\cdot B\in \mathcal{U}\) because \(\mathcal{U}\) is a <b>vector space</b> </li>
+And \(\alpha\in\mathbb{R}\) and \(\beta\in\mathbb{R}\)<br>
+And we are looking at \(\alpha\cdot A + \beta \cdot B;\quad\) \(\forall A\in\mathcal{S}\) and \(\forall B\in\mathcal{U}\).<br>
+And it's a linear combinations in between elements of \(\mathcal{S}\) and \(\mathcal{U}\).<br>
+</blockquote>
+\(A\in\mathcal{S}\) and \(B\in\mathcal{U}\) and we are looking for \(A+B\).<br>
+<div class="math-container">
+\[
+\begin{bmatrix}
+\color{}{\mathbb{R}}   & \color{red}{\mathbb{R}}  & \color{blue}{\mathbb{R}}  \\
+\color{red}{\mathbb{R}}   & \color{}{\mathbb{R}}  & \color{green}{\mathbb{R}}  \\
+\color{blue}{\mathbb{R}}   & \color{green}{\mathbb{R}}  & \color{}{\mathbb{R}}   \\
+\end{bmatrix}
++
+\begin{bmatrix}
+\mathbb{R}   &           0            & 0 \\
+\mathbb{R}   & \mathbb{R} & 0 \\
+\mathbb{R} & \mathbb{R}  & \mathbb{R} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\color{}{2\mathbb{R}}                       & \color{red}{\mathbb{R}}  & \color{blue}{\mathbb{R}}  \\
+\color{red}{\mathbb{R}}+\color{}{\mathbb{R}}   & \color{}{2\mathbb{R}}                      & \color{green}{\mathbb{R}}  \\
+\color{blue}{\mathbb{R}}+\color{}{\mathbb{R}}   & \color{green}{\mathbb{R}}+\color{}{\mathbb{R}}  & \color{}{2\mathbb{R}} \\
+\end{bmatrix}
+\]
+</div>
+
+equivalently,<br>
+
+<div class="math-container">
+\[
+\begin{bmatrix}
+\color{}{\mathbb{R}}   & \color{red}{\mathbb{R}}  & \color{blue}{\mathbb{R}}  \\
+\color{red}{\mathbb{R}}   & \color{}{\mathbb{R}}  & \color{green}{\mathbb{R}}  \\
+\color{blue}{\mathbb{R}}   & \color{green}{\mathbb{R}}  & \color{}{\mathbb{R}}   \\
+\end{bmatrix}
++
+\begin{bmatrix}
+\mathbb{R}   &           0            & 0 \\
+\mathbb{R}   & \mathbb{R} & 0 \\
+\mathbb{R} & \mathbb{R}  & \mathbb{R} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\mathbb{R}   & \color{red}{\mathbb{R}}  & \color{blue}{\mathbb{R}}  \\
+\mathbb{R}   & \mathbb{R}               & \color{green}{\mathbb{R}}  \\
+\mathbb{R}   & \mathbb{R}               & \mathbb{R} \\
+\end{bmatrix}
+\]
+</div>
+
+now there is no boundation so,<br>
+<div class="math-container">
+\[
+\begin{bmatrix}
+\color{}{\mathbb{R}}   & \color{red}{\mathbb{R}}  & \color{blue}{\mathbb{R}}  \\
+\color{red}{\mathbb{R}}   & \color{}{\mathbb{R}}  & \color{green}{\mathbb{R}}  \\
+\color{blue}{\mathbb{R}}   & \color{green}{\mathbb{R}}  & \color{}{\mathbb{R}}   \\
+\end{bmatrix}
++
+\begin{bmatrix}
+\mathbb{R}   &           0            & 0 \\
+\mathbb{R}   & \mathbb{R} & 0 \\
+\mathbb{R} & \mathbb{R}  & \mathbb{R} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\mathbb{R}   & \mathbb{R}  & \mathbb{R}  \\
+\mathbb{R}   & \mathbb{R}  & \mathbb{R}  \\
+\mathbb{R}   & \mathbb{R}  & \mathbb{R} \\
+\end{bmatrix}
+\]
+</div>
+
+Here we have \(9\) independent entities for a \(3\times 3\) matrix.<br>
+So it has \(9\) <b>Basis</b> and \(9\) <b>Dimensions</b>.<br>
+
+We can also see it by a beautiful formula.<br>
+<blockquote>
+    \( \text{dim}(\mathcal{S}) + \text{dim}(\mathcal{U}) = 
+    \text{dim}(\mathcal{S}\cap\mathcal{U}) + \text{dim}(\mathcal{S} + \mathcal{U})\)
+</blockquote>
+(That is \(6 + 6 = 3 + 9\))
+
+
+
+
+
+
+
+
+
+
+</p>
+
+<button class="accordion">\(\text{Discussion}\)</button>
+<div class="panel">
+    <script src="https://utteranc.es/client.js"
+        repo="yuvraj97/stats.github.io"
+        issue-term="introduction-intro-discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+<button class="accordion">\(\text{Put up a question}\)</button>
+<div class="panel">
+    <script src="https://utteranc.es/client.js"
+        repo="yuvraj97/stats.github.io"
+        issue-term="introduction-intro-questions"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+<br><br>
+<div class='buttons'>
+    <button onclick="window.location.href = '../../../index.html';">&#x25C0;&nbsp;&nbsp; Home</button>
+    <button style="float: right;" onclick="window.location.href = 'column-space.html';">Column Space&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+                        </section>
+                    </div>
+            </div>
+            <!-- Highlight all -->
+            <script type="text/javascript">
+                SyntaxHighlighter.all()
+            </script>
+
+            <!-- Accordions -->
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+}
+</script>
+        <!-- Scripts -->
+            <script src="../../assets/js/jquery.min.js"></script>
+            <script src="../../assets/js/jquery.scrollex.min.js"></script>
+            <script src="../../assets/js/jquery.scrolly.min.js"></script>
+            <script src="../../assets/js/browser.min.js"></script>
+            <script src="../../assets/js/breakpoints.min.js"></script>
+            <script src="../../assets/js/util.js"></script>
+            <script src="../../assets/js/main.js"></script>
+
+    </body>
+</html>
