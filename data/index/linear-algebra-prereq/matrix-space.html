@@ -396,6 +396,7 @@ Similarly The <b>space</b> all \(3\times 3\) Diagonal matrices is a <b>subspace<
 <h2 id="dim-basis">Dimension and Basis</h2>
 <h4 id="basis-3x3">Basis of all \(3\times 3\) matrices</h4>
 Our matrix space is something like,
+<blockquote>
 \[
 \begin{bmatrix}
 \mathbb{R} & \mathbb{R} & \mathbb{R} \\
@@ -403,8 +404,10 @@ Our matrix space is something like,
 \mathbb{R} & \mathbb{R} & \mathbb{R} \\
 \end{bmatrix}
 \]
+</blockquote>
 We have \(9\) independent entities for a \(3\times 3\) matrix.<br>
 So there are \(9\) <b>basis</b>,<br>
+<blockquote>
 \[
 \begin{bmatrix}
 \color{red}{1} & 0 & 0 \\
@@ -464,6 +467,8 @@ So there are \(9\) <b>basis</b>,<br>
 0 & 0 &  \color{red}{1} \\
 \end{bmatrix}
 \]
+</blockquote>
+<br>
 
 <blockquote>We can get any matrix by the linear combination of these matrices</blockquote>
 <br>
@@ -477,6 +482,7 @@ So Dimension of all \(3\times 3\) matrices is \(9\).<br>
 
 <h4 id="basis-3x3-up">Basis of all \(3\times 3\) Lower Triangular matrices</h4>
 Our matrix space is something like,<br>
+<blockquote>
 \[
 \begin{bmatrix}
 \mathbb{R}   &           0            & 0 \\
@@ -484,9 +490,11 @@ Our matrix space is something like,<br>
 \mathbb{R} & \mathbb{R}  & \mathbb{R} \\
 \end{bmatrix}
 \]
+</blockquote>
 
 We have \(6\) independent entities for a \(3\times 3\) matrix.<br>
 So there are \(6\) <b>basis</b>,<br>
+<blockquote>
 \[
 \begin{bmatrix}
 \color{red}{1} & 0 & 0 \\
@@ -526,7 +534,7 @@ So there are \(6\) <b>basis</b>,<br>
 0 & 0 & \color{red}{1} \\
 \end{bmatrix}
 \]
-
+</blockquote>
 
 <blockquote>We can get any Lower Triangular matrix by the linear combination of these matrices</blockquote>
 <br>
@@ -541,6 +549,8 @@ So Dimension of all \(3\times 3\) Lower Triangular matrices is \(6\).<br>
 
 <h4 id="basis-3x3-sym">Basis of all \(3\times 3\) Symmetric matrices</h4>
 Our matrix space is something like,<br>
+
+<blockquote>
 \[
 \begin{bmatrix}
 \color{}{\mathbb{R}}   & \color{red}{\mathbb{R}}  & \color{blue}{\mathbb{R}}  \\
@@ -548,9 +558,12 @@ Our matrix space is something like,<br>
 \color{blue}{\mathbb{R}}   & \color{green}{\mathbb{R}}  & \color{}{\mathbb{R}}   \\
 \end{bmatrix}
 \]
+</blockquote>
 
 We have \(6\) independent entities for a \(3\times 3\) matrix.<br>
 So there are \(6\) <b>basis</b>,<br>
+
+<blockquote>
 \[
 \begin{bmatrix}
 \color{red}{1} & 0 & 0 \\
@@ -590,7 +603,7 @@ So there are \(6\) <b>basis</b>,<br>
 0 & 0 & \color{red}{1} \\
 \end{bmatrix}
 \]
-
+</blockquote>
 
 <blockquote>We can get any Symmetric matrix by the linear combination of these matrices</blockquote>
 <br>
@@ -746,14 +759,70 @@ We can also see it by a beautiful formula.<br>
     \( \text{dim}(\mathcal{S}) + \text{dim}(\mathcal{U}) = 
     \text{dim}(\mathcal{S}\cap\mathcal{U}) + \text{dim}(\mathcal{S} + \mathcal{U})\)
 </blockquote>
-(That is \(6 + 6 = 3 + 9\))
+(That is \(6 + 6 = 3 + 9\))<br>
 
+<br>
+<h2 id="examples">More Examples on Matrix Space</h2>
+<h4 id="ex1">Example 1</h4>
+Consider <b>all</b> \(m\times n\) matrices, here \(n\) and \(m\) are <b>constant</b> 
+(say \(m=5\) and \(n=17\)).<br>
+Let's denote space of <b>all</b> \(m\times n\) matrices by \(\mathcal{M}\).<br>
+Now consider a subset of <b>all</b> \(m\times n\) matrices,<br>
+<blockquote>
+    Consider <b>all</b> \(m\times n\) matrices <b>with rank \(=1\)</b>.<br>
+    Let's denote space of <b>all</b> \(m\times n\) matrices <b>with rank \(=1\)</b> by \(\mathcal{Q}\).<br>
+</blockquote>
+<br>
+Is <b>space</b> of <b>all</b> \(m\times n\) matrices <b>with rank \(=1\)</b> \((\mathcal{Q})\) 
+is a <b>subspace</b> of space of <b>all</b> \(m\times n\) matrices \((\mathcal{M})?\)<br>
+Or say Is \((\mathcal{Q})\) a subspace of \((\mathcal{M})?\)<br>
+<blockquote>
+    For \((\mathcal{Q})\) to be a subspace, first it had to be a <b>vector space</b>.<br>
+</blockquote>
+<br>
+So Is \((\mathcal{Q})\) a <b>vector space?</b>
+<blockquote>
+    <b>space</b> of <b>all</b> \(m\times n\) matrices <b>with rank \(=1\)</b> \((\mathcal{Q})\)
+    <b>do not</b> form a <b>vector space</b> of all \(m\times n\) <b>matrices</b>.<br> 
+    <br>
+    <b>But Why?</b><br>
+    
+    Consider two <b>rank</b> \(1\) matrices \(A\in\mathcal{Q}\) and \(B\in\mathcal{Q}\).<br>
 
+    For \(\mathcal{Q}\) to be a <b>vector space</b>, <b>linear combination</b> of 
+    \(A\) and \(B\) must \(\in\mathcal{Q}\).<br>
 
+    Let's consider an example (say \(m=2, n=3\))<br>
+\(A=
+\begin{bmatrix}
+\color{red}{1} & 0 & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+\)
+and
+\(B=
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & \color{red}{1} & 0 \\
+\end{bmatrix}
+\)<br>
+<br>
 
+Here \(A\) and \(B\) both are rank \(1\) matrices so \(A\in\mathcal{Q}\) and \(B\in\mathcal{Q}\).<br>
+<br>
 
-
-
+\(A+B=
+\begin{bmatrix}
+\color{red}{1}  &       0        & 0 \\
+       0        & \color{red}{1} & 0 \\
+\end{bmatrix}
+\)<br>
+\(A\) and \(B\) are rank \(1\) matrices so they \(\in\mathcal{Q}\).<br>
+But \(A+B\) has rank = \(2\).<br>
+\(A+B\) is a linear combination of \(A\) and \(B\) but because  \(A+B\) has rank = \(2\Rightarrow\)
+ \(A+B\notin \mathcal{Q}\).<br>
+So \(\mathcal{Q}\) is not a <b>vector space</b>.
+</blockquote><br>
 
 
 
