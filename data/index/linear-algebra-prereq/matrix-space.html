@@ -823,8 +823,105 @@ But \(A+B\) has rank = \(2\).<br>
  \(A+B\notin \mathcal{Q}\).<br>
 So \(\mathcal{Q}\) is not a <b>vector space</b>.
 </blockquote><br>
+<br>
 
+<h4 id="ex2">Example 2</h4>
+Consider <b>all</b> vectors in \(\mathbb{R}^4\)<br>
+Let's denote space of <b>all</b> vectors in \(\mathbb{R}^4\) by \(\mathcal{S}\).<br>
+Now consider a subset of <b>all</b> vectors in \(\mathbb{R}^4\)<br>
+<blockquote>
+    Consider <b>all</b> vectors in \(\mathbb{R}^4\) where there elements sum up to \(0\).<br>
+    for example assume a vector \(\vec{v}\in\mathbb{R}^4\).<br>
+    
+    \(\vec{v}=\begin{bmatrix} \color{red}{v_1\in\mathbb{R}}\\ \color{blue}{v_2\in\mathbb{R}}\\ \color{green}{v_3\in\mathbb{R}}\\ \color{brown}{v_4\in\mathbb{R}}\\ \end{bmatrix}\)
+    
+    And we want \( \color{red}{v_1} + \color{blue}{v_2} + \color{green}{v_3} + \color{brown}{v_4} =0 \)<br>
+    
+    Let's denote space of <b>all</b> vectors in \(\mathbb{R}^4\) where there elements sum up to \(0\) by \(\mathcal{Q}\).<br>
+    (So \(\vec{v}\in\mathcal{Q}\))
+</blockquote>
+<br>
+Is <b>space</b> of <b>all</b> vectors in \(\mathbb{R}^4\) where there elements sum up to \(0\) \((\mathcal{Q})\) 
+is a <b>subspace</b> of space of <b>all</b> vectors in \(\mathbb{R}^4\) \((\mathcal{S})?\)<br>
+Or say Is \(\mathcal{Q}\) a subspace of \(\mathcal{S}?\)<br>
+<blockquote>
+    <b>Yes</b>, \(\mathcal{Q}\) a subspace of \(\mathcal{S}\).<br>
+    <br>
+    
+    <b>But How?</b>
+    Consider vectors in \(\mathbb{R}^4\) where there elements sum up to \(0\), 
+    \(\vec{v}\in\mathcal{Q}\) and \(\vec{w}\in\mathcal{Q}\).<br>
 
+    For \(\mathcal{Q}\) to be a <b>subspace</b> of \(\mathcal{S}\) <b>linear combination</b> of 
+    \(\vec{v}\) and \(\vec{w}\) must \(\in\mathcal{Q}\).<br>
+
+    \(\vec{v} = \begin{bmatrix} 
+                    v_1\in\mathbb{R}\\ 
+                    v_2\in\mathbb{R}\\ 
+                    v_3\in\mathbb{R}\\ 
+                    v_4\in\mathbb{R}\\ 
+                \end{bmatrix}\),  
+    \(\vec{w} = \begin{bmatrix} 
+                    w_1\in\mathbb{R}\\ 
+                    w_2\in\mathbb{R}\\ 
+                    w_3\in\mathbb{R}\\ 
+                    w_4\in\mathbb{R}\\ 
+                \end{bmatrix}\)<br>
+    There is a constraint on \(\vec{v}\) and \(\vec{w}\), we want elements of \(\vec{v}\) and \(\vec{w}\) 
+    sums to \(0\),
+    \[\sum_{v_i\in\vec{v}}v_i=0 \\
+      \sum_{w_i\in\vec{w}}w_i=0 \\
+    \]
+    
+    Let's take linear combination of \(\vec{v}\) and \(\vec{w}\) and if every linear combination 
+    of \(\vec{v}\) and \(\vec{w}\)  \(\in\mathcal{Q}\) then it's a <b>subspace</b> of <b>all</b> vectors in \(\mathbb{R}^4\).<br>
+    
+    \(\alpha\cdot\vec{v} +\beta\cdot\vec{w} =
+                \alpha\cdot
+                \begin{bmatrix} 
+                    v_1\\ 
+                    v_2\\ 
+                    v_3\\ 
+                    v_4\\ 
+                \end{bmatrix}
+                +
+                \beta\cdot
+                \begin{bmatrix} 
+                    w_1\\ 
+                    w_2\\ 
+                    w_3\\ 
+                    w_4\\ 
+                \end{bmatrix}
+                ;\quad\)
+    \(\alpha\in\mathbb{R}, \beta\in\mathbb{R}\)<br>
+    
+    Say \( \alpha\cdot\vec{v} +\beta\cdot\vec{w} = \vec{r}\)<br>
+    
+    
+    \(\vec{r} =
+                \begin{bmatrix} 
+                    \alpha\cdot v_1 + \beta\cdot w_1 \\
+                    \alpha\cdot v_2 + \beta\cdot w_2 \\
+                    \alpha\cdot v_3 + \beta\cdot w_3 \\
+                    \alpha\cdot v_4 + \beta\cdot w_4 \\
+                \end{bmatrix}
+    \)<br>
+
+    For \(\mathcal{Q}\) to be a <b>subspace</b> of \(\mathcal{S}\),&nbsp; \(r\) must \(\in\mathcal{Q}\).<br>
+    
+    And if \(r\in\mathcal{Q}\) then \[\sum_{r_i\in\vec{r}}r_i=0\]
+    Proof:<br>
+    \[\sum_{r_i\in\vec{r}}r_i   =   
+    \alpha\cdot (v_1 + v_2 + v_3 + v_4) + \beta\cdot (w_1 + w_2 + w_3 + w_4)
+    \]
+    
+    \[\sum_{r_i\in\vec{r}}r_i   =   \alpha\cdot (0) + \beta\cdot (0)\]
+    
+    \[\sum_{r_i\in\vec{r}}r_i   =   0\]
+
+    So <b>space</b> of <b>all</b> vectors in \(\mathbb{R}^4\) where there elements sum up to \(0\) \((\mathcal{Q})\) 
+is a <b>subspace</b> of space of <b>all</b> vectors in \(\mathbb{R}^4\) \((\mathcal{S})\)<br>
+</blockquote>
 
 </p>
 
