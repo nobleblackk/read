@@ -1,0 +1,425 @@
+<!DOCTYPE HTML>
+<!--
+    "Thanks to HTML5 UP for this template".
+    Massively by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <!-- Code Render-->
+        <link rel="stylesheet" href="../../syntaxhighlighter/shCore.css">
+        <link rel="stylesheet" href="../../syntaxhighlighter/shThemeDefault.css">
+        <script type="text/javascript" src="../../syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="../../syntaxhighlighter/shBrushPython.js"></script>
+
+        <!--MathJax-->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                    config: ["MMLorHTML.js"],
+    extensions: ["mml2jax.js"],
+    jax: ["input/MathML"]
+
+        });
+
+        </script>
+        <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <style>
+            .math-container {
+            overflow-x: auto;
+            display: block;
+        }
+        </style>
+        <style>
+        .new_image {
+            width:100%;
+        }
+        img {
+            max-width:100%;
+        }
+        </style>
+
+<style>
+.accordion {
+    border: 0px solid black;
+    border-color: black;
+    background-color: #FFC2C2;
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+
+}
+
+.active, .accordion:hover {
+    background-color:#C2E7FF;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+</style>
+        <title>4 fundamental subspaces</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="../../assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <a href="../../../index.html" class="logo">Linear Algebra</a>
+                    </header>
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul class="links">
+                            <li class="active"><a href="fundamental-subspaces.html">4 fundamental subspaces</a></li>
+                        </ul>
+                        <ul class="icons">
+                            <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+                            <li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                        </ul>					</nav>
+                <!-- Main -->
+                    <div id="main">
+                        <section class="post">
+<div class='buttons'>
+    <button onclick="window.location.href = 'rank.html';">&#x25C0;&nbsp;&nbsp;Rank Of a Matrix</button>
+    <button style="float: right;" onclick="window.location.href = 'matrix-space.html';">Matrix Space&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+
+<p>
+<h1 id="main">4 fundamental subspaces</h1>
+<br>
+
+Our \(4\) fundamental subspaces are,<br>
+<li><a style="color:blue" href="complete-space.html">Column Space\((C(A))\)</a></li>
+<li><a style="color:blue" href="null-space.html">Null Space\((N(A))\)</a></li>
+<li>Row Space</li>
+<li>Left Null Space</li>
+We discussed about
+<a style="color:blue" href="complete-space.html">Column Space</a> and
+<a style="color:blue" href="null-space.html">Null Space</a>, 
+what new is <b>Row Space</b> and <b>Left Null Space</b>.<br>
+<br>
+
+<h2 id="row-space">Row Space</h2>
+Say we have a \(m\times n\) matrix \(A\).<br>
+<b>Row Space</b> of \(A\) is all the <b>linear combination</b> of <b>rows</b> of matrix \(A\).<br>
+We can also say that <b>Row space</b> of \(A\) is all the <b>linear combination</b> of <b>columns</b> of matrix \(A^T\).<br>
+<blockquote>
+So <b>Row space</b> of matrix \(A\) is the Column Space of matrix \(A^T\).<br>
+<b>Row space</b> is \(C(A^T)\)
+</blockquote><br>
+<br>
+
+<h2 id="left-null-space">Left Null Space</h2>
+Say we have a \(m\times n\) matrix \(A\).<br>
+Then <b>Left Null Space</b> is the Null Space of \(A^T\), so, <br>
+<blockquote>For a matrix \(A\) the <b>Left Null space</b> is the space of all \(\vec{x}\) that solves \(A^T\vec{x}=\vec{0}\)</blockquote><br>
+<br>
+
+<h2 id="dim">Dimensions of fundamental spaces</h2>
+<br>
+
+<h4 id="dim-column-space">Dimensions of Column space</h4>
+Say we have a \(m\times n\) matrix \(A\) and \(\text{Rank}(A)=r\).<br>
+Here we have \(n\) columns and each column have \(m\) components.<br>
+<blockquote>
+So every <b>column vector</b> of matrix \(A\) \(\in\mathbb{R}^m\).<br>
+So the <b>Column space</b> of matrix \(A\) lives in \(\mathbb{R}^m\).<br>
+</blockquote>
+\(\text{Rank}(A)=r\) so we know that we have \(r\) <b>independent columns</b> in matrix \(A\).<br>
+<blockquote>
+The <b>Column space</b> of \(A\) is spanned by these \(r\) <b>independent columns vectors</b> of matrix \(A\).<br>
+So then dimension of the <b>column space</b> is \(r\).<br>
+\[\text{dim }C(A)=r\]
+</blockquote><br>
+<br>
+
+<h4 id="dim-column-space">Dimensions of Null space</h4>
+Say we have a \(m\times n\) matrix \(A\) and \(\text{Rank}(A)=r\).<br>
+For matrix \(A\) the <b>Null space</b> is the space of all \(\vec{x}\) that solves \(A\vec{x}=\vec{0}\).<br>
+<blockquote>
+We know that \(A\) is a \(m\times n\) matrix, so \(\vec{x}\in\mathbb{R}^n\).<br>
+So the <b>Null space</b> of matrix \(A\) lives in \(\mathbb{R}^n\).<br>
+</blockquote>
+\(\text{Rank}(A)=r\) so we know that we have \(r\) <b>independent columns</b> in matrix \(A\).<br>
+So there are \(n-r\) <b>dependent column vector</b>(special solution) in matrix \(A\).<br>
+<blockquote>
+The <b>Null space</b> is spanned by these \(n-r\) <b>dependent column vector</b> of matrix \(A\).<br>
+So then dimension of the <b>null space</b> of matrix \(A\) is \(n-r\).<br>
+\[\text{dim }N(A)=n-r\]
+</blockquote><br>
+<br>
+
+<h4 id="dim-column-space">Dimensions of Row space</h4>
+Say we have a \(m\times n\) matrix \(A\) and \(\text{Rank}(A)=r\).<br>
+Here we have \(m\) rows and each row have \(n\) components.<br>
+<blockquote>
+So every <b>row vector</b> of matrix \(A\) \(\in\mathbb{R}^n\).<br>
+So the <b>Row space</b> of matrix \(A\) lives in \(\mathbb{R}^n\).<br>
+</blockquote>
+\(\text{Rank}(A)=\text{Rank}(A^T)\) <a style="color:blue" href="https://www.khanacademy.org/math/linear-algebra/matrix-transformations/matrix-transpose/v/linear-algebra-rank-a-rank-transpose-of-a">[proof]</a><br>
+\(\text{Rank}(A)=r\Rightarrow\) \(\text{Rank}(A^T)=r\) so we know that we have \(r\) <b>independent columns</b> in matrix \(A^T\).<br>
+OR say that we have \(r\) <b>independent rows</b> in matrix \(A\).<br>
+<blockquote>
+The <b>Row space</b> of \(A\) is spanned by these \(r\)  <b>independent row vectors</b> of \(A\).<br>
+<b>OR</b> say that, 
+the <b>Column space</b> of \(A^T\) is spanned by these \(r\) <b>independent columns vectors</b> of \(A^T\).<br>
+So then dimension of the <b>row space</b> of matrix \(A\) is \(r\).<br>
+\[\text{dim }C(A^T)=r\]
+</blockquote><br>
+<br>
+
+<h4 id="dim-column-space">Dimensions of Left Null space</h4>
+Say we have a \(m\times n\) matrix \(A\) and \(\text{Rank}(A)=r\).<br>
+For a matrix \(A\) the <b>Left Null space</b> is the space of all \(\vec{x}\) that solves \(A^T\vec{x}=\vec{0}\).<br>
+<blockquote>
+We know that \(A^T\) is a \(n\times m\) matrix, so \(\vec{x}\in\mathbb{R}^m\).<br>
+So the <b>Left Null space</b> of matrix \(A\) lives in \(\mathbb{R}^m\).<br>
+</blockquote>
+\(\text{Rank}(A)=\text{Rank}(A^T)\) <a style="color:blue" href="https://www.khanacademy.org/math/linear-algebra/matrix-transformations/matrix-transpose/v/linear-algebra-rank-a-rank-transpose-of-a">[proof]</a><br>
+\(\text{Rank}(A)=r\Rightarrow\) \(\text{Rank}(A^T)=r\) so we know that we have \(r\) <b>independent columns</b> in matrix \(A^T\).<br>
+OR say that we have \(r\) <b>independent rows</b> in matrix \(A\).<br>
+<blockquote>
+So there are \(m-r\) <b>dependent column vector</b>(special solution) in matrix \(A^T\).<br>
+The <b>Left Null space</b> is spanned by these \(m-r\) <b>dependent column vector</b> in matrix \(A\).<br>
+So then dimension of the <b>left null space</b> is \(m-r\).<br>
+\[\text{dim }N(A^T)=m-r\]
+</blockquote><br>
+<br>
+
+
+<img src="img/fundamental-subspaces.png" width="447" height="357" alt=""><br>
+<br>
+
+<h2 id="basis">Basis of fundamental spaces</h2>
+<br>
+
+<h4 id="basis-column">Basis of Column space</h4>
+Say we have a \(m\times n\) matrix \(A\) and \(\text{Rank}(A)=r\).<br>
+Here we have \(r\) <b>independent columns</b> in \(A\).<br>
+And these <b>independent columns</b> are the basis of <b>Column space</b>.<br>
+We talked about <b>Basis of Column space</b> <a style="color:blue" href="rank.html#cs">[HERE]</a><br>
+<br>
+
+<h4 id="basis-column">Basis of Null space</h4>
+Say we have a \(m\times n\) matrix \(A\) and \(\text{Rank}(A)=r\).<br>
+Here we have \(n-r\) <b>special solutions</b>.<br>
+And these <b>special solutions</b> are the basis of <b>Null space</b>.<br>
+We talked about <b>Basis of Null space</b> <a style="color:blue" href="rank.html#ns">[HERE]</a><br>
+<br>
+
+<h4 id="basis-column">Basis of Row space</h4>
+Say we have a \(m\times n\) matrix \(A\) and \(\text{Rank}(A)=r\).<br>
+\(\text{Rank}(A)=r\Rightarrow\) \(\text{Rank}(A^T)=r\) so here we have \(r\) 
+<b>independent columns</b> in \(A^T\).<br>
+
+So we can also say that there are \(r\) <b>independent rows</b> in \(A\).<br>
+
+And these <b>independent rows</b> of \(A\) are the basis of <b>Row space</b>.<br>
+<b>Example,</b><br>
+<dl><dd>
+Say \(A=\begin{bmatrix}
+1 & 2 & 3 & 1\\
+1 & 1 & 2 & 1\\
+1 & 2 & 3 & 1\\
+\end{bmatrix}\)<br>
+It's <b>reduced row echelon form</b> is,<br>
+\(R=\begin{bmatrix}
+\color{blue}{\fbox{1}} & \color{blue}{0} & \color{red}{1}        & \color{red}{1} \\
+\color{blue}{0}        & \color{blue}{\fbox{1}} & \color{red}{1} & \color{red}{0}  \\
+            0         &         0       &           0           &       0          \\
+\end{bmatrix}\)<br>
+Here we can clearly see that rank\((r)\) is \(2\).<br>
+<blockquote>
+    Our row operation preserve the <b>row space</b>.<br>
+    It mean our row space is unaffected during row operations while reducing it to reduced row echelon form.<br>
+    Because we are just taking the <b>linear combinations</b> of rows and linear combinations of two vectors
+    in row space remains in row space.<br>
+    <br>
+    But column space might changed.
+</blockquote><br>
+Here the basis for <b>Row space</b> is first \(r\) row vectors in \(R\).<br>
+So our basis are 
+\(\begin{bmatrix} 1\\0\\1\\1\\ \end{bmatrix}\), 
+\(\begin{bmatrix} 0\\1\\1\\0\\ \end{bmatrix}\)
+</dd></dl>
+
+<h4 id="basis-column">Basis of Left Null space</h4>
+Say we have a \(m\times n\) matrix \(A\) and \(\text{Rank}(A)=r\).<br>
+For matrix \(A\) the <b>Left Null space</b> is the space of all \(\vec{x}\) that solves \(A^T\vec{x}=\vec{0}\).<br>
+When we reduce \(A\) in <b>reduced row echelon form</b>, then <b># zero</b> rows are \(m-r\).<br>
+So we have \(m-r\) <b>special solutions</b> for our <b>Left null space</b>.<br>
+And these <b>special solutions</b> are the basis of <b>Left Null space</b>.<br>
+<br>
+To find the basis we <b>can</b> take the transpose of \(A\) and find the null space of \(A^T\).<br>
+But this is not intuitive for <b>row space</b> perspective.<br>
+So what we do is while reducing the matrix \(A\) to the <b>reduced row echelon form</b>\((R)\),
+by using <a style="color:blue" href="http://math.mit.edu/~mckernan/Teaching/08-09/Autumn/18.700/l_5.pdf">Gauss-Jordan elimination</a> technique
+we can keep the track of our action.<br>
+And it will result in a matrix say \(E\).<br>
+\(EA=R\)<br>
+then last \(m-r\) rows of \(E\) will be our <b>basis</b> for <b>Left null space</b>.<br>
+<b>Example,</b>
+
+<dl><dd>
+Say \(A=\begin{bmatrix}
+1 & 2 & 3 & 1\\
+1 & 1 & 2 & 1\\
+1 & 2 & 3 & 1\\
+\end{bmatrix}\)<br>
+Now let's find it's <b>reduced row echelon form</b> Gauss Jordan,<br>
+
+\(\left[  \begin{array}{cccc|ccc}
+1 & 2 & 3 & 1   &     1 & 0 & 0 \\
+1 & 1 & 2 & 1   &     0 & 1 & 0 \\
+1 & 2 & 3 & 1   &     0 & 0 & 1 \\
+\end{array}   \right]
+\)<br>
+\(R_2 \leftarrow R_2 - R_1\) and \(R_3 \leftarrow R_3 - R_1\)<br>
+
+\(\left[  \begin{array}{cccc|ccc}
+\color{blue}{\fbox{1}} &  2 &  3 & 1     &    1 & 0 & 0 \\
+                     0 & -1 & -1 & 0     &   -1 & 1 & 0 \\
+                     0 &  0 &  0 & 0     &   -1 & 0 & 1 \\
+\end{array}   \right]
+\)<br>
+
+\(R_2 \leftarrow -R_2 \)<br>
+
+\(\left[  \begin{array}{cccc|ccc}
+\color{blue}{\fbox{1}} &                       2 &  3 &  1     &     1 &  0 &  0 \\
+                     0 &  \color{blue}{\fbox{1}} &  1 &  0     &     1 & -1 &  0 \\
+                     0 &                       0 &  0 &  0     &    -1 &  0 & 1 \\
+\end{array}   \right]
+\)<br>
+
+\(R_1 \leftarrow R_1 -R_2\)<br>
+
+\(\left[  \begin{array}{cccc|ccc}
+\color{blue}{\fbox{1}} &  \color{blue}{0}        &  \color{red}{1} &  \color{red}{1}     &    -1 &  2 &  0 \\
+        \color{blue}{0}&  \color{blue}{\fbox{1}} &  \color{red}{1} &  \color{red}{0}     &     1 & -1 &  0 \\
+                     0 &                       0 &               0 &  0                  &    \color{green}{-1} &  \color{green}{0} & \color{green}{1} \\
+\end{array}   \right]
+\)<br>
+What is special in \(\begin{bmatrix} \color{green}{-1}\\\color{green}{0}\\\color{green}{1}\\ \end{bmatrix}\)?<br>
+It's suggesting that if we take 
+\(\color{green}{-1}\cdot R_1  +  \color{green}{0}\cdot R_2  + \color{green}{1}\cdot R_3\) &nbsp;&nbsp;
+ of \(A\) then we will get \(\vec{0}\).<br>
+So our <b>left null space</b> is,<br>
+\[c\cdot \begin{bmatrix} \color{green}{-1}\\\color{green}{0}\\\color{green}{1}\\ \end{bmatrix};
+\quad c\in\mathbb{R}\]
+
+</dd></dl>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+</p>
+
+<button class="accordion">\(\text{Discussion}\)</button>
+<div class="panel">
+    <script src="https://utteranc.es/client.js"
+        repo="yuvraj97/stats.github.io"
+        issue-term="introduction-intro-discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+<button class="accordion">\(\text{Put up a question}\)</button>
+<div class="panel">
+    <script src="https://utteranc.es/client.js"
+        repo="yuvraj97/stats.github.io"
+        issue-term="introduction-intro-questions"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+<br><br>
+<div class='buttons'>
+    <button onclick="window.location.href = 'rank.html';">&#x25C0;&nbsp;&nbsp;Rank Of a Matrix</button>
+    <button style="float: right;" onclick="window.location.href = 'matrix-space.html';">Matrix Space&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+                        </section>
+                    </div>
+            </div>
+            <!-- Highlight all -->
+            <script type="text/javascript">
+                SyntaxHighlighter.all()
+            </script>
+
+            <!-- Accordions -->
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+}
+</script>
+        <!-- Scripts -->
+            <script src="../../assets/js/jquery.min.js"></script>
+            <script src="../../assets/js/jquery.scrollex.min.js"></script>
+            <script src="../../assets/js/jquery.scrolly.min.js"></script>
+            <script src="../../assets/js/browser.min.js"></script>
+            <script src="../../assets/js/breakpoints.min.js"></script>
+            <script src="../../assets/js/util.js"></script>
+            <script src="../../assets/js/main.js"></script>
+
+    </body>
+</html>
