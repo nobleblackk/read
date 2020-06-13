@@ -116,7 +116,7 @@
 <h1>Null space</h1>
 We discussed <a style="color:blue" href="column-space.html">column space</a> of a matrix \(A\) as a vector space of linear combination of all of it's column vectors.<br>
 <b>Null space</b> is completely different thing.<br>
-<blockquote style="background-color:#E9FBF3;  border-left-color:#26CB7C">For a matrix say \(A\) the <b>Null space</b> is the space of all \(\vec{x}\) that solves \(A\vec{x}=\vec{0}\)</blockquote>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">For a matrix say \(A\) the <b>Null space</b> is the space of all \(\vec{x}\) that solves \(A\vec{x}=\vec{0}\)</blockquote>
 <br>
 <h3 id="r4">Example in \(\mathbb{R}^4\)</h3>
 Consider a matrix
@@ -228,14 +228,14 @@ Here \(2^{nd}\) element itself is \(0\), and all element below it also \(0\), so
 We end here because \(3^{rd}\) element of \(c_4\) is itself \(0\)<br>
 <br>
 So we got total \(2\) pivots, this is also the rank of this matrix.<br>
-<blockquote style="background-color:#E9FBF3;  border-left-color:#26CB7C">
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
 <b>\(\text{Rank}(A)\) = # of pivots</b>
 </blockquote><br>
 Our matrix has 4 columns, \(2\) of them are <b>pivot columns</b> and other we call <b>free columns</b><br>
 
 <br>
 <h4 id="pivot-free-columns" >What are those <b>pivot column</b> and <b>free columns</b>?</h4>
-<blockquote style="background-color:#E9FBF3;  border-left-color:#26CB7C">
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
 <b>Free columns</b> are dependent columns we can get these free columns by a linear combination of pivot columns.
 </blockquote><br>
 As in our example our <b>pivot columns</b> are \(c_1\) and \(c_3\), and <b>free columns</b> are \(c_2\) and \(c_4\)<br>
@@ -334,13 +334,13 @@ Now we got the <b>Null Space</b> of matrix \(A\) it's a plane passing through
 <br>
 
 <span id="num-of-special-sol"></span>
-<blockquote style="background-color:#E9FBF3;  border-left-color:#26CB7C">Null Space is the linear combination of all <b>special</b> solutions.</blockquote>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">Null Space is the linear combination of all <b>special</b> solutions.</blockquote>
 <br>
 <h2>But how many special solutions are there?</h2>
 Say there are \(k\) dependent column vectors in our matrix \(A\), then as we discussed we craft these special solution such that we consider
 one dependent vector at a time.<br>
 So 
-<blockquote style="background-color:#E9FBF3;  border-left-color:#26CB7C"> <b># special solution = # dependent column vector</b><br> </blockquote>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC"> <b># special solution = # dependent column vector</b><br> </blockquote>
 remember <b>Rank(A) = # pivot columns</b><br>
 <br>
 Say that shape of our matrix is \(m\times n\), so we have \(n\) column vectors in \(\mathbb{R}^m\), and say Rank of the matrix is \(r\).<br>
@@ -348,7 +348,7 @@ Then <b># special solution = # dependent column vector = </b>\(n-r\)<br>
 
 Then the Null space of \(A\) is linear combinations of these \(n-r\) special solution.<br>
 <br>
-<blockquote style="background-color:#E9FBF3;  border-left-color:#26CB7C">For a matrix \(A\in\mathbb{R}^{m\times n}\) with \(\text{Rank}(A)=r\), Null Space is a vector space in \(\mathbb{R}^{n-r}\)</blockquote>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">For a matrix \(A\in\mathbb{R}^{m\times n}\) with \(\text{Rank}(A)=r\), Null Space is a vector space in \(\mathbb{R}^{n-r}\)</blockquote>
 <br>
 
 <h3 id="rref">reduced row echelon form</h3>

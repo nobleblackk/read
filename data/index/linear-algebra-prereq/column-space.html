@@ -130,11 +130,16 @@ say \(\vec{u}= \begin{bmatrix} 1\\1\\5\\  \end{bmatrix}\in\mathbb{R}^3;\quad\)
 \(\vec{v}= \begin{bmatrix} 2\\3\\1\\  \end{bmatrix}\in\mathbb{R}^3;\quad\)<br>
 <img src="img/2.1.png" width="600" height="350" alt=""><br>
 So we have \(2\quad\) \(3\)-dimensional vectors.<br>
-So column space of matrix \(A\) is defined by the <b>vector space</b> of these vectors \(\vec{u},\vec{v}\) and
+So 
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+column space of matrix \(A\) is defined by the <b>vector space</b> of these vectors \(\vec{u},\vec{v}\) and
 vector space of \(\vec{u},\vec{v}\) is all the <b>linear</b> combinations of
-vectors  \(\vec{u}\) and \(\vec{v}\).<br>
+vectors  \(\vec{u}\) and \(\vec{v}\).
+</blockquote> <br>
 How does that <b>vector space</b> look like?<br>
-Here we can see \(\vec{u}\) and \(\vec{v}\) are non-parallel vectors so vector space of \(\vec{u}\) and \(\vec{v}\) is a <b>plane</b>.<br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+Here we can see \(\vec{u}\) and \(\vec{v}\) are non-parallel vectors so vector space of \(\vec{u}\) and \(\vec{v}\) is a <b>plane</b>.
+</blockquote><br>
 <details><summary><b><span style="cursor:pointer; color:blue;">Equation of plane</span></b></summary>
 General equation of plane is \(ax+by+cz+d=0\) we know this plane passes through origin so \(d=0\), and
 \(\lt a,b,c \gt\) is normal to plane which we can get by taking cross product between \(\vec{v}\) and \(\vec{u}\).<br>
@@ -174,9 +179,12 @@ Consider a matrix
 \end{bmatrix}\) here each column is considered as a vector.<br>
 Matrix \(A\) has \(3\) columns so we have \(3\) vectors, say \(\vec{u}= \begin{bmatrix} 1\\2\\3\\4\\  \end{bmatrix}\in\mathbb{R}^4;\quad\) \(\vec{v}= \begin{bmatrix} 1\\4\\6\\8\\  \end{bmatrix}\in\mathbb{R}^4;\quad\) \(\vec{w}= \begin{bmatrix} 2\\6\\9\\12\\  \end{bmatrix}\in\mathbb{R}^4\)<br>
 So we have \(3\quad\) \(4\)-dimensional vectors.<br>
-So column space of matrix \(A\) is defined by the <b>vector space</b> of these vectors \(\vec{u},\vec{v},\vec{w}\) and
+So 
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+    column space of matrix \(A\) is defined by the <b>vector space</b> of these vectors \(\vec{u},\vec{v},\vec{w}\) and
 vector space of \(\vec{u},\vec{v},\vec{w}\) is all the <b>linear</b> combinations of
-vectors  \(\vec{u},\vec{v}\) and \(\vec{w}\).<br>
+vectors  \(\vec{u},\vec{v}\) and \(\vec{w}\).
+</blockquote><br>
 How does that <b>vector space</b> look like?<br>
 <details>
 <summary><b><span style="cursor:pointer; color:blue;">Does it fill the whole \(4\)-dimensional space?</span></b></summary>
@@ -206,14 +214,15 @@ How does that <b>vector space</b> look like?<br>
     </dd></dl>
 </details>
 
-<blockquote>Column space of a matrix \(A\) is defined by all the <b>linear</b> combinations of it's column vectors.</blockquote>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">Column space of a matrix \(A\) is defined by all the <b>linear</b> combinations of it's column vectors.</blockquote>
 Here we will denote the column space of matrix \(A\) as \(\mathbf{C}(A)\)<br>
 <br>
 <h2 id="matrix-notation">Matrix Notation</h2>
 We saw how we can find Column space using columns as vectors.
 Now let's find Column space of some matrix \(A\) in matrix notation.<br>
 Say we have a matrix \(A\)<br>
-Now answer this, <b>Does \(A\vec{x}=\vec{b}\) always have a solution for every \(\vec{b}\)?</b>, and if the answer is No then <b>which \(\vec{b}\) do have a solution?</b><br>
+Now answer this,<br>
+<b>Does \(A\vec{x}=\vec{b}\) always have a solution for every \(\vec{b}\)?</b>, and if the answer is No then <b>which \(\vec{b}\) do have a solution?</b><br>
 if \(A\) is a \(n\times m\) matrix, then \(\vec{x}\) is a \(m\times 1\) vector and \(\vec{b}\) is \(n\times 1\) vector.<br>
 <br>
 Say our matrix is
@@ -294,6 +303,7 @@ You can see that in our matrix
 there is a column that we can get with linear combination of other columns.<br>
 (here I represent column \(i\) as \(c_i\)) \(c_3=c_1+c_2\)<br>
 So \(c_3\) is in the vector space of \(c_1\) and \(c_2\).<br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
 If we remove one of the column from matrix \(A\) then the column space of matrix A will still be same.<br>
 say we drop column \(3\) (We can drop column \(1\) or column\(2\))<br>
 So say \(A'=\begin{bmatrix}
@@ -304,7 +314,7 @@ So say \(A'=\begin{bmatrix}
 \end{bmatrix}\)<br>
 Then \(A'\vec{x}\) will also give all possible \(\vec{b}\) that \(A\vec{x}\) can.<br>
 So we can say that Column space of \(A\) and \(A'\) are same, \(\mathbf{C}(A) = \mathbf{C}(A')\)<br>
-<br>
+</blockquote><br>
 But we can't drop two columns from \(A\) because any two columns in our matrix \(A\) are independent of each other.<br>
 So we can say that Column space of matrix \(A\) is a \(2\)-dimensional subspace inside \(4\)-dimensional space.
 
