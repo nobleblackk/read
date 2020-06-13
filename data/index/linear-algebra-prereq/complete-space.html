@@ -137,7 +137,9 @@ It give us a set of equations:<br>
 
 \(A\vec{x}\) is just a linear combinations of column vector of matrix \(A\), so the resultant of this linear combination
 must lie in the column space of \(A\). So<br>
-<blockquote>\(A\vec{x}=\vec{b}\) is solvable if \(\vec{b}\) lies in the column space of \(A\)</blockquote><br>
+<blockquote style="background-color:#E9FBF3;  border-left-color:#26CB7C">
+    \(A\vec{x}=\vec{b}\) is solvable if \(\vec{b}\) lies in the column space of \(A\)
+</blockquote><br>
 
 <h3 id="ax=b">How can we find all the \(\vec{x}\) that solves \(A\vec{x}=\vec{b}\)?</h3>
 Let's find <b>a</b> solution for \(A\vec{x}=\vec{b}\)<br>
@@ -210,21 +212,23 @@ So our system of equation becomes:<br>
 \end{matrix}\)<br>
 by solving them: \(x_3=3/2, x_1=-2\)<br>
 So \(\vec{x}_p=\begin{bmatrix} -2\\0\\3/2\\0\\ \end{bmatrix}\)<br>
-<blockquote>
+<br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
 Remember our approach when we are finding Null Space:<br>
 We were finding solution for \(A\vec{x}=0\) and what we did is, we took our free variables,
 and iteratively we set one free variable to \(1\) and all other free variables to \(0\).<br>
 By this we create multiple special solutions and each special solution consider a particular free column vector.<br>
 Then we took linear combination of all of those <b>special solutions</b>.<br>
 </blockquote>
+<br>
 Now here what we are doing is, we aren't considering any of the free column vector, because our Null space had already considered them for us.<br>
 Now say \(\vec{x}_n\) represent the Null Space of matrix \(A\), so \(A\vec{x}=0;\quad x\in x_n\)<br>
 \(\vec{x}_n\) represents a vector space(it's not a single vector), it's a linear combination of bunch of vectors.<br>
 So complete solution for \(A\vec{x}=\vec{b}\) is:<br>
-<blockquote>\(\vec{x} = \vec{x}_p+\vec{x}_n\)</blockquote>
+<blockquote style="background-color:#E9FBF3;  border-left-color:#26CB7C"> \(\vec{x} = \vec{x}_p+\vec{x}_n\)</blockquote>
 So any \(\vec{x}\in\vec{x}_p+\vec{x}_n\) solves \(A\vec{x}=\vec{b}\)<br>
 
-<blockquote>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
 But remember that \(\vec{x}_p\) is a <b>vector</b>, and \(\vec{x}_n\) is a <b>vector space</b> it's some \(d\)-dimensional subspace.<br>
 <b>How can we add a vector \(\vec{x}_p\) and a subspace \(\vec{x}_n\)?<br></b>
 Think about a surface in \(3\)-dimensions, let's say that surface is a plane then when we add a vector to a plane,
@@ -241,7 +245,9 @@ So complete solution for our example is:<br>
 \begin{bmatrix} -2\\0\\3/2\\0\\ \end{bmatrix} +
 \alpha \begin{bmatrix} -2\\1\\0\\0\\ \end{bmatrix} + \beta \begin{bmatrix} 2\\0\\-2\\1\\ \end{bmatrix}
 ;\quad\) \(\alpha,\beta\in\mathbb{R}\)<br>
+<blockquote style="background-color:#E9FBF3;  border-left-color:#26CB7C">
 So the solution space of \(A\vec{x}_p= \begin{bmatrix} 1\\5\\6\\ \end{bmatrix}\) is a plane in \(\mathbb{R}^4   \).<br>
+</blockquote>
 <br>
 
 </p>
