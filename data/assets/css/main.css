@@ -148,7 +148,7 @@ input, select, textarea {
 	}
 
 	body, input, select, textarea {
-		font-family: "Merriweather", Georgia, serif;
+		font-family: Arial, Helvetica, sans-serif;
 		font-weight: 300;
 		font-size: 1rem;
 		line-height: 2.375;
@@ -3693,7 +3693,6 @@ input, select, textarea {
 			flex-shrink: 1;
 			font-family: "Source Sans Pro", Helvetica, sans-serif;
 			font-weight: 900;
-			letter-spacing: 0.075em;
 			list-style: none;
 			margin-bottom: 0;
 			padding-left: 0;
@@ -3713,7 +3712,7 @@ input, select, textarea {
 					display: block;
 					font-size: 0.8rem;
 					outline: none;
-					padding: 0 2rem;
+					padding: 0 1.5rem;
 				}
 
 					#nav ul.links li a:hover {
