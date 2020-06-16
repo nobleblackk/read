@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<!--
+    "Thanks to HTML5 UP for this template".
+    Massively by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <!-- Code Render-->
+        <link rel="stylesheet" href="../syntaxhighlighter/shCore.css">
+        <link rel="stylesheet" href="../syntaxhighlighter/shThemeDefault.css">
+        <script type="text/javascript" src="../syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter/shBrushPython.js"></script>
+
+        <!--MathJax-->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                    config: ["MMLorHTML.js"],
+    extensions: ["mml2jax.js"],
+    jax: ["input/MathML"]
+
+        });
+
+        </script>
+        <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <style>
+            .math-container {
+            overflow-x: auto;
+            display: block;
+        }
+        </style>
+        <style>
+        .new_image {
+            width:100%;
+        }
+        img {
+            max-width:100%;
+        }
+        </style>
+
+<style>
+.accordion {
+    border: 0px solid black;
+    border-color: black;
+    background-color: #FFC2C2;
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+
+}
+
+.active, .accordion:hover {
+    background-color:#C2E7FF;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+</style>
+        <title>Matrix Space</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="../assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <a href="../index.html" class="logo">Linear Algebra</a>
+                    </header>
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul class="links">
+                            <li><a href="fundamental-subspaces.html">&#x25C0;</a></li>
+                            <li><a href="matrix-space.html">Matrix Space</a></li>
+                            <li><a href="matrix-space-dim.html">DIMENSION AND BASIS</a></li>
+                            <li><a href="matrix-space-ops.html">OPERATION ON SUBSPACES</a></li>
+                            <li class="active"><a href="matrix-space-ex.html">EXAMPLES</a></li>
+                            <li><a href="orthogonal.html">&#x25B6;</a></li>
+                        </ul>
+                        <ul class="icons">
+                            <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+                            <li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                        </ul>					</nav>
+                <!-- Main -->
+                    <div id="main">
+                        <section class="post">
+<div class='buttons'>
+    <button onclick="window.location.href = 'matrix-space-ops.html';">&#x25C0;&nbsp;&nbsp;Operation on subspaces</button>
+    <button style="float: right;" onclick="window.location.href = 'orthogonal.html';">Orthogonal Subspaces&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+
+<p>
+<h2 id="examples">More Examples on Matrix Space</h2>
+<h4 id="ex1">Example 1</h4>
+Consider <b>all</b> \(m\times n\) matrices, here \(n\) and \(m\) are <b>constant</b> 
+(say \(m=5\) and \(n=17\)).<br>
+Let's denote space of <b>all</b> \(m\times n\) matrices by \(\mathcal{M}\).<br>
+Now consider a subset of <b>all</b> \(m\times n\) matrices,<br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+    Consider <b>all</b> \(m\times n\) matrices <b>with rank \(=1\)</b>.<br>
+    Let's denote space of <b>all</b> \(m\times n\) matrices <b>with rank \(=1\)</b> by \(\mathcal{Q}\).<br>
+</blockquote>
+<br>
+Is <b>space</b> of <b>all</b> \(m\times n\) matrices <b>with rank \(=1\)</b> \((\mathcal{Q})\) 
+is a <b>subspace</b> of space of <b>all</b> \(m\times n\) matrices \((\mathcal{M})?\)<br>
+Or say Is \((\mathcal{Q})\) a subspace of \((\mathcal{M})?\)<br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+    For \((\mathcal{Q})\) to be a subspace, first it had to be a <b>vector space</b>.<br>
+</blockquote>
+<br>
+So Is \((\mathcal{Q})\) a <b>vector space?</b>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+    <b>space</b> of <b>all</b> \(m\times n\) matrices <b>with rank \(=1\)</b> \((\mathcal{Q})\)
+    <b>do not</b> form a <b>vector space</b> of all \(m\times n\) <b>matrices</b>.<br> 
+    <br>
+    <b>But Why?</b><br>
+    
+    Consider two <b>rank</b> \(1\) matrices \(A\in\mathcal{Q}\) and \(B\in\mathcal{Q}\).<br>
+
+    For \(\mathcal{Q}\) to be a <b>vector space</b>, <b>linear combination</b> of 
+    \(A\) and \(B\) must \(\in\mathcal{Q}\).<br>
+
+    Let's consider an example (say \(m=2, n=3\))<br>
+\(A=
+\begin{bmatrix}
+\color{red}{1} & 0 & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+\)
+and
+\(B=
+\begin{bmatrix}
+0 & 0 & 0 \\
+0 & \color{red}{1} & 0 \\
+\end{bmatrix}
+\)<br>
+<br>
+
+Here \(A\) and \(B\) both are rank \(1\) matrices so \(A\in\mathcal{Q}\) and \(B\in\mathcal{Q}\).<br>
+<br>
+
+\(A+B=
+\begin{bmatrix}
+\color{red}{1}  &       0        & 0 \\
+       0        & \color{red}{1} & 0 \\
+\end{bmatrix}
+\)<br>
+\(A\) and \(B\) are rank \(1\) matrices so they \(\in\mathcal{Q}\).<br>
+But \(A+B\) has rank = \(2\).<br>
+\(A+B\) is a linear combination of \(A\) and \(B\) but because  \(A+B\) has rank = \(2\Rightarrow\)
+ \(A+B\notin \mathcal{Q}\).<br>
+So \(\mathcal{Q}\) is not a <b>vector space</b>.
+</blockquote><br>
+<br>
+
+<h4 id="ex2">Example 2</h4>
+Consider <b>all</b> vectors in \(\mathbb{R}^4\)<br>
+Let's denote space of <b>all</b> vectors in \(\mathbb{R}^4\) by \(\mathcal{S}\).<br>
+Now consider a subset of <b>all</b> vectors in \(\mathbb{R}^4\)<br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+    Consider <b>all</b> vectors in \(\mathbb{R}^4\) where there elements sum up to \(0\).<br>
+    for example assume a vector \(\vec{v}\in\mathbb{R}^4\).<br>
+    
+    \(\vec{v}=\begin{bmatrix} \color{red}{v_1\in\mathbb{R}}\\ \color{blue}{v_2\in\mathbb{R}}\\ \color{green}{v_3\in\mathbb{R}}\\ \color{brown}{v_4\in\mathbb{R}}\\ \end{bmatrix}\)
+    
+    And we want \( \color{red}{v_1} + \color{blue}{v_2} + \color{green}{v_3} + \color{brown}{v_4} =0 \)<br>
+    
+    Let's denote space of <b>all</b> vectors in \(\mathbb{R}^4\) where there elements sum up to \(0\) by \(\mathcal{Q}\).<br>
+    (So \(\vec{v}\in\mathcal{Q}\))
+</blockquote>
+<br>
+Is <b>space</b> of <b>all</b> vectors in \(\mathbb{R}^4\) where there elements sum up to \(0\) \((\mathcal{Q})\) 
+is a <b>subspace</b> of space of <b>all</b> vectors in \(\mathbb{R}^4\) \((\mathcal{S})?\)<br>
+Or say Is \(\mathcal{Q}\) a subspace of \(\mathcal{S}?\)<br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+    <b>Yes</b>, \(\mathcal{Q}\) a subspace of \(\mathcal{S}\).<br>
+    <br>
+    
+    <b>But How?</b>
+    Consider vectors in \(\mathbb{R}^4\) where there elements sum up to \(0\), 
+    \(\vec{v}\in\mathcal{Q}\) and \(\vec{w}\in\mathcal{Q}\).<br>
+
+    For \(\mathcal{Q}\) to be a <b>subspace</b> of \(\mathcal{S}\) <b>linear combination</b> of 
+    \(\vec{v}\) and \(\vec{w}\) must \(\in\mathcal{Q}\).<br>
+
+    \(\vec{v} = \begin{bmatrix} 
+                    v_1\in\mathbb{R}\\ 
+                    v_2\in\mathbb{R}\\ 
+                    v_3\in\mathbb{R}\\ 
+                    v_4\in\mathbb{R}\\ 
+                \end{bmatrix}\),  
+    \(\vec{w} = \begin{bmatrix} 
+                    w_1\in\mathbb{R}\\ 
+                    w_2\in\mathbb{R}\\ 
+                    w_3\in\mathbb{R}\\ 
+                    w_4\in\mathbb{R}\\ 
+                \end{bmatrix}\)<br>
+    There is a constraint on \(\vec{v}\) and \(\vec{w}\), we want elements of \(\vec{v}\) and \(\vec{w}\) 
+    sums to \(0\),
+    \[\sum_{v_i\in\vec{v}}v_i=0 \\
+      \sum_{w_i\in\vec{w}}w_i=0 \\
+    \]
+    
+    Let's take linear combination of \(\vec{v}\) and \(\vec{w}\) and if every linear combination 
+    of \(\vec{v}\) and \(\vec{w}\)  \(\in\mathcal{Q}\) then it's a <b>subspace</b> of <b>all</b> vectors in \(\mathbb{R}^4\).<br>
+    
+    \(\alpha\cdot\vec{v} +\beta\cdot\vec{w} =
+                \alpha\cdot
+                \begin{bmatrix} 
+                    v_1\\ 
+                    v_2\\ 
+                    v_3\\ 
+                    v_4\\ 
+                \end{bmatrix}
+                +
+                \beta\cdot
+                \begin{bmatrix} 
+                    w_1\\ 
+                    w_2\\ 
+                    w_3\\ 
+                    w_4\\ 
+                \end{bmatrix}
+                ;\quad\)
+    \(\alpha\in\mathbb{R}, \beta\in\mathbb{R}\)<br>
+    
+    Say \( \alpha\cdot\vec{v} +\beta\cdot\vec{w} = \vec{r}\)<br>
+    
+    
+    \(\vec{r} =
+                \begin{bmatrix} 
+                    \alpha\cdot v_1 + \beta\cdot w_1 \\
+                    \alpha\cdot v_2 + \beta\cdot w_2 \\
+                    \alpha\cdot v_3 + \beta\cdot w_3 \\
+                    \alpha\cdot v_4 + \beta\cdot w_4 \\
+                \end{bmatrix}
+    \)<br>
+
+    For \(\mathcal{Q}\) to be a <b>subspace</b> of \(\mathcal{S}\),&nbsp; \(r\) must \(\in\mathcal{Q}\).<br>
+    
+    And if \(r\in\mathcal{Q}\) then \[\sum_{r_i\in\vec{r}}r_i=0\]
+    Proof:<br>
+    <div class="math-container">
+    \[\sum_{r_i\in\vec{r}}r_i   =   
+    \alpha\cdot (v_1 + v_2 + v_3 + v_4) + \beta\cdot (w_1 + w_2 + w_3 + w_4)
+    \]
+    </div>
+    \[\sum_{r_i\in\vec{r}}r_i   =   \alpha\cdot (0) + \beta\cdot (0)\]
+    \[\sum_{r_i\in\vec{r}}r_i   =   0\]
+
+    So <b>space</b> of <b>all</b> vectors in \(\mathbb{R}^4\) where there elements sum up to \(0\) \((\mathcal{Q})\) 
+is a <b>subspace</b> of space of <b>all</b> vectors in \(\mathbb{R}^4\) \((\mathcal{S})\)<br>
+</blockquote>
+
+</p>
+
+<button class="accordion">\(\text{Discussion}\)</button>
+<div class="panel">
+    <script src="https://utteranc.es/client.js"
+        repo="yuvraj97/stats.github.io"
+        issue-term="introduction-intro-discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+<button class="accordion">\(\text{Put up a question}\)</button>
+<div class="panel">
+    <script src="https://utteranc.es/client.js"
+        repo="yuvraj97/stats.github.io"
+        issue-term="introduction-intro-questions"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+<br><br>
+<div class='buttons'>
+    <button onclick="window.location.href = 'matrix-space-ops.html';">&#x25C0;&nbsp;&nbsp;Operation on subspaces</button>
+    <button style="float: right;" onclick="window.location.href = 'orthogonal.html';">--&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+                        </section>
+                    </div>
+            </div>
+            <!-- Highlight all -->
+            <script type="text/javascript">
+                SyntaxHighlighter.all()
+            </script>
+
+            <!-- Accordions -->
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+}
+</script>
+        <!-- Scripts -->
+            <script src="../assets/js/jquery.min.js"></script>
+            <script src="../assets/js/jquery.scrollex.min.js"></script>
+            <script src="../assets/js/jquery.scrolly.min.js"></script>
+            <script src="../assets/js/browser.min.js"></script>
+            <script src="../assets/js/breakpoints.min.js"></script>
+            <script src="../assets/js/util.js"></script>
+            <script src="../assets/js/main.js"></script>
+
+    </body>
+</html>

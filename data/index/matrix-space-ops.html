@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<!--
+    "Thanks to HTML5 UP for this template".
+    Massively by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <!-- Code Render-->
+        <link rel="stylesheet" href="../syntaxhighlighter/shCore.css">
+        <link rel="stylesheet" href="../syntaxhighlighter/shThemeDefault.css">
+        <script type="text/javascript" src="../syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter/shBrushPython.js"></script>
+
+        <!--MathJax-->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                    config: ["MMLorHTML.js"],
+    extensions: ["mml2jax.js"],
+    jax: ["input/MathML"]
+
+        });
+
+        </script>
+        <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <style>
+            .math-container {
+            overflow-x: auto;
+            display: block;
+        }
+        </style>
+        <style>
+        .new_image {
+            width:100%;
+        }
+        img {
+            max-width:100%;
+        }
+        </style>
+
+<style>
+.accordion {
+    border: 0px solid black;
+    border-color: black;
+    background-color: #FFC2C2;
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+
+}
+
+.active, .accordion:hover {
+    background-color:#C2E7FF;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+</style>
+        <title>Matrix Space</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="../assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <a href="../../index.html" class="logo">Linear Algebra</a>
+                    </header>
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul class="links">
+                            <li><a href="fundamental-subspaces.html">&#x25C0;</a></li>
+                            <li><a href="matrix-space.html">Matrix Space</a></li>
+                            <li><a href="matrix-space-dim.html">DIMENSION AND BASIS</a></li>
+                            <li class="active"><a href="matrix-space-ops.html">OPERATION ON SUBSPACES</a></li>
+                            <li><a href="matrix-space-ex.html">EXAMPLES</a></li>
+                            <li><a href="orthogonal.html">&#x25B6;</a></li>
+                        </ul>
+                        <ul class="icons">
+                            <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+                            <li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                        </ul>					</nav>
+                <!-- Main -->
+                    <div id="main">
+                        <section class="post">
+<div class='buttons'>
+    <button onclick="window.location.href = 'matrix-space-dim.html';">&#x25C0;&nbsp;&nbsp;Dimension and Basis</button>
+    <button style="float: right;" onclick="window.location.href = 'matrix-space-ex.html';">Examples&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+
+<p>
+
+<h2 id="op">Operation on subspaces</h2>
+Say \(\mathcal{S}\) denotes the space of <b>all</b> \(3\times 3\) <b>symmetric</b> matrices.<br>
+Say \(\mathcal{U}\) denotes the space of <b>all</b> \(3\times 3\) <b>lower triangular</b> matrices.<br>
+<br>
+<li id="intersaction">\(\mathcal{S}\cap\mathcal{U}\)</li>
+What about <b>all</b> \(3\times 3\) matrices who are <b>lower triangular</b> <b>AND</b> <b>symmetric</b>.<br>
+We are asking for space contain by both \(\mathcal{U}\) <b>AND</b> \(\mathcal{S}\), OR <i>say</i> what is the space of \(\mathcal{S}\cap\mathcal{U}\).<br>
+And it's <b>all</b> \(3\times 3\) <b>Diagonal matrices</b>.<br>
+And what is the <b>dimension</b> of <b>all</b> \(3\times 3\) <b>Diagonal matrices</b>.<br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+    Space of <b>all</b> \(3\times 3\) <b>diagonal matrices</b> is a <b>subspace</b> of <b>all</b> \(3\times 3\) <b>matrices</b>.<br>
+    It has \(3\) independent entities for a \(3\times 3\) matrix.<br>
+    So it's <b>dimension</b> is \(3\).
+</blockquote><br>
+
+<li id="union">\(\mathcal{S}\cup\mathcal{U}\)</li>
+What about matrices who are <b>lower triangular</b> <b>OR</b> <b>symmetric</b>.<br>
+We are asking for space contain by both \(\mathcal{U}\) OR \(\mathcal{S}\),<br>
+Or say what is the space of \(\mathcal{S}\cup\mathcal{U}\).<br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+    But <b>all</b> \(3\times 3\) <b>lower triangular</b> <b>OR</b> <b>symmetric</b> matrices <b>do not</b> 
+    form a <b>subspace</b> of <b>all</b> \(3\times 3\) <b>matrices</b>.<br> 
+    <br>
+    
+    <b>But Why?</b><br>
+    Let's say \(\mathcal{Q}=\mathcal{S}\cup\mathcal{U}\)<br>
+    Consider two matrices,<br>
+(symmetric)\(A=
+\begin{bmatrix}
+\color{red}{1}  & \color{red}{1} & 0 \\
+\color{red}{1} & 0 & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+\)
+and
+(lower triangular)\(B=
+\begin{bmatrix}
+0 & 0 & 0 \\
+\color{red}{-1} & 0 & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+\)<br>
+\(A\in\mathcal{Q}\) and \(B\in\mathcal{Q}\) so for \(\mathcal{Q}\) to be a <b>vector space</b>, 
+<b>linear combination</b> of \(A\) and \(B\) must \(\in\mathcal{Q}\).<br>
+\(A+B=
+\begin{bmatrix}
+\color{red}{1}  & \color{red}{1} & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{bmatrix}
+\)<br>
+And \(A+B\) is <b>neither</b> lower triangular and <b>nor</b> symmetric.<br>
+So \(A+B\notin \mathcal{Q}\).<br>
+So \(\mathcal{Q}\) is not a <b>vector space</b>.
+</blockquote><br>
+
+<li is="addition">\(\mathcal{S} + \mathcal{U}\)</li>
+Here we took any matrix in \(\mathcal{S}\) (say \(A\)) and any matrix in \(\mathcal{U}\) (say\(B\)), and <b>add</b> them.<br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+You can say it's some sort to linear combinations of space \(\mathcal{S}\) and space \(\mathcal{U}\).<br>
+Say you have a matrix \(A\in\mathcal{S}\) and a matrix \(B\in\mathcal{U}\).<br>
+<li>If \(A\in\mathcal{S}\Rightarrow \alpha\cdot A\in \mathcal{S}\) because \(\mathcal{S}\) is a <b>vector space</b> </li>
+<li>If \(B\in\mathcal{U}\Rightarrow \beta\cdot B\in \mathcal{U}\) because \(\mathcal{U}\) is a <b>vector space</b> </li>
+And \(\alpha\in\mathbb{R}\) and \(\beta\in\mathbb{R}\)<br>
+And we are looking at \(\alpha\cdot A + \beta \cdot B;\quad\) \(\forall A\in\mathcal{S}\) and \(\forall B\in\mathcal{U}\).<br>
+And it's a linear combinations in between elements of \(\mathcal{S}\) and \(\mathcal{U}\).<br>
+</blockquote>
+\(A\in\mathcal{S}\) and \(B\in\mathcal{U}\) and we are looking for \(A+B\).<br>
+<div class="math-container">
+\[
+\begin{bmatrix}
+\color{}{\mathbb{R}}   & \color{red}{\mathbb{R}}  & \color{blue}{\mathbb{R}}  \\
+\color{red}{\mathbb{R}}   & \color{}{\mathbb{R}}  & \color{green}{\mathbb{R}}  \\
+\color{blue}{\mathbb{R}}   & \color{green}{\mathbb{R}}  & \color{}{\mathbb{R}}   \\
+\end{bmatrix}
++
+\begin{bmatrix}
+\mathbb{R}   &           0            & 0 \\
+\mathbb{R}   & \mathbb{R} & 0 \\
+\mathbb{R} & \mathbb{R}  & \mathbb{R} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\color{}{2\mathbb{R}}                       & \color{red}{\mathbb{R}}  & \color{blue}{\mathbb{R}}  \\
+\color{red}{\mathbb{R}}+\color{}{\mathbb{R}}   & \color{}{2\mathbb{R}}                      & \color{green}{\mathbb{R}}  \\
+\color{blue}{\mathbb{R}}+\color{}{\mathbb{R}}   & \color{green}{\mathbb{R}}+\color{}{\mathbb{R}}  & \color{}{2\mathbb{R}} \\
+\end{bmatrix}
+\]
+</div>
+
+equivalently,<br>
+
+<div class="math-container">
+\[
+\begin{bmatrix}
+\color{}{\mathbb{R}}   & \color{red}{\mathbb{R}}  & \color{blue}{\mathbb{R}}  \\
+\color{red}{\mathbb{R}}   & \color{}{\mathbb{R}}  & \color{green}{\mathbb{R}}  \\
+\color{blue}{\mathbb{R}}   & \color{green}{\mathbb{R}}  & \color{}{\mathbb{R}}   \\
+\end{bmatrix}
++
+\begin{bmatrix}
+\mathbb{R}   &           0            & 0 \\
+\mathbb{R}   & \mathbb{R} & 0 \\
+\mathbb{R} & \mathbb{R}  & \mathbb{R} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\mathbb{R}   & \color{red}{\mathbb{R}}  & \color{blue}{\mathbb{R}}  \\
+\mathbb{R}   & \mathbb{R}               & \color{green}{\mathbb{R}}  \\
+\mathbb{R}   & \mathbb{R}               & \mathbb{R} \\
+\end{bmatrix}
+\]
+</div>
+
+now there is no boundation so,<br>
+<div class="math-container">
+\[
+\begin{bmatrix}
+\color{}{\mathbb{R}}   & \color{red}{\mathbb{R}}  & \color{blue}{\mathbb{R}}  \\
+\color{red}{\mathbb{R}}   & \color{}{\mathbb{R}}  & \color{green}{\mathbb{R}}  \\
+\color{blue}{\mathbb{R}}   & \color{green}{\mathbb{R}}  & \color{}{\mathbb{R}}   \\
+\end{bmatrix}
++
+\begin{bmatrix}
+\mathbb{R}   &           0            & 0 \\
+\mathbb{R}   & \mathbb{R} & 0 \\
+\mathbb{R} & \mathbb{R}  & \mathbb{R} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+\mathbb{R}   & \mathbb{R}  & \mathbb{R}  \\
+\mathbb{R}   & \mathbb{R}  & \mathbb{R}  \\
+\mathbb{R}   & \mathbb{R}  & \mathbb{R} \\
+\end{bmatrix}
+\]
+</div>
+
+Here we have \(9\) independent entities for a \(3\times 3\) matrix.<br>
+So it has \(9\) <b>Basis</b> and \(9\) <b>Dimensions</b>.<br>
+
+We can also see it by a beautiful formula.<br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+<div class="math-container">
+    \( \text{dim}(\mathcal{S}) + \text{dim}(\mathcal{U}) = 
+    \text{dim}(\mathcal{S}\cap\mathcal{U}) + \text{dim}(\mathcal{S} + \mathcal{U})\)
+</div>
+</blockquote>
+(That is \(6 + 6 = 3 + 9\))<br>
+<br>
+</p>
+
+<button class="accordion">\(\text{Discussion}\)</button>
+<div class="panel">
+    <script src="https://utteranc.es/client.js"
+        repo="yuvraj97/stats.github.io"
+        issue-term="introduction-intro-discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+<button class="accordion">\(\text{Put up a question}\)</button>
+<div class="panel">
+    <script src="https://utteranc.es/client.js"
+        repo="yuvraj97/stats.github.io"
+        issue-term="introduction-intro-questions"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+<br><br>
+<div class='buttons'>
+    <button onclick="window.location.href = 'matrix-space-dim.html';">&#x25C0;&nbsp;&nbsp;Dimension and Basis</button>
+    <button style="float: right;" onclick="window.location.href = 'matrix-space-ex.html';">Examples&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+                        </section>
+                    </div>
+            </div>
+            <!-- Highlight all -->
+            <script type="text/javascript">
+                SyntaxHighlighter.all()
+            </script>
+
+            <!-- Accordions -->
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+}
+</script>
+        <!-- Scripts -->
+            <script src="../assets/js/jquery.min.js"></script>
+            <script src="../assets/js/jquery.scrollex.min.js"></script>
+            <script src="../assets/js/jquery.scrolly.min.js"></script>
+            <script src="../assets/js/browser.min.js"></script>
+            <script src="../assets/js/breakpoints.min.js"></script>
+            <script src="../assets/js/util.js"></script>
+            <script src="../assets/js/main.js"></script>
+
+    </body>
+</html>

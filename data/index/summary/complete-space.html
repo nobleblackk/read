@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--Code By Webdevtrick ( https://webdevtrick.com )-->
+<html lang="en" >
+<head>
+    <!--MathJax-->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        extensions: ["mml2jax.js"],
+        jax: ["input/MathML"]
+    });
+
+    </script>
+    <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Adding a scrollbar in math formula-->
+    <style>
+        .math-container {
+        overflow-x: auto;
+        display: block;
+    }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>Summary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="../../assets/css/popupcard.css">
+</head>
+<body>
+
+<div class="container" id="popup">
+    <div class="modal">
+        <div class="details">
+            <p class="description">
+            Solving \(A\vec{x}=\vec{b}\)<br>
+            </p>
+        </div>
+        
+        <p class="txt">
+            Say that shape of matrix \(A\) is \(m\times n\) , \(A\in\mathbb{R}^{m\times n}\).<br>
+            <br>
+            \(A\vec{x}\) is just a linear combinations of column vector of matrix \(A\), so the resultant of this linear combination
+            must lie in the column space of \(A\). So<br>
+            <br>
+            \(\bullet\)&nbsp; <u>\(A\vec{x}=\vec{b}\) is solvable if \(\vec{b}\) lies in the column space of \(A\)</u>.<br>
+            <br>
+            \(\bullet\)&nbsp; Complete solution of \(A\vec{x}=\vec{b}\) is \(\vec{x} = \vec{x}_p+\vec{x}_n\)<br>
+            <span style="margin-left: 20px">
+            \( \vec{x}_p\) is <b>a</b> <b>particular solution</b> for \(A\vec{x}=\vec{b}\) and,
+            \(\vec{x}_n\) is the <b>null space</b> of matrix \(A\).
+            </span>
+            <br><br>
+            So any \(\vec{x}\in\vec{x}_p+\vec{x}_n\) solves \(A\vec{x}=\vec{b}\)<br>
+            
+        </p>
+        <br>        
+        <button class="btn" onclick="window.location.href = '../complete-space.html';">Visit Chapter &rarr;</button>
+
+        <a href="../../../index.html" class="link-2"></a>
+
+    </div>
+</div>
+</body>
+</html>
