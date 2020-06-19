@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<!--
+    "Thanks to HTML5 UP for this template".
+    Massively by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <!-- Code Render-->
+        <link rel="stylesheet" href="../syntaxhighlighter/shCore.css">
+        <link rel="stylesheet" href="../syntaxhighlighter/shThemeDefault.css">
+        <script type="text/javascript" src="../syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter/shBrushPython.js"></script>
+
+        <!--MathJax-->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                    config: ["MMLorHTML.js"],
+    extensions: ["mml2jax.js"],
+    jax: ["input/MathML"]
+
+        });
+
+        </script>
+        <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <style>
+            .math-container {
+            overflow-x: auto;
+            display: block;
+        }
+        </style>
+        <style>
+        .new_image {
+            width:100%;
+        }
+        img {
+            max-width:100%;
+        }
+        </style>
+
+<style>
+.accordion {
+    border: 0px solid black;
+    border-color: black;
+    background-color: #FFC2C2;
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+
+}
+
+.active, .accordion:hover {
+    background-color:#C2E7FF;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+</style>
+        <title>Eigenvalues and Eigenvectors</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="../assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <a href="../../index.html" class="logo">Linear Algebra</a>
+                    </header>
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul class="links">
+                            <li class="active"><a href="eigenvalues-eigenvectors .html">Eigenvalues and Eigenvectors </a></li>
+                        </ul>
+                        <ul class="icons">
+                            <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+                            <li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                        </ul>					</nav>
+                <!-- Main -->
+                    <div id="main">
+                        <section class="post">
+<div class='buttons'>
+    <button onclick="window.location.href = 'orthogonal-matrices.html';">&#x25C0;&nbsp;&nbsp;Orthonormal Vectors</button>
+    <button style="float: right;" onclick="window.location.href = '.html';">--&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+
+<p>
+<h2>Eigenvalues and Eigenvectors </h2>
+Say that we have a \(n\times n\) matrix \(A\) and a vector \(\vec{v}\in\mathbb{R}^n\).<br>
+When we perform \(A\vec{v}\), think of it as transformation of \(\vec{v}\) into a new 
+coordinate system whose basis vector are defined by matrix \(A\).<br>
+After the transformation most of the vectors changes there orientation, but 
+there are some <b>vectors that do not change there direction</b>(length might has been changed) 
+there vectors are called <b>eigenvectors</b> and the factor by which there length has been 
+changed(say\(\lambda\)) is called <b>eigenvalue</b>.<br>
+<br>
+So we can say that after applying transformation \(A\) <b>eigenvectors</b> don't changes there direction.<br>
+\[A\vec{x}=\lambda\vec{x};\quad \vec{x}\text{ is eigenvector}\]<br>
+<br>
+<b>Example \(1\)</b>
+<blockquote style="background-color:#ECF1F6;">
+Let's say \(P\) is a <a style="color:blue" href="projection.html">projection matrix</a>.<br>
+What are the eigenvalues and eigenvectors of \(P\)?<br>
+Let's say \(\vec{b}\in\mathbb{R}^n\) and the <a style="color:blue" href="matrix-space.html">matrix space</a>
+of \(P\) is \(n-1\) dimensional hyper<b>plane</b>.<br>
+Then when we perform \(P\vec{b}\) it project \(\vec{b}\) onto the <b>matrix space</b>
+of \(P\) (here it is obvious that \(\vec{b}\) isn't an eigenvector).<br>
+\(P\) project all vector \(\vec{x}\) onto the <b>matrix space</b> of \(P\) <b>but</b> vectors 
+which are already in the <b>matrix space</b> of \(P\) are unaffected.<br>
+So vectors which are already in the <b>matrix space</b> of \(P\) are <b>eigenvector</b>.<br>
+And they are unaffected by \(P\) so <b>eigenvalue</b> is \(1\).<br>
+There is one more <b>eigenvector</b>, vector that is perpendicular to the <b>matrix space</b> of \(P\) is also an <b>eigenvector</b>.<br>
+And projection of that vecor is \(\vec{0}\) so it's <b>eigenvalue</b> is \(0\).<br>
+</blockquote><br>
+
+<b>Facts</b>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+    <li>A \(n\times n\) <b>non-singular</b> matrix will have \(n\) <b>eigenvalues</b></li>
+    <li> Say we have a \(n\times n\) <b>non-singular</b> matrix \(A\).<br>
+\[
+A=\begin{bmatrix}
+ a_{11} & a_{12} & \cdots & a_{1n} \\  
+ a_{21} & a_{22} & \cdots &  a_{2n}   \\
+ \vdots & \vdots & \ddots & \vdots \\
+ a_{n1} & a_{n2} & \cdots & a_{nn} \\
+ \end{bmatrix}
+\]
+Then,<br>
+Sum of <b>eigenvalues</b> \(=\) Sum of diagonal elements of matrix \(A\) \(= \)
+\(a_{11} + a_{22} + \cdots + a_{nn}\)
+    </li>
+</blockquote><br>
+<br>
+
+<h2>Solving \(A\vec{x}=\lambda\vec{x}\)</h2>
+We want to find the <b>eigenvalues</b> and <b>eigenvectors</b> of a matrix \(A\).<br>
+<b>eigenvectors</b> does not change it's direction after applying the transformation \(A\).<br>
+\[A\vec{x}=\lambda\vec{x};\quad \vec{x}\text{ is eigenvector}\]
+\(\Rightarrow A\vec{x} - \lambda\vec{x} = \vec{0}\)<br>
+\(\Rightarrow (A - \lambda\mathcal{I})\vec{x} = \vec{0}\)<br>
+So we have to find \(\lambda\) such that there is <b>some</b> \(\vec{x}\neq\vec{0}\)  in 
+the <b>Null Space</b> of \(A - \lambda\mathcal{I}\).<br>
+So we want <b>some</b> <b>free variables</b> in \(A - \lambda\mathcal{I}\) (or say we want \(\text{Rank}(A - \lambda\mathcal{I})\lt n\) )<br>
+This mean we want \(A - \lambda\mathcal{I}\) to be a singular matrix.<br>
+This mean determinant of \(A - \lambda\mathcal{I}=0\)<br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+\(\text{det}(A - \lambda\mathcal{I})=0\)
+</blockquote>
+This will gives us \(\lambda\) so we now get our matrix \(A - \lambda\mathcal{I}\)<br>
+Now we have to find it's Null space we discussed it <a style="color:blue" href="null-space.html">HERE</a>.<br>
+<br>
+<b>Example</b><br>
+<blockquote style="background-color:#ECF1F6">
+\[A=\begin{bmatrix}
+  0 & 1 \\
+  1 & 0 \\
+  \end{bmatrix}\]
+We want to find the <b>eigenvalues</b> and <b>eigenvectors</b> of a matrix \(A\).<br>
+\[A\vec{x}=\lambda\vec{x};\quad \vec{x}\text{ is eigenvector}\]
+<hr style="width: 50%">
+\(\text{det}(A - \lambda\mathcal{I})=\begin{vmatrix}
+    -\lambda & 1 \\
+    1 & -\lambda \\
+    \end{vmatrix}\)<br>
+\(\Rightarrow \text{det}(A - \lambda\mathcal{I})= \lambda^2-1\)<br>
+We know that \(\text{det}(A - \lambda\mathcal{I})=0\).<br>
+\(\Rightarrow \lambda^2-1=0\)<br>
+\(\Rightarrow \lambda= \pm 1\)<br>
+So <b>eigenvalues</b> are \(1,-1\).<br>
+
+<li>For \(\lambda=1\)</li>
+<dl><dd>
+\((A-\lambda\mathcal{I})\vec{x}=\vec{0}\)<br>
+\(\Rightarrow (A-\mathcal{I})\vec{x}=\vec{0}\)<br>
+
+\(A-\mathcal{I}=\begin{bmatrix}
+    -1 &  1 \\
+     1 & -1 \\
+    \end{bmatrix}
+    \begin{bmatrix} x_1\\x_2\\ \end{bmatrix}=
+    \begin{bmatrix} 0\\0\\ \end{bmatrix}\)<br>
+    
+\(\Rightarrow \vec{x} = 
+    \begin{bmatrix} 1\\1\\ \end{bmatrix}\)<br>
+</dd></dl>
+
+<li>For \(\lambda=-1\)</li>
+<dl><dd>
+\((A-\lambda\mathcal{I})\vec{x}=\vec{0}\)<br>
+\(\Rightarrow (A+\mathcal{I})\vec{x}=\vec{0}\)<br>
+
+\(A-\mathcal{I}=\begin{bmatrix}
+    1 & 1 \\
+    1 & 1 \\
+    \end{bmatrix}
+    \begin{bmatrix} x_1\\x_2\\ \end{bmatrix}=
+    \begin{bmatrix} 0\\0\\ \end{bmatrix}\)<br>
+    
+\(\Rightarrow \vec{x} = 
+    \begin{bmatrix} 1\\-1\\ \end{bmatrix}\)<br>    
+</dd></dl>
+eigenvectors of \(A\) are \(\begin{bmatrix} 1\\1\\ \end{bmatrix}\) and \(\begin{bmatrix} 1\\-1\\ \end{bmatrix}\)
+</blockquote><br>
+
+What if we add a constant \(\alpha\mathcal{I}\) to \(A\) and \(\alpha\in\mathbb{R}\).<br>
+We know that \(A\vec{x}=\lambda\vec{x};\quad \vec{x}\text{ is eigenvector}\).<br>
+\(\Rightarrow A\vec{x} + \alpha\vec{x}=\lambda\vec{x} + \alpha\vec{x}\)
+\(\Rightarrow (A + \alpha\mathcal{I})\vec{x}=(\lambda + \alpha)\vec{x}\)
+So,<br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+If a matrix \(A\) has <b>eigenvalue</b> \(\lambda\).<br>
+Then \(A + \alpha\mathcal{I}\) has <b>eigenvalue</b> \(\lambda+\alpha\).<br>
+</blockquote><br>
+
+Example(\(90^o\) Rotation)
+<blockquote style="background-color:#ECF1F6;">
+\[A=\begin{bmatrix}
+    0 & -1 \\
+    1 & 0 \\
+    \end{bmatrix}\]
+We want to find the <b>eigenvalues</b> and <b>eigenvectors</b> of a matrix \(A\).<br>
+\[A\vec{x}=\lambda\vec{x};\quad \vec{x}\text{ is eigenvector}\]
+<hr style="width: 50%">
+\(\text{det}(A - \lambda\mathcal{I})=\begin{vmatrix}
+        -\lambda & -1 \\
+        1 & -\lambda \\
+        \end{vmatrix}\)<br>
+\(\Rightarrow \text{det}(A - \lambda\mathcal{I})= \lambda^2+1\)<br>
+We know that \(\text{det}(A - \lambda\mathcal{I})=0\).<br>
+\(\Rightarrow \lambda^2+1=0\)<br>
+\(\Rightarrow \lambda= \pm i\)<br>
+So <b>eigenvalues</b> are \(i,-i\).<br>
+<b>eigenvalues</b> not necessarily need to be <b>real numbers</b>, here <b>eigenvalues</b> are <b>complex numbers</b>.<br>
+</blockquote><br>
+
+<!--
+Symmetric matrix will give us pure Real eigenvalue, and
+Anti Symmetric matrix will give us pure Complex eigenvalue, and
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+</blockquote>
+-->
+</p>
+
+<button class="accordion">\(\text{Discussion}\)</button>
+<div class="panel">
+    <script src="https://utteranc.es/client.js"
+        repo="yuvraj97/stats.github.io"
+        issue-term="introduction-intro-discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+<button class="accordion">\(\text{Put up a question}\)</button>
+<div class="panel">
+    <script src="https://utteranc.es/client.js"
+        repo="yuvraj97/stats.github.io"
+        issue-term="introduction-intro-questions"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+<br><br>
+<div class='buttons'>
+    <button onclick="window.location.href = 'orthogonal-matrices.html';">&#x25C0;&nbsp;&nbsp;Orthonormal Vectors</button>
+    <button style="float: right;" onclick="window.location.href = '.html';">--&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+                        </section>
+                    </div>
+            </div>
+            <!-- Highlight all -->
+            <script type="text/javascript">
+                SyntaxHighlighter.all()
+            </script>
+
+            <!-- Accordions -->
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+}
+</script>
+        <!-- Scripts -->
+            <script src="../assets/js/jquery.min.js"></script>
+            <script src="../assets/js/jquery.scrollex.min.js"></script>
+            <script src="../assets/js/jquery.scrolly.min.js"></script>
+            <script src="../assets/js/browser.min.js"></script>
+            <script src="../assets/js/breakpoints.min.js"></script>
+            <script src="../assets/js/util.js"></script>
+            <script src="../assets/js/main.js"></script>
+
+    </body>
+</html>
