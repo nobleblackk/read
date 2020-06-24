@@ -108,15 +108,15 @@
                     <div id="main">
                         <section class="post">
 <div class='buttons'>
-    <button onclick="window.location.href = 'orthogonal-matrices.html';">&#x25C0;&nbsp;&nbsp;Orthonormal Vectors</button>
-    <button style="float: right;" onclick="window.location.href = '.html';">--&nbsp;&nbsp;&#x25B6;</button>
+    <button onclick="window.location.href = 'eigenvalues-eigenvectors.html';">&#x25C0;&nbsp;&nbsp;Eigenvalues and Eigenvectors</button>
+    <button style="float: right;" onclick="window.location.href = 'differential-equation.html';">Differential Equation&nbsp;&nbsp;&#x25B6;</button>
 </div><br>
 
 <p>
 <h2>Diagonalization of a Matrix</h2>
-Say that we have a \(n\times n\) <b>non-singular</b> matrix \(A\) with 
-\(n\) <b>independent</b> <b>eigenvectors</b> (say \(\vec{x}_1,\vec{x}_2,\cdots,\vec{x}_n\)).<br>
-We put these <b>eigenvectors</b> (\(\vec{x}_1,\vec{x}_2,\cdots,\vec{x}_n\)) in a matrix (say \(S\)).<br>
+Say that we have a \(n\times n\) matrix \(A\) with 
+\(n\) <b>independent</b> <i>eigenvectors</i> (say \(\vec{x}_1,\vec{x}_2,\cdots,\vec{x}_n\)).<br>
+We put these <i>eigenvectors</i> (\(\vec{x}_1,\vec{x}_2,\cdots,\vec{x}_n\)) in a matrix (say \(S\)).<br>
 \[
 S=\begin{bmatrix}
  \vdots & \vdots & \cdots & \vdots \\  
@@ -185,11 +185,11 @@ We know that,<br>
     \lambda_i\text{ is eigenvalue}
     \end{matrix}\right.
 \]
-Now let's calculate <b>eigenvectors</b> and <b>eigenvalues</b> of \(A^2\).<br>
+Now let's calculate <i>eigenvectors</i> and <i>eigenvalues</i> of \(A^2\).<br>
 \(AA\vec{x}_i=\lambda_i (A \vec{x}_i)\)<br>
 \(\Rightarrow A^2\vec{x}_i=\lambda_i^2\vec{x}_i\)<br>
-So <b>eigenvectors</b> of \(A^2\) remains same.<br>
-But <b>eigenvalues</b> of \(A^2\) becomes \(\lambda^2\).<br>
+So <i>eigenvectors</i> of \(A^2\) remains same.<br>
+But <i>eigenvalues</i> of \(A^2\) becomes \(\lambda^2\).<br>
 <br>
 We can also get it by \(A=S\Lambda S^{-1}\).<br>
 \(A=S\Lambda S^{-1}\)<br>
@@ -208,10 +208,10 @@ where,
 Now we can get formula for \(k^{\text{th}}\) power of \(A\).<br>
 <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
 \[A^k = S\Lambda^k S^{-1}\]
-So <b>eigenvectors</b> of \(A^k\) remains same as the <b>eigenvectors</b> of \(A\).<br>
-But <b>eigenvalues</b> of \(A^k\) becomes \(\lambda^k\).<br>
+So <i>eigenvectors</i> of \(A^k\) remains same as the <i>eigenvectors</i> of \(A\).<br>
+But <i>eigenvalues</i> of \(A^k\) becomes \(\lambda^k\).<br>
 </blockquote>
-So now we can find power of matrices quickly, if we have the <b>eigenvectors(independent)</b> of that matrix.<br>
+So now we can find power of matrices quickly, if we have the eigenvectors<b>(independent)</b> of that matrix.<br>
 <br>
 
 When we call a matrix \(A\) <b>stable</b>?<br>
@@ -230,9 +230,9 @@ So \(A\) is <b>diagonalizable</b> if, all \(\lambda\)'s are different.<br>
 </blockquote><br>
 
 <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
-If all the <b>eigenvalues</b> are different then all the <b>eigenvectors</b> are <b>independent</b>.<br>
-<b>But</b> reverse is not true, <b>independent</b> of <b>eigenvectors</b> does <b>not</b>
-implies that all <b>eigenvalues</b> are different.<br>
+If all the <i>eigenvalues</i> are different then all the <i>eigenvectors</i> are <b>independent</b>.<br>
+<b>But</b> reverse is not true, <b>independent</b> of <i>eigenvectors</i> does <b>not</b>
+implies that all <i>eigenvalues</i> are different.<br>
 <b>Example</b><br>
 Say \(A=\mathcal{I}_{3\times 3}=\begin{bmatrix}
  1      & 0 &    0    \\  
@@ -240,12 +240,12 @@ Say \(A=\mathcal{I}_{3\times 3}=\begin{bmatrix}
  0      & 0 &    1 \\  
 \end{bmatrix}\)<br>
 So when we apply transformation of \(\mathcal{I}\) nothing changes so every vector is an eigenvector for \(\mathcal{I}\).<br>
-But there is only <b>one</b> <b>eigenvalue</b> and that is \(1\).
+But there is only <b>one</b> <i>eigenvalue</i> and that is \(1\).
 </blockquote><br>
 <br>
 
 <h2>\(\vec{u}_{k+1}=A\vec{u}_k\)</h2>
-Say we have a vector \(\vec{u}_0\) and a matrix(<b>non-singular</b>) \(A\), with \(n\) <b>independent</b> <b>eigenvectors</b>.<br>
+Say we have a vector \(\vec{u}_0\) and a matrix(<b>non-singular</b>) \(A\), with \(n\) <b>independent</b> <i>eigenvectors</i>.<br>
 We iteratively apply transformation \(A\) on \(\vec{u}_0\).<br>
 \[\vec{u}_{k+1}=A\vec{u}_k\]
 \(\vec{u}_{1}=A\vec{u}_0\)<br>
@@ -256,8 +256,8 @@ How can we find \(\vec{u}_k\) for an arbitrary large \(k\).<br>
 \(\vec{u}\) lives in the column space of \(A\), and \(A\) has \(n\) <b>independent</b> <i>eigenvectors</i>
 so we can say that \(\vec{u}\) lives in the vector space spanned by these <i>eigenvectors</i>.<br>
 so \(\vec{u}\) is the <b>linear combination</b> of these <i>eigenvectors</i>.<br>
-say the <b>eigenvectors</b> of \(A\) are \(\vec{x}_1,\vec{x}_2,\cdots,\vec{x}_n\) 
-and <b>eigenvalues</b> of \(A\) are \(\lambda_1,\lambda_2,\cdots,\lambda_n\) <br>
+say the <i>eigenvectors</i> of \(A\) are \(\vec{x}_1,\vec{x}_2,\cdots,\vec{x}_n\) 
+and <i>eigenvalues</i> of \(A\) are \(\lambda_1,\lambda_2,\cdots,\lambda_n\) <br>
 So we can say that,<br>
 \(\vec{u}_0=c_1\vec{x}_1+c_2\vec{x}_2+\cdots+c_n\vec{x}_n\)<br>
 \(\Rightarrow A\vec{u}_0=c_1A\vec{x}_1+c_2A\vec{x}_2+\cdots+c_nA\vec{x}_n\)<br>
@@ -302,7 +302,7 @@ What are it's <i>eigenvalues</i> and <i>eigenvectors</i>.<br>
 for \(\text{det}(A - \lambda\mathcal{I})=0\) we get,<br>
 \(\lambda_1 = \frac{1+\sqrt{5}}{2}\)<br>
 \(\lambda_2 = \frac{1-\sqrt{5}}{2}\)<br>
-We get our <b>eigenvalues</b> \(\lambda_1, \lambda_2\).<br>
+We get our <i>eigenvalues</i> \(\lambda_1, \lambda_2\).<br>
 \((A-\lambda\mathcal{I})\vec{x}=0\)<br>
 \(\begin{bmatrix}
         1-\lambda & 1 \\
@@ -312,7 +312,7 @@ We get our <b>eigenvalues</b> \(\lambda_1, \lambda_2\).<br>
 \)<br>
 by solving it we get, <br>
 \(\vec{x}=\begin{bmatrix} \lambda\\ 1 \end{bmatrix}\)<br>
-So our <b>eigenvectors</b> are 
+So our <i>eigenvectors</i> are 
 \(\vec{x}_1=\begin{bmatrix} \lambda_1\\ 1 \end{bmatrix},\quad\)
 \(\vec{x}_2=\begin{bmatrix} \lambda_2\\ 1 \end{bmatrix}\)<br>
 </blockquote><br>
@@ -360,7 +360,8 @@ So,<br>
 For large \(k,\quad\) \(\left(\frac{1-\sqrt{5}}{2}\right)^{k}\approx 0\)<br>
 So 
 \[F_k\approx \frac{1}{\sqrt{5}}\left(   \left(\frac{1+\sqrt{5}}{2}\right)^k \right)\]
-\(\frac{1+\sqrt{5}}{2}\) is known as <a style="color:blue" href="https://en.wikipedia.org/wiki/Golden_ratio">Golden Ratio</a>
+\(\frac{1+\sqrt{5}}{2}\) is known as <a style="color:#185EE0" href="https://en.wikipedia.org/wiki/Golden_ratio">Golden Ratio</a>
+<!-- #E6EEF9 -->
 </blockquote><br>
 
 
@@ -409,8 +410,8 @@ Anti Symmetric matrix will give us pure Complex eigenvalue, and
 </div>
 <br><br>
 <div class='buttons'>
-    <button onclick="window.location.href = 'orthogonal-matrices.html';">&#x25C0;&nbsp;&nbsp;Orthonormal Vectors</button>
-    <button style="float: right;" onclick="window.location.href = '.html';">--&nbsp;&nbsp;&#x25B6;</button>
+    <button onclick="window.location.href = 'eigenvalues-eigenvectors.html';">&#x25C0;&nbsp;&nbsp;Eigenvalues and Eigenvectors</button>
+    <button style="float: right;" onclick="window.location.href = 'differential-equation.html';">Differential Equation&nbsp;&nbsp;&#x25B6;</button>
 </div><br>
                         </section>
                     </div>

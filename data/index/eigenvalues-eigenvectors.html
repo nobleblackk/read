@@ -98,7 +98,7 @@
                 <!-- Nav -->
                     <nav id="nav">
                         <ul class="links">
-                            <li class="active"><a href="eigenvalues-eigenvectors .html">Eigenvalues and Eigenvectors </a></li>
+                            <li class="active"><a href="eigenvalues-eigenvectors.html">Eigenvalues and Eigenvectors </a></li>
                         </ul>
                         <ul class="icons">
                             <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
@@ -109,7 +109,7 @@
                         <section class="post">
 <div class='buttons'>
     <button onclick="window.location.href = 'orthogonal-matrices.html';">&#x25C0;&nbsp;&nbsp;Orthonormal Vectors</button>
-    <button style="float: right;" onclick="window.location.href = '.html';">--&nbsp;&nbsp;&#x25B6;</button>
+    <button style="float: right;" onclick="window.location.href = 'diagonalization.html';">Diagonalization of a Matrix&nbsp;&nbsp;&#x25B6;</button>
 </div><br>
 
 <p>
@@ -120,10 +120,13 @@ coordinate system whose basis vector are defined by matrix \(A\).<br>
 After the transformation most of the vectors changes there orientation, but 
 there are some <b>vectors that do not change there direction</b>(length might has been changed) 
 there vectors are called <b>eigenvectors</b> and the factor by which there length has been 
-changed(say\(\lambda\)) is called <b>eigenvalue</b>.<br>
+changed(say \(\lambda\)) is called <b>eigenvalue</b>.<br>
 <br>
-So we can say that after applying transformation \(A\) <b>eigenvectors</b> don't changes there direction.<br>
-\[A\vec{x}=\lambda\vec{x};\quad \vec{x}\text{ is eigenvector}\]<br>
+So we can say that after applying transformation \(A,\) <b>eigenvectors</b> don't changes there direction.<br>
+\[A\vec{x}=\lambda\vec{x};\quad \left\{\begin{matrix}
+    \vec{x}\text{ is eigenvector}\\
+    \lambda\text{ is eigenvalue}
+    \end{matrix}\right.\]<br>
 <br>
 <b>Example \(1\)</b>
 <blockquote style="background-color:#ECF1F6;">
@@ -143,8 +146,8 @@ And projection of that vecor is \(\vec{0}\) so it's <b>eigenvalue</b> is \(0\).<
 
 <b>Facts</b>
 <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
-    <li>A \(n\times n\) <b>non-singular</b> matrix will have \(n\) <b>eigenvalues</b></li>
-    <li> Say we have a \(n\times n\) <b>non-singular</b> matrix \(A\).<br>
+    <li>A \(n\times n\) matrix will have \(n\) <b>eigenvalues</b></li>
+    <li> Say we have a \(n\times n\) matrix \(A\).<br>
 \[
 A=\begin{bmatrix}
  a_{11} & a_{12} & \cdots & a_{1n} \\  
@@ -154,9 +157,12 @@ A=\begin{bmatrix}
  \end{bmatrix}
 \]
 Then,<br>
-Sum of <b>eigenvalues</b> \(=\) Sum of diagonal elements of matrix \(A\) \(= \)
-\(a_{11} + a_{22} + \cdots + a_{nn}\)
-    </li>
+<dl><dd>
+<li>Sum of <b>eigenvalues</b> \(=\) Sum of diagonal elements of matrix \(A\) \(= \)
+\(a_{11} + a_{22} + \cdots + a_{nn}\)</li>
+<li>Product of <b>eigenvalues</b> is the <b>determinant</b> of \(A\)</li>
+</dd></dl>
+</li>
 </blockquote><br>
 <br>
 
@@ -310,7 +316,7 @@ Anti Symmetric matrix will give us pure Complex eigenvalue, and
 <br><br>
 <div class='buttons'>
     <button onclick="window.location.href = 'orthogonal-matrices.html';">&#x25C0;&nbsp;&nbsp;Orthonormal Vectors</button>
-    <button style="float: right;" onclick="window.location.href = '.html';">--&nbsp;&nbsp;&#x25B6;</button>
+    <button style="float: right;" onclick="window.location.href = 'diagonalization.html';">Diagonalization of a Matrix&nbsp;&nbsp;&#x25B6;</button>
 </div><br>
                         </section>
                     </div>
