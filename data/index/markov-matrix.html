@@ -1,0 +1,462 @@
+<!DOCTYPE HTML>
+<!--
+    "Thanks to HTML5 UP for this template".
+    Massively by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <!-- Code Render-->
+        <link rel="stylesheet" href="../syntaxhighlighter/shCore.css">
+        <link rel="stylesheet" href="../syntaxhighlighter/shThemeDefault.css">
+        <script type="text/javascript" src="../syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter/shBrushPython.js"></script>
+
+        <!--MathJax-->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                    config: ["MMLorHTML.js"],
+    extensions: ["mml2jax.js"],
+    jax: ["input/MathML"]
+
+        });
+
+        </script>
+        <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <style>
+            .math-container {
+            overflow-x: auto;
+            display: block;
+        }
+        </style>
+        <style>
+        .new_image {
+            width:100%;
+        }
+        img {
+            max-width:100%;
+        }
+        </style>
+
+<style>
+.accordion {
+    border: 0px solid black;
+    border-color: black;
+    background-color: #FFC2C2;
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+
+}
+
+.active, .accordion:hover {
+    background-color:#C2E7FF;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+</style>
+        <title>Markov Matrix and Fourier Series</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="../assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <a href="../../index.html" class="logo">Linear Algebra</a>
+                    </header>
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul class="links">
+                            <li class="active"><a href="complete-space.html">Markov Matrix and Fourier Series</a></li>
+                        </ul>
+                        <ul class="icons">
+                            <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+                            <li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                        </ul>					</nav>
+                <!-- Main -->
+                    <div id="main">
+                        <section class="post">
+<div class='buttons'>
+    <button onclick="window.location.href = 'differential-equation.html';">&#x25C0;&nbsp;&nbsp;Differential Equation</button>
+    <button style="float: right;" onclick="window.location.href = '.html';">--&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+
+<p>
+<h2>Markov Matrix</h2>
+
+A \(n\times n\) matrix whose elements are <b>non-negative</b> and every column vector sums to \(1\) 
+is known as <b>Markov Matrix</b>(aka <b>stochastic matrix</b>).<br>
+Say \[A=\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\  
+a_{21} & a_{22} & \cdots &  a_{2n}   \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn} \\
+\end{bmatrix}\]
+So,
+<li>\(a_{ij}\geq 0;\quad\forall i,j\in\{1,2,\cdots,n\}\)</li>
+<li>\(\sum_{i=0}^{n}a_{ij}=1\quad\forall j\in\{1,2,\cdots,n\}\)</li>
+<br>
+
+<h2>\(\lambda_1=1\)</h2>
+Markov matrix always have one of the eigenvalues \(=1\).<br>
+<b>Proof:</b><br>
+<dl><dd>
+\(A=\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\  
+a_{21} & a_{22} & \cdots &  a_{2n}   \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn} \\
+\end{bmatrix}\)<br>
+
+<div class="math-container">
+\(A-1\mathcal{I}=\begin{bmatrix}
+a_{11}-1 & a_{12} & \cdots & a_{1n} \\  
+a_{21} & a_{22}-1 & \cdots &  a_{2n}   \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn}-1 \\
+\end{bmatrix}\)
+</div>
+<br>
+Now we apply \(R_n \leftarrow R_1 + R_2 + \cdots + R_n\)<br>
+<br>
+<div class="math-container">
+\(A-\mathcal{I}=\begin{bmatrix}
+a_{11}-1 & a_{12} & \cdots & a_{1n} \\  
+a_{21} & a_{22}-1 & \cdots &  a_{2n}   \\
+\vdots & \vdots & \ddots & \vdots \\
+\sum_{i=0}^{n}a_{i1} -1 & \sum_{i=0}^{n}a_{i2} -1 & \cdots & \sum_{i=0}^{n}a_{in} -1 \\
+\end{bmatrix}\)
+</div>
+<br>
+And as we know that \(\sum_{i=0}^{n}a_{ij}=1\quad\forall j\in\{1,2,\cdots,n\}\)<br>
+<br>
+<div class="math-container">
+\(A-\mathcal{I}=\begin{bmatrix}
+a_{11}-1 & a_{12} & \cdots & a_{1n}  \\  
+a_{21} & a_{22}-1 & \cdots &  a_{2n} \\
+\vdots & \vdots & \ddots & \vdots    \\
+0      &    0   & \cdots &    0      \\
+\end{bmatrix}\)
+</div>
+
+So now we can see that \(\text{det}(A-\mathcal{I})=0\)<br>
+So indeed \(\lambda=1\).<br>
+</dd></dl>
+<br>
+
+<h2 id="example">Example of Markov Matrices</h2>
+
+Assume that we have two cities \(A\) and \(B\) and  at the end of the year we calculate the 
+<li>Proportion of peoples remains in city \(A\), we denote it by \(p_{a}\) </li>
+<li>Proportion of peoples remains in city \(B\), we denote it by \(p_{b}\) </li>
+<li>Proportion of peoples moved from city \(A\) to  \(B\), we denote it by \(p_{ab}\) </li>
+<li>Proportion of peoples moved from city \(B\) to  \(A\), we denote it by \(p_{ba}\) </li>
+
+We can represent this information as a Markov Matrix (say \(M\)).<br>
+<div class="math-container">
+\[\begin{matrix}
+                   &  \text{Moved to } A  & \text{Moved to } B \\
+\text{From } A  & p_{a} & p_{ba}\\  
+\text{From } B  & p_{ab} & p_{b}\\
+\end{matrix}\]
+</div>
+
+\[M=\begin{bmatrix}
+p_{a} & p_{ba}\\  
+p_{ab} & p_{b}\\
+\end{bmatrix}\]
+\(p_a + p_{ab}=1\) (here we took all peoples in city \(A\))<br>
+\(p_b + p_{ba}=1\) (here we took all peoples in city \(B\))<br>
+And proportions are positive and cannot be greater then \(1\)<br>
+So it is a <b>Markov Matrix</b><br>
+<br>
+Now say that at time \(t=k\).<br>
+<li>Number of peoples in city \(A\) are \(u_A\)</li>
+<li>Number of peoples in city \(B\) are \(u_B\)</li>
+So at that at time \(t=k+1\) we can say,<br>
+
+\[\begin{bmatrix} u_{A}\\u_{B}\\ \end{bmatrix}_{t=k+1}=\begin{bmatrix}
+p_{a} & p_{ba}\\  
+p_{ab} & p_{b}\\
+\end{bmatrix}\begin{bmatrix} u_{A}\\u_{B}\\ \end{bmatrix}_{t=k}\]
+Say that we know \(u_{t=0}\) and we want to find \(u_{t=100}\) then we have to compute \(M^{100}\) but 
+for large \(M\) it's impractical to compute.<br>
+Now say that <i>eigenvalues</i> of \(M\) is \(\lambda_1\) and \(\lambda_2\) and <i>eigenvectos</i> of \(M\) is \(x_1\) and \(x_2\)<br>
+So,<br>
+<div class="math-container">
+\[\color{blue}{\boxed{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle \vec{u}_{t=k}=c_1\lambda_1^k\vec{u}_{t=0} + c_2\lambda_2^k\vec{u}_{t=0} 
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]
+</div>
+
+<h2 id="expansion">Expansion with Orthogonal basis</h2>
+Say that we are in \(n\) dimensional space and \(\vec{q}_1, \vec{q}_2, \cdots, \vec{q}_n\) are the <b>basis</b> for that \(n\) dimensional space.<br>
+Here all  \(\vec{q}_1, \vec{q}_2, \cdots, \vec{q}_n\) are <b>orthogonal</b><br>
+We can express any vector in this \(n\) dimensional space as the <b>linear combination</b> of basis vectors.<br>
+Assume a vector \(\vec{v}\in\mathbb{R}^n\) in this \(n\) dimensional space.<br>
+we can express \(\vec{v}\) as,<br>
+\(\vec{v}=x_1\vec{q}_1 + x_2\vec{q}_2 + \cdots + x_n\vec{q}_n\)<br>
+Ok we can express \(\vec{v}\) as <b>linear combination</b> of basis vectors but we are interested in these
+\(x_1, x_2, \cdots, x_n\).<br>
+<br>
+How can we compute \(x_1, x_2, \cdots, x_n\)?<br> 
+First let's see how can we get \(x_1\)?<br>
+<b>IDEA:</b> All  \(\vec{q}_1, \vec{q}_2, \cdots, \vec{q}_n\) are <b>orthogonal</b> so \(\vec{q}_i^T\vec{q}_j=0;\quad \forall i\neq j\)<br>
+so take dot product w.r.t. \(x_1\).<br>
+<div class="math-container">
+\(\vec{v}^T\vec{q}_1=x_1\underbrace{\vec{q}_1^T\vec{q}_1}_{=1} + x_2\underbrace{\vec{q}_2^T\vec{q}_1}_{=0} + \cdots + x_n\underbrace{\vec{q}_n^T\vec{q}_1}_{=0}\)
+</div>
+\(\Rightarrow x_1=\vec{v}^T\vec{q}_1\)<br>
+<div class="math-container">
+\[\color{blue}{\boxed{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle x_i=\vec{v}^T\vec{q}_i;\quad\forall i\in\{1,2,\cdots, n\}
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]
+</div>
+Say 
+\(\begin{bmatrix}
+\vdots & \vdots &  & \vdots \\  
+\vec{q}_{1} & \vec{q}_{2} & \cdots &  \vec{q}_{n}   \\
+\vdots & \vdots &  & \vdots \\
+\end{bmatrix}=Q\) and \(\vec{x}=\begin{bmatrix} x_1\\ \vdots \\x_n\\  \end{bmatrix}\)<br>
+We can also write it in matrix form,<br>
+<div class="math-container">
+\[\begin{bmatrix}
+\vdots & \vdots &  & \vdots \\  
+\vec{q}_{1} & \vec{q}_{2} & \cdots &  \vec{q}_{n}   \\
+\vdots & \vdots &  & \vdots \\
+\end{bmatrix}
+\begin{bmatrix} x_1\\ \vdots \\x_n\\  \end{bmatrix}
+=
+\vec{v}
+\]
+</div>
+\(\Rightarrow Q\vec{x}=\vec{v}\)<br>
+\(\Rightarrow \underbrace{Q^TQ}_{\mathcal{I}}\vec{x}=Q^T\vec{v}\)<br>
+\[\color{blue}{\boxed{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle \vec{x}=Q^T\vec{v}
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]<br>
+<br>
+
+<h2 id="fourier">Fourier Series</h2>
+<div class="math-container">
+\[f(x)=a_0 1+a_1\cos(x)+b_1\sin(x)+a_2\cos(2x)+b_2\sin(2x)+\cdots\]
+</div>
+Here instead of vectors we are using <i>functions</i>, so here we are computing <b>linear combinations</b>
+of functions (instead of vectors).<br>
+Here our space is \(\infty\) dimensional<br>
+<li>In vector case <i>dot product</i> is like,</li>
+<dL><dd>
+    Say \(\vec{v}= \begin{bmatrix} v_1\\ \vdots \\v_n\\  \end{bmatrix}\)
+    and \(\vec{u}= \begin{bmatrix} u_1\\ \vdots \\u_n\\  \end{bmatrix}\)<br>
+    \(\vec{v}\cdot\vec{u}=v_1u_1 + v_2u_2 + \cdots + v_1nu_n \)
+</dd></dL>
+
+<li>For function <i>dot product</i> is like,</li>
+<dl><dd>
+    Vectors have some set of values like \(\vec{v}= \begin{bmatrix} v_1\\ \vdots \\v_n\\  \end{bmatrix}\).<br>
+    But a function has a range of values like for \(\cos(x)\) range is \([0,2\pi]\).<br>
+    And a dot product of two functions say \(f\) and \(g\) with interval \([0,2\pi]\) is defined as.<br>
+    \[\color{blue}{\boxed{
+        \begin{matrix}
+            \\    %blank line
+        \quad 
+        
+        % equation
+         f\cdot g=\int_{0}^{2\pi}f(x)g(x)dx
+        %equation
+        
+        \quad\\
+            \\    %blank line
+        \end{matrix}
+        }}
+    \]
+</dd></dl>
+
+Here our functions are \(1,\cos(x),\sin(x),\cos(2x),\sin(2x),\cdots\)<br>
+\(\cos\) and \(\sin\) are periodic function with period of \([0,2\pi]\), so \(0\leq x\leq 2\pi\)<br>
+So we have \(\infty\) orthogonal basis.<br>
+Now we want to find \(a_0,a_1,b_1,a_2,b_2,\cdots\)<br>
+First let's see how to find \(a_1\)?<br>
+\(f(x)=a_0 1+a_1\cos(x)+b_1\sin(x)+a_2\cos(2x)+b_2\sin(2x)+\cdots\)<br>
+<b>IDEA: </b> take dot product with function with \(a_1\)<br>
+<div class="math-container">
+    \(f(x)\cdot\cos(x)  =a_0 1\cdot\cos(x) +a_1\cos(x)\cdot\cos(x) +b_1\sin(x)\cdot\cos(x) +a_2\cos(2x)\cdot\cos(x) +b_2\sin(2x)\cdot\cos(x) +\cdots\)<br>
+</div><br>
+<div class="math-container">
+    \(\Rightarrow \int_{0}^{2\pi}f(x)\cos(x)  =\underbrace{\int_{0}^{2\pi}a_0 1\cos(x)}_{=0} + \int_{0}^{2\pi}a_1\cos(x)\cos(x) + \underbrace{\int_{0}^{2\pi}b_1\sin(x)\cos(x)}_{=0} + \underbrace{\int_{0}^{2\pi}a_2\cos(2x)\cos(x)}_{=0} + \underbrace{\int_{0}^{2\pi}b_2\sin(2x)\cos(x)}_{=0} +\cdots\)<br>
+</div>
+<!--\begin{bmatrix}   \end{bmatrix}-->
+
+\(\Rightarrow \int_{0}^{2\pi}f(x)\cos(x)  =\int_{0}^{2\pi}a_1\cos(x)\cos(x)\)<br>
+\(\Rightarrow \int_{0}^{2\pi}f(x)\cos(x)  =a_1\pi\)<br>
+\(\Rightarrow \int_{0}^{2\pi}f(x)\cos(x)  =a_1\pi\)<br>
+So,
+\[\color{blue}{\boxed{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    a_1=\frac{1}{\pi}\int_{0}^{2\pi}f(x)\cos(x)
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]
+Similarly we can find rest of \(a_i\)'s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p>
+
+<button class="accordion">\(\text{Discussion}\)</button>
+<div class="panel">
+    <script src="https://utteranc.es/client.js"
+        repo="yuvraj97/stats.github.io"
+        issue-term="introduction-intro-discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+<button class="accordion">\(\text{Put up a question}\)</button>
+<div class="panel">
+    <script src="https://utteranc.es/client.js"
+        repo="yuvraj97/stats.github.io"
+        issue-term="introduction-intro-questions"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+<br><br>
+<div class='buttons'>
+    <button onclick="window.location.href = 'differential-equation.html';">&#x25C0;&nbsp;&nbsp;Differential Equation</button>
+    <button style="float: right;" onclick="window.location.href = '.html';">--&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+                        </section>
+                    </div>
+            </div>
+            <!-- Highlight all -->
+            <script type="text/javascript">
+                SyntaxHighlighter.all()
+            </script>
+
+            <!-- Accordions -->
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+}
+</script>
+        <!-- Scripts -->
+            <script src="../assets/js/jquery.min.js"></script>
+            <script src="../assets/js/jquery.scrollex.min.js"></script>
+            <script src="../assets/js/jquery.scrolly.min.js"></script>
+            <script src="../assets/js/browser.min.js"></script>
+            <script src="../assets/js/breakpoints.min.js"></script>
+            <script src="../assets/js/util.js"></script>
+            <script src="../assets/js/main.js"></script>
+
+    </body>
+</html>
