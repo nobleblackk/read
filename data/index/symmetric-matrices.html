@@ -1,0 +1,340 @@
+<!DOCTYPE HTML>
+<!--
+    "Thanks to HTML5 UP for this template".
+    Massively by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <!-- Code Render-->
+        <link rel="stylesheet" href="../syntaxhighlighter/shCore.css">
+        <link rel="stylesheet" href="../syntaxhighlighter/shThemeDefault.css">
+        <script type="text/javascript" src="../syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter/shBrushPython.js"></script>
+
+        <!--MathJax-->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                    config: ["MMLorHTML.js"],
+    extensions: ["mml2jax.js"],
+    jax: ["input/MathML"]
+
+        });
+
+        </script>
+        <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <style>
+            .math-container {
+            overflow-x: auto;
+            display: block;
+        }
+        </style>
+        <style>
+        .new_image {
+            width:100%;
+        }
+        img {
+            max-width:100%;
+        }
+        </style>
+
+<style>
+.accordion {
+    border: 0px solid black;
+    border-color: black;
+    background-color: #FFC2C2;
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+
+}
+
+.active, .accordion:hover {
+    background-color:#C2E7FF;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+</style>
+<style>
+.bb {
+    padding-left: 10px;
+    padding-right: 10px; 
+    padding-top: 5px; 
+    padding-bottom: 5px; 
+    background-color: #f6f8fa;
+    border:1px rgb(194, 199, 204) solid;
+    border-radius: 6px;
+}
+</style>
+        <title>Symmetric Matrices</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="../assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <a href="../../index.html" class="logo">Linear Algebra</a>
+                    </header>
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul class="links">
+                            <li class="active"><a href="symmetric-matrices.html">Symmetric Matrices</a></li>
+                        </ul>
+                        <ul class="icons">
+                            <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+                            <li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                        </ul>					</nav>
+                <!-- Main -->
+                    <div id="main">
+                        <section class="post">
+<div class='buttons'>
+    <button onclick="window.location.href = 'markov-matrix.html';">&#x25C0;&nbsp;&nbsp;Markov Matrix</button>
+    <button style="float: right;" onclick="window.location.href = 'cmfft.html';">Complex Matrices; Fast Fourier Transform&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+
+<p>
+<h2>Symmetric Matrices</h2>
+
+Say we have a \(n\times n\) matrix \(A\) and <span class="bb">\(a_{ij}\in\mathbb{R}\)</span>.<br>
+\(A\) is <b>symmetric</b> if <span class="bb">\(A=A^T\)</span><br>
+\[A=\begin{bmatrix}
+a_{11} & \color{red}{a_{12}} & \cdots & \color{blue}{a_{1n}} \\  
+\color{red}{a_{21}} & a_{22} & \cdots &  \color{darkgreen}{a_{2n}}   \\
+\vdots & \vdots & \ddots & \vdots \\
+\color{blue}{a_{n1}} & \color{darkgreen}{a_{n2}} & \cdots & a_{nn} \\
+\end{bmatrix}  \\ \quad \\
+a_{ij}=a_{ji}\]
+Properties of a Symmetric matrix,<br>
+<li><blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">Eigenvalues of a symmetric matrix are <b>real</b></blockquote></li>
+<!--<hr style="width:50%;height:3px;border:none;color:#fff;background-color:#d8d8d8;" />-->
+<b>Proof:</b><br>
+<blockquote>
+<dl><dd>
+    Say \(\lambda\in\mathbb{C}\) is the <i>eigenvalues</i> and \(x\in\mathbb{C}^n\) is the <i>eigenvector</i> of matrix \(A\) so,<br>
+    (Here \(\mathbb{C}\) represent <b>Complex numbers</b>)<br>
+    
+    <li>\(Ax=\lambda x\)</li>
+    \(\Rightarrow\) <span class="bb" style="padding-top: 15px; padding-bottom: 15px;">\(\left(\overline{x}\right)^TAx=\lambda\ (\overline{x})^Tx\)</span> <span style="float: right;">\(\color{red}{(1)}\)</span><br>
+    <br>        
+    <blockquote style="background-color:#f6f8fa; border-radius: 35px;">
+        And this bar( \(\overline{ \ \  }\) ) means that we are taking conjugate of complex number, like, <br>
+        \(\overline{a+ib}=a-ib\)
+    </blockquote><br>
+    
+    <li>\(Ax=\lambda x\)</li>
+    \(\Rightarrow \overline{A}\ \overline{x}=\overline{\lambda}\ \overline{x}\)<br>
+    because element of \(A\) are Real numbers so \( \overline{A}=A\)<br>
+    \(\Rightarrow A\ \overline{x}=\overline{\lambda}\ \overline{x}\)<br>
+    \(\Rightarrow (A\ \overline{x})^T=(\overline{\lambda}\ \overline{x})^T\)<br>
+    \(\displaystyle \Rightarrow \left(\overline{x}\right)^TA^T=\overline{\lambda}\ (\overline{x})^T\)<br>
+    because A is a symmetric matrix so,<br>
+    \(\displaystyle \Rightarrow \left(\overline{x}\right)^TA=\overline{\lambda}\ (\overline{x})^T\)<br>
+    \(\Rightarrow\) <span class="bb" style="padding-top: 15px; padding-bottom: 15px;">\(\left(\overline{x}\right)^TAx=\overline{\lambda}\ (\overline{x})^Tx\)</span> <span style="float: right;">\(\color{red}{(2)}\)</span><br>
+    
+    Using above equations \(\color{red}{(1)}\) and \(\color{red}{(2)}\) we can say that,<br>
+    \(\lambda\ (\overline{x})^Tx = \overline{\lambda}\ (\overline{x})^Tx\)<br>
+    \(\Rightarrow\)  <span class="bb" style="padding-top: 15px; padding-bottom: 15px;">\(\lambda=\overline{\lambda}\)</span><br>
+    It is only possible if complex part of \(\lambda\) is \(0\) so <i>eigenvalues</i> are indeed Real.  <span style="float: right;">✅</span>
+</dd><br>
+</blockquote>
+<br>
+<li style="padding-bottom: 10px;"><blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">For a symmetric matrix we can get <b>orthonormal</b> eigenvectors</blockquote></li>
+<!--<hr style="width:50%;height:3px;border:none;color:#fff;background-color:#d8d8d8;" />-->
+<blockquote>
+<dl><dd>
+Say \(\vec{q}_1, \vec{q}_2, \cdots, \vec{q}_n \) are eigenvectors of \(A\)<br>
+Say,
+\[Q=\begin{bmatrix}
+\vdots & \vdots &          & \vdots \\  
+q_1    &  q_2   & \cdots   &  q_n   \\
+\vdots & \vdots &          & \vdots \\
+\end{bmatrix}\]
+So <span class="bb">\(A=Q\Lambda Q^{-1}\)</span> we discussed it <a style="color: blue;" href="diagonalization.html">HERE</a><br>
+And because \(Q\) is an orthonormal matrix so <span class="bb">\(Q^{-1}=Q^T\)</span> we discussed it <a style="color: blue;" href="orthogonal-matrices.html">HERE</a> so,<br>
+<h3>\[\color{blue}{\boxed{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    A=Q\Lambda Q^{T}
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]</h3>
+So we can write it as,<br>
+<div class="math-container">
+\[A=
+\begin{bmatrix}
+ \vdots & \vdots &  & \vdots \\  
+ \vec{q}_{1} & \vec{q}_{2} & \cdots &  \vec{q}_{n}   \\
+ \vdots & \vdots & & \vdots \\
+ \end{bmatrix}
+ {\begin{bmatrix}
+ \lambda_1 &     0     & \cdots  &    0    \\  
+ 0         & \lambda_2 & \cdots  &    0    \\  
+ \vdots    & \vdots    & \ddots  & \vdots    \\  
+ 0         &    0      & \cdots  &    \lambda_n    \\  
+\end{bmatrix}}
+\begin{bmatrix}
+\cdots q_1 \cdots\\
+\cdots q_2 \cdots\\
+\vdots\\
+\cdots q_n \cdots\\
+\end{bmatrix}
+ 
+ \]
+</div>
+So,
+\[\color{blue}{\boxed{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle A=\lambda_1q_1q_1^T + \lambda_2q_2q_2^T + \cdots + \lambda_nq_nq_n^T
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]
+Here all \(q_i\)'s are <b>orthonormal</b> vectors so \(q_iq_i^T\) is a <b>projection matrix</b> so we can say that,<br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+    \(A\) is the combination of <b>orthogonal</b> projection matrices.
+</blockquote>
+(we talked about <b>Orthogonal Subspaces</b> <a style="color: blue;" href="orthogonal.html">HERE</a>)
+</dd></dl>
+</blockquote><br>
+
+<li style="padding-bottom: 10px;"><blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">For a symmetric matrix <b>signs</b> of <i>pivots</i> are same as <b>signs</b> of <i>eigenvalues</i> </blockquote></li>
+<blockquote>
+<dl><dd>
+Say that we have a \(50\times 50\) symmetric matrix and we just want to know there <b>signs</b>.<br>
+In differential equation we saw that knowing just the <b>signs</b> of <i>eigenvalues</i> are important, it tells us about the state of the system.<br>
+Here we can't go for <span class="bb">\(\text{det}(A-\lambda\mathcal{I})=0\)</span>, because it will give us a \(50\) degree polynomial,
+and we can spend lifetime solving this.<br>
+So what we do instead is we find \(50\) pivots and find number of positive pivots and number of negative pivots.<br>
+And for a Symmetric matrix,<br>
+<li><b>\(\mathbf{\#}\)</b> of positive <i>pivots</i> \(=\) <b>\(\mathbf{\#}\)</b> of positive <i>eigenvalues</i></li>
+<li><b>\(\mathbf{\#}\)</b> of negative <i>pivots</i> \(=\) <b>\(\mathbf{\#}\)</b> of negative <i>eigenvalues</i></li>
+
+</dd></dl>
+</blockquote><br>
+<br>
+
+<h4 id="pos-def">Positive Definite Symmetric Matrices</h4>
+<b>Facts:</b><br>
+For a Symmetric Matrix to be Positive Definite all <i>eigenvalues</i> must be <b>positive</b>.<br>
+If all <i>eigenvalues</i> are <b>positive</b> then all <i>pivots</i> are also positive.<br>
+For a Symmetric Matrix to be Positive Definite all <i>sub-determinant</i> must be <b>positive</b>.<br>
+
+
+
+
+
+
+
+<!--
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+</blockquote>
+-->
+</p>
+
+<button class="accordion">\(\text{Discussion}\)</button>
+<div class="panel">
+    <script src="https://utteranc.es/client.js"
+        repo="yuvraj97/stats.github.io"
+        issue-term="introduction-intro-discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+<button class="accordion">\(\text{Put up a question}\)</button>
+<div class="panel">
+    <script src="https://utteranc.es/client.js"
+        repo="yuvraj97/stats.github.io"
+        issue-term="introduction-intro-questions"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+<br><br>
+<div class='buttons'>
+    <button onclick="window.location.href = 'markov-matrix.html';">&#x25C0;&nbsp;&nbsp;Markov Matrix</button>
+    <button style="float: right;" onclick="window.location.href = 'cmfft.html';">Complex Matrices; Fast Fourier Transform&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+                        </section>
+                    </div>
+            </div>
+            <!-- Highlight all -->
+            <script type="text/javascript">
+                SyntaxHighlighter.all()
+            </script>
+
+            <!-- Accordions -->
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+}
+</script>
+        <!-- Scripts -->
+            <script src="../assets/js/jquery.min.js"></script>
+            <script src="../assets/js/jquery.scrollex.min.js"></script>
+            <script src="../assets/js/jquery.scrolly.min.js"></script>
+            <script src="../assets/js/browser.min.js"></script>
+            <script src="../assets/js/breakpoints.min.js"></script>
+            <script src="../assets/js/util.js"></script>
+            <script src="../assets/js/main.js"></script>
+
+    </body>
+</html>
