@@ -1,0 +1,459 @@
+<!DOCTYPE HTML>
+<!--
+    "Thanks to HTML5 UP for this template".
+    Massively by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <!-- Code Render-->
+        <link rel="stylesheet" href="../syntaxhighlighter/shCore.css">
+        <link rel="stylesheet" href="../syntaxhighlighter/shThemeDefault.css">
+        <script type="text/javascript" src="../syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter/shBrushPython.js"></script>
+
+        <!--MathJax-->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                    config: ["MMLorHTML.js"],
+    extensions: ["mml2jax.js"],
+    jax: ["input/MathML"]
+
+        });
+        </script>
+        <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <style>
+            .math-container {
+            overflow-x: auto;
+            display: block;
+        }
+        </style>
+        <style>
+        .new_image {
+            width:100%;
+        }
+        img {
+            max-width:100%;
+        }
+        </style>
+
+<style>
+.accordion {
+    border: 0px solid black;
+    border-color: black;
+    background-color: #FFC2C2;
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+
+}
+
+.active, .accordion:hover {
+    background-color:#C2E7FF;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+</style>
+<style>
+.bb {
+    padding-left: 10px;
+    padding-right: 10px; 
+    padding-top: 5px; 
+    padding-bottom: 5px; 
+    background-color: #f6f8fa;
+    border:1px rgb(194, 199, 204) solid;
+    border-radius: 6px;
+}
+</style>
+        <title>Complex Matrices & Fast Fourier Transform</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="../assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <a href="../../index.html" class="logo">Linear Algebra</a>
+                    </header>
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul class="links">
+                            <li class="active"><a href="cmfft.html">Complex Matrices & Fast Fourier Transform</a></li>
+                        </ul>
+                        <ul class="icons">
+                            <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+                            <li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                        </ul>					</nav>
+                <!-- Main -->
+                    <div id="main">
+                        <section class="post">
+<div class='buttons'>
+    <button onclick="window.location.href = 'symmetric-matrices.html';">&#x25C0;&nbsp;&nbsp;Symmetric Matrices</button>
+    <button style="float: right;" onclick="window.location.href = '.html';">--&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+
+<p>
+<h2>Complex Matrices</h2>
+
+Say we have a vector \(\vec{z}\in\mathbb{C}^n\) here elements of \(\vec{z}\) are complex, \(z_i=a_i+ib_i\)<br>
+ \(\vec{z}=\begin{bmatrix} z_1\\z_2\\ \vdots \\z_n\\  \end{bmatrix}\) how can we find the length of vector \(\vec{z}\)<br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+    Magnitude of a complex number \(z_i\) is,<br>
+    \(\|z_i\|=\|\overline{z_i}\|\|z_i\|\)<br>
+    \(\|z_i\|=(a_i - ib_i)(a_i + ib_i)\)<br>
+    \(\|z_i\|=a_i^2 + b_i^2\)<br>
+</blockquote><br>
+We can get the magnitude of \(\vec{z}\) by taking dot product \(\vec{z}\cdot\vec{z}\), but how to take the dot product of of two complex vectors.<br>
+<blockquote>
+    We can <b>not</b> compute dot product like \(\vec{z}\cdot\vec{z}=\vec{z}^T\vec{z}\)<br>
+    Say \(\vec{z}=\begin{bmatrix} 1\\i\\  \end{bmatrix}\) then \(\vec{z}^T\vec{z}=a^2+i^2=0\)<br>
+    But we can clearly see that the magnitude of \(\vec{z}\) is <b>not</b> \(0\)<br>
+    <br>
+    Magnitude of a complex vector is given as,<br>
+    \[\color{blue}{\boxed{
+        \begin{matrix}
+            \\    %blank line
+        \quad 
+        
+        % equation
+        \|\mathbf{z}\|=\mathbf{z}\cdot\mathbf{z}=\mathbf{\overline{z}}^T\mathbf{z};\quad \mathbf{z}\in\mathbb{C}^n
+        %equation
+        
+        \quad\\
+            \\    %blank line
+        \end{matrix}
+        }}
+    \]
+    So for \(\vec{z}=\begin{bmatrix} 1\\i\\  \end{bmatrix}\) magnitude of \(\mathbf{z}\) is \(\|\mathbf{z}\|=\mathbf{\overline{z}}^T\mathbf{z}\)<br>
+    \(\|\mathbf{z}\|=\begin{bmatrix} \overline{1} & \overline{i}\\  \end{bmatrix} \begin{bmatrix} 1\\i\\  \end{bmatrix}\)<br>
+    \(\|\mathbf{z}\|=1 \times \overline{1} + i\overline{i}\)<br>
+    \(\|\mathbf{z}\|= 1  - i^2\)<br>
+    \(\|\mathbf{z}\|= 1  + 1\)<br>
+    \(\|\mathbf{z}\|= 2\)<br>
+</blockquote><br>
+
+\(\mathbf{\overline{z}}^T\mathbf{z}\) is also written as \(\mathbf{z}^H\mathbf{z}\) we pronounce it as <i>"z Hermitian z"</i>.<br>
+<b>Dot product</b> between two complex vector say \(\mathbf{u},\mathbf{v} \in\mathbb{C}^n\) is given as.<br>
+\[\color{blue}{\boxed{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \mathbf{u}\cdot\mathbf{v}=\mathbf{\overline{u}}^T\mathbf{v}=\mathbf{u}^H\mathbf{v};\quad \mathbf{u},\mathbf{v}\in\mathbb{C}^n
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]<br>
+
+<h3 id="complex-symmetric-matrices">Complex symmetric matrices</h3>
+What we have seen for symmetric matrix is \(A^T=A\) but it's only true if all the elements of \(A\) are <b>Real</b>.<br>
+A <b>Complex matrix</b> is <i>symmetric</i> if 
+\[\color{blue}{\boxed{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \overline{A}^T=A
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]
+And these matrices are known as <b>Hermitian matrices</b>.<br>
+<br>
+
+<h3 id="complex-orthogonal-matrices">Complex Orthogonal Matrices</h3>
+Say we have an orthogonal matrix \(Q\in\mathbb{C}^{n\times n}\) whose column vectors are perpendicular to each other.<br>
+\[Q=\begin{bmatrix}
+\vdots & \vdots &          & \vdots \\  
+q_1    &  q_2   & \cdots   &  q_n   \\
+\vdots & \vdots &          & \vdots \\
+\end{bmatrix}\]
+<b>all</b> columns vectors are <b>perpendicular</b> to each other,
+\[
+\overline{q_i}^Tq_j=\left\{\begin{matrix}
+    0& \text{if }i\neq j\\
+    1& \text{if }i=j \\
+    \end{matrix}\right.
+\]
+And we can also say,<br>
+\[\color{blue}{\boxed{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \overline{Q}^TQ=Q^HQ=\mathcal{I}
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]<br>
+<br>
+<h2 id="fft">Fast Fourier Transform</h2>
+
+We <a href="markov-matrix.html#fourier">discussed</a> about <b>Fourier Series</b>.<br>
+\[f(x)=a_0 1+a_1\cos(x)+b_1\sin(x)+a_2\cos(2x)+b_2\sin(2x)+\cdots\]
+Now assume we have \(n\) samples \((f_0,f_2,\cdots,f_{n-1})\) from a signal \(f\), we only have some realizations of \(f\) so we can only a <b>Discrete Fourier Transform</b>  .<br>
+Using these \(n\) samples we want to approximate the there fourier coefficient \((\hat{f}_0, \hat{f}_1, \cdots , \hat{f}_{n-1})\).<br>
+\[\color{blue}{\boxed{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle \hat{f}_k=\sum_{j=0}^{n-1}f_j \exp\left(\frac{-i2\pi jk}{n}\right)
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]
+\[f_k=\frac{1}{n}\left(\sum_{j=0}^{n-1}\hat{f}_j \exp\left(\frac{   i2\pi jk}{n}\right)\right)\]
+Say, 
+\[\color{blue}{\boxed{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle \omega_n=\exp\left(\frac{i2\pi}{n}\right)
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]
+We can rewrite the above equations as,<br>
+\[\begin{bmatrix} \hat{f}_0\\\hat{f}_1\\\hat{f}_2\\ \vdots \\\hat{f}_{n-1}\\  \end{bmatrix}=
+\underbrace{\begin{bmatrix} 
+1 & 1 & 1 & \cdots & 1 \\
+1 & \omega_n & \omega_n^2 & \cdots & \omega_n^{n-1}\\ 
+1 & \omega_n^2 & \omega_n^4 & \cdots & \omega_n^{2(n-1)}\\ 
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & \omega_n^{n-1} & \omega_n^{2(n-1)} & \cdots & \omega_n^{(n-1)^2}\\ 
+\end{bmatrix}}_{\text{DFT matrix say } F_n}
+\begin{bmatrix} f_0\\f_1\\f_2\\ \vdots \\f_{n-1}\\  \end{bmatrix}
+\]
+\(\omega_n\) is an <b>complex number</b> so <b>DFT</b> matrix is a <b>Complex Matrix</b>, so our fourier coefficient 
+\((\hat{f}_0, \hat{f}_1, \cdots , \hat{f}_{n-1})\) are also <b>complex number</b>.<br>
+<li>Magnitude of \(\hat{f}_i\)  tells us the magnitude of the \(i^{th}\)   \(\sin\) and \(\cos\).<br></li>
+<li>Phase of \(\hat{f}_i\)  tells us the phase of the \(i^{th}\)  \(\sin\) and \(\cos\).<br></li><br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+    <b>DFT matrix</b> is an <b>Orthogonal Matrix</b>, all <b>column vectors</b> are <b>orthogonal</b> to each other.
+    \[
+    \color{blue}{\boxed{
+        \begin{matrix}
+            \\    %blank line
+        \quad 
+        
+        % equation
+        \overline{F}_n^TF_n=F_n^HF_n=\mathcal{I}_n
+        %equation
+        
+        \quad\\
+            \\    %blank line
+        \end{matrix}
+        }}
+    \]
+</blockquote>
+<br>
+Now the problem is this matrix multiplication, time complexity of this matrix multiplication is \(O(n^2)\), 
+for a matrix of size \(1024\times 1024\) then it requires \(‭1,048,576‬\) multiplications.<br>
+This problem is solved by <b>Fast Fourier Transform</b><br>
+<b>IDEA</b> behind <b>FFT</b> is we can write \(F_n\) as,<br>
+\[
+\color{blue}{\boxed{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    F_n = 
+    \begin{bmatrix} \mathcal{I}_{n/2} & -D_{n/2}\\
+    \mathcal{I}_{n/2} & D_{n/2}\\
+    \end{bmatrix}
+    \begin{bmatrix} F_{n/2} & 0\\
+    0 & F_{n/2}\\
+    \end{bmatrix}
+    P_n
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]
+\(
+    D_{n/2}=\begin{bmatrix} 
+    1       &     0    &    0     & \cdots   &    0      \\
+    0       & \omega_{n/2} &    0     & \cdots   &    0      \\
+    0       &    0     & \omega_{n/2}^2 & \cdots   &    0      \\
+    \vdots  & \vdots   & \vdots   & \ddots   & \vdots    \\
+    0       &    0     &    0     &  \cdots  & \omega_{n/2}^{n/2-1}
+    \end{bmatrix}
+\)<br>
+\(P_n\) is a \(n\times n\) even and odd permutation matrix.<br>
+\(P_n=
+    \begin{bmatrix} 
+       \color{red}{1} & \color{red}{0} & \color{red}{0} & \color{red}{0} & \cdots & \color{red}{0} & \color{red}{0} \\
+                    \color{red}{0} & \color{red}{0} & \color{red}{1} & \color{red}{0} & \cdots & \color{red}{0} & \color{red}{0} \\
+                    \vdots  & \vdots   & \vdots   & \vdots   & \ddots  & \vdots  & \vdots \\
+                    \color{red}{0} & \color{red}{0} & \color{red}{0} & \color{red}{0} & \cdots & \color{red}{1} & \color{red}{0} \\
+
+        \color{blue}{0} & \color{blue}{1} & \color{blue}{0} & \color{blue}{0} & \cdots & \color{blue}{0} & \color{blue}{0} \\
+                    \color{blue}{0} & \color{blue}{0} & \color{blue}{0} & \color{blue}{1} & \cdots & \color{blue}{0} & \color{blue}{0} \\
+                    \vdots  & \vdots   & \vdots   & \vdots   & \ddots  & \vdots  & \vdots \\
+                    \color{blue}{0} & \color{blue}{0} & \color{blue}{0} & \color{blue}{0} & \cdots & \color{blue}{0} & \color{blue}{1} \\
+    \end{bmatrix}
+\)<br>
+<br>
+<b>FFT</b> will have to make \(\frac{1}{2}n\log_2(n)‬\) calculations<br>
+<br>
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+    <b>FFT</b> gives time complexity of \(n\log_2(n)\)
+</blockquote><br>
+For \(n=1024=2^{10}\)<br>
+<li><b>DFT</b> will have to make \(n^2=‭1,048,576‬\) calculations</li>
+<li><b>FFT</b> will have to make only \(\frac{1}{2}n\log_2(n)=5,120‬\) calculations</li>
+So here <b>FFT</b> is more then \(200x\) faster then <b>DFT</b>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+</blockquote>
+-->
+
+<!--
+    https://youtu.be/nl9TZanwbBk?list=PLMrJAkhIeNNRjxJ_sMtJ02geqw_-vuB7O
+    https://youtu.be/E8HeD-MUrjY?list=PLMrJAkhIeNNRjxJ_sMtJ02geqw_-vuB7O
+-->
+
+
+</p>
+
+<button class="accordion">\(\text{Discussion}\)</button>
+<div class="panel">
+    <script src="https://utteranc.es/client.js"
+        repo="yuvraj97/stats.github.io"
+        issue-term="introduction-intro-discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+<button class="accordion">\(\text{Put up a question}\)</button>
+<div class="panel">
+    <script src="https://utteranc.es/client.js"
+        repo="yuvraj97/stats.github.io"
+        issue-term="introduction-intro-questions"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+</div>
+<br><br>
+<div class='buttons'>
+    <button onclick="window.location.href = 'symmetric-matrices.html';">&#x25C0;&nbsp;&nbsp;Symmetric Matrices</button>
+    <button style="float: right;" onclick="window.location.href = '.html';">--&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+                        </section>
+                    </div>
+            </div>
+            <!-- Highlight all -->
+            <script type="text/javascript">
+                SyntaxHighlighter.all()
+            </script>
+
+            <!-- Accordions -->
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+}
+</script>
+        <!-- Scripts -->
+            <script src="../assets/js/jquery.min.js"></script>
+            <script src="../assets/js/jquery.scrollex.min.js"></script>
+            <script src="../assets/js/jquery.scrolly.min.js"></script>
+            <script src="../assets/js/browser.min.js"></script>
+            <script src="../assets/js/breakpoints.min.js"></script>
+            <script src="../assets/js/util.js"></script>
+            <script src="../assets/js/main.js"></script>
+
+    </body>
+</html>
