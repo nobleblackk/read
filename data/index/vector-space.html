@@ -26,20 +26,20 @@
         <script type="text/javascript" async
         src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
-        <style>
+<style>
             .math-container {
             overflow-x: auto;
             display: block;
         }
-        </style>
-        <style>
+</style>
+<style>
         .new_image {
             width:100%;
         }
         img {
             max-width:100%;
         }
-        </style>
+</style>
 
 <style>
 .accordion {
@@ -79,6 +79,18 @@
     transition: max-height 0.2s ease-out;
 }
 </style>
+<style>
+    .bb {
+        padding-left: 10px;
+        padding-right: 10px; 
+        padding-top: 5px; 
+        padding-bottom: 5px; 
+        background-color: #f6f8fa;
+        border:1px rgb(194, 199, 204) solid;
+        border-radius: 6px;
+    }
+</style>
+
         <title>Vector Space</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -114,13 +126,16 @@
 
 <p>
 <h1 id="main">Vector space</h1>
-
+<br>
 Consider a vector \(\vec{v}\in\mathbb{R}^d\), here \(\vec{v}\) lives in \(d\) dimensional space this space is a <b>vector space</b>.<br>
 For example for \(d=3\),
 <br>
 <img src="img/1.png" width="557" height="334" alt="">
 <br>
-<details><summary><b><span style="cursor:pointer; color:blue;">Code To plot this vector (python)</span></b></summary>
+
+Vector shown in the blue is a vector \(\vec{x}\in\mathbb{R}^3\). All the space surrounding this vector is \(3\)-dimensional vector space.<br>
+
+<details><summary><b><span class="bb" style="cursor:pointer; color:royalblue; background-color: lightyellow;">Code to plot this vector (python)</span></b></summary>
 <pre  class="brush: python">
 import MultiVariable as mvar
 import numpy as np
@@ -132,9 +147,10 @@ m.plot_3D_vectors(vector)
 m.set_axes_limit((-2,2))
 m.setZ_limit((-0.5,2))
 </pre>
-<change> You can get this MultiVariable class <a style="color:blue" href="">HERE</a>
+<change> You can get this MultiVariable class <a style="color:royalblue" href="">HERE</a>
+<hr style="width: 50%">
 </details>
-Vector shown in the blue is a vector \(\vec{x}\in\mathbb{R}^3\). All the space surrounding this vector is \(3\)-dimensional vector space<br>
+
 <br>
 If we multiply a vector \(\vec{v}\) by a constant say \(c\) then the resulting vector is in direction of \(\vec{v}\) (or in opposite direction).<br>
 Say the resulting vector is \(\vec{v}'\) then we can say \(\vec{v}' = c \vec{v} \) where \(c\in\mathbb{R}\), it is a line along vector \(\vec{v}\).<br>
@@ -143,7 +159,8 @@ Example for \(d=3\)
 <br>
 <img src="img/2.png" width="557" height="334" alt="">
 <br>
-<details><summary><b><span style="cursor:pointer; color:blue;">Code To plot this vector (python)</span></b></summary>
+Here you can see the vector \(\vec{x}\in\mathbb{R}^3\) has it's own vector space that is that line.<br>
+<details><summary><b><span class="bb" style="cursor:pointer; color:royalblue; background-color: lightyellow;">Code To plot this vector (python)</span></b></summary>
 <pre  class="brush: python">
 import MultiVariable as mvar
 import numpy as np
@@ -157,15 +174,14 @@ m.plot_3D_vectors(vector, plot_separately=False)
 ## Adjusting axis limits
 m.set_axes_limit((-3,3))
 </pre>
-<change> You can get this MultiVariable class <a style="color:blue" href="">HERE</a>
+<change> You can get this MultiVariable class <a style="color:royalblue" href="">HERE</a>
 </details>
-Here you can see the vector \(\vec{x}\in\mathbb{R}^3\) has it's own vector space that is that line.<br>
 <br>
 Now Consider a plane(passing through origin) inside a \(3\)-dimensional space, so that plane lives inside \(3\)-dimensional vector space, but it has it's own vector space.<br>
 <br>
 <img src="img/3.png" width="557" height="334" alt="">
 <br>
-<details><summary><b><span style="cursor:pointer; color:blue;">Code To plot this plane (python)</span></b></summary>
+<details><summary><b><span class="bb" style="cursor:pointer; color:royalblue; background-color: lightyellow;">Code To plot this plane (python)</span></b></summary>
 <pre  class="brush: python">
 import MultiVariable as mvar
 import numpy as np
@@ -177,7 +193,8 @@ def f(x,y):
 m = mvar.MultiVariable()
 m.plot_surface_color_3D(f, plot_separately=True, alpha=0.7)
 </pre>
-<change> You can get this MultiVariable class <a style="color:blue" href="">HERE</a>
+<change> You can get this MultiVariable class <a style="color:royalblue" href="">HERE</a>
+<hr style="width: 50%">
 </details>
 Here you can see the plane \(x+y+z=0\) has it's own vector space inside \(3\)-dimensional vector space.<br>
 <br>
@@ -193,7 +210,7 @@ Say the vectors are \(\vec{v} = \begin{bmatrix} 1 \\ 1\\ 1\\ \end{bmatrix}\) and
 <img src="img/6.png" width="600" height="350" alt=""><br>
 Then the vector space is just a line passing through these vectors.<br>
 <img src="img/7.png" width="600" height="350" alt=""><br>
-<details><summary><b><span style="cursor:pointer; color:blue;">Code To plot this (python)</span></b></summary>
+<details><summary><b><span class="bb" style="cursor:pointer; color:royalblue; background-color: lightyellow;">Code To plot this (python)</span></b></summary>
 <pre  class="brush: python">
 import MultiVariable as mvar
 import numpy as np
@@ -212,7 +229,8 @@ lines = np.array([[-2.5,2.5,-2.5,2.5,-2.5,2.5]])
 m.plot_3D_lines(lines, plot_separately=False)
 m.set_axes_limit((-3,3))
 </pre>
-<change> You can get this MultiVariable class <a style="color:blue" href="">HERE</a>
+<change> You can get this MultiVariable class <a style="color:royalblue" href="">HERE</a>
+<hr style="width: 50%">
 </details>
 
 <br>
@@ -224,7 +242,7 @@ Say the vectors are \(\vec{v} = \begin{bmatrix} 2 \\ -1\\ -1\\ \end{bmatrix}\) a
 <img src="img/4.png" width="600" height="350" alt=""><br>
 Then the vector space is the plane passing through these vectors.<br>
 <img src="img/5.png" width="600" height="350" alt=""><br>
-<details><summary><b><span style="cursor:pointer; color:blue;">Code To plot this (python)</span></b></summary>
+<details><summary><b><span class="bb" style="cursor:pointer; color:royalblue; background-color: lightyellow;">Code To plot this (python)</span></b></summary>
 <pre  class="brush: python">
 import MultiVariable as mvar
 import numpy as np
@@ -244,7 +262,8 @@ m.plot_3D_vectors(vectors, origin, plot_separately=False)
 m.plot_surface_lines_3d(f, density = 100, plot_separately=False)
 m.set_axes_limit((-3,3))
 </pre>
-<change> You can get this MultiVariable class <a style="color:blue" href="">HERE</a>
+<change> You can get this MultiVariable class <a style="color:royalblue" href="">HERE</a>
+<hr style="width: 50%">
 </details>
 <br><br>
 <h2 id="properties">Vector Space Properties</h2>
@@ -262,7 +281,7 @@ What about multiplying a constant to a vector, take a vector in that space \(\ve
 <img src="img/10.png" width="600" height="300" alt=""><br>
 if we multiply \(\vec{v}\)  by \(-1\) then if goes out of space.<br>
 <img src="img/11.png" width="600" height="300" alt=""><br>
-<details><summary><b><span style="cursor:pointer; color:blue;">Code To plot this (python)</span></b></summary>
+<details><summary><b><span class="bb" style="cursor:pointer; color:royalblue; background-color: lightyellow;">Code To plot this (python)</span></b></summary>
 <pre  class="brush: python">
 import MultiVariable as mvar
 import numpy as np
@@ -283,7 +302,8 @@ origin = np.array([0,0])
 m.plot_2D_vectors(vectors, origin, plot_separately=False, head_width=0.2, head_length=0.2)
 m.set_axes_limit((-5,5))
 </pre>
-<change> You can get this MultiVariable class <a style="color:blue" href="">HERE</a>
+<change> You can get this MultiVariable class <a style="color:royalblue" href="">HERE</a>
+<hr style="width: 50%">
 </details>
 So it can't be a vector space.<br>
 <br>

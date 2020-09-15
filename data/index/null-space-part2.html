@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<!--
+    "Thanks to HTML5 UP for this template".
+    Massively by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <!-- Code Render-->
+        <link rel="stylesheet" href="../syntaxhighlighter/shCore.css">
+        <link rel="stylesheet" href="../syntaxhighlighter/shThemeDefault.css">
+        <script type="text/javascript" src="../syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter/shBrushPython.js"></script>
+
+        <!--MathJax-->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                    config: ["MMLorHTML.js"],
+    extensions: ["mml2jax.js"],
+    jax: ["input/MathML"]
+
+        });
+
+        </script>
+        <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <style>
+            .math-container {
+            overflow-x: auto;
+            display: block;
+        }
+        </style>
+        <style>
+        .new_image {
+            width:100%;
+        }
+        img {
+            max-width:100%;
+        }
+        </style>
+
+<style>
+.accordion {
+    border: 0px solid black;
+    border-color: black;
+    background-color: #FFC2C2;
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+
+}
+
+.active, .accordion:hover {
+    background-color:#C2E7FF;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+</style>
+        <style>
+    .bb {
+        padding-left: 10px;
+        padding-right: 10px; 
+        padding-top: 5px; 
+        padding-bottom: 5px; 
+        background-color: #f6f8fa;
+        border:1px rgb(194, 199, 204) solid;
+        border-radius: 6px;
+    }
+</style>
+
+        <title>Null Space</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="../assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <a href="../../index.html" class="logo">Linear Algebra</a>
+                    </header>
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul class="links">
+                            <li><a href="null-space.html">Null Space</a></li>
+                            <li class="active"><a href="null-space-part2.html">Echelon Form, pivot/free columns</a></li>
+                            <li><a href="null-space-part3.html">Solve \(A\vec{x}=0\)</a></li>
+                            <li><a href="null-space-part4.html">Reduced Row Echelon Form</a></li>
+                        </ul>
+                        <ul class="icons">
+                            <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+                            <li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                        </ul>					</nav>
+                <!-- Main -->
+                    <div id="main">
+                        <section class="post">
+<div class='buttons'>
+    <button onclick="window.location.href = 'null-space.html';">&#x25C0;&nbsp;&nbsp; Null Space</button>
+    <button style="float: right;" onclick="window.location.href = 'null-space-part3.html';">Solve \(A\vec{x}=0\)&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+
+<p>
+    We <a href="null-space.html" style="color: royalblue;">discussed</a> what a <b>Null Space</b> is, 
+    but how to find a Null space for an arbitrary large matrix, We can't do that by hands.
+    So what are the steps (Algorithm) to find the Null space.<br>
+    <H2>Echelon Form</H1>
+    To find Null Space first we convert our matrix (say \(A\)) in <b>echelon form</b> using Elimination technique.<br>
+    For example Say our matrix is
+    \(A=\begin{bmatrix}
+    1 & 2 & 2 & 2\\
+    2 & 4 & 6 & 8\\
+    3 & 6 & 8 & 10\\
+    \end{bmatrix}\)<br>
+    From now on we refer to \(i^{th}\) Row as \(r_i\) and \(j^{th}\) column as \(c_j\)<br>
+    box \(\fbox{}\) represent pivot element.<br>
+    <!-- we can see that \(c_2=2c_1\) so column 1 and column 2 are parallel, \(r_3 = r_1+r_2\).<br> <change>-->
+    <b>Step 1</b>: of elimination method, here we make all element \(0\) in \(c_1\) below the \(1^{st}\) element.<br>
+    \(r_2\leftarrow r_2-2r_1\)<br>
+    \(A=\begin{bmatrix}
+    \fbox{1} & 2 & 2 & 2\\
+    0 & 0 & 2 & 4\\
+    3 & 6 & 8 & 10\\
+    \end{bmatrix}\)<br>
+    \(r_3\leftarrow r_3-3r_1\)<br>
+    \(A=\begin{bmatrix}
+    \fbox{1} & 2 & 2 & 2\\
+    0 & 0 & 2 & 4\\
+    0 & 0 & 2 & 4\\
+    \end{bmatrix}\)<br>
+    
+    <b>Step 2</b>: of elimination method, here we make all element \(0\) in \(c_2\) below the \(2^{nd}\) element.<br>
+    \(A=\begin{bmatrix}
+    \fbox{1} & 2 & 2 & 2\\
+    0 & 0 & 2 & 4\\
+    0 & 0 & 2 & 4\\
+    \end{bmatrix}\)<br>
+    Here \(2^{nd}\) element itself is \(0\), and all element below it also \(0\), so move forward.<br>
+    
+    <b>Step 3</b>: of elimination method, here we make all element \(0\) in \(c_3\) below the \(2^{nd}\) element.<br>
+    \(A=\begin{bmatrix}
+    \fbox{1} & 2 & 2 & 2\\
+    0 & 0 & 2 & 4\\
+    0 & 0 & 2 & 4\\
+    \end{bmatrix}\)<br>
+    
+    \(r_3\leftarrow r_3-r_2\)<br>
+    \(A=\begin{bmatrix}
+    \fbox{1} & 2 & 2 & 2\\
+    0 & 0 & \fbox{2} & 4\\
+    0 & 0 & 0 & 0\\
+    \end{bmatrix}\)<br>
+    
+    We end here because \(3^{rd}\) element of \(c_4\) is itself \(0\)<br>
+    <br>
+    So we got total \(2\) pivots, this is also the rank of this matrix.<br>
+    <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+    <b>\(\text{Rank}(A)\) = # of pivots</b>
+    </blockquote><br>
+    Our matrix has 4 columns, \(2\) of them are <b>pivot columns</b> and other we call <b>free columns</b><br>
+    
+    <br>
+    <h4 id="pivot-free-columns" >What are those <u>pivot column</u> and <u>free columns</u>?</h4>
+    <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+    <b>Free columns</b> are dependent columns.<br>
+    And <b>Pivot columns</b> are independent columns.<br>
+    we can get those <b>free columns</b> by a linear combination of <b>pivot columns</b>.
+    </blockquote><br>
+    As in our example our <b>pivot columns</b> are \(c_1\) and \(c_3\), and <b>free columns</b> are \(c_2\) and \(c_4\)<br>
+    \(A=\begin{bmatrix}
+    1 & 2 & 2 & 2\\
+    2 & 4 & 6 & 8\\
+    3 & 6 & 8 & 10\\
+    \end{bmatrix}\)<br>
+    We can get \(c_2\) as: \(c_2 = 2c_1\)<br>
+    We can get \(c_4\) as: \(c_4 = 2(c_3-c_1)\)<br>
+    <br>
+    
+</p>
+    
+    <button class="accordion">\(\text{Discussion}\)</button>
+    <div class="panel">
+        <script src="https://utteranc.es/client.js"
+            repo="yuvraj97/stats.github.io"
+            issue-term="introduction-intro-discussion"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+        </script>
+    </div>
+    <button class="accordion">\(\text{Put up a question}\)</button>
+    <div class="panel">
+        <script src="https://utteranc.es/client.js"
+            repo="yuvraj97/stats.github.io"
+            issue-term="introduction-intro-questions"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+        </script>
+    </div>
+    <br><br>
+    <div class='buttons'>
+        <button onclick="window.location.href = 'null-space.html';">&#x25C0;&nbsp;&nbsp; Null Space</button>
+        <button style="float: right;" onclick="window.location.href = 'null-space-part3.html';">Solve \(A\vec{x}=0\)&nbsp;&nbsp;&#x25B6;</button>
+    </div><br>
+                            </section>
+                        </div>
+                </div>
+                <!-- Highlight all -->
+                <script type="text/javascript">
+                    SyntaxHighlighter.all()
+                </script>
+    
+                <!-- Accordions -->
+    
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+    </script>
+            <!-- Scripts -->
+                <script src="../assets/js/jquery.min.js"></script>
+                <script src="../assets/js/jquery.scrollex.min.js"></script>
+                <script src="../assets/js/jquery.scrolly.min.js"></script>
+                <script src="../assets/js/browser.min.js"></script>
+                <script src="../assets/js/breakpoints.min.js"></script>
+                <script src="../assets/js/util.js"></script>
+                <script src="../assets/js/main.js"></script>
+    
+        </body>
+    </html>

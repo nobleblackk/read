@@ -79,6 +79,18 @@
     transition: max-height 0.2s ease-out;
 }
 </style>
+        <style>
+    .bb {
+        padding-left: 10px;
+        padding-right: 10px; 
+        padding-top: 5px; 
+        padding-bottom: 5px; 
+        background-color: #f6f8fa;
+        border:1px rgb(194, 199, 204) solid;
+        border-radius: 6px;
+    }
+</style>
+
         <title>4 fundamental subspaces</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -117,13 +129,13 @@
 <br>
 
 Our \(4\) fundamental subspaces are,<br>
-<li><a style="color:blue" href="complete-space.html">Column Space\((C(A))\)</a></li>
-<li><a style="color:blue" href="null-space.html">Null Space\((N(A))\)</a></li>
+<li><a style="color: royalblue" href="complete-space.html">Column Space\((C(A))\)</a></li>
+<li><a style="color: royalblue" href="null-space.html">Null Space\((N(A))\)</a></li>
 <li>Row Space</li>
 <li>Left Null Space</li>
 We discussed about
-<a style="color:blue" href="complete-space.html">Column Space</a> and
-<a style="color:blue" href="null-space.html">Null Space</a>, 
+<a style="color: royalblue" href="complete-space.html">Column Space</a> and
+<a style="color: royalblue" href="null-space.html">Null Space</a>, 
 what new is <b>Row Space</b> and <b>Left Null Space</b>.<br>
 <br>
 
@@ -184,7 +196,7 @@ Here we have \(m\) rows and each row have \(n\) components.<br>
 So every <b>row vector</b> of matrix \(A\) \(\in\mathbb{R}^n\).<br>
 So the <b>Row space</b> of matrix \(A\) lives in \(\mathbb{R}^n\).<br>
 </blockquote>
-\(\text{Rank}(A)=\text{Rank}(A^T)\) <a style="color:blue" href="https://www.khanacademy.org/math/linear-algebra/matrix-transformations/matrix-transpose/v/linear-algebra-rank-a-rank-transpose-of-a">[proof]</a><br>
+\(\text{Rank}(A)=\text{Rank}(A^T)\) <a style="color: royalblue" href="https://www.khanacademy.org/math/linear-algebra/matrix-transformations/matrix-transpose/v/linear-algebra-rank-a-rank-transpose-of-a">[proof]</a><br>
 \(\text{Rank}(A)=r\Rightarrow\) \(\text{Rank}(A^T)=r\) so we know that we have \(r\) <b>independent columns</b> in matrix \(A^T\).<br>
 OR say that we have \(r\) <b>independent rows</b> in matrix \(A\).<br>
 <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
@@ -203,7 +215,7 @@ For a matrix \(A\) the <b>Left Null space</b> is the space of all \(\vec{x}\) th
 We know that \(A^T\) is a \(n\times m\) matrix, so \(\vec{x}\in\mathbb{R}^m\).<br>
 So the <b>Left Null space</b> of matrix \(A\) lives in \(\mathbb{R}^m\).<br>
 </blockquote>
-\(\text{Rank}(A)=\text{Rank}(A^T)\) <a style="color:blue" href="https://www.khanacademy.org/math/linear-algebra/matrix-transformations/matrix-transpose/v/linear-algebra-rank-a-rank-transpose-of-a">[proof]</a><br>
+\(\text{Rank}(A)=\text{Rank}(A^T)\) <a style="color: royalblue" href="https://www.khanacademy.org/math/linear-algebra/matrix-transformations/matrix-transpose/v/linear-algebra-rank-a-rank-transpose-of-a">[proof]</a><br>
 \(\text{Rank}(A)=r\Rightarrow\) \(\text{Rank}(A^T)=r\) so we know that we have \(r\) <b>independent columns</b> in matrix \(A^T\).<br>
 OR say that we have \(r\) <b>independent rows</b> in matrix \(A\).<br>
 <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
@@ -227,7 +239,7 @@ Say we have a \(m\times n\) matrix \(A\) and \(\text{Rank}(A)=r\).<br>
 Here we have \(r\) <b>independent columns</b> in \(A\).<br>
 And these <b>independent columns</b> are the basis of <b>Column space</b>.
 </blockquote>
-We talked about <b>Basis of Column space</b> <a style="color:blue" href="rank.html#cs">[HERE]</a><br>
+We talked about <b>Basis of Column space</b> <a style="color: royalblue" href="rank.html#cs">[HERE]</a><br>
 <br>
 
 <h4 id="basis-null">Basis of Null space</h4>
@@ -236,7 +248,7 @@ Say we have a \(m\times n\) matrix \(A\) and \(\text{Rank}(A)=r\).<br>
 Here we have \(n-r\) <b>special solutions</b>.<br>
 And these <b>special solutions</b> are the basis of <b>Null space</b>.
 </blockquote>
-We talked about <b>Basis of Null space</b> <a style="color:blue" href="rank.html#ns">[HERE]</a><br>
+We talked about <b>Basis of Null space</b> <a style="color: royalblue" href="rank.html#ns">[HERE]</a><br>
 <br>
 
 <h4 id="basis-row">Basis of Row space</h4>
@@ -285,7 +297,7 @@ And these <b>special solutions</b> are the basis of <b>Left Null space</b>.<br>
 To find the basis we <b>can</b> take the transpose of \(A\) and find the null space of \(A^T\).<br>
 But this is not intuitive for <b>row space</b> perspective.<br>
 So what we do is while reducing the matrix \(A\) to the <b>reduced row echelon form</b>\((R)\),
-by using <a style="color:blue" href="http://math.mit.edu/~mckernan/Teaching/08-09/Autumn/18.700/l_5.pdf">Gauss-Jordan elimination</a> technique
+by using <a style="color: royalblue" href="http://math.mit.edu/~mckernan/Teaching/08-09/Autumn/18.700/l_5.pdf">Gauss-Jordan elimination</a> technique
 we can keep the track of our action.<br>
 And it will result in a matrix say \(E\).<br>
 \(EA=R\)<br>

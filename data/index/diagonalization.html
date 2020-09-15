@@ -79,6 +79,18 @@
     transition: max-height 0.2s ease-out;
 }
 </style>
+<style>
+    .bb {
+        padding-left: 10px;
+        padding-right: 10px; 
+        padding-top: 5px; 
+        padding-bottom: 5px; 
+        background-color: #f6f8fa;
+        border:1px rgb(194, 199, 204) solid;
+        border-radius: 6px;
+    }
+</style>
+    
         <title>Diagonalization of a Matrix</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -165,18 +177,45 @@ Let's calculate \(AS\)<br>
 \(AS=S\Lambda\)<br>
 because \(S\) has independent columns so \(S^{-1}\) exists, so<br>
 
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
-\[\Lambda =S^{-1}AS\]
-This is Diagonalization.
-</blockquote><br>
+<div class="math-container">
+    \[\color{blue}{\boxed{
+        \begin{matrix}
+            \\    %blank line
+        \quad 
+        
+        % equation
+        \displaystyle \Lambda =S^{-1}AS
+        %equation
+        
+        \quad\\
+            \\    %blank line
+        \end{matrix}
+        }}
+    \]
+</div>
+    
+This is <b>Diagonalization</b>.<br>
 
-We can get a factorization of \(A\)<br>
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
-\[A=S\Lambda S^{-1}\]
-</blockquote><br>
+We can also get a factorization of \(A\)<br>
+<div class="math-container">
+    \[\color{blue}{\boxed{
+        \begin{matrix}
+            \\    %blank line
+        \quad 
+        
+        % equation
+        \displaystyle A=S\Lambda S^{-1}
+        %equation
+        
+        \quad\\
+            \\    %blank line
+        \end{matrix}
+        }}
+    \]
+</div><br>
 <br>
 
-<h2>Power of a matrix</h2>
+<h2 id="power">Power of a matrix</h2>
 Now let's see how \(A=S\Lambda S^{-1}\) helps us in calculating \(A^k\) for \(k=\{1,2,3,\cdots\}\)<br>
 We know that,<br>
 \[A\vec{x}_i=\lambda_i\vec{x}_i;\quad 
@@ -206,12 +245,30 @@ where,
 \end{bmatrix}\)<br>
 <br>
 Now we can get formula for \(k^{\text{th}}\) power of \(A\).<br>
+
+<div class="math-container">
+    \[\color{blue}{\boxed{
+        \begin{matrix}
+            \\    %blank line
+        \quad 
+        
+        % equation
+        \displaystyle A^k = S\Lambda^k S^{-1}
+        %equation
+        
+        \quad\\
+            \\    %blank line
+        \end{matrix}
+        }}
+    \]
+</div><br>
+
+
 <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
-\[A^k = S\Lambda^k S^{-1}\]
 So <i>eigenvectors</i> of \(A^k\) remains same as the <i>eigenvectors</i> of \(A\).<br>
 But <i>eigenvalues</i> of \(A^k\) becomes \(\lambda^k\).<br>
 </blockquote>
-So now we can find power of matrices quickly, if we have the eigenvectors<b>(independent)</b> of that matrix.<br>
+So now we can find power of matrices quickly, if we have the eigenvectors<i>(independent)</i> of that matrix.<br>
 <br>
 
 When we call a matrix \(A\) <b>stable</b>?<br>
@@ -244,7 +301,7 @@ But there is only <b>one</b> <i>eigenvalue</i> and that is \(1\).
 </blockquote><br>
 <br>
 
-<h2>\(\vec{u}_{k+1}=A\vec{u}_k\)</h2>
+<h2><span class="bb">\(\vec{u}_{k+1}=A\vec{u}_k\)</span></h2>
 Say we have a vector \(\vec{u}_0\) and a matrix(<b>non-singular</b>) \(A\), with \(n\) <b>independent</b> <i>eigenvectors</i>.<br>
 We iteratively apply transformation \(A\) on \(\vec{u}_0\).<br>
 \[\vec{u}_{k+1}=A\vec{u}_k\]
@@ -277,31 +334,45 @@ So we can say that,<br>
  \end{bmatrix};\quad\)
 \(\vec{c}=\begin{bmatrix} c_1\\c_2\\ \vdots \\c_n \end{bmatrix}\)<br>
 So,<br>
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
-\[\vec{u}_k = A^{k}\vec{u}_0=\Lambda^k S\ \vec{c}\]
-</blockquote><br>
+<div class="math-container">
+    \[\color{blue}{\boxed{
+        \begin{matrix}
+            \\    %blank line
+        \quad 
+        
+        % equation
+        \displaystyle \vec{u}_k = A^{k}\vec{u}_0=\Lambda^k S\ \vec{c}
+        %equation
+        
+        \quad\\
+            \\    %blank line
+        \end{matrix}
+        }}
+    \]
+</div><br>
+
 <br>
 
-<h4>Fibonacci example</h4>
+<h4 id="fibonacci">Fibonacci example</h4>
 Fibonacci sequence: \(0,1,1,2,3,5,\cdots\)<br>
 How can we find \(F_k\) for an arbitrary large \(k\).<br>
-\(F_{k+2}=F_{k+1}+F_k\)<br>
-Now let's write it in form of \(\vec{u}_{k+1}=A\vec{u}_k\)<br>
+<span class="bb">\(F_{k+2}=F_{k+1}+F_k\)</span><br>
+Now let's write it in form of <span class="bb">\(\vec{u}_{k+1}=A\vec{u}_k\)</span><br>
 say \(\vec{u}_k= \begin{bmatrix} F_{k+1}\\F_k\\ \end{bmatrix}\)<br>
 and \(\vec{u}_{k+1}=A\vec{u}_k\)<br>
 \(\Rightarrow \vec{u}_{k+1}=A\begin{bmatrix} F_{k+1}\\F_k\\ \end{bmatrix}\)<br>
 \(\Rightarrow A=\begin{bmatrix} 1&1\\1&0\\ \end{bmatrix}\)<br>
 What are it's <i>eigenvalues</i> and <i>eigenvectors</i>.<br>
-<blockquote style="background-color:#ECF1F6;">
+<blockquote>
 
 \(\text{det}(A - \lambda\mathcal{I})=\begin{vmatrix}
         1-\lambda & 1 \\
         1 & -\lambda \\
         \end{vmatrix}\)<br>
 \(\text{det}(A - \lambda\mathcal{I})=\lambda^2-\lambda-1\)<br>
-for \(\text{det}(A - \lambda\mathcal{I})=0\) we get,<br>
-\(\lambda_1 = \frac{1+\sqrt{5}}{2}\)<br>
-\(\lambda_2 = \frac{1-\sqrt{5}}{2}\)<br>
+for \(\text{det}(A - \lambda\mathcal{I})=0\) we get,<br><br>
+<span class="bb" style="padding-bottom: 20px; padding-top: 20px;">\(\lambda_1 = \frac{1+\sqrt{5}}{2}\)</span><br><br>
+<span class="bb" style="padding-bottom: 20px; padding-top: 20px;">\(\lambda_2 = \frac{1-\sqrt{5}}{2}\)</span><br><br>
 We get our <i>eigenvalues</i> \(\lambda_1, \lambda_2\).<br>
 \((A-\lambda\mathcal{I})\vec{x}=0\)<br>
 \(\begin{bmatrix}
@@ -352,11 +423,27 @@ We know that, \(\vec{u}_k= \begin{bmatrix} F_{k+1}\\F_k\\ \end{bmatrix}\)<br>
 So,<br>
 \[F_k=\frac{\lambda_1^k - \lambda_2^k}{\lambda_1-\lambda_2}\]
 \(\lambda_1 = \frac{1+\sqrt{5}}{2}\) and \(\lambda_2 = \frac{1-\sqrt{5}}{2}\) so<br>
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
-\[F_k=\frac{1}{\sqrt{5}}\left(   \left(\frac{1+\sqrt{5}}{2}\right)^k - \left(\frac{1-\sqrt{5}}{2}\right)^k  \right)\]
-</blockquote><br>
 
-<blockquote style="background-color:#ECF1F6;">
+<div class="math-container">
+    \[\color{blue}{\boxed{
+        \begin{matrix}
+            \\    %blank line
+        \quad 
+        
+        % equation
+        \displaystyle F_k=\frac{1}{\sqrt{5}}\left(   \left(\frac{1+\sqrt{5}}{2}\right)^k - \left(\frac{1-\sqrt{5}}{2}\right)^k  \right)
+        %equation
+        
+        \quad\\
+            \\    %blank line
+        \end{matrix}
+        }}
+    \]
+</div>
+
+
+
+<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
 For large \(k,\quad\) \(\left(\frac{1-\sqrt{5}}{2}\right)^{k}\approx 0\)<br>
 So 
 \[F_k\approx \frac{1}{\sqrt{5}}\left(   \left(\frac{1+\sqrt{5}}{2}\right)^k \right)\]

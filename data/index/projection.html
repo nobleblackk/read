@@ -87,6 +87,18 @@
     width: max-content;
 }
 </style>
+        <style>
+    .bb {
+        padding-left: 10px;
+        padding-right: 10px; 
+        padding-top: 5px; 
+        padding-bottom: 5px; 
+        background-color: #f6f8fa;
+        border:1px rgb(194, 199, 204) solid;
+        border-radius: 6px;
+    }
+</style>
+
         <title>Projection</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -123,10 +135,10 @@
 <p>
 <p id="rcorners1">
     <b>Topics</b><br>
-    \(1.\) <a style="color:blue" href="#vec-proj">Vector Projection</a><br>
-    \(2.\) <a style="color:blue" href="#why-project">Why are we doing projection?</a><br>
-    \(3.\) <a style="color:blue" href="#matrix-projection">Matrix Projection</a><br>
-    \(\quad\bullet\)   <a style="color:blue" href="#matrix-projection-column">Projection on to the column space of a matrix</a><br>
+    \(1.\) <a style="color: royalblue" href="#vec-proj">Vector Projection</a><br>
+    \(2.\) <a style="color: royalblue" href="#why-project">Why are we doing projection?</a><br>
+    \(3.\) <a style="color: royalblue" href="#matrix-projection">Matrix Projection</a><br>
+    \(\quad\bullet\)   <a style="color: royalblue" href="#matrix-projection-column">Projection on to the column space of a matrix</a><br>
 </p>
 
 <h1>Projection</h1>
@@ -310,7 +322,7 @@ collectively gives us back our vector \(\vec{v}\)
 <br>
 
 <h3 id="matrix-projection-column">Projection onto the column space of a matrix</h3>
-Recall our <a style="color:blue" href="projection.html#example">previous example</a>, here we have a system of equation \(\mathbb{A}\mathbb{X}=\mathbb{Y}\) where there is <b>no solution</b>.<br>
+Recall our <a style="color: royalblue" href="projection.html#example">previous example</a>, here we have a system of equation \(\mathbb{A}\mathbb{X}=\mathbb{Y}\) where there is <b>no solution</b>.<br>
 Here problem was that there are <b>high chance</b> that \(\mathbb{Y}\) does <b>not</b> lives in <b>column space</b> of \(\mathbb{A}\), 
 So it does <b>not</b> have a solution.<br> 
 So we go for the <b>closest</b> solution.<br>
@@ -335,9 +347,9 @@ We can write it as,<br>
 \[\mathbb{A}^T(\mathbb{Y} - \widehat{\mathbb{Y}})=0\]
 </blockquote>
 Notice that \(\mathbb{Y} - \widehat{\mathbb{Y}}\) lives in \((N(A^T))\)
-<li>The <a style="color:blue" href="fundamental-subspaces.html#left-null-space">Left Null Space</a>
+<li>The <a style="color: royalblue" href="fundamental-subspaces.html#left-null-space">Left Null Space</a>
 of matrix \(\mathbb{A}\) OR say </li>
-<li>The <a style="color:blue" href="null-space.html">Null Space</a> of \(\mathbb{A}^T\).<br></li> 
+<li>The <a style="color: royalblue" href="null-space.html">Null Space</a> of \(\mathbb{A}^T\).<br></li> 
 And <b>Null Space</b> of \(\mathbb{A}^T\) is <b>perpendicular</b> to the <b>column space</b> of \(\mathbb{A}\).<br>
 <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">    
 So \(\mathbb{Y} - \widehat{\mathbb{Y}}\) is  <b>perpendicular</b> to the <b>column space</b> of \(\mathbb{A}\).<br>

@@ -1,0 +1,304 @@
+<!DOCTYPE HTML>
+<!--
+    "Thanks to HTML5 UP for this template".
+    Massively by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <!-- Code Render-->
+        <link rel="stylesheet" href="../syntaxhighlighter/shCore.css">
+        <link rel="stylesheet" href="../syntaxhighlighter/shThemeDefault.css">
+        <script type="text/javascript" src="../syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="../syntaxhighlighter/shBrushPython.js"></script>
+
+        <!--MathJax-->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                    config: ["MMLorHTML.js"],
+    extensions: ["mml2jax.js"],
+    jax: ["input/MathML"]
+
+        });
+
+        </script>
+        <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <style>
+            .math-container {
+            overflow-x: auto;
+            display: block;
+        }
+        </style>
+        <style>
+        .new_image {
+            width:100%;
+        }
+        img {
+            max-width:100%;
+        }
+        </style>
+
+<style>
+.accordion {
+    border: 0px solid black;
+    border-color: black;
+    background-color: #FFC2C2;
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+
+}
+
+.active, .accordion:hover {
+    background-color:#C2E7FF;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+</style>
+        <style>
+    .bb {
+        padding-left: 10px;
+        padding-right: 10px; 
+        padding-top: 5px; 
+        padding-bottom: 5px; 
+        background-color: #f6f8fa;
+        border:1px rgb(194, 199, 204) solid;
+        border-radius: 6px;
+    }
+</style>
+
+        <title>Null Space</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="../assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <a href="../../index.html" class="logo">Linear Algebra</a>
+                    </header>
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul class="links">
+                            <li><a href="null-space.html">Null Space</a></li>
+                            <li><a href="null-space-part2.html">Echelon Form, pivot/free columns</a></li>
+                            <li class="active"><a href="null-space-part3.html">Solve \(A\vec{x}=0\)</a></li>
+                            <li><a href="null-space-part4.html">Reduced Row Echelon Form</a></li>
+                        </ul>
+                        <ul class="icons">
+                            <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+                            <li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                        </ul>					</nav>
+                <!-- Main -->
+                    <div id="main">
+                        <section class="post">
+<div class='buttons'>
+    <button onclick="window.location.href = 'null-space-part2.html';">&#x25C0;&nbsp;&nbsp; Echelon Form, pivot/free columns</button>
+    <button style="float: right;" onclick="window.location.href = 'null-space-part4.html';">Reduced Row Echelon Form&nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+
+<p>
+    <a href="null-space-part2.html" style="color: royalblue;">Previously</a> we saw how to get 
+    <b>echelon form, pivot/free column vectors</b> of a matrix say \(A\).<br>
+    Now let's find \(\vec{x}\) that solves \(A\vec{x}=\vec{0}\)<br>
+    <h2>Solve \(A\vec{x}=0\)</h2>
+    (say) \(A=\begin{bmatrix}
+    \fbox{1} & 2 & 2 & 2\\
+    0 & 0 & \fbox{2} & 4\\
+    0 & 0 & 0 & 0\\
+    \end{bmatrix}\)<br>
+    Note that we can get <b>free columns</b> by a linear combination of <b>pivot columns</b>.<br>
+    So we are free to scale our free columns.<br>
+    So consider \(A'=\begin{bmatrix}
+    \fbox{1} & \lambda_1*2 & 2        & \lambda_2*2\\
+          0  & \lambda_1*0 & \fbox{2} & \lambda_2*4\\
+          0  & \lambda_1*0 & 0        & \lambda_2*0\\
+    \end{bmatrix}\) and \(\lambda_i\in\mathbb{R}\ \forall i=\{1,2\}\)<br>
+    <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC; margin-top: 10px;">
+    Because free columns are the linear combination of pivot columns, we can say that the Null space we get by \(A\vec{x}=\vec{0}\) is the same Null space we get by \(A'\vec{x}=\vec{0}\)
+    </blockquote>
+    So now we will find solution for \(A'\vec{x}=\vec{0}\)<br>
+    \(A'\vec{x}= \begin{bmatrix}
+    \fbox{1} & \lambda_1*2 & 2        & \lambda_2*2\\
+        0  & \lambda_1*0 & \fbox{2} & \lambda_2*4\\
+        0  & \lambda_1*0 & 0        & \lambda_2*0\\
+    \end{bmatrix} \begin{bmatrix}  x_1\\x_2\\x_3\\x_4\\  \end{bmatrix}
+    = \begin{bmatrix}  0\\0\\0\\  \end{bmatrix}\)<br>
+    
+    Let's see \(2\) approaches to achieve it.<br>
+    <h4>\(\text{Approach } 1\)</h4>
+    <blockquote>
+    So we have system of equation:<br>
+    \(\begin{matrix}
+    x_1 & + & 2\lambda_1x_2 & + & 2x_3 & + & 2\lambda_2x_4  & = & 0 \\
+    0   & + &       0       & + & 2x_3 & + & 4\lambda_2x_4  & = & 0 \\
+    0   & + &       0       & + &   0  & + &        0       & = & 0 \\
+    \end{matrix} \)<br>
+    We are free to choose \(\lambda_1\) and \(\lambda_2\) so let \(\lambda_1=\frac{1}{x_2}\), \(\lambda_2=0\)<br>
+    Then our system of equation becomes:<br>
+    \(\begin{matrix}
+    x_1   & + & 2 & + & 2x_3 & + & 0 & = & 0 \\
+    0     & + & 0 & + & 2x_3 & + & 0 & = & 0 \\
+    0     & + & 0 & + &   0  & + & 0 & = & 0 \\
+    \end{matrix} \)<br>
+    \(\Rightarrow x= \begin{bmatrix} -2\\1\\0\\0\\ \end{bmatrix}\)<br>
+    Now let's set \(\lambda_1,\lambda_2\) some different value to get \(x_2,x_4\)<br>
+    let \(\lambda_1=0\), \(\lambda_2=\frac{1}{x_4}\)<br>
+    So we have system of equation:<br>
+    \(\begin{matrix}
+    x_1 & + & 0 & + & 2x_3 & + & 2 & = & 0 \\
+    0   & + & 0 & + & 2x_3 & + & 4 & = & 0 \\
+    0   & + & 0 & + &   0  & + & 0 & = & 0 \\
+    \end{matrix} \)<br>
+    \(\Rightarrow x= \begin{bmatrix} 2\\0\\-2\\1\\ \end{bmatrix}\)<br>
+    </blockquote><br>
+    
+    <h4>\(\text{Approach } 2\)</h4>
+    <blockquote>
+    \(A'\vec{x}= \begin{bmatrix}
+    \fbox{1} & \lambda_1*2 &    2     & \lambda_2*2\\
+        0    & \lambda_1*0 & \fbox{2} & \lambda_2*4\\
+        0    & \lambda_1*0 &    0     & \lambda_2*0\\
+    \end{bmatrix} \begin{bmatrix}  x_1\\x_2\\x_3\\x_4\\  \end{bmatrix}
+    = \begin{bmatrix}  0\\0\\0\\  \end{bmatrix}
+    \)<br>
+    We can write it as.<br>
+    \(A'\vec{x}= \begin{bmatrix}
+    \fbox{1} & 2 &    2     & 2\\
+        0    & 0 & \fbox{2} & 4\\
+        0    & 0 &    0     & 0\\
+    \end{bmatrix} \begin{bmatrix}  x_1\\ \lambda_1*x_2\\x_3\\ \lambda_2*x_4\\  \end{bmatrix}
+    = \begin{bmatrix}  0\\0\\0\\  \end{bmatrix}
+    \)<br>
+    We are free to choose \(\lambda_1\) and \(\lambda_2\) so let \(\lambda_1=\frac{1}{x_2}\), \(\lambda_2=0\)<br>
+    By solving it we get \(\Rightarrow x= \begin{bmatrix} -2\\1\\0\\0\\ \end{bmatrix}\)<br>
+    By choosing \(\lambda_1=0\), \(\lambda_2=\frac{1}{x_4}\)<br>
+    We get \(\Rightarrow x= \begin{bmatrix} 2\\0\\-2\\1\\ \end{bmatrix}\)<br>
+    </blockquote><br>
+
+    So we have two <b>special</b> solution.<br>
+    <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+    They are <b>special</b> solution because
+    we crafted those solution in such a way that, in one solution we didn't consider free vector \(c_4\) but consider \(c_2\),
+    and in another solution we didn't consider \(c_2\) but consider \(c_4\).<br>
+    </blockquote>
+    We can get all the possible \(\vec{x}\) that solves \(A'\vec{x}=0\) by taking linear combinations of those possible solutions.<br>
+    So \(x=\alpha \begin{bmatrix} -2\\1\\0\\0\\ \end{bmatrix} + \beta \begin{bmatrix} 2\\0\\-2\\1\\ \end{bmatrix};\quad\) \(\alpha,\beta\in\mathbb{R}\)<br>
+    Now we got the <b>Null Space</b> of matrix \(A\) it's a plane passing through
+    \(\begin{bmatrix} -2\\1\\0\\0\\ \end{bmatrix}\) and \(\begin{bmatrix} 2\\0\\-2\\1\\ \end{bmatrix}\)<br>
+    <br>
+    
+    <span id="num-of-special-sol"></span>
+    <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">Null Space is the linear combination of all <b>special</b> solutions.</blockquote>
+    <br>
+    <h3>But how many special solutions are there?</h3>
+    Say there are \(k\) dependent column vectors in our matrix \(A\), then as we discussed we craft these special solution such that we consider
+    one dependent vector at a time.<br>
+    So 
+    <b># special solution = # dependent column vector</b><br>
+    remember <b>Rank(A) = # pivot columns</b><br>
+
+    Say that shape of our matrix is \(m\times n\), so we have \(n\) column vectors in \(\mathbb{R}^m\), and say Rank of the matrix is \(r\), then 
+    <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC"> 
+        <b># special solution = # dependent column vector = </b>\(n-r\)
+    </blockquote>
+    
+    Then the Null space of \(A\) is linear combinations of these \(n-r\) special solution.<br>
+    <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">For a matrix \(A\in\mathbb{R}^{m\times n}\) with \(\text{Rank}(A)=r\), Null Space is a vector space in \(\mathbb{R}^{n-r}\)</blockquote>
+    <br>
+    
+    
+</p>
+    
+    <button class="accordion">\(\text{Discussion}\)</button>
+    <div class="panel">
+        <script src="https://utteranc.es/client.js"
+            repo="yuvraj97/stats.github.io"
+            issue-term="introduction-intro-discussion"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+        </script>
+    </div>
+    <button class="accordion">\(\text{Put up a question}\)</button>
+    <div class="panel">
+        <script src="https://utteranc.es/client.js"
+            repo="yuvraj97/stats.github.io"
+            issue-term="introduction-intro-questions"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+        </script>
+    </div>
+    <br><br>
+    <div class='buttons'>
+        <button onclick="window.location.href = 'null-space-part2.html';">&#x25C0;&nbsp;&nbsp; Echelon Form, pivot/free columns</button>
+        <button style="float: right;" onclick="window.location.href = 'null-space-part4.html';">Reduced Row Echelon Form&nbsp;&nbsp;&#x25B6;</button>
+    </div><br>
+                            </section>
+                        </div>
+                </div>
+                <!-- Highlight all -->
+                <script type="text/javascript">
+                    SyntaxHighlighter.all()
+                </script>
+    
+                <!-- Accordions -->
+    
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+    </script>
+            <!-- Scripts -->
+                <script src="../assets/js/jquery.min.js"></script>
+                <script src="../assets/js/jquery.scrollex.min.js"></script>
+                <script src="../assets/js/jquery.scrolly.min.js"></script>
+                <script src="../assets/js/browser.min.js"></script>
+                <script src="../assets/js/breakpoints.min.js"></script>
+                <script src="../assets/js/util.js"></script>
+                <script src="../assets/js/main.js"></script>
+    
+        </body>
+    </html>

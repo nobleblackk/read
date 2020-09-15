@@ -236,7 +236,7 @@ when we transform that vector  \(\vec{v}\in\mathbb{R}^n\) using matrix \(A\), \(
     (say) our <b>orthonormal</b> basis vector for <b>Null Space</b> are \(\color{brown}{\vec{v}_{r+1},\vec{v}_{r+2},\cdots,\vec{v}_n}\).<br>
 </blockquote><br>
 
-<li id="column-space"><b><span style="color: blue;">Column Space</span></b> \(\color{blue}{(C(A))}\) (Map the Orthonormal Basis vectors from the <b>Row Space</b> to <b>Column Space</b>)</li>
+<li id="column-space"><b><span style="color: royalblue;">Column Space</span></b> \(\color{blue}{(C(A))}\) (Map the Orthonormal Basis vectors from the <b>Row Space</b> to <b>Column Space</b>)</li>
 <blockquote>
     After we got our orthonormal basis vector for <b>Row Space</b> \(\color{blue}{\vec{v}_1,\vec{v}_2,\cdots,\vec{v}_n}\), 
     we map them to the <b>Column Space</b> using matrix \(A\).<br>
@@ -635,14 +635,14 @@ Now we can say that <span style="color: red;">Row Space</span> of \(A\) is same 
 <span style="color: red;">Row Space</span> of \(A^TA\).<br>
 <br>
 \((A^TA)^T=A^TA \Rightarrow A^TA\) is symmetric matrix, so <br>
-<span style="color: red;">Row Space</span> of \(A^TA=\) <span style="color: blue;">Column Space</span> of \(A^TA=\) <span style="color: red;">Row Space</span> of \(A\)<br>  
+<span style="color: red;">Row Space</span> of \(A^TA=\) <span style="color: royalblue;">Column Space</span> of \(A^TA=\) <span style="color: red;">Row Space</span> of \(A\)<br>  
 
 </blockquote><br>
 
 <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC; padding-right: 5px;">
-    <li><span style="color: blue;">Column Space</span> of \(A\) is same as <span style="color: blue;">Column Space</span> of \(AA^T\)</li>
-    <i>It is easy to find the basis for <span style="color: blue;">Column Space</span> of \(AA^T\), so rather than finding
-    basis for <span style="color: blue;">Column Space</span> of \(A\) we will find basis for <span style="color: blue;">Column Space</span> of \(AA^T\)</i>
+    <li><span style="color: royalblue;">Column Space</span> of \(A\) is same as <span style="color: royalblue;">Column Space</span> of \(AA^T\)</li>
+    <i>It is easy to find the basis for <span style="color: royalblue;">Column Space</span> of \(AA^T\), so rather than finding
+    basis for <span style="color: royalblue;">Column Space</span> of \(A\) we will find basis for <span style="color: royalblue;">Column Space</span> of \(AA^T\)</i>
 </blockquote>
 
 <blockquote style="background-color:#f6f8fa; border-color: white; border-radius: 35px; margin-top: 5px;">
@@ -661,20 +661,20 @@ a_{12} & a_{22} & \cdots &  a_{m2}   \\
 a_{1n} & a_{2n} & \cdots & a_{mn} \\
 \end{bmatrix}\)<br>
 
-Here we can see that we are mapping the <span style="color: blue;">column vectors</span> of \(A^T\) onto 
-the <span style="color: blue;">Column Space</span> of \(A\).<br>
+Here we can see that we are mapping the <span style="color: royalblue;">column vectors</span> of \(A^T\) onto 
+the <span style="color: royalblue;">Column Space</span> of \(A\).<br>
 
 And if \(\text{Rank}(A)=r\) then \(\Rightarrow \text{Rank}(A^T)=r\) so \(A\) and \(A^T\) both are 
-\(r\)-dimensions <span style="color: blue;">Column Space</span>.<br>
+\(r\)-dimensions <span style="color: royalblue;">Column Space</span>.<br>
 
-So when we map <span style="color: blue;">column vector</span> of \(A^T\) onto the <span style="color: blue;">Column Space</span> 
-of \(A\) then the resulting <span style="color: blue;">Column Space</span> also has \(r\)-dimensions, so we can say that \(\text{Rank}(AA^T)=r\)<br>
+So when we map <span style="color: royalblue;">column vector</span> of \(A^T\) onto the <span style="color: royalblue;">Column Space</span> 
+of \(A\) then the resulting <span style="color: royalblue;">Column Space</span> also has \(r\)-dimensions, so we can say that \(\text{Rank}(AA^T)=r\)<br>
 
-Now we can say that <span style="color: blue;">Column Space</span> of \(A\) is same as 
-<span style="color: blue;">Column Space</span> of \(AA^T\).<br>
+Now we can say that <span style="color: royalblue;">Column Space</span> of \(A\) is same as 
+<span style="color: royalblue;">Column Space</span> of \(AA^T\).<br>
 <br>
 \((AA^T)^T=AA^T \Rightarrow AA^T\) is symmetric matrix, so <br>
-<span style="color: blue;">Column Space</span> of \(AA^T=\) <span style="color: red;">Row Space</span> of \(AA^T=\) <span style="color: blue;">Column Space</span> of \(A\)<br>
+<span style="color: royalblue;">Column Space</span> of \(AA^T=\) <span style="color: red;">Row Space</span> of \(AA^T=\) <span style="color: royalblue;">Column Space</span> of \(A\)<br>
 </blockquote><br>
 <br>
 
@@ -769,7 +769,7 @@ Now we can say that <span style="color: blue;">Column Space</span> of \(A\) is s
 
 <h2 id="U">Finding orthonormal Column Vectors\((U)\) for matrix \(A\)</h2>
 
-    We discussed that <span style="color: blue;">Column Space</span> of \(A\) is same as <span style="color: blue;">Column Space</span> of \(AA^T\).<br>
+    We discussed that <span style="color: royalblue;">Column Space</span> of \(A\) is same as <span style="color: royalblue;">Column Space</span> of \(AA^T\).<br>
     So we need to find orthonormal Column vectors for matrix \(AA^T\).<br>
 
     \(A_{m\times n}=U_{m\times m}\Sigma_{m\times n}V_{n\times n}^{T}\)<br>

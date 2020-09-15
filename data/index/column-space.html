@@ -26,20 +26,20 @@
         <script type="text/javascript" async
         src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
-        <style>
+<style>
             .math-container {
             overflow-x: auto;
             display: block;
         }
-        </style>
-        <style>
+</style>
+<style>
         .new_image {
             width:100%;
         }
         img {
             max-width:100%;
         }
-        </style>
+</style>
 
 <style>
 .accordion {
@@ -79,6 +79,18 @@
     transition: max-height 0.2s ease-out;
 }
 </style>
+<style>
+    .bb {
+        padding-left: 10px;
+        padding-right: 10px; 
+        padding-top: 5px; 
+        padding-bottom: 5px; 
+        background-color: #f6f8fa;
+        border:1px rgb(194, 199, 204) solid;
+        border-radius: 6px;
+    }
+</style>
+
         <title>Column Space</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -114,7 +126,8 @@
 
 <p>
 <h1 id="main">Column space</h1>
-We <a style="color:blue" href="vector-space.html">discussed</a> that a space is a <b>vector space</b>, if all <b>linear</b> combination of vectors (that are inside that space) lies in that space.<br>
+<br>
+We <a style="color:royalblue" href="vector-space.html">discussed</a> that a space is a <b>vector space</b>, if all <b>linear</b> combination of vectors (that are inside that space) lies in that space.<br>
 But what is this Column space? We know what is space, but what we meant by <b>Column</b>?<br>
 Here <b>Column</b> is referring to Column of a <b>matrix</b>.<br>
 <br>
@@ -140,14 +153,16 @@ How does that <b>vector space</b> look like?<br>
 <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
 Here we can see \(\vec{u}\) and \(\vec{v}\) are non-parallel vectors so vector space of \(\vec{u}\) and \(\vec{v}\) is a <b>plane</b>.
 </blockquote><br>
-<details><summary><b><span style="cursor:pointer; color:blue;">Equation of plane</span></b></summary>
+<details><summary><b><span class="bb" style="cursor:pointer; color:royalblue; background-color: lightyellow;">Equation of plane</span></b></summary>
+<div class="bb">
 General equation of plane is \(ax+by+cz+d=0\) we know this plane passes through origin so \(d=0\), and
 \(\lt a,b,c \gt\) is normal to plane which we can get by taking cross product between \(\vec{v}\) and \(\vec{u}\).<br>
 \(\vec{u}\times\vec{v} = \lt -14,9,1 \gt\) so equation of plane is, \(-14x+9y+z=0\)<br>
+</div>
 </details>
 <br>
 <img src="img/2.2.png" width="600" height="350" alt=""><br>
-<details><summary><b><span style="cursor:pointer; color:blue;">Code To plot this (python)</span></b></summary>
+<details><summary><b><span class="bb" style="cursor:pointer; color:royalblue; background-color: lightyellow;">Code To plot this (python)</span></b></summary>
 <pre  class="brush: python">
 import MultiVariable as mvar
 import numpy as np
@@ -166,7 +181,8 @@ m.plot_surface_color_3D(f,plot_separately=False, alpha=0.3)
 m.setX_limit((-1,3))
 m.setY_limit((-1,3.5))
 </pre>
-<change> You can get this MultiVariable class <a style="color:blue" href="">HERE</a>
+<change> You can get this MultiVariable class <a style="color:royalblue" href="">HERE</a>
+<hr style="width: 50%">
 </details>
 <br>
 <h3 id="r4">Example in \(\mathbb{R}^4\)</h3>
@@ -187,30 +203,36 @@ vectors  \(\vec{u},\vec{v}\) and \(\vec{w}\).
 </blockquote><br>
 How does that <b>vector space</b> look like?<br>
 <details>
-<summary><b><span style="cursor:pointer; color:blue;">Does it fill the whole \(4\)-dimensional space?</span></b></summary>
+<summary><b><span class="bb" style="cursor:pointer; color:royalblue; background-color: lightyellow;">Does it fill the whole \(4\)-dimensional space?</span></b></summary>
     <dl><dd>
+        <div class="bb">
         We have \(3\) vectors in \(\mathbb{R}^4\) and we can't fill a \(4\) dimensional space with just \(3\) vectors,
         doesn't matter how they are oriented.<br>
         So the answer is <b>No</b>
+        </div>
     </dd></dl>
 </details>
 
 <details>
-<summary><b><span style="cursor:pointer; color:blue;">Does it fill a \(3\)-dimensional space?</span></b></summary>
+<summary><b><span class="bb" style="cursor:pointer; color:royalblue; background-color: lightyellow;">Does it fill a \(3\)-dimensional space?</span></b></summary>
     <dl><dd>
+        <div class="bb">
         Here you can see that \(\vec{w}=\vec{u}+\vec{v}\), so \(\vec{w}\) lives in vector space of \(\vec{u}\) and \(\vec{v}\)
         So in total we have just \(2\) vectors \(\vec{u}\) and \(\vec{v}\) and we can't fill a \(3\) dimensional space
         with just 2 vectors, we at least need \(3\) (non-parallel) vectors to fill a \(3\)-dimensional space.<br>
         So answer is <b>No</b>
+        </div>
     </dd></dl>
 </details>
 <details open>
-<summary><b><span style="cursor:pointer; color:blue;">Does it fill a \(2\)-dimensional space?</span></b></summary>
+<summary><b><span class="bb" style="cursor:pointer; color:royalblue; background-color: lightyellow;">Does it fill a \(2\)-dimensional space?</span></b></summary>
     <dl><dd>
+        <div class="bb">
         Here you can see that \(\vec{w}=\vec{u}+\vec{v}\), so \(\vec{w}\) lives in vector space of \(\vec{u}\) and \(\vec{v}\)
         , and, \(\vec{u}\) and \(\vec{v}\) are non-parallel vectors so vector space of \(\vec{u}\) and \(\vec{v}\) is a <b>plane</b>.<br>
         Combined all of that <b>vector space</b> of \(\vec{u}\), \(\vec{v}\) and \(\vec{w}\) is a <b>plane</b> \(\Rightarrow \) Column space of matrix \(A\) is a <b>plane</b>.<br>
         So answer is <b>Yes</b> vector space of \(\vec{u},\vec{v}\) and \(\vec{w}\) fills a \(2\)-dimensional space?
+    </div>
     </dd></dl>
 </details>
 
@@ -234,11 +256,13 @@ Say our matrix is
 \end{bmatrix}\) then \(\vec{x}=\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\   \end{bmatrix};\quad\) \(x_i\in\mathbb{R}\)
 and \(\vec{b}=\begin{bmatrix} b_1 \\ b_2 \\ b_3 \\  b_4 \\ \end{bmatrix};\quad\) \(b_i\in\mathbb{R}\)
 <details id='a'>
-<summary><b><span style="cursor:pointer; color:blue;">Does \(A\vec{x}=\vec{b}\) always have a solution for every \(\vec{b}\)?</span></b></summary>
+<summary><b><span class="bb" style="cursor:pointer; color:royalblue; background-color: lightyellow;">Does \(A\vec{x}=\vec{b}\) always have a solution for every \(\vec{b}\)?</span></b></summary>
     <dl><dd>
+        <div class=bb>
         Here we have <b>3</b> variables \(x_1,x_2,x_3\) and <b>4</b> equations so, one of the \(b_i\) depends on one of \(b_j\) and \(i\neq j\)
         So we can't have solution for every \(\vec{b}\), because of this dependency. So it rules out the possibility of \(4\) dimensional column space.<br>
         Because to be a Column space we must get every vector in that column space by the linear combinations of column vectors.
+        </div>
     </dd></dl>
 </details>
 
@@ -257,8 +281,9 @@ What are the \(\vec{b}\) that are possible?<br>
 Ok we can't solve it for every \(\vec{b}\) but we can solve it for some \(\vec{b}\).<br>
 For example:<br>
 <details>
-<summary><b><span style="cursor:pointer; color:blue;">For \(\vec{b}=\begin{bmatrix} 1 \\ 2 \\ 3 \\  4 \\ \end{bmatrix}  \)</span></b></summary>
-    <dl><dd><br>
+<summary><b><span style="cursor:pointer; color: royalblue;">For \(\vec{b}=\begin{bmatrix} 1 \\ 2 \\ 3 \\  4 \\ \end{bmatrix}  \)</span></b></summary>
+    <dl><dd>
+<div class="bb">
 For \(\vec{b}=\begin{bmatrix} 1 \\ 2 \\ 3 \\  4 \\ \end{bmatrix} \quad \) \(\vec{x}=\begin{bmatrix} 1 \\ 0\\ 0\\   \end{bmatrix}\)<br>
 \(A\vec{x}=
 \begin{bmatrix}
@@ -270,12 +295,14 @@ For \(\vec{b}=\begin{bmatrix} 1 \\ 2 \\ 3 \\  4 \\ \end{bmatrix} \quad \) \(\vec
 \begin{bmatrix} 1\\ 0\\ 0\\   \end{bmatrix}
 = \begin{bmatrix} 1\\ 2\\ 3\\  4\\ \end{bmatrix}
 \)
+</div>
     </dd></dl>
 </details>
 
 <details>
-<summary><b><span style="cursor:pointer; color:blue;">For \(\vec{b}=\begin{bmatrix} 1 \\ 4 \\ 6 \\  8 \\ \end{bmatrix}  \)</span></b></summary>
-    <dl><dd><br>
+<summary><b><span style="cursor:pointer; color: royalblue;">For \(\vec{b}=\begin{bmatrix} 1 \\ 4 \\ 6 \\  8 \\ \end{bmatrix}  \)</span></b></summary>
+    <dl><dd>
+<div class="bb">
 For \(\vec{b}=\begin{bmatrix} 1 \\ 4 \\ 6 \\  8 \\ \end{bmatrix} \quad \) \(\vec{x}=\begin{bmatrix} 0 \\ 1\\ 0\\   \end{bmatrix}\)<br>
 \(A\vec{x}=
 \begin{bmatrix}
@@ -287,6 +314,7 @@ For \(\vec{b}=\begin{bmatrix} 1 \\ 4 \\ 6 \\  8 \\ \end{bmatrix} \quad \) \(\vec
 \begin{bmatrix} 0\\ 1\\ 0\\   \end{bmatrix}
 = \begin{bmatrix} 1\\ 4\\ 6\\  8\\ \end{bmatrix}
 \)
+</div>
     </dd></dl>
 </details>
 Now you can see that the \(\vec{b}\) that <b>can solve</b> this system of equation is the \(\vec{b}\) that is <b>in the</b> column space of matrix \(A\).<br>

@@ -79,7 +79,19 @@
     transition: max-height 0.2s ease-out;
 }
 </style>
-        <title>Orthogonal matrices</title>
+        <style>
+    .bb {
+        padding-left: 10px;
+        padding-right: 10px; 
+        padding-top: 5px; 
+        padding-bottom: 5px; 
+        background-color: #f6f8fa;
+        border:1px rgb(194, 199, 204) solid;
+        border-radius: 6px;
+    }
+</style>
+
+        <title>Orthonormal Vectors</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="../assets/css/main.css" />
@@ -98,7 +110,7 @@
                 <!-- Nav -->
                     <nav id="nav">
                         <ul class="links">
-                            <li class="active"><a href="orthogonal-matrices.html">Orthogonal matrices</a></li>
+                            <li class="active"><a href="orthogonal-matrices.html">Orthonormal Vectors</a></li>
                         </ul>
                         <ul class="icons">
                             <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
@@ -109,11 +121,11 @@
                         <section class="post">
 <div class='buttons'>
     <button onclick="window.location.href = 'least-squares.html';">&#x25C0;&nbsp;&nbsp;Least Squares</button>
-    <button style="float: right;" onclick="window.location.href = '.html';">--&nbsp;&nbsp;&#x25B6;</button>
+    <button style="float: right;" onclick="window.location.href = 'eigenvalues-eigenvectors.html';">Eigenvalues and Eigenvectors&nbsp;&nbsp;&#x25B6;</button>
 </div><br>
 
 <p>
-<h1 id="orthogonal-matrices">Orthogonal Matrices</h1>
+<h1 id="orthogonal-matrices">Orthonormal Vectors</h1>
 Say we have a \(m\times n\)  matrix \(Q\), ith columns of \(Q\) is denotes as \(q_i\).<br>
 \[
 Q=\begin{bmatrix}
@@ -125,7 +137,7 @@ Q=\begin{bmatrix}
 And <b>all</b> columns vectors are <b>perpendicular</b> to each other, and <b>all</b> column vectors
 are of <b>unit length</b><br>
 \[
-q_i=\left\{\begin{matrix}
+q_i^Tq_j=\left\{\begin{matrix}
     0& \text{if }i\neq j\\
     1& \text{if }i=j \\
     \end{matrix}\right.
@@ -215,7 +227,7 @@ Projection Matrix\((P)\):<br>
 <b>So now we don't have to take the <i>inverse</i>  is \(Q^TQ\)</b>
 </blockquote><br>
 
-We can see the direct benefit of having a matrix with <b>orthonormal column vectors</b> is in <a style="color:blue" href="least-squares.html">least squares</a>.<br>
+We can see the direct benefit of having a matrix with <b>orthonormal column vectors</b> is in <a style="color: royalblue" href="least-squares.html">least squares</a>.<br>
 In Least squares we have equation of form \(A^TA\widehat{\mathbb{X}}=A^T\vec{v}\) and if \(A\) has orthonormal column vectors,
 then \(A^TA=\mathcal{I}\) so our equation becomes \(\widehat{\mathbb{X}}=A^T\vec{v}\)<br>
 No need to take \((A^TA)^{-1}\)<br>
@@ -352,8 +364,8 @@ This is <b>The Gram Schmidt Process</b>.<br>
 </div>
 <br><br>
 <div class='buttons'>
-    <button onclick="window.location.href = 'projection.html';">&#x25C0;&nbsp;&nbsp;Projection</button>
-    <button style="float: right;" onclick="window.location.href = '.html';">--&nbsp;&nbsp;&#x25B6;</button>
+    <button onclick="window.location.href = 'least-squares.html';">&#x25C0;&nbsp;&nbsp;Least Squares</button>
+    <button style="float: right;" onclick="window.location.href = 'eigenvalues-eigenvectors.html';">Eigenvalues and Eigenvectors&nbsp;&nbsp;&#x25B6;</button>
 </div><br>
                         </section>
                     </div>
