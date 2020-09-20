@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--Code By Webdevtrick ( https://webdevtrick.com )-->
+<html lang="en" >
+<head>
+    <!--MathJax-->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        extensions: ["mml2jax.js"],
+        jax: ["input/MathML"]
+    });
+
+    </script>
+    <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Adding a scrollbar in math formula-->
+    <style>
+        .math-container {
+        overflow-x: auto;
+        display: block;
+    }
+    </style>
+    <style>
+        .bb {
+            padding-left: 10px;
+            padding-right: 10px; 
+            padding-top: 3px; 
+            padding-bottom: 3px; 
+            background-color: #f6f8fa;
+            border:1px rgb(194, 199, 204) solid;
+            border-radius: 6px;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>Summary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="../data/assets/css/popupcard.css">
+<link rel="icon" href="../data/img/icon.png" type="image/png" sizes="16x16">
+</head><body>
+
+<div class="container" id="popup">
+    <div class="modal">
+        <div class="details">
+            <p class="description">
+            <b><i>Complex Matrices</i></b><br>
+            </p>
+        </div>
+
+        <p class="txt">
+            
+            \(\bullet\) &nbsp; <b>Dot product</b> of \(\mathbf{u},\mathbf{v} \in\mathbb{C}^n\) is,
+            <span class="bb">\(\mathbf{u}\cdot\mathbf{v}=\mathbf{\overline{u}}^T\mathbf{v}=\mathbf{u}^H\mathbf{v};\quad \mathbf{u},\mathbf{v}\in\mathbb{C}^n\)</span><br>
+            
+            \(\bullet\) &nbsp; \(A\in\mathbb{C}^{n\times n}\) is a <b>Symmetric matrix</b> if,
+            <span class="bb">\(\overline{A}^T=A\)</span><br>
+            
+            \(\bullet\) &nbsp;\(Q\in\mathbb{C}^{n\times n}\) is an <b>orthogonal matrix</b> then,
+            <span class="bb">\(\overline{Q}^TQ=Q^HQ=\mathcal{I}\)</span><br>
+        </p>
+
+        <div class="details">
+            <p class="description">
+            <b><i>Fast Fourier Transform</i></b><br>
+            </p>
+        </div>
+
+        <p class="txt">
+            Say \(F_n\) is our <i>Discrete Fourier Transform</i>(DFT) matrix.<br>
+            \(\bullet\) &nbsp; DFT matrices are orthogonal matrices , 
+            <span class="bb">\(\overline{F}_n^TF_n=F_n^HF_n=\mathcal{I}_n\)</span><br>
+            \(\bullet\) &nbsp; <b>FFT:</b>
+            \(    F_n = 
+            \begin{bmatrix} \mathcal{I}_{n/2} & -D_{n/2}\\
+            \mathcal{I}_{n/2} & D_{n/2}\\
+            \end{bmatrix}
+            \begin{bmatrix} F_{n/2} & 0\\
+            0 & F_{n/2}\\
+            \end{bmatrix}
+            P_n;\)<br>
+            \(P_n\) is a \(n\times n\) even and odd permutation matrix</i> ,
+            \(D_{n/2}|_{i,j} = \left\{\begin{matrix}
+            \omega_{n/2}^i  ;\text{ if } i=j\\
+            0               \quad ; \text{ if } i \neq j
+            \end{matrix}\right.\)  , 
+            \(\omega_n=\exp\left(\frac{i2\pi}{n}\right)\)
+            <br>
+
+            \(\bullet\) &nbsp; <b>FFT</b> gives time complexity of \(n\log_2(n)\)
+            
+
+        </p>
+
+        
+
+        <br>        
+        <button class="btn" onclick="window.location.href = '../cmfft.html';">Visit Chapter &rarr;</button>
+
+        <a href="../index.html#cmfft" class="link-2"></a>
+
+    </div>
+</div>
+</body>
+</html>
