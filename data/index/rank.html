@@ -8,10 +8,10 @@
 <html>
     <head>
         <!-- Code Render-->
-        <link rel="stylesheet" href="../syntaxhighlighter/shCore.css">
-        <link rel="stylesheet" href="../syntaxhighlighter/shThemeDefault.css">
-        <script type="text/javascript" src="../syntaxhighlighter/shCore.js"></script>
-        <script type="text/javascript" src="../syntaxhighlighter/shBrushPython.js"></script>
+        <link rel="stylesheet" href="data/syntaxhighlighter/shCore.css">
+        <link rel="stylesheet" href="data/syntaxhighlighter/shThemeDefault.css">
+        <script type="text/javascript" src="data/syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="data/syntaxhighlighter/shBrushPython.js"></script>
 
         <!--MathJax-->
         <script type="text/x-mathjax-config">
@@ -42,41 +42,22 @@
         </style>
 
 <style>
-.accordion {
-    border: 0px solid black;
-    border-color: black;
-    background-color: #FFC2C2;
-    color: black;
-    width: 100%;
-    text-align: center;
+.slack-discuss {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
     font-size: 16px;
-    cursor: pointer;
-    transition: 0.4s;
+    text-align: center;
 
-}
-
-.active, .accordion:hover {
-    background-color:#C2E7FF;
-}
-
-.accordion:after {
-    content: '\002B';
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-}
-
-.active:after {
-    content: "\2212";
-}
-
-.panel {
-    padding: 0 18px;
     background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    box-shadow: .1rem .1rem 1.2rem .1rem #467AAC;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 20px;
+
+}
+
+.slack-discuss:hover {
+    box-shadow: .2rem .2rem 2.4rem .2rem #467AAC;
 }
 </style>
         <style>
@@ -91,20 +72,43 @@
     }
 </style>
 
-        <title>Rank of a Matrix</title>
+        		<style>
+			.logo-nav{
+				background-color: #cfedff; 
+				border-radius: 5px; 
+				position: relative; 
+				top: 3px;
+			}
+			.logo-nav:hover{
+				background-color: #6cc7ff; 
+			}
+			.slack-nav{
+				color: blue;
+				border-bottom-color: transparent;
+				background-color: #cfedff; 
+				border-radius: 	5px;	
+				padding-right: 	3px;
+				padding-left:  	3px;
+				padding-top: 	2px;
+				padding-bottom: 1px;
+				top: 			0px;
+				
+			}
+		</style>
+		<title>Rank of a Matrix</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="../assets/css/main.css" />
-        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
-    </head>
-    <body class="is-preload">
+        <link rel="stylesheet" href="data/assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="data/assets/css/noscript.css" /></noscript>
+    <link rel="icon" href="data/img/icon.png" type="image/png" sizes="16x16">
+</head>    <body class="is-preload">
 
         <!-- Wrapper -->
             <div id="wrapper">
 
                 <!-- Header -->
                     <header id="header">
-                        <a href="../../index.html" class="logo">Linear Algebra</a>
+                        <a href="index.html" class="logo">Linear Algebra</a>
                     </header>
 
                 <!-- Nav -->
@@ -113,6 +117,8 @@
                             <li class="active"><a href="complete-space.html">Rank of a Matrix</a></li>
                         </ul>
                         <ul class="icons">
+                            <li><a href="https://www.quantml.org" style="border-bottom-color: transparent;"><img style="margin-right: 5px; margin-left: 5px;" class="logo-nav" src="data/img/icon.png" alt="logo" width="20" height="20"></a></li>
+							<li><a href="https://join.slack.com/t/quantml-workspace/shared_invite/zt-hcmbg7fr-jPbVAUT_tjGPaKWU50qMYQ" class="fab fa-slack slack-nav" style="color: blue;"><span class="label"></span></a></li>
                             <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
                             <li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
                         </ul>					</nav>
@@ -139,7 +145,7 @@ We describe rank as number of pivots of a matrix.<br>
 
 Consider a \(m\times n\) matrix \(A\) of rank \(r\) and \(m\gt n\).<br>
 Here \(\text{Rank}(A)=r=n\) it means that all of the column vectors are independent, <b>#</b> pivots \(=n\) \(\Rightarrow\) <b>#</b> free column vectors \(=0\).<br>
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
 <b>Can we always get a solution, can we always find \(x\) such that \(A\vec{x}=\vec{b}\) for every \(\vec{b}\)?</b><br>
 Here in \(A\) we have \(n\) independent vectors in \(\mathbb{R}^m\) and \(m\gt n\),
 to fill a \(m\) dimensional space we alteast need \(m\) independent vectors, but we had \(n\) independent vectors
@@ -165,12 +171,13 @@ Example:<br>
 3 & 2\\
 4 & 1\\
 \end{bmatrix}\)<br>
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
 <b>Can we always get a solution, can we always find \(x\) such that \(A\vec{x}=\vec{b}\) for every \(\vec{b}\)?</b><br>
 Here in \(A\) we have \(2\) vectors in \(\mathbb{R}^4\).<br>
 and linear combination of \(2\) vector can give us a space in \(\mathbb{R}^2\) so we can only get those \(\vec{b}\)
 which are in the linear combination(plane) of those two vectors.<br>
-possible \(\vec{b}\) is \(\vec{b}= \alpha\begin{bmatrix} 1\\2\\3\\4\\ \end{bmatrix}  +\beta\begin{bmatrix} 4\\3\\2\\1\\ \end{bmatrix};\quad\) \(\alpha,\beta\in\mathbb{R}\)<br>
+possible \(\vec{b}\) is \(\vec{b}= \alpha\begin{bmatrix} 1\\2\\3\\4\\ \end{bmatrix}  +\beta\begin{bmatrix} 4\\3\\2\\1\\ \end{bmatrix};\quad\) \(\alpha,\beta\in\mathbb{R}\)
+<br>
 So answer is <b>No</b> we can't get every \(\vec{b}\)
 </blockquote>
 row reduced echelon form is \(\begin{bmatrix}
@@ -180,15 +187,12 @@ row reduced echelon form is \(\begin{bmatrix}
 0 & 0 \\
 \end{bmatrix} = \begin{bmatrix} I_{2\times2}\\0 \end{bmatrix}  \)<br>
 So <b>#</b> of pivots are \(2\)<br>
-</dd></dl>
-
-
-<br>
+</dd></dl><br>
 <h3 id="row">&#x25B6; &nbsp;Full row rank matrix</h3>
 <dl><dd>
 Consider a \(m\times n\) matrix \(A\) of rank \(r\) and \(m\lt n\).<br>
 Here \(\text{Rank}(A)=r=m\) now all of the column vectors are not independent, <b>#</b> pivots \(=m\) \(\Rightarrow\) <b>#</b> free column vectors \(=n-r\).<br>
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
 <b>Can we always get a solution, can we always find \(x\) such that \(A\vec{x}=\vec{b}\) for every \(\vec{b}\)?</b><br>
 Here in \(A\) we have \(m\) independent vectors in \(\mathbb{R}^m\), so we have enough vectors to fill \(\mathbb{R}^m\).<br>
 Linear combination of \(m\) independent vectors can give us a space in \(\mathbb{R}^m\)<br>
@@ -205,7 +209,7 @@ Example:<br>
 1 & 2 & 3 & 4 \\
 4 & 3 & 2 & 1 \\
 \end{bmatrix}\)<br>
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
 <b>Can we always get a solution, can we always find \(x\) such that \(A\vec{x}=\vec{b}\) for every \(\vec{b}\)?</b><br>
 Here in \(A\) we have \(4\) vectors in \(\mathbb{R}^2\) and out of those \(2\) vectors are independent.<br>
 And linear combination of \(2\) independent vector can give us a space in \(\mathbb{R}^2\).
@@ -217,15 +221,12 @@ row reduced echelon form is \(\begin{bmatrix}
     0    & \fbox{1} &  2 &  3 \\
 \end{bmatrix} = \begin{bmatrix} I_{2\times2} & F_{2\times2} \end{bmatrix}  \)<br>
 So <b>#</b> of pivots are \(2\)<br>
-</dd></dl>
-
-
-<br>
+</dd></dl><br>
 <h3 id="full">&#x25B6; &nbsp;Full rank matrix</h3>
 <dl><dd>
 Consider a \(m\times n\) matrix \(A\) of rank \(r\) and \(m = n\).<br>
 Here \(\text{Rank}(A)=r=n\) it means that all of the column vectors are independent, <b>#</b> pivots \(=n\) \(\Rightarrow\) <b>#</b> free column vectors \(=0\).<br>
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
 <b>Can we always get a solution, can we always find \(x\) such that \(A\vec{x}=\vec{b}\) for every \(\vec{b}\)?</b><br>
 Here in \(A\) we have \(n\) independent vectors in \(\mathbb{R}^n\), so we have enough vectors to fill \(\mathbb{R}^n\).<br>
 Linear combination of \(n\) independent vectors can give us a space in \(\mathbb{R}^n\)<br>
@@ -239,9 +240,6 @@ We have no free vectors here so <b>Null Space</b> of \(A\) is just \(\vec{0}\), 
 row reduced echelon form of \(A\) is \(I_{n\times n}\)
 </blockquote><br>
 </dd></dl>
-
-
-
 <br>
 <h2 id="dim-basis">Dimensions and Basis</h2>
 Say we have a matrix \(A_{m\times n}\in\mathbb{R}^{m\times n}\)<br>
@@ -252,7 +250,7 @@ Say we have a matrix \(A_{m\times n}\in\mathbb{R}^{m\times n}\)<br>
 We know that the column space of matrix \(A\) lives in \(R^{m}\).<br>
 
 But what are the <b>basis</b> for that <b>column space?</b><br>
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
     <b>Basis</b> are those <b>(minimum)</b> vectors whose linear combination gives us the desired space.<br>
     for example, for space of \(R^2\), linear combinations of any <u>\(2\)</u> <b>non-parallel(independent)</b> 
     vectors will give us \(R^2\).
@@ -269,15 +267,12 @@ What is the <b>Dimension</b> of <b>column space?</b><br>
     <b># Dimensions</b> \(= r\)
 </blockquote>
 <br>    
-</dd></dl>
-
-
-<h3 id="ns">&#x25B6; &nbsp;Null Space</h3>
+</dd></dl><h3 id="ns">&#x25B6; &nbsp;Null Space</h3>
 
 <dl><dd>
 Null space of matrix \(A\) also lives in \(R^{m}\).<br>
 
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
 Recall those <b>free variables</b> of matrix \(A\), <b>free variables</b> are the dependent  
 column vectors of matrix \(A\), these free variables gives us the <b>special solutions</b>  
 and linear combination of those <b>special solutions</b> gives us our <b>Null space.</b><br>
@@ -297,47 +292,14 @@ What is the <b>Dimension</b> of <b>Null space?</b><br>
     <b># Dimensions</b> \(= n-r\)
 </blockquote>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </dd></dl>
 
 </p>
 
-<button class="accordion">\(\text{Discussion}\)</button>
-<div class="panel">
-    <script src="https://utteranc.es/client.js"
-        repo="yuvraj97/stats.github.io"
-        issue-term="introduction-intro-discussion"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
-</div>
-<button class="accordion">\(\text{Put up a question}\)</button>
-<div class="panel">
-    <script src="https://utteranc.es/client.js"
-        repo="yuvraj97/stats.github.io"
-        issue-term="introduction-intro-questions"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
-</div>
-<br><br>
+<br>
+<div onclick="location.href = 'https://join.slack.com/t/quantml-workspace/shared_invite/zt-hcmbg7fr-jPbVAUT_tjGPaKWU50qMYQ';" class="slack-discuss" style="color: #406b94;">Join our Slack <i class="fab fa-slack"> </i>  discussion forum</div>
+<br>
+
 <div class='buttons'>
     <button onclick="window.location.href = 'complete-space.html';">&#x25C0;&nbsp;&nbsp;Solving \(A\vec{x}=\vec{b}\)</button>
     <button style="float: right;" onclick="window.location.href = 'fundamental-subspaces.html';">4 fundamental subspaces&nbsp;&nbsp;&#x25B6;</button>
@@ -369,13 +331,13 @@ for (i = 0; i < acc.length; i++) {
 }
 </script>
         <!-- Scripts -->
-            <script src="../assets/js/jquery.min.js"></script>
-            <script src="../assets/js/jquery.scrollex.min.js"></script>
-            <script src="../assets/js/jquery.scrolly.min.js"></script>
-            <script src="../assets/js/browser.min.js"></script>
-            <script src="../assets/js/breakpoints.min.js"></script>
-            <script src="../assets/js/util.js"></script>
-            <script src="../assets/js/main.js"></script>
+            <script src="data/assets/js/jquery.min.js"></script>
+            <script src="data/assets/js/jquery.scrollex.min.js"></script>
+            <script src="data/assets/js/jquery.scrolly.min.js"></script>
+            <script src="data/assets/js/browser.min.js"></script>
+            <script src="data/assets/js/breakpoints.min.js"></script>
+            <script src="data/assets/js/util.js"></script>
+            <script src="data/assets/js/main.js"></script>
 
     </body>
 </html>

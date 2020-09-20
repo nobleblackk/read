@@ -8,10 +8,10 @@
 <html>
     <head>
         <!-- Code Render-->
-        <link rel="stylesheet" href="../syntaxhighlighter/shCore.css">
-        <link rel="stylesheet" href="../syntaxhighlighter/shThemeDefault.css">
-        <script type="text/javascript" src="../syntaxhighlighter/shCore.js"></script>
-        <script type="text/javascript" src="../syntaxhighlighter/shBrushPython.js"></script>
+        <link rel="stylesheet" href="data/syntaxhighlighter/shCore.css">
+        <link rel="stylesheet" href="data/syntaxhighlighter/shThemeDefault.css">
+        <script type="text/javascript" src="data/syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="data/syntaxhighlighter/shBrushPython.js"></script>
 
         <!--MathJax-->
         <script type="text/x-mathjax-config">
@@ -42,41 +42,22 @@
         </style>
 
 <style>
-.accordion {
-    border: 0px solid black;
-    border-color: black;
-    background-color: #FFC2C2;
-    color: black;
-    width: 100%;
-    text-align: center;
+.slack-discuss {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
     font-size: 16px;
-    cursor: pointer;
-    transition: 0.4s;
+    text-align: center;
 
-}
-
-.active, .accordion:hover {
-    background-color:#C2E7FF;
-}
-
-.accordion:after {
-    content: '\002B';
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-}
-
-.active:after {
-    content: "\2212";
-}
-
-.panel {
-    padding: 0 18px;
     background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    box-shadow: .1rem .1rem 1.2rem .1rem #467AAC;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 20px;
+
+}
+
+.slack-discuss:hover {
+    box-shadow: .2rem .2rem 2.4rem .2rem #467AAC;
 }
 </style>
         <style>
@@ -91,20 +72,43 @@
     }
 </style>
 
-        <title>Matrix Space</title>
+        		<style>
+			.logo-nav{
+				background-color: #cfedff; 
+				border-radius: 5px; 
+				position: relative; 
+				top: 3px;
+			}
+			.logo-nav:hover{
+				background-color: #6cc7ff; 
+			}
+			.slack-nav{
+				color: blue;
+				border-bottom-color: transparent;
+				background-color: #cfedff; 
+				border-radius: 	5px;	
+				padding-right: 	3px;
+				padding-left:  	3px;
+				padding-top: 	2px;
+				padding-bottom: 1px;
+				top: 			0px;
+				
+			}
+		</style>
+		<title>Matrix Space</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="../assets/css/main.css" />
-        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
-    </head>
-    <body class="is-preload">
+        <link rel="stylesheet" href="data/assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="data/assets/css/noscript.css" /></noscript>
+    <link rel="icon" href="data/img/icon.png" type="image/png" sizes="16x16">
+</head>    <body class="is-preload">
 
         <!-- Wrapper -->
             <div id="wrapper">
 
                 <!-- Header -->
                     <header id="header">
-                        <a href="../../index.html" class="logo">Linear Algebra</a>
+                        <a href="index.html" class="logo">Linear Algebra</a>
                     </header>
 
                 <!-- Nav -->
@@ -115,9 +119,11 @@
                             <li><a href="matrix-space-dim.html">DIMENSION AND BASIS</a></li>
                             <li class="active"><a href="matrix-space-ops.html">OPERATION ON SUBSPACES</a></li>
                             <li><a href="matrix-space-ex.html">EXAMPLES</a></li>
-                            <li><a href="orthogonal.html">&#x25B6;</a></li>
+                            <li><a href="orthogonal-subspaces.html">&#x25B6;</a></li>
                         </ul>
                         <ul class="icons">
+                            <li><a href="https://www.quantml.org" style="border-bottom-color: transparent;"><img style="margin-right: 5px; margin-left: 5px;" class="logo-nav" src="data/img/icon.png" alt="logo" width="20" height="20"></a></li>
+							<li><a href="https://join.slack.com/t/quantml-workspace/shared_invite/zt-hcmbg7fr-jPbVAUT_tjGPaKWU50qMYQ" class="fab fa-slack slack-nav" style="color: blue;"><span class="label"></span></a></li>
                             <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
                             <li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
                         </ul>					</nav>
@@ -150,7 +156,7 @@ And what is the <b>dimension</b> of <b>all</b> \(3\times 3\) <b>Diagonal matrice
 What about matrices who are <b>lower triangular</b> <b>OR</b> <b>symmetric</b>.<br>
 We are asking for space contain by both \(\mathcal{U}\) OR \(\mathcal{S}\),<br>
 Or say what is the space of \(\mathcal{S}\cup\mathcal{U}\).<br>
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
     But <b>all</b> \(3\times 3\) <b>lower triangular</b> <b>OR</b> <b>symmetric</b> matrices <b>do not</b> 
     form a <b>subspace</b> of <b>all</b> \(3\times 3\) <b>matrices</b>.<br> 
     <br>
@@ -189,7 +195,7 @@ So \(\mathcal{Q}\) is not a <b>vector space</b>.
 
 <li is="addition">\(\mathcal{S} + \mathcal{U}\)</li>
 Here we took any matrix in \(\mathcal{S}\) (say \(A\)) and any matrix in \(\mathcal{U}\) (say\(B\)), and <b>add</b> them.<br>
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
 You can say it's some sort to linear combinations of space \(\mathcal{S}\) and space \(\mathcal{U}\).<br>
 Say you have a matrix \(A\in\mathcal{S}\) and a matrix \(B\in\mathcal{U}\).<br>
 <li>If \(A\in\mathcal{S}\Rightarrow \alpha\cdot A\in \mathcal{S}\) because \(\mathcal{S}\) is a <b>vector space</b> </li>
@@ -282,27 +288,10 @@ We can also see it by a beautiful formula.<br>
 <br>
 </p>
 
-<button class="accordion">\(\text{Discussion}\)</button>
-<div class="panel">
-    <script src="https://utteranc.es/client.js"
-        repo="yuvraj97/stats.github.io"
-        issue-term="introduction-intro-discussion"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
-</div>
-<button class="accordion">\(\text{Put up a question}\)</button>
-<div class="panel">
-    <script src="https://utteranc.es/client.js"
-        repo="yuvraj97/stats.github.io"
-        issue-term="introduction-intro-questions"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
-</div>
-<br><br>
+<br>
+<div onclick="location.href = 'https://join.slack.com/t/quantml-workspace/shared_invite/zt-hcmbg7fr-jPbVAUT_tjGPaKWU50qMYQ';" class="slack-discuss" style="color: #406b94;">Join our Slack <i class="fab fa-slack"> </i>  discussion forum</div>
+<br>
+
 <div class='buttons'>
     <button onclick="window.location.href = 'matrix-space-dim.html';">&#x25C0;&nbsp;&nbsp;Dimension and Basis</button>
     <button style="float: right;" onclick="window.location.href = 'matrix-space-ex.html';">Examples&nbsp;&nbsp;&#x25B6;</button>
@@ -334,13 +323,13 @@ for (i = 0; i < acc.length; i++) {
 }
 </script>
         <!-- Scripts -->
-            <script src="../assets/js/jquery.min.js"></script>
-            <script src="../assets/js/jquery.scrollex.min.js"></script>
-            <script src="../assets/js/jquery.scrolly.min.js"></script>
-            <script src="../assets/js/browser.min.js"></script>
-            <script src="../assets/js/breakpoints.min.js"></script>
-            <script src="../assets/js/util.js"></script>
-            <script src="../assets/js/main.js"></script>
+            <script src="data/assets/js/jquery.min.js"></script>
+            <script src="data/assets/js/jquery.scrollex.min.js"></script>
+            <script src="data/assets/js/jquery.scrolly.min.js"></script>
+            <script src="data/assets/js/browser.min.js"></script>
+            <script src="data/assets/js/breakpoints.min.js"></script>
+            <script src="data/assets/js/util.js"></script>
+            <script src="data/assets/js/main.js"></script>
 
     </body>
 </html>

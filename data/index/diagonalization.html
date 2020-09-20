@@ -8,10 +8,10 @@
 <html>
     <head>
         <!-- Code Render-->
-        <link rel="stylesheet" href="../syntaxhighlighter/shCore.css">
-        <link rel="stylesheet" href="../syntaxhighlighter/shThemeDefault.css">
-        <script type="text/javascript" src="../syntaxhighlighter/shCore.js"></script>
-        <script type="text/javascript" src="../syntaxhighlighter/shBrushPython.js"></script>
+        <link rel="stylesheet" href="data/syntaxhighlighter/shCore.css">
+        <link rel="stylesheet" href="data/syntaxhighlighter/shThemeDefault.css">
+        <script type="text/javascript" src="data/syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="data/syntaxhighlighter/shBrushPython.js"></script>
 
         <!--MathJax-->
         <script type="text/x-mathjax-config">
@@ -42,41 +42,22 @@
         </style>
 
 <style>
-.accordion {
-    border: 0px solid black;
-    border-color: black;
-    background-color: #FFC2C2;
-    color: black;
-    width: 100%;
-    text-align: center;
+.slack-discuss {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
     font-size: 16px;
-    cursor: pointer;
-    transition: 0.4s;
+    text-align: center;
 
-}
-
-.active, .accordion:hover {
-    background-color:#C2E7FF;
-}
-
-.accordion:after {
-    content: '\002B';
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-}
-
-.active:after {
-    content: "\2212";
-}
-
-.panel {
-    padding: 0 18px;
     background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    box-shadow: .1rem .1rem 1.2rem .1rem #467AAC;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 20px;
+
+}
+
+.slack-discuss:hover {
+    box-shadow: .2rem .2rem 2.4rem .2rem #467AAC;
 }
 </style>
 <style>
@@ -91,20 +72,43 @@
     }
 </style>
     
-        <title>Diagonalization of a Matrix</title>
+        		<style>
+			.logo-nav{
+				background-color: #cfedff; 
+				border-radius: 5px; 
+				position: relative; 
+				top: 3px;
+			}
+			.logo-nav:hover{
+				background-color: #6cc7ff; 
+			}
+			.slack-nav{
+				color: blue;
+				border-bottom-color: transparent;
+				background-color: #cfedff; 
+				border-radius: 	5px;	
+				padding-right: 	3px;
+				padding-left:  	3px;
+				padding-top: 	2px;
+				padding-bottom: 1px;
+				top: 			0px;
+				
+			}
+		</style>
+		<title>Diagonalization of a Matrix</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="../assets/css/main.css" />
-        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
-    </head>
-    <body class="is-preload">
+        <link rel="stylesheet" href="data/assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="data/assets/css/noscript.css" /></noscript>
+    <link rel="icon" href="data/img/icon.png" type="image/png" sizes="16x16">
+</head>    <body class="is-preload">
 
         <!-- Wrapper -->
             <div id="wrapper">
 
                 <!-- Header -->
                     <header id="header">
-                        <a href="../../index.html" class="logo">Linear Algebra</a>
+                        <a href="index.html" class="logo">Linear Algebra</a>
                     </header>
 
                 <!-- Nav -->
@@ -113,6 +117,8 @@
                             <li class="active"><a href="diagonalization.html">Diagonalization of a Matrix</a></li>
                         </ul>
                         <ul class="icons">
+                            <li><a href="https://www.quantml.org" style="border-bottom-color: transparent;"><img style="margin-right: 5px; margin-left: 5px;" class="logo-nav" src="data/img/icon.png" alt="logo" width="20" height="20"></a></li>
+							<li><a href="https://join.slack.com/t/quantml-workspace/shared_invite/zt-hcmbg7fr-jPbVAUT_tjGPaKWU50qMYQ" class="fab fa-slack slack-nav" style="color: blue;"><span class="label"></span></a></li>
                             <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
                             <li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
                         </ul>					</nav>
@@ -143,6 +149,7 @@ S=\begin{bmatrix}
     \end{matrix}\right.
 \]
 Let's calculate \(AS\)<br>
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
 \(AS = A \begin{bmatrix}
  \vdots & \vdots & \cdots & \vdots \\  
  \vec{x}_{1} & \vec{x}_{2} & \cdots &  \vec{x}_{n}   \\
@@ -173,12 +180,13 @@ Let's calculate \(AS\)<br>
  0         &    0      & \cdots  &    \lambda_n    \\  
 \end{bmatrix}}_{\text{say }\Lambda}
  \)<br>
+ </blockquote>
 
-\(AS=S\Lambda\)<br>
+<span class="bb">\(AS=S\Lambda\)</span><br>
 because \(S\) has independent columns so \(S^{-1}\) exists, so<br>
 
 <div class="math-container">
-    \[\color{blue}{\boxed{
+    \[\bbox[5px,border:2px solid blue]{ \color{blue}{
         \begin{matrix}
             \\    %blank line
         \quad 
@@ -198,7 +206,7 @@ This is <b>Diagonalization</b>.<br>
 
 We can also get a factorization of \(A\)<br>
 <div class="math-container">
-    \[\color{blue}{\boxed{
+    \[\bbox[5px,border:2px solid blue]{ \color{blue}{
         \begin{matrix}
             \\    %blank line
         \quad 
@@ -231,6 +239,7 @@ So <i>eigenvectors</i> of \(A^2\) remains same.<br>
 But <i>eigenvalues</i> of \(A^2\) becomes \(\lambda^2\).<br>
 <br>
 We can also get it by \(A=S\Lambda S^{-1}\).<br>
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
 \(A=S\Lambda S^{-1}\)<br>
 \(\Rightarrow A^2=S\Lambda (S^{-1}S)\Lambda S^{-1}\)<br>
 \(\Rightarrow A^2=S\Lambda \mathcal{I}\Lambda S^{-1}\)<br>
@@ -242,12 +251,13 @@ where,
  0         & \lambda_2^2 & \cdots  &    0    \\  
  \vdots    & \vdots    & \ddots  & \vdots    \\  
  0         &    0      & \cdots  &    \lambda_n^2    \\  
-\end{bmatrix}\)<br>
+\end{bmatrix}\)
+</blockquote>
 <br>
 Now we can get formula for \(k^{\text{th}}\) power of \(A\).<br>
 
 <div class="math-container">
-    \[\color{blue}{\boxed{
+    \[\bbox[5px,border:2px solid blue]{ \color{blue}{
         \begin{matrix}
             \\    %blank line
         \quad 
@@ -261,10 +271,7 @@ Now we can get formula for \(k^{\text{th}}\) power of \(A\).<br>
         \end{matrix}
         }}
     \]
-</div><br>
-
-
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+</div><br><blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
 So <i>eigenvectors</i> of \(A^k\) remains same as the <i>eigenvectors</i> of \(A\).<br>
 But <i>eigenvalues</i> of \(A^k\) becomes \(\lambda^k\).<br>
 </blockquote>
@@ -288,7 +295,11 @@ So \(A\) is <b>diagonalizable</b> if, all \(\lambda\)'s are different.<br>
 
 <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
 If all the <i>eigenvalues</i> are different then all the <i>eigenvectors</i> are <b>independent</b>.<br>
-<b>But</b> reverse is not true, <b>independent</b> of <i>eigenvectors</i> does <b>not</b>
+</blockquote>
+<br>
+
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
+<b>But</b> reverse is not true, <b>independence</b> of <i>eigenvectors</i> does <b>not</b>
 implies that all <i>eigenvalues</i> are different.<br>
 <b>Example</b><br>
 Say \(A=\mathcal{I}_{3\times 3}=\begin{bmatrix}
@@ -309,7 +320,7 @@ We iteratively apply transformation \(A\) on \(\vec{u}_0\).<br>
 \(\vec{u}_2=A^2\vec{u}_0\)<br>
 \(\vec{u}_k=A^k\vec{u}_0\)<br>
 <br>
-How can we find \(\vec{u}_k\) for an arbitrary large \(k\).<br>
+<b>How can we find \(\vec{u}_k\) for an arbitrary large \(k\).</b><br>
 \(\vec{u}\) lives in the column space of \(A\), and \(A\) has \(n\) <b>independent</b> <i>eigenvectors</i>
 so we can say that \(\vec{u}\) lives in the vector space spanned by these <i>eigenvectors</i>.<br>
 so \(\vec{u}\) is the <b>linear combination</b> of these <i>eigenvectors</i>.<br>
@@ -335,7 +346,7 @@ So we can say that,<br>
 \(\vec{c}=\begin{bmatrix} c_1\\c_2\\ \vdots \\c_n \end{bmatrix}\)<br>
 So,<br>
 <div class="math-container">
-    \[\color{blue}{\boxed{
+    \[\bbox[5px,border:2px solid blue]{ \color{blue}{
         \begin{matrix}
             \\    %blank line
         \quad 
@@ -363,7 +374,7 @@ and \(\vec{u}_{k+1}=A\vec{u}_k\)<br>
 \(\Rightarrow \vec{u}_{k+1}=A\begin{bmatrix} F_{k+1}\\F_k\\ \end{bmatrix}\)<br>
 \(\Rightarrow A=\begin{bmatrix} 1&1\\1&0\\ \end{bmatrix}\)<br>
 What are it's <i>eigenvalues</i> and <i>eigenvectors</i>.<br>
-<blockquote>
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
 
 \(\text{det}(A - \lambda\mathcal{I})=\begin{vmatrix}
         1-\lambda & 1 \\
@@ -425,7 +436,7 @@ So,<br>
 \(\lambda_1 = \frac{1+\sqrt{5}}{2}\) and \(\lambda_2 = \frac{1-\sqrt{5}}{2}\) so<br>
 
 <div class="math-container">
-    \[\color{blue}{\boxed{
+    \[\bbox[5px,border:2px solid blue]{ \color{blue}{
         \begin{matrix}
             \\    %blank line
         \quad 
@@ -440,9 +451,6 @@ So,<br>
         }}
     \]
 </div>
-
-
-
 <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
 For large \(k,\quad\) \(\left(\frac{1-\sqrt{5}}{2}\right)^{k}\approx 0\)<br>
 So 
@@ -450,52 +458,16 @@ So
 \(\frac{1+\sqrt{5}}{2}\) is known as <a style="color:#185EE0" href="https://en.wikipedia.org/wiki/Golden_ratio">Golden Ratio</a>
 <!-- #E6EEF9 -->
 </blockquote><br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
-</blockquote>
--->
-
 <!--
 Symmetric matrix will give us pure Real eigenvalue, and
 Anti Symmetric matrix will give us pure Complex eigenvalue, and
 -->
 </p>
 
-<button class="accordion">\(\text{Discussion}\)</button>
-<div class="panel">
-    <script src="https://utteranc.es/client.js"
-        repo="yuvraj97/stats.github.io"
-        issue-term="introduction-intro-discussion"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
-</div>
-<button class="accordion">\(\text{Put up a question}\)</button>
-<div class="panel">
-    <script src="https://utteranc.es/client.js"
-        repo="yuvraj97/stats.github.io"
-        issue-term="introduction-intro-questions"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
-</div>
-<br><br>
+<br>
+<div onclick="location.href = 'https://join.slack.com/t/quantml-workspace/shared_invite/zt-hcmbg7fr-jPbVAUT_tjGPaKWU50qMYQ';" class="slack-discuss" style="color: #406b94;">Join our Slack <i class="fab fa-slack"> </i>  discussion forum</div>
+<br>
+
 <div class='buttons'>
     <button onclick="window.location.href = 'eigenvalues-eigenvectors.html';">&#x25C0;&nbsp;&nbsp;Eigenvalues and Eigenvectors</button>
     <button style="float: right;" onclick="window.location.href = 'differential-equation.html';">Differential Equation&nbsp;&nbsp;&#x25B6;</button>
@@ -527,13 +499,13 @@ for (i = 0; i < acc.length; i++) {
 }
 </script>
         <!-- Scripts -->
-            <script src="../assets/js/jquery.min.js"></script>
-            <script src="../assets/js/jquery.scrollex.min.js"></script>
-            <script src="../assets/js/jquery.scrolly.min.js"></script>
-            <script src="../assets/js/browser.min.js"></script>
-            <script src="../assets/js/breakpoints.min.js"></script>
-            <script src="../assets/js/util.js"></script>
-            <script src="../assets/js/main.js"></script>
+            <script src="data/assets/js/jquery.min.js"></script>
+            <script src="data/assets/js/jquery.scrollex.min.js"></script>
+            <script src="data/assets/js/jquery.scrolly.min.js"></script>
+            <script src="data/assets/js/browser.min.js"></script>
+            <script src="data/assets/js/breakpoints.min.js"></script>
+            <script src="data/assets/js/util.js"></script>
+            <script src="data/assets/js/main.js"></script>
 
     </body>
 </html>

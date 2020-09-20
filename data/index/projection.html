@@ -8,10 +8,10 @@
 <html>
     <head>
         <!-- Code Render-->
-        <link rel="stylesheet" href="../syntaxhighlighter/shCore.css">
-        <link rel="stylesheet" href="../syntaxhighlighter/shThemeDefault.css">
-        <script type="text/javascript" src="../syntaxhighlighter/shCore.js"></script>
-        <script type="text/javascript" src="../syntaxhighlighter/shBrushPython.js"></script>
+        <link rel="stylesheet" href="data/syntaxhighlighter/shCore.css">
+        <link rel="stylesheet" href="data/syntaxhighlighter/shThemeDefault.css">
+        <script type="text/javascript" src="data/syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="data/syntaxhighlighter/shBrushPython.js"></script>
 
         <!--MathJax-->
         <script type="text/x-mathjax-config">
@@ -42,41 +42,22 @@
         </style>
 
 <style>
-.accordion {
-    border: 0px solid black;
-    border-color: black;
-    background-color: #FFC2C2;
-    color: black;
-    width: 100%;
-    text-align: center;
+.slack-discuss {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
     font-size: 16px;
-    cursor: pointer;
-    transition: 0.4s;
+    text-align: center;
 
-}
-
-.active, .accordion:hover {
-    background-color:#C2E7FF;
-}
-
-.accordion:after {
-    content: '\002B';
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-}
-
-.active:after {
-    content: "\2212";
-}
-
-.panel {
-    padding: 0 18px;
     background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    box-shadow: .1rem .1rem 1.2rem .1rem #467AAC;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 20px;
+
+}
+
+.slack-discuss:hover {
+    box-shadow: .2rem .2rem 2.4rem .2rem #467AAC;
 }
 </style>
 <style> 
@@ -87,11 +68,11 @@
     width: max-content;
 }
 </style>
-        <style>
+<style>
     .bb {
         padding-left: 10px;
         padding-right: 10px; 
-        padding-top: 5px; 
+        padding-top: 7px; 
         padding-bottom: 5px; 
         background-color: #f6f8fa;
         border:1px rgb(194, 199, 204) solid;
@@ -99,28 +80,54 @@
     }
 </style>
 
-        <title>Projection</title>
+        		<style>
+			.logo-nav{
+				background-color: #cfedff; 
+				border-radius: 5px; 
+				position: relative; 
+				top: 3px;
+			}
+			.logo-nav:hover{
+				background-color: #6cc7ff; 
+			}
+			.slack-nav{
+				color: blue;
+				border-bottom-color: transparent;
+				background-color: #cfedff; 
+				border-radius: 	5px;	
+				padding-right: 	3px;
+				padding-left:  	3px;
+				padding-top: 	2px;
+				padding-bottom: 1px;
+				top: 			0px;
+				
+			}
+		</style>
+		<title>Projection</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="../assets/css/main.css" />
-        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
-    </head>
-    <body class="is-preload">
+        <link rel="stylesheet" href="data/assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="data/assets/css/noscript.css" /></noscript>
+    <link rel="icon" href="data/img/icon.png" type="image/png" sizes="16x16">
+</head>    <body class="is-preload">
 
         <!-- Wrapper -->
             <div id="wrapper">
 
                 <!-- Header -->
                     <header id="header">
-                        <a href="../../index.html" class="logo">Linear Algebra</a>
+                        <a href="index.html" class="logo">Linear Algebra</a>
                     </header>
 
                 <!-- Nav -->
                     <nav id="nav">
                         <ul class="links">
                             <li class="active"><a href="projection.html">Projection</a></li>
+                            <li><a href="least-squares.html">Least Squares(Application of projection)</a></li>
                         </ul>
                         <ul class="icons">
+                            <li><a href="https://www.quantml.org" style="border-bottom-color: transparent;"><img style="margin-right: 5px; margin-left: 5px;" class="logo-nav" src="data/img/icon.png" alt="logo" width="20" height="20"></a></li>
+							<li><a href="https://join.slack.com/t/quantml-workspace/shared_invite/zt-hcmbg7fr-jPbVAUT_tjGPaKWU50qMYQ" class="fab fa-slack slack-nav" style="color: blue;"><span class="label"></span></a></li>
                             <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
                             <li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
                         </ul>					</nav>
@@ -128,7 +135,7 @@
                     <div id="main">
                         <section class="post">
 <div class='buttons'>
-    <button onclick="window.location.href = 'orthogonal.html';">&#x25C0;&nbsp;&nbsp;Orthogonal Subspaces</button>
+    <button onclick="window.location.href = 'orthogonal-subspaces.html';">&#x25C0;&nbsp;&nbsp;Orthogonal Subspaces</button>
     <button style="float: right;" onclick="window.location.href = 'least-squares.html';">Least Squares&nbsp;&nbsp;&#x25B6;</button>
 </div><br>
 
@@ -145,8 +152,8 @@
 
 <h2 id="vec-proj">Vector Projection</h2>
 <div class="new_image">
-<img src="img/proj-0.png" width="184" height="136" alt="" style="float:right">
-Say that we have two vector \(\vec{v}\in\mathbb{R}^2\) and \(\vec{u}\in\mathbb{R}^2\).<br>
+<img src="data/img/proj-0.png" width="184" height="136" alt="" style="float:right">
+Say that we have two vector <span class="bb">\(\vec{v}\in\mathbb{R}^2\)</span> and <span class="bb">\(\vec{u}\in\mathbb{R}^2\)</span>.<br>
 Now <b>in space of \(\vec{v}\)</b> which vector is <b>closest</b> to \(\vec{w}\)?<br>
 But let's first ask what is the space of \(\vec{v}\)?<br>
 </div>
@@ -160,21 +167,23 @@ Now we have to find a vector <b>closest</b> to \(\vec{w}\) in the <b>vector spac
 Let's call this <b>closest</b> vector as \(\vec{p}\), 
 this \(\vec{p}\) is the projection of \(\vec{w}\) on \(\vec{v}\).<br>
 We know that \(\vec{p}\) lives in the <b>vector space</b> of \(\vec{v}\).<br>
-So \(\vec{p}=x\vec{v};\quad x\in\mathbb{R}\).<br>
+So <span class="bb">\(\vec{p}=x\vec{v};\quad x\in\mathbb{R}\)</span>.<br>
 \(\vec{p}\) is the <b>closest</b> vector to \(\vec{w}\) then the vector joining 
 \(\vec{p}\) to \(\vec{w}\) is perpendicular to \(\vec{v}\).<br>
 Say the vector joining \(\vec{p}\) to \(\vec{w}\) be \(\vec{e}\), and \(\vec{e} = \vec{w}-\vec{p}\)
 So,<br>
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
 \(\vec{v}\cdot \vec{e} =0\)<br>
 \(\Rightarrow \vec{v}^T \vec{e} =0\)<br>
 \(\Rightarrow \vec{v}^T (\vec{w} -\vec{p})=0\)<br>
 \(\Rightarrow \vec{v}^T (\vec{w} -x\vec{v})=0\)<br>
 \(\Rightarrow \vec{v}^T \vec{w} -x\vec{v}^T\vec{v}=0\)<br>
+</blockquote>
 \[\Rightarrow x=\frac{\vec{v}^T \vec{w}}{\vec{v}^T\vec{v}} \in\mathbb{R}\]
-<b>Projection</b> of \(\vec{w}\) on \(\vec{v}\) is \(\vec{p}=\vec{v}x\)<br>
+<b>Projection</b> of \(\vec{w}\) on \(\vec{v}\) is <span class="bb">\(\vec{p}=\vec{v}x\)</span><br>
 <br>
 <h3 id="vector-projection-matrix">Projection Matrix of a vector</h3>
-Say we have a vector \(\vec{v}\in\mathbb{R}^n\) now we want a <b>matrix</b> that gives us projection 
+Say we have a vector <span class="bb">\(\vec{v}\in\mathbb{R}^n\)</span> now we want a <b>matrix</b> that gives us projection 
 of <b>any</b> vector onto this vector \(\vec{v}\), we call this matrix a <b>projection matrix</b>.<br>
 Say this projected vector on \(\vec{v}\) be \(\vec{p}\).<br>
 As we discussed above,<br>
@@ -183,9 +192,22 @@ As we discussed above,<br>
 \(\displaystyle \Rightarrow \vec{p}= \frac{\vec{v} \vec{v}^T}{\vec{v}^T\vec{v}} \vec{w}\)<br>
 <br>
 Projection matrix\((P)\) of a vector \(\vec{v}\) is
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">    
-\[\displaystyle P=\frac{\vec{v} \vec{v}^T}{\vec{v}^T\vec{v}} \]
-</blockquote><br>
+
+\[\bbox[5px,border:2px solid blue]{ \color{blue}{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle P=\frac{\vec{v}\ \vec{v}^T}{\vec{v}^T\vec{v}} 
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]
+
 <li>Columns of \(P\) is the <b>linear combinations</b> of \(\vec{v}\), so </li>
 <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">    
 Column space of \(P\) is the vector space of \(\vec{v}\).<br>
@@ -291,11 +313,13 @@ f_4\\
 f_5\\
 \end{bmatrix}
 =\mathbb{Y}\)<br>
-So \(\mathbb{A}\mathbb{X}=\mathbb{Y}\)<br>
+So <span class="bb">\(\mathbb{A}\mathbb{X}=\mathbb{Y}\)</span><br>
 Our data is <b>noisy</b>.<br>
-\(\text{Rank}(\mathbb{A})\leq 3,\quad\) \(\mathbb{X}\in\mathbb{R}^3,\quad\) \(\mathbb{Y}\in\mathbb{R}^5\quad\).<br>
+<span class="bb">\(\text{Rank}(\mathbb{A})\leq 3\)</span>,
+<span class="bb"> \(\mathbb{X}\in\mathbb{R}^3\)</span>,
+<span class="bb"> \(\mathbb{Y}\in\mathbb{R}^5\)</span>.<br>
 So there are <b>high chance</b> that \(\mathbb{Y}\) does <b>not</b> lives in <b>column space</b> of \(\mathbb{A}\).<br> 
-So <b>instead</b> we find the solution for \(\mathbb{A}\widehat{\mathbb{X}}=\widehat{\mathbb{Y}}\).<br>
+So <b>instead</b> we find the solution for <span class="bb">\(\mathbb{A}\widehat{\mathbb{X}}=\widehat{\mathbb{Y}}\)</span>.<br>
 Where \(\widehat{\mathbb{Y}}\) lives in the column space of \(\mathbb{A}\) <b>and</b> \(\widehat{\mathbb{Y}}\)
 is <b>closest</b> to \(\mathbb{Y}\)
 <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">    
@@ -305,8 +329,8 @@ onto the <b>column space</b> of \(\mathbb{A}\)
 <br>
 
 <h2 id="matrix-projection">Matrix Projection</h2>
-Say that we have a \(m\times n\) matrix \(\mathbb{A}\in\mathbb{R}^{m\times n}\) and a vector 
-\(\vec{v}\in\mathbb{R}^n\).<br>
+Say that we have a \(m\times n\) matrix <span class="bb">\(\mathbb{A}\in\mathbb{R}^{m\times n}\)</span> and a vector 
+<span class="bb">\(\vec{v}\in\mathbb{R}^n\)</span>.<br>
 Then <b>projection</b> of a vector \(\vec{v}\) on a matrix \(\mathbb{A}\) <i>generally</i> means <b>projection</b>
 of \(\vec{v}\) on the <b>column space</b> of matrix \(\mathbb{A}\).<br>
 We can also take the <b>projection</b> of a vector \(\vec{v}\) on the <b>null space</b> of matrix \(\mathbb{A}^T\).<br>
@@ -322,11 +346,12 @@ collectively gives us back our vector \(\vec{v}\)
 <br>
 
 <h3 id="matrix-projection-column">Projection onto the column space of a matrix</h3>
-Recall our <a style="color: royalblue" href="projection.html#example">previous example</a>, here we have a system of equation \(\mathbb{A}\mathbb{X}=\mathbb{Y}\) where there is <b>no solution</b>.<br>
+Recall our <a style="color: royalblue" href="projection.html#example">previous example</a>, 
+here we have a system of equation <span class="bb">\(\mathbb{A}\mathbb{X}=\mathbb{Y}\)</span> where there is <b>no solution</b>.<br>
 Here problem was that there are <b>high chance</b> that \(\mathbb{Y}\) does <b>not</b> lives in <b>column space</b> of \(\mathbb{A}\), 
 So it does <b>not</b> have a solution.<br> 
 So we go for the <b>closest</b> solution.<br>
-\(\mathbb{A}\widehat{\mathbb{X}}=\widehat{\mathbb{Y}}\)<br>
+<span class="bb">\(\mathbb{A}\widehat{\mathbb{X}}=\widehat{\mathbb{Y}}\)</span><br>
 where, \(\widehat{\mathbb{Y}}\) lives in the <b>column space</b> of \(\mathbb{A}\), so.<br>
 <!--(And we put a <b>hat</b> on\(\mathbb{X}\) just to show that it's the estimated \(\mathbb{X}\)).<br>-->
 <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
@@ -338,14 +363,27 @@ where, \(\widehat{\mathbb{Y}}\) lives in the <b>column space</b> of \(\mathbb{A}
 The vector \(\mathbb{Y} - \widehat{\mathbb{Y}}\) is perpendicular to the <b>column space</b> of \(\mathbb{A}\)
 </blockquote>
 \(\Rightarrow \mathbb{Y} - \widehat{\mathbb{Y}}\) is also perpendicular to the column <b>vectors</b> of \(\mathbb{A}\)<br>
-\(\Rightarrow \vec{a}^T (\mathbb{Y} - \widehat{\mathbb{Y}})=0\), 
-\(\vec{b}^T (\mathbb{Y} - \widehat{\mathbb{Y}})=0\) and
-\(\vec{c}^T (\mathbb{Y} - \widehat{\mathbb{Y}})=0\)
+\(\Rightarrow\) <span class="bb">\(\vec{a}^T (\mathbb{Y} - \widehat{\mathbb{Y}})=0\)</span>, 
+<span class="bb">\(\vec{b}^T (\mathbb{Y} - \widehat{\mathbb{Y}})=0\)</span> and
+<span class="bb">\(\vec{c}^T (\mathbb{Y} - \widehat{\mathbb{Y}})=0\)</span>
 where \(\vec{a},\) \(\vec{b}\) and \(\vec{c}\) are the column vector of \(\mathbb{A}\).<br>
 We can write it as,<br>
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">    
-\[\mathbb{A}^T(\mathbb{Y} - \widehat{\mathbb{Y}})=0\]
-</blockquote>
+
+\[\bbox[5px,border:2px solid blue]{ \color{blue}{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle \mathbb{A}^T(\mathbb{Y} - \widehat{\mathbb{Y}})=0
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]
+
 Notice that \(\mathbb{Y} - \widehat{\mathbb{Y}}\) lives in \((N(A^T))\)
 <li>The <a style="color: royalblue" href="fundamental-subspaces.html#left-null-space">Left Null Space</a>
 of matrix \(\mathbb{A}\) OR say </li>
@@ -358,20 +396,59 @@ So \(\mathbb{Y} - \widehat{\mathbb{Y}}\) is  <b>perpendicular</b> to the <b>colu
 \(\Rightarrow \mathbb{A}^T(\mathbb{Y} - \mathbb{A}\widehat{\mathbb{X}})=0\)<br>
 \(\Rightarrow \mathbb{A}^T \mathbb{Y} - \mathbb{A}^T\mathbb{A}\widehat{\mathbb{X}}=0\)<br>
 \(\Rightarrow \mathbb{A}^T\mathbb{A}\widehat{\mathbb{X}}=\mathbb{A}^T \mathbb{Y}\)<br>
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
-\[\widehat{\mathbb{X}}=(\mathbb{A}^T\mathbb{A})^{-1}\mathbb{A}^T \mathbb{Y}\]
-</blockquote>
+
+\[\bbox[5px,border:2px solid blue]{ \color{blue}{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle \widehat{\mathbb{X}}=\left(\mathbb{A}^T\mathbb{A}\right)^{-1}\mathbb{A}^T \mathbb{Y}
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]
+
 Our <b>projection</b> of \(\mathbb{Y}\) on the columnn space of \(\mathbb{A}\) is \(\widehat{\mathbb{Y}}\) .<br>
-\(\widehat{\mathbb{Y}}=\mathbb{A}\widehat{\mathbb{X}}\) and \(\widehat{\mathbb{X}}=(\mathbb{A}^T\mathbb{A})^{-1}\mathbb{A}^T \mathbb{Y}\), so<br>
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">    
+<span class="bb">\(\widehat{\mathbb{Y}}=\mathbb{A}\widehat{\mathbb{X}}\)</span> and <span class="bb">\(\widehat{\mathbb{X}}=(\mathbb{A}^T\mathbb{A})^{-1}\mathbb{A}^T \mathbb{Y}\)</span>, so<br>
+<br>
 <li>Projection\((\widehat{\mathbb{Y}})\) of \(\mathbb{Y}\) on the <b>column space</b> of \(\mathbb{A}\):</li>
-\[\widehat{\mathbb{Y}}=\mathbb{A}(\mathbb{A}^T\mathbb{A})^{-1}\mathbb{A}^T \mathbb{Y}\]
-</blockquote><br>
-So our <b>projection matrix</b> is, 
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">    
-<li>Projection matrix\((P)\):</li>
-\[P=\mathbb{A}(\mathbb{A}^T\mathbb{A})^{-1}\mathbb{A}^T\]
-</blockquote><br>
+
+\[\bbox[5px,border:2px solid blue]{ \color{blue}{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle \widehat{\mathbb{Y}}=\mathbb{A}\left(\mathbb{A}^T\mathbb{A}\right)^{-1}\mathbb{A}^T \mathbb{Y}
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]
+
+<br>
+So our <b>Projection Matrix</b> is, 
+
+\[\bbox[5px,border:2px solid blue]{ \color{blue}{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle P=\mathbb{A}\left(\mathbb{A}^T\mathbb{A}\right)^{-1}\mathbb{A}^T
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]
 
 <li>Is \(P\) <b>symmetric</b>?</li>
 \(\displaystyle P= \mathbb{A}(\mathbb{A}^T\mathbb{A})^{-1}\mathbb{A}^T\)<br>
@@ -414,10 +491,7 @@ Suppose we want to take projection of a vector \(\vec{b}\) in the <b>column spac
     </blockquote>
     And <b>projection</b>\(P\) of \(\vec{b}\) in the <b>column space</b> of a matrix \(\mathbb{A}\) is \(P\vec{b}\) <br>
     \(P\vec{b}= \mathbb{A}(\mathbb{A}^T\mathbb{A})^{-1}\underbrace{\mathbb{A}^T\vec{b}}_{=\vec{0}}=\vec{0}\)
-</dd></dl>
-
-
-\(2.\) <b>What If the vector \(\vec{b}\) is <b>in</b> the <b>column space</b> of \(m\times n\) matrix \(\mathbb{A}\)?</b>
+</dd></dl>\(2.\) <b>What If the vector \(\vec{b}\) is <b>in</b> the <b>column space</b> of \(m\times n\) matrix \(\mathbb{A}\)?</b>
 <dl><dd>
     <b>Vectors</b> in the <b>column space</b> of \(\mathbb{A}\) is the <b>linear combinations</b> of the column vectors of matrix\(\mathbb{A}\).<br>
     We can write the all the linear combinations of matrix all as \(\mathbb{A}\vec{x};\quad\vec{x}\in\mathbb{R}^n\).<br>
@@ -433,47 +507,14 @@ Suppose we want to take projection of a vector \(\vec{b}\) in the <b>column spac
     So projecting \(\vec{b}\)(which is already in the column space of \(\mathbb{A}\)) on the the <b>column space</b> of \(\mathbb{A}\)
     changes nothing.<br>
 </dd></dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </p>
 
-<button class="accordion">\(\text{Discussion}\)</button>
-<div class="panel">
-    <script src="https://utteranc.es/client.js"
-        repo="yuvraj97/stats.github.io"
-        issue-term="introduction-intro-discussion"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
-</div>
-<button class="accordion">\(\text{Put up a question}\)</button>
-<div class="panel">
-    <script src="https://utteranc.es/client.js"
-        repo="yuvraj97/stats.github.io"
-        issue-term="introduction-intro-questions"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
-</div>
-<br><br>
+<br>
+<div onclick="location.href = 'https://join.slack.com/t/quantml-workspace/shared_invite/zt-hcmbg7fr-jPbVAUT_tjGPaKWU50qMYQ';" class="slack-discuss" style="color: #406b94;">Join our Slack <i class="fab fa-slack"> </i>  discussion forum</div>
+<br>
+
 <div class='buttons'>
-    <button onclick="window.location.href = 'orthogonal.html';">&#x25C0;&nbsp;&nbsp;Orthogonal Subspaces</button>
+    <button onclick="window.location.href = 'orthogonal-subspaces.html';">&#x25C0;&nbsp;&nbsp;Orthogonal Subspaces</button>
     <button style="float: right;" onclick="window.location.href = 'least-squares.html';">Least Squares&nbsp;&nbsp;&#x25B6;</button></div><br>
                         </section>
                     </div>
@@ -502,13 +543,13 @@ for (i = 0; i < acc.length; i++) {
 }
 </script>
         <!-- Scripts -->
-            <script src="../assets/js/jquery.min.js"></script>
-            <script src="../assets/js/jquery.scrollex.min.js"></script>
-            <script src="../assets/js/jquery.scrolly.min.js"></script>
-            <script src="../assets/js/browser.min.js"></script>
-            <script src="../assets/js/breakpoints.min.js"></script>
-            <script src="../assets/js/util.js"></script>
-            <script src="../assets/js/main.js"></script>
+            <script src="data/assets/js/jquery.min.js"></script>
+            <script src="data/assets/js/jquery.scrollex.min.js"></script>
+            <script src="data/assets/js/jquery.scrolly.min.js"></script>
+            <script src="data/assets/js/browser.min.js"></script>
+            <script src="data/assets/js/breakpoints.min.js"></script>
+            <script src="data/assets/js/util.js"></script>
+            <script src="data/assets/js/main.js"></script>
 
     </body>
 </html>

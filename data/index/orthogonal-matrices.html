@@ -8,10 +8,10 @@
 <html>
     <head>
         <!-- Code Render-->
-        <link rel="stylesheet" href="../syntaxhighlighter/shCore.css">
-        <link rel="stylesheet" href="../syntaxhighlighter/shThemeDefault.css">
-        <script type="text/javascript" src="../syntaxhighlighter/shCore.js"></script>
-        <script type="text/javascript" src="../syntaxhighlighter/shBrushPython.js"></script>
+        <link rel="stylesheet" href="data/syntaxhighlighter/shCore.css">
+        <link rel="stylesheet" href="data/syntaxhighlighter/shThemeDefault.css">
+        <script type="text/javascript" src="data/syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="data/syntaxhighlighter/shBrushPython.js"></script>
 
         <!--MathJax-->
         <script type="text/x-mathjax-config">
@@ -42,44 +42,25 @@
         </style>
 
 <style>
-.accordion {
-    border: 0px solid black;
-    border-color: black;
-    background-color: #FFC2C2;
-    color: black;
-    width: 100%;
-    text-align: center;
+.slack-discuss {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
     font-size: 16px;
-    cursor: pointer;
-    transition: 0.4s;
+    text-align: center;
 
-}
-
-.active, .accordion:hover {
-    background-color:#C2E7FF;
-}
-
-.accordion:after {
-    content: '\002B';
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-}
-
-.active:after {
-    content: "\2212";
-}
-
-.panel {
-    padding: 0 18px;
     background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    box-shadow: .1rem .1rem 1.2rem .1rem #467AAC;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 20px;
+
+}
+
+.slack-discuss:hover {
+    box-shadow: .2rem .2rem 2.4rem .2rem #467AAC;
 }
 </style>
-        <style>
+<style>
     .bb {
         padding-left: 10px;
         padding-right: 10px; 
@@ -91,28 +72,53 @@
     }
 </style>
 
-        <title>Orthonormal Vectors</title>
+        		<style>
+			.logo-nav{
+				background-color: #cfedff; 
+				border-radius: 5px; 
+				position: relative; 
+				top: 3px;
+			}
+			.logo-nav:hover{
+				background-color: #6cc7ff; 
+			}
+			.slack-nav{
+				color: blue;
+				border-bottom-color: transparent;
+				background-color: #cfedff; 
+				border-radius: 	5px;	
+				padding-right: 	3px;
+				padding-left:  	3px;
+				padding-top: 	2px;
+				padding-bottom: 1px;
+				top: 			0px;
+				
+			}
+		</style>
+		<title>Orthonormal Vectors</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="../assets/css/main.css" />
-        <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
-    </head>
-    <body class="is-preload">
+        <link rel="stylesheet" href="data/assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="data/assets/css/noscript.css" /></noscript>
+    <link rel="icon" href="data/img/icon.png" type="image/png" sizes="16x16">
+</head>    <body class="is-preload">
 
         <!-- Wrapper -->
             <div id="wrapper">
 
                 <!-- Header -->
                     <header id="header">
-                        <a href="../../index.html" class="logo">Linear Algebra</a>
+                        <a href="index.html" class="logo">Linear Algebra</a>
                     </header>
 
                 <!-- Nav -->
                     <nav id="nav">
                         <ul class="links">
-                            <li class="active"><a href="orthogonal-matrices.html">Orthonormal Vectors</a></li>
+                            <li class="active"><a href="orthonormal-vectors.html">Orthonormal Vectors</a></li>
                         </ul>
                         <ul class="icons">
+                            <li><a href="https://www.quantml.org" style="border-bottom-color: transparent;"><img style="margin-right: 5px; margin-left: 5px;" class="logo-nav" src="data/img/icon.png" alt="logo" width="20" height="20"></a></li>
+							<li><a href="https://join.slack.com/t/quantml-workspace/shared_invite/zt-hcmbg7fr-jPbVAUT_tjGPaKWU50qMYQ" class="fab fa-slack slack-nav" style="color: blue;"><span class="label"></span></a></li>
                             <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
                             <li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
                         </ul>					</nav>
@@ -142,7 +148,7 @@ q_i^Tq_j=\left\{\begin{matrix}
     1& \text{if }i=j \\
     \end{matrix}\right.
 \]
-equivalently we can say that \(Q^TQ=\mathcal{I}_{n\times n}\),<br>
+equivalently we can say that <span class="bb">\(Q^TQ=\mathcal{I}_{n\times n}\)</span>,<br>
 <div class="math-container ">
 \[
 Q^TQ=
@@ -191,12 +197,25 @@ Q^TQ=
 \(Q\) is an <b>Orthogonal matrix</b> <b>if</b> \(Q\) is a <b>square matrix</b> 
 </blockquote><br>
 So if \(Q\) is an <b>Orthogonal matrix</b> then,<br>
-\(Q^TQ=\mathcal{I}\) tells us that \(Q^T = Q^{-1}\), So,<br>
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">    
-If \(Q\) is an <b>Orthogonal matrix</b> then \(Q^T = Q^{-1}\)
-</blockquote><br>
+<span class="bb">\(Q^TQ=\mathcal{I}\)</span> tells us that <span class="bb">\(Q^T = Q^{-1}\)</span>, So,<br>
 
-<b>Examples of matrices with orthogonal vectors,</b><br>
+<li>If \(Q\) is an <b>Orthogonal matrix</b> then</li>
+
+\[\bbox[5px,border:2px solid blue]{ \color{blue}{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle Q^T = Q^{-1}
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]<b>Examples of matrices with orthogonal vectors,</b><br>
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
 \(
 Q=\begin{bmatrix}
 0 & 0 &  1\\
@@ -212,38 +231,54 @@ Q=\begin{bmatrix}
 2 &  2 &  1\\
 \end{bmatrix}
 \) here all vectors are orthogonal, unit length and it's an \(3\times 3\) square matrix so it's orthogonal matrix.<br><br>
+</blockquote>
 <br>
 
 <h2 id="why-orthogonal">What is the benefit of orthonormal column vector</h2>
 Say we have a \(m\times n\) matrix \(Q\) with <b>orthonormal</b> column vectors .<br>
 Now say we want the projection of a vector (say \(\vec{v}\)) onto the column space of \(Q\).<br>
-Our <b>projection matrix\((P)\)</b> is: \(P=Q(Q^TQ)^{-1}Q^T\).<br>
+Our <b>projection matrix\((P)\)</b> is: <span class="bb">\(P=Q(Q^TQ)^{-1}Q^T\)</span>.<br>
 And projection of vector \(\vec{v}\) onto the column space of \(Q\) is \(P\vec{v}\)<br>
-because \(Q\) has <b>orthonormal</b> column vectors .<br> So \(Q^TQ=\mathcal{I}\).<br>
+because \(Q\) has <b>orthonormal</b> column vectors .<br> 
+So <span class="bb">\(Q^TQ=\mathcal{I}\)</span>.<br>
 So our <b>projection matrix\((P)\)</b> becomes \(P=Q\mathcal{I}Q^T\), so.<br>
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">    
-Projection Matrix\((P)\):<br>
-\[P=QQ^T\]
-<b>So now we don't have to take the <i>inverse</i>  is \(Q^TQ\)</b>
-</blockquote><br>
 
-We can see the direct benefit of having a matrix with <b>orthonormal column vectors</b> is in <a style="color: royalblue" href="least-squares.html">least squares</a>.<br>
+<li><b>Projection Matrix\((P)\):</b></li>
+
+\[\bbox[5px,border:2px solid blue]{ \color{blue}{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle P=QQ^T
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]
+
+<i>(So now we don't have to take the <i>inverse</i>  is \(Q^TQ\))</i><br>We can see the direct benefit of having a matrix with <b>orthonormal column vectors</b> is in <a style="color: royalblue" href="least-squares.html">least squares</a>.<br>
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
 In Least squares we have equation of form \(A^TA\widehat{\mathbb{X}}=A^T\vec{v}\) and if \(A\) has orthonormal column vectors,
 then \(A^TA=\mathcal{I}\) so our equation becomes \(\widehat{\mathbb{X}}=A^T\vec{v}\)<br>
-No need to take \((A^TA)^{-1}\)<br>
+No need to take \((A^TA)^{-1}\)
+</blockquote>
 <br>
 
 Now let's test the properties of a <b>projection matrix</b>,<br>
-<li>\(P=P^T\)</li>
+<li><span class="bb">\(P=P^T\)</span></li>
     <dl><dd>
     \(P=QQ^T\)<br>
     \(P^T=(QQ^T)^T = Q^{T^T}Q^T = QQ^T=P\)
     </dd></dl>
-<li>\(P=P^2\)</li>
+<li><span class="bb">\(P=P^2\)</span></li>
     <dl><dd>
     \(P=QQ^T\)<br>
     \(P^2=Q(Q^TQ)Q^T=Q\mathcal{I}Q^T=QQ^T\)<br>
-    </dd></dl><br>
+    </dd></dl>
 <br>
 
 <h2 id="gram-schmidt">Gram Schmidt</h2>
@@ -267,16 +302,16 @@ Now let's find second <b>orthonormal vectors</b>?<br>
 So first take the projection of \(\vec{b}\) onto the vector space of \(\vec{q}_a\), say this projected 
 \(\vec{b}\) on \(\vec{q}_a\) to be \(\vec{b}_p\).<br>
 Now the vector joining \(\vec{b}\) and \(\vec{b}_p\) is orthogonal to \(\vec{q}_a\), say this vector \(\vec{b}_o\).<br>
-And \(\vec{b}_p + \vec{b}_o = \vec{b}\) so,<br>
+And <span class="bb">\(\vec{b}_p + \vec{b}_o = \vec{b}\)</span> so,<br>
 \(\vec{b}_o = \vec{b}-\vec{b}_p\).<br>
-<a href="projection.html#vector-projection-matrix">Recall</a> our projection matrix\((P)\) of a vector,<br>
+<a style="color: royalblue;" href="projection.html#vector-projection-matrix">Recall</a> our projection matrix\((P)\) of a vector,<br>
 \[\displaystyle P=\frac{\vec{v} \vec{v}^T}{\vec{v}^T\vec{v}}\]
-So projection of \(\vec{b}\) onto the vector space of \(\vec{q}_a\) is \(\vec{b}_p=P\vec{b}\),<br>
+So projection of \(\vec{b}\) onto the vector space of \(\vec{q}_a\) is <span class="bb">\(\vec{b}_p=P\vec{b}\)</span>,<br>
 \(\displaystyle P\vec{b}=\frac{\vec{q}_a \vec{q}_a^T}{\vec{q}_a^T\vec{q}_a}\vec{b}\).<br>
 \(\displaystyle \Rightarrow \vec{b}_p =\frac{\vec{q}_a \vec{q}_a^T}{\vec{q}_a^T\vec{q}_a}\vec{b}\).<br>
 And \(\vec{q}_a^T\vec{q}_a=1\)<br>
 \(\displaystyle \Rightarrow \vec{b}_p =\vec{q}_a \vec{q}_a^T\vec{b} \).<br>
-<blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">    
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
 \[\vec{b}_o = \vec{b}-(\vec{q}_a\cdot\vec{b})\vec{q}_a  \]
 And
 \[\vec{q}_b=\frac{\vec{b}_o}{\|\vec{b}_o\|}\]
@@ -290,7 +325,7 @@ So \(\vec{b}_o\) is in the Null space of \(\vec{q}_a ^T\) so,<br>
 <dl><dd>
     \[\vec{q}_a^T \left(  \vec{b}-\vec{q}_a \vec{q}_a^T\vec{b}  \right) = 0\]
     \[\Rightarrow \vec{q}_a^T \vec{b}- (\vec{q}_a^T  \vec{q}_a) \vec{q}_a^T\vec{b}   = 0\]
-    \[\Rightarrow \vec{q}_a^T \vec{b}- \vec{q}_a^T \vec{b} = 0\quad &#10003;\] 
+    \[\Rightarrow \vec{q}_a^T \vec{b}- \vec{q}_a^T \vec{b} = 0\quad \color{green}{&#10003;}\] 
 </dd></dl>
 Now let's push ourselves a little further now add another vector \(\vec{c}\).<br>
 We got our two <b>orthogonal</b> vectors \(\vec{q}_a\) and \(\vec{q}_b\) and this vector \(\vec{c}\)
@@ -310,9 +345,9 @@ Let's call this vector \(\vec{c}_{o_{a}}\).<br>
 
 <li>Now remove it's direction along \(\vec{q}_a\) </li>
 This is our vector \(\vec{c}_{o}\).<br>
-\(\vec{c}_{o} = \vec{c} - (\vec{q}_a\cdot\vec{c})\vec{q}_a - \frac{\vec{q}_b \vec{q}_b^T}{\vec{q}_b^T\vec{q}_b}\vec{c}\)<br>
+\(\displaystyle \vec{c}_{o} = \left(\vec{c} - (\vec{q}_a\cdot\vec{c})\vec{q}_a\right) - \frac{\vec{q}_b \vec{q}_b^T}{\vec{q}_b^T\vec{q}_b}\vec{c}\)<br>
 \(\vec{q}_b^T\vec{q}_b=1\)<br>
-\(\Rightarrow \vec{c}_{o} = \vec{c} - (\vec{q}_a\cdot\vec{c})\vec{q}_a - (\vec{q}_b\cdot\vec{c})\vec{q}_b\)<br>
+\(\displaystyle \Rightarrow \vec{c}_{o} = \left( \vec{c} - (\vec{q}_a\cdot\vec{c})\vec{q}_a\right) - (\vec{q}_b\cdot\vec{c})\vec{q}_b\)<br>
 \(\vec{q}_c=\frac{\vec{c}_o}{\|\vec{c}_o\|}\)<br>
 <br>
 Now we can see a pattern here.<br>
@@ -324,45 +359,12 @@ we can deduce a pattern above,
 <br>
 So now we can find <b>orthonormal vectors</b> for any set of independent vectors.<br>
 This is <b>The Gram Schmidt Process</b>.<br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </p>
 
-<button class="accordion">\(\text{Discussion}\)</button>
-<div class="panel">
-    <script src="https://utteranc.es/client.js"
-        repo="yuvraj97/stats.github.io"
-        issue-term="introduction-intro-discussion"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
-</div>
-<button class="accordion">\(\text{Put up a question}\)</button>
-<div class="panel">
-    <script src="https://utteranc.es/client.js"
-        repo="yuvraj97/stats.github.io"
-        issue-term="introduction-intro-questions"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-    </script>
-</div>
-<br><br>
+<br>
+<div onclick="location.href = 'https://join.slack.com/t/quantml-workspace/shared_invite/zt-hcmbg7fr-jPbVAUT_tjGPaKWU50qMYQ';" class="slack-discuss" style="color: #406b94;">Join our Slack <i class="fab fa-slack"> </i>  discussion forum</div>
+<br>
+
 <div class='buttons'>
     <button onclick="window.location.href = 'least-squares.html';">&#x25C0;&nbsp;&nbsp;Least Squares</button>
     <button style="float: right;" onclick="window.location.href = 'eigenvalues-eigenvectors.html';">Eigenvalues and Eigenvectors&nbsp;&nbsp;&#x25B6;</button>
@@ -394,13 +396,13 @@ for (i = 0; i < acc.length; i++) {
 }
 </script>
         <!-- Scripts -->
-            <script src="../assets/js/jquery.min.js"></script>
-            <script src="../assets/js/jquery.scrollex.min.js"></script>
-            <script src="../assets/js/jquery.scrolly.min.js"></script>
-            <script src="../assets/js/browser.min.js"></script>
-            <script src="../assets/js/breakpoints.min.js"></script>
-            <script src="../assets/js/util.js"></script>
-            <script src="../assets/js/main.js"></script>
+            <script src="data/assets/js/jquery.min.js"></script>
+            <script src="data/assets/js/jquery.scrollex.min.js"></script>
+            <script src="data/assets/js/jquery.scrolly.min.js"></script>
+            <script src="data/assets/js/browser.min.js"></script>
+            <script src="data/assets/js/breakpoints.min.js"></script>
+            <script src="data/assets/js/util.js"></script>
+            <script src="data/assets/js/main.js"></script>
 
     </body>
 </html>
