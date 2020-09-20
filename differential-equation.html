@@ -1,0 +1,586 @@
+<!DOCTYPE HTML>
+<!--
+    "Thanks to HTML5 UP for this template".
+    Massively by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <!-- Code Render-->
+        <link rel="stylesheet" href="data/syntaxhighlighter/shCore.css">
+        <link rel="stylesheet" href="data/syntaxhighlighter/shThemeDefault.css">
+        <script type="text/javascript" src="data/syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="data/syntaxhighlighter/shBrushPython.js"></script>
+
+        <!--MathJax-->
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                    config: ["MMLorHTML.js"],
+    extensions: ["mml2jax.js"],
+    jax: ["input/MathML"]
+
+        });
+
+        </script>
+        <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <style>
+            .math-container {
+            overflow-x: auto;
+            display: block;
+        }
+        </style>
+        <style>
+        .new_image {
+            width:100%;
+        }
+        img {
+            max-width:100%;
+        }
+        </style>
+
+<style>
+.slack-discuss {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+
+    background-color: white;
+    box-shadow: .1rem .1rem 1.2rem .1rem #467AAC;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 20px;
+
+}
+
+.slack-discuss:hover {
+    box-shadow: .2rem .2rem 2.4rem .2rem #467AAC;
+}
+</style>
+<style>
+    .bb {
+        padding-left: 10px;
+        padding-right: 10px; 
+        padding-top: 5px; 
+        padding-bottom: 5px; 
+        background-color: #f6f8fa;
+        border:1px rgb(194, 199, 204) solid;
+        border-radius: 6px;
+    }
+</style>
+    
+        		<style>
+			.logo-nav{
+				background-color: #cfedff; 
+				border-radius: 5px; 
+				position: relative; 
+				top: 3px;
+			}
+			.logo-nav:hover{
+				background-color: #6cc7ff; 
+			}
+			.slack-nav{
+				color: blue;
+				border-bottom-color: transparent;
+				background-color: #cfedff; 
+				border-radius: 	5px;	
+				padding-right: 	3px;
+				padding-left:  	3px;
+				padding-top: 	2px;
+				padding-bottom: 1px;
+				top: 			0px;
+				
+			}
+		</style>
+		<title>DIFFERENTIAL EQUATION</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="data/assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="data/assets/css/noscript.css" /></noscript>
+    <link rel="icon" href="data/img/icon.png" type="image/png" sizes="16x16">
+</head>    <body class="is-preload">
+
+        <!-- Wrapper -->
+            <div id="wrapper">
+
+                <!-- Header -->
+                    <header id="header">
+                        <a href="index.html" class="logo">Linear Algebra</a>
+                    </header>
+
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul class="links">
+                            <li class="active"><a href="differential-equation.html">Differential Equation</a></li>
+                        </ul>
+                        <ul class="icons">
+                            <li><a href="https://www.quantml.org" style="border-bottom-color: transparent;"><img style="margin-right: 5px; margin-left: 5px;" class="logo-nav" src="data/img/icon.png" alt="logo" width="20" height="20"></a></li>
+							<li><a href="https://join.slack.com/t/quantml-workspace/shared_invite/zt-hcmbg7fr-jPbVAUT_tjGPaKWU50qMYQ" class="fab fa-slack slack-nav" style="color: blue;"><span class="label"></span></a></li>
+                            <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+                            <li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                        </ul>					</nav>
+                <!-- Main -->
+                    <div id="main">
+                        <section class="post">
+<div class='buttons'>
+    <button onclick="window.location.href = 'diagonalization.html';">&#x25C0;&nbsp;&nbsp;Diagonalization of a Matrix</button>
+    <button style="float: right;" onclick="window.location.href = 'markov-matrix.html';">Markov Matrix &nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
+    <span><b style="color: red;">Warning</b></span><br>
+    In this lecture I struggle alot(because I have not much experience with differential equations) so there will be errors,
+    but as always am sure you will find here something worth considering .<br>
+    If you spot an error then please tell me about that error in our discussion form.<br>
+</blockquote>
+<p>
+<h2>Matrix Exponential</h2>
+Before we dive into <b>Differential Equation</b> first let's see what meant by <b>Matrix Exponential</b>.<br>
+We are familiar with <a style="color: royalblue" href="https://en.wikipedia.org/wiki/Taylor_series#Exponential_function">power series of \(e^{x}\) .</a><br>
+\[e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots\]
+Now say we have a \(n\times n\) matrix \(A\) and we want to find \(e^{A}\)<br>
+Then power series of \(e^A\) is,<br>
+\[\bbox[5px,border:2px solid blue]{ \color{blue}{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle e^A=\mathcal{I}_n+A+\frac{A^2}{2!}+\frac{A^3}{3!}+\cdots
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]<br>
+
+<li><span class="bb" style="padding-top: 20px; padding-bottom: 15px;">\(\displaystyle \frac{d}{dt}e^{tA}=Ae^{tA}\)</span></li>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Proof:</b>
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
+    <div style="padding-bottom: 5px;" class="math-container">
+    \(\frac{d}{dt}e^{tA}=\frac{d}{dt}\left(\mathcal{I}_n+tA+\frac{(tA)^2}{2!}+\frac{(tA)^3}{3!}+\cdots\right)\)<br>
+    </div>
+    <div style="padding-bottom: 5px;" class="math-container">
+    \(\frac{d}{dt}e^{tA}=\color{red}{\mathbb{0}_n}+A+t(A)^2+\frac{t^2(A)^3}{2!}+\frac{t^3(A)^4}{3!}+\cdots\)<br>
+    </div>
+    <div class="math-container">
+    \(\frac{d}{dt}e^{tA}=A\left(\mathcal{I}_n+t(A)+\frac{t^2(A)^2}{2!}+\frac{t^3(A)^3}{3!}+\cdots\right)\)<br>
+    </div>
+    \[\bbox[5px,border:2px solid blue]{ \color{blue}{
+        \begin{matrix}
+            \\    %blank line
+        \quad 
+        
+        % equation
+        \displaystyle \frac{d}{dt}e^{tA}=Ae^{tA}
+        %equation
+        
+        \quad\\
+            \\    %blank line
+        \end{matrix}
+        }}_{\quad\quad✅}
+    \]
+    <span style="float: right;"></span>
+
+</blockquote><br>
+
+<li><span class="bb" style="padding-top: 15px; padding-bottom: 15px;">\(\displaystyle e^{tA}\vec{x}=e^{\lambda t}\vec{x}\)</span></li>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Proof:</b>
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
+
+    Here \(\lambda\) is an <i>eigenvalue</i> of \(A\) with <i>eigenvectors</i> \(\vec{x}\)<br>
+    \(e^A=\mathcal{I}_n+A+\frac{A^2}{2!}+\frac{A^3}{3!}+\cdots\)<br>
+    \(\Rightarrow e^{tA}=\mathcal{I}_n+tA+\frac{t^2A^2}{2!}+\frac{t^3A^3}{3!}+\cdots\)<br>
+    \(\Rightarrow e^{tA}\vec{x}=\mathcal{I}_n\vec{x}+tA\vec{x}+\frac{t^2A^2}{2!}\vec{x}+\frac{t^3A^3}{3!}\vec{x}+\cdots\)<br>
+    We <a style="color: royalblue" href="eigenvalues-eigenvectors.html">discussed</a> that \(A\vec{x}=\lambda\vec{x}\)<br>
+    And we also <a style="color: royalblue" href="diagonalization.html">discussed</a> that \(A^k\vec{x}=\lambda^k\vec{x}\) so,<br>
+    \(\Rightarrow e^{tA}\vec{x}=\mathcal{I}_n\vec{x}+t\lambda\vec{x}+\frac{t^2\lambda^2}{2!}\vec{x}+\frac{t^3\lambda^3}{3!}\vec{x}+\cdots\) so,<br>
+    \[\bbox[5px,border:2px solid blue]{ \color{blue}{
+        \begin{matrix}
+            \\    %blank line
+        \quad 
+        
+        % equation
+        \displaystyle e^{tA}\vec{x}=e^{\lambda t}\vec{x}
+        %equation
+        
+        \quad\\
+            \\    %blank line
+        \end{matrix}
+        }}_{\quad\quad✅}
+    \]
+
+</blockquote><br>
+
+<li><span class="bb" style="padding-top: 20px; padding-bottom: 20px;">\(\displaystyle \frac{d}{dt}e^{\lambda t}\vec{x}=Ae^{\lambda t}\vec{x}\)</span></li>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Proof:</b>
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
+
+    
+    \(\frac{d}{dt}e^{\lambda t}\vec{x}=\lambda e^{\lambda t}\vec{x}\)<br>
+    \(\Rightarrow \frac{d}{dt}e^{\lambda t}\vec{x}=e^{\lambda t}\underbrace{\lambda\vec{x}}_{=A\vec{x}}\)<br>
+
+    \[\bbox[5px,border:2px solid blue]{ \color{blue}{
+        \begin{matrix}
+            \\    %blank line
+        \quad 
+        
+        % equation
+        \displaystyle \frac{d}{dt}e^{\lambda t}\vec{x}=Ae^{\lambda t}\vec{x}
+        %equation
+        
+        \quad\\
+            \\    %blank line
+        \end{matrix}
+        }}_{\quad\quad✅}
+    \]
+
+</blockquote><br>
+
+<br>
+
+<h2 id="diff">Differential Equation</h2>
+We have a vector \(\vec{u}=    \begin{bmatrix} u_1\\u_2\\\vdots\\u_n \end{bmatrix}\in\mathbb{R}^n\) and a \(n\times n\) matrix \(A\).<br>
+\(\vec{u}(t_0)=\vec{u}_0\)<br>
+And we want to solve a differential equation,<br>
+\[\frac{\partial \vec{u}}{\partial t}=A\vec{u}\]
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
+For \(u,\alpha\in\mathbb{R}\).<br>
+Solution of \(\frac{\partial u}{\partial t}=\alpha u\) is,<br>
+\[u=Ce^{\alpha t}\]
+</blockquote><br>
+<!--
+We know that \(\vec{u}(t_0)=\vec{u}_0\) so,<br>
+\[\bbox[5px,border:2px solid blue]{ \color{blue}{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \vec{u}(t)=e^{(t-t_0)}\vec{u}_0
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]
+is one possible solution
+-->  
+
+<!--
+\(\quad \frac{\partial \vec{u}}{\partial t}=A\vec{u}\)<br>
+-->
+Say that the <i>eigenvectors</i> of \(A\) are \(\vec{x}_1,\vec{x}_2,\cdots, \vec{x}_n\),<br>
+And say the <i>eigenvalues</i> of \(A\) are \(\lambda_1,\lambda_2 ,\cdots, \lambda_n\) so,<br>
+<!--
+\(\Rightarrow\frac{\partial \vec{u}}{\partial t}=\lambda\vec{u}\)<br>
+\(\Rightarrow\begin{bmatrix} \frac{\partial u_1}{\partial t}\\\frac{\partial u_2}{\partial t} \end{bmatrix}=\begin{bmatrix} \lambda_1 u_1\\\lambda_2 u_2 \end{bmatrix}\)<br>
+<br>
+<li>\(\frac{\partial u_1}{\partial t} =\lambda_1 u_1\)<br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;so as we discussed above,
+    <blockquote style="background-color:#ECF1F6;">
+        \[ u_1=C_1e^{\lambda_1 t}\]
+    </blockquote>
+    
+</li>
+
+<li>\(\frac{\partial u_2}{\partial t} =\lambda_2 u_2\)<br>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;so as we discussed above,
+    <blockquote style="background-color:#ECF1F6;">
+        \[ u_2=C_2e^{\lambda_2 t}\]
+    </blockquote>
+    
+</li>    
+-->
+Then the solution for \(\vec{u}\) is,<br>
+<div class="math-container">
+\[\bbox[5px,border:2px solid blue]{ \color{blue}{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle \vec{u}(t) = C_1e^{\lambda_1 t}\vec{x}_1 + C_2e^{\lambda_2 t}\vec{x}_2 + \cdots + C_ne^{\lambda_n t}\vec{x}_n
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]
+</div>
+<br>
+<b>Example:</b><br>
+Say \(\vec{u}=    \begin{bmatrix} u_1\\u_2\\ \end{bmatrix}\in\mathbb{R}^n\) and 
+\(\vec{u}(0)=    \begin{bmatrix} 1\\0\\ \end{bmatrix}\)<br>
+And we are given,<br>
+\(\frac{du_1}{dt}=-u_1+2u_2\) and<br>
+\(\frac{du_2}{dt}=2u_1-u_2\) so,<br>
+\(A=\begin{bmatrix} 
+-1 & 2\\ 
+1 & -2\\ 
+\end{bmatrix}\in\mathbb{R}^n\)<br>
+Now we want to solve differential equation,<br>
+\[\frac{d \vec{u}}{d t}=A\vec{u}\]
+First of all find it's <i>eigenvalues</i> and <i>eigenvectors</i>.<br>
+We <a style="color: royalblue" href="eigenvalues-eigenvectors.html">discussed</a> 
+about how to find them<br>
+So our <i>eigenvalues</i> are \(\lambda_1=0\) and \(\lambda_2=-3\)<br>
+And our <i>eigenvectors</i> are
+\(\vec{x}_1=    \begin{bmatrix} 2\\1\\ \end{bmatrix},\quad\)
+\(\vec{x}_2=    \begin{bmatrix} 1\\-1\\ \end{bmatrix}\)<br>
+Now we got our  <i>eigenvalues</i> and <i>eigenvectors</i> so solution is.<br>
+\(\vec{u}(t) =  c_1e^{\lambda_1 t}\vec{x}_1 + c_2e^{\lambda_2 t}\vec{x}_2\)<br>
+\(\vec{u}(t) =  c_1e^{0 t}\begin{bmatrix} 2\\1\\ \end{bmatrix} + 
+                c_2e^{-3 t}\begin{bmatrix} 1\\-1\\ \end{bmatrix}\)<br>
+\(\displaystyle \vec{u}(t) =  \underbrace{c_1\begin{bmatrix} 2\\1\\ \end{bmatrix}}_{\text{steady state}} + 
+                \underbrace{c_2e^{-3 t}\begin{bmatrix} 1\\-1\\ \end{bmatrix}}_{\xrightarrow [t\to \infty ]{} \vec{0}}\)<br>
+<br>
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
+So here we can see that our <i>eigenvalue</i> control the <b>state</b>.<br>
+<li>For \(\lambda_1=0\) the state becomes <b>steady</b>, it does not depends on time.</li>
+<li>For \(\lambda_2=-3\) the solution <b>vanishes</b>, as \(t\) increases.</li>
+<li>As \(t\to\infty\) solution associated with \(\lambda_2\) vanishes and solution associated with \(\lambda_1\) remains steady.</li>
+</blockquote><br>
+We know that \(\vec{u}(0)=    \begin{bmatrix} 1\\0\\ \end{bmatrix}\) so,<br>
+\(\vec{u}(0)= c_1\begin{bmatrix} 2\\1\\ \end{bmatrix} + 
+c_2\begin{bmatrix} 1\\-1\\ \end{bmatrix}
+=\begin{bmatrix} 1\\0\\ \end{bmatrix}\)<br>
+By solving we get \(c_1=c_2=\frac{1}{3}\)<br>
+So solution is,<br>
+\[\bbox[5px,border:2px solid blue]{ \color{blue}{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle \vec{u}(t) =  \underbrace{\frac{1}{3}\begin{bmatrix} 2\\1\\ \end{bmatrix}}_{\text{steady state}} + 
+    \underbrace{\frac{1}{3}e^{-3 t}\begin{bmatrix} 1\\-1\\ \end{bmatrix}}_{\xrightarrow [t\to \infty ]{} \vec{0}}
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\]<br>
+
+<hr style="width: 75%;">
+<br>
+
+<h2 id="If-A-is-diagonalizable">If \(A\) is Diagonalizable</h2>
+If \(A\) is diagonalizable then, 
+\[\bbox[5px,border:2px solid blue]{ \color{blue}{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle A=S\Lambda S^{-1}
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}
+\] 
+Where the columns of matrix \(S\) are eigenvectors of \(A\).<br>
+\[S=\begin{bmatrix}
+\vdots & \vdots & \cdots & \vdots \\  
+\vec{x}_{1} & \vec{x}_{2} & \cdots &  \vec{x}_{n}   \\
+\vdots & \vdots & \cdots & \vdots \\
+\end{bmatrix}\]
+
+(we discussed it <a style="color: royalblue" href="diagonalization.html">HERE</a>) So,<br>
+<br>
+
+<li><span class="bb" style="padding-top: 15px; padding-bottom: 15px;">\(\displaystyle e^{At}=Se^{(\Lambda t)}S^{-1}\)</span></li>
+<b>Proof:</b><br>
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
+
+    \(e^A=\mathcal{I}_n+A+\frac{A^2}{2!}+\frac{A^3}{3!}+\cdots\)<br>
+    \(\Rightarrow e^{At}=\mathcal{I}_n+At+\frac{t^2A^2}{2!}+\frac{t^3A^3}{3!}+\cdots\)<br>
+    As we know that \(A=S\Lambda S^{-1}\)<br>
+    <div class="math-container">
+    \(\Rightarrow e^{At}=\mathcal{I}_n+S\Lambda S^{-1}t+\frac{t^2(S\Lambda S^{-1})^2}{2!}+\frac{t^3(S\Lambda S^{-1})^3}{3!}+\cdots\)
+    </div>
+    As we <a style="color: royalblue" href="diagonalization.html">discussed</a> that \(A^k=(S\Lambda S^{-1})^k=S\Lambda^k S^{-1}\)<br>
+    <div class="math-container">
+    \(\Rightarrow e^{At}=\mathcal{I}_n+S\Lambda S^{-1}t+\frac{t^2 S\Lambda^2 S^{-1}}{2!}+\frac{t^3 S\Lambda^3 S^{-1}}{3!}+\cdots\)
+    </div>
+    <div class="math-container">
+    \(\Rightarrow e^{At}=\mathcal{I}_n+S\Lambda S^{-1}t+\frac{t^2 S\Lambda^2 S^{-1}}{2!}+\frac{t^3 S\Lambda^3 S^{-1}}{3!}+\cdots\)
+    </div>
+    <div class="math-container">
+    \(\Rightarrow e^{At}=S\left(\mathcal{I}_n+\Lambda t+\frac{t^2 \Lambda^2}{2!}+\frac{t^3 \Lambda^3}{3!}+\cdots\right)S^{-1}\)
+    </div>
+    So,
+    \[\bbox[5px,border:2px solid blue]{ \color{blue}{
+        \begin{matrix}
+            \\    %blank line
+        \quad 
+        
+        % equation
+        \displaystyle e^{At}=S e^{(\Lambda t)} S^{-1}
+        %equation
+        
+        \quad\\
+            \\    %blank line
+        \end{matrix}
+        }}_{\quad\quad✅}
+    \]
+    <blockquote style="background-color:#ECF1F6;  border-left-color:#467AAC">
+        And remember that it's true only if \(A\) is <a style="color: royalblue" href="diagonalization.html">Diagonalizable</a>
+    </blockquote>
+
+</blockquote><br>
+
+<li><span class="bb" style="padding-top: 15px; padding-bottom: 15px;">\(\displaystyle \vec{u}(t)=Se^{\Lambda t}S^{-1}\vec{x}\)</span></li>
+<b>Proof:</b><br>
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
+
+We know that \(\vec{u}(t)=ce^{\lambda t}\vec{x}\) where \(c\in\mathbb{R}\) is a constant, 
+\(\lambda\) is our <i>eigenvalue</i> and \(\vec{x}\)is our <i>eigenvectors</i>.<br>
+And as we discussed above \(\displaystyle e^{\lambda t}\vec{x}=e^{At}\vec{x}\) so,<br>
+\(\vec{u}(t)=ce^{At}\vec{x}\)<br>
+We also discussed that \(\displaystyle e^{At}=Se^{(\Lambda t)}S^{-1}\) so,<br>
+\(\vec{u}(t)=cSe^{(\Lambda t)}S^{-1}\vec{x}\)<br>
+And we can get the value of \(c\) using initial condition \(\vec{u}(t_0)=\vec{u}_0\) so,<br>
+\[\bbox[5px,border:2px solid blue]{ \color{blue}{
+    \begin{matrix}
+        \\    %blank line
+    \quad 
+    
+    % equation
+    \displaystyle \vec{u}(t)=Se^{(\Lambda t)}S^{-1}\vec{x}
+    %equation
+    
+    \quad\\
+        \\    %blank line
+    \end{matrix}
+    }}_{\quad\quad✅}
+\]
+<!--
+Now assume a vector \(\vec{v}\) such that \(S\vec{v} = \vec{u}\) (because \(\vec{u}\) lives in the column space of \(S\))<br>
+So now we can rewrite \(\frac{d \vec{u}}{d t}=A\vec{u}\) as <br>
+\(\frac{d S\vec{v}}{d t}=AS\vec{v}\)<br>
+\(S \frac{d \vec{v}}{d t}=AS\vec{v}\)<br>
+\(\frac{d \vec{v}}{d t}=S^{-1}AS\vec{v}\)<br>
+\(\frac{d \vec{v}}{d t}=\Lambda\vec{v}\) (we discussed it <a style="color: royalblue" href="diagonalization.html">HERE</a>)<br>
+where \(\Lambda=
+\begin{bmatrix}
+ \lambda_1 &     0     & \cdots  &    0    \\  
+ 0         & \lambda_2 & \cdots  &    0    \\  
+ \vdots    & \vdots    & \ddots  & \vdots    \\  
+ 0         &    0      & \cdots  &    \lambda_n    \\  
+\end{bmatrix}
+\)<br>
+-->
+
+</blockquote>
+<!--
+So our solution is of form,<br>
+\(\displaystyle \vec{u}(t) =  c_1\begin{bmatrix} 2\\1\\ \end{bmatrix} + c_2e^{-3 t}\begin{bmatrix} 1\\-1\\ \end{bmatrix}\)
+We can rewrite it as,<br>
+\(\displaystyle \vec{u}(t) =  
+\begin{bmatrix} 
+2 & 1 \\ 
+1 & -1 \\ 
+\end{bmatrix} \begin{bmatrix} 1\\-1\\ \end{bmatrix}\)
+-->
+
+<br>
+<h3 id="states">States</h3>
+<div class="math-container">
+\[\vec{u}(t) = C_1e^{\lambda_1 t}\vec{x}_1 + C_2e^{\lambda_2 t}\vec{x}_2 + \cdots + C_ne^{\lambda_n t}\vec{x}_n\]
+</div>
+
+\(1.\) <b>Stable state</b><br>
+<dl><dd>
+If <span class="bb" style="padding-top: 15px; padding-bottom: 15px;">\(\vec{u}(t)\xrightarrow [t\to \infty ]{} \vec{0}\)</span> then we say we have a stable state.<br>
+We can achieve it if <b>all</b> the <i>eigenvalues</i> are negative.<br>
+\(\lambda_1\lt 0, \lambda_2\lt 0,\cdots ,\lambda_n\lt 0\)<br>
+<blockquote style="background-color:#f6f8fa; border-color: #fff; border-radius: 15px;">
+If <i>eigenvalues</i> are <b>Complex</b> say \(\lambda=a+ib;\quad a,b\in\mathbb{R}\) then
+\(\|e^{(a+ib)}\|=\|e^a\|\) so complex part doesn't matters here.
+</blockquote>
+</dd></dl>
+
+\(2.\) <b>Steady state</b><br>
+<dl><dd>
+If <span class="bb" style="padding-top: 15px; padding-bottom: 15px;">\(\vec{u}(t)\xrightarrow [t\to \infty ]{} \vec{c}\)</span> then we have a <b>steady state</b><br>
+Here \(\vec{c}\) is a constant vector that does not depends on \(t\).<br>
+If atleast one of the <i>eigenvalue</i> is \(0\) and rest of the <i>eigenvalues</i> are negative
+then we can say we have a steady state.<br>
+\(\lambda_1 = 0, \lambda_2 = 0,\cdots ,\lambda_k = 0;\quad\)\(1 \leq k \leq n\)<br>
+\(\lambda_{k+1} \lt 0, \lambda_{k+2} \lt 0,\cdots ,\lambda_n \lt 0;\quad\)\(1 \leq k \leq n\)<br>
+</dd></dl>
+
+\(2.\) <b>Blow-up</b><br>
+<dl><dd>
+If <span class="bb" style="padding-top: 15px; padding-bottom: 15px;">\(\vec{u}(t)\xrightarrow [t\to \infty ]{} \vec{\infty}\)</span>  then we have a <b>blow-up</b><br>
+Here \(\vec{\infty}\) means that all the elements of \(\vec{u}(t)\) (goes to) \(\infty\)<br>
+If atleast one of the <i>eigenvalue</i> is <b>positive</b> then we can say we have a blow-up.<br>
+So we can say that for a blow-up \(\exists \lambda_k \gt 0 ;\quad k\in\{1,2,3,\cdots,n\}\)<br>
+</dd></dl>
+<!--
+<li>For some a <b>non-singular</b> matrix say \(S\)</li>
+\[e^{SAS^{-1}}=Se^{A}S^{-1}\]
+<b>Proof:</b>
+-->
+<!--
+Symmetric matrix will give us pure Real eigenvalue, and
+Anti Symmetric matrix will give us pure Complex eigenvalue, and
+-->
+</p>
+
+<br>
+<div onclick="location.href = 'https://join.slack.com/t/quantml-workspace/shared_invite/zt-hcmbg7fr-jPbVAUT_tjGPaKWU50qMYQ';" class="slack-discuss" style="color: #406b94;">Join our Slack <i class="fab fa-slack"> </i>  discussion forum</div>
+<br>
+
+<div class='buttons'>
+    <button onclick="window.location.href = 'diagonalization.html';">&#x25C0;&nbsp;&nbsp;Diagonalization of a Matrix</button>
+    <button style="float: right;" onclick="window.location.href = 'markov-matrix.html';">Markov Matrix &nbsp;&nbsp;&#x25B6;</button>
+</div><br>
+                        </section>
+                    </div>
+            </div>
+            <!-- Highlight all -->
+            <script type="text/javascript">
+                SyntaxHighlighter.all()
+            </script>
+
+            <!-- Accordions -->
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+}
+</script>
+        <!-- Scripts -->
+            <script src="data/assets/js/jquery.min.js"></script>
+            <script src="data/assets/js/jquery.scrollex.min.js"></script>
+            <script src="data/assets/js/jquery.scrolly.min.js"></script>
+            <script src="data/assets/js/browser.min.js"></script>
+            <script src="data/assets/js/breakpoints.min.js"></script>
+            <script src="data/assets/js/util.js"></script>
+            <script src="data/assets/js/main.js"></script>
+
+    </body>
+</html>

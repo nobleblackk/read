@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--Code By Webdevtrick ( https://webdevtrick.com )-->
+<html lang="en" >
+<head>
+    <!--MathJax-->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        extensions: ["mml2jax.js"],
+        jax: ["input/MathML"]
+    });
+
+    </script>
+    <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Adding a scrollbar in math formula-->
+    <style>
+        .math-container {
+        overflow-x: auto;
+        display: block;
+    }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>Summary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="../data/assets/css/popupcard.css">
+<link rel="icon" href="../data/img/icon.png" type="image/png" sizes="16x16">
+</head><body>
+
+<div class="container" id="popup">
+    <div class="modal">
+        <div class="details">
+            <p class="description">
+            <b>Dimensions and Basis</b><br>
+            </p>
+        </div>
+        
+        <p class="txt">
+            Say we have a matrix \(A_{m\times n}\in\mathbb{R}^{m\times n}\)<br>
+            <br>
+            <b>Column Space</b><br>
+            \(\bullet\)&nbsp; Column Space of matrix \(A\) lives in \(\mathbb{R}^m\).<br>
+            \(\bullet\)&nbsp; The <b>basis</b> for <b>column space</b> are <b>(independent)pivot columns</b> of matrix \(A\).<br>
+            \(\bullet\)&nbsp; <b># Dimensions \(=\) # pivot columns</b> \(=Rank(A)=r\)<br>
+            <br>            
+                        
+            <b>Null Space</b><br>
+            \(\bullet\)&nbsp; Null Space of matrix \(A\) also lives in \(\mathbb{R}^m\).<br>
+            \(\bullet\)&nbsp; The <b>basis</b> for <b>null space</b> are <b>special solutions</b> of matrix \(A\).<br>
+            \(\bullet\)&nbsp; <b># Dimensions \(=\) # special solutions</b> \(=Rank(A)=r\)<br>
+            <br>            
+
+            &larr;&nbsp; <u><a style="color:red" href="rank.html#popup">Rank of a matrix(<i>summary</i>)</a></u><br>
+            &larr;&nbsp; <u><a style="color:red" href="rank-full-col.html#popup">Full column rank matrix(<i>summary</i>)</a></u><br>
+            &larr;&nbsp; <u><a style="color:red" href="rank-full-row.html#popup">Full row rank matrix(<i>summary</i>)</a></u><br>
+            &larr;&nbsp; <u><a style="color:red" href="rank-full.html#popup">Full rank matrix(<i>summary</i>)</a></u><br>
+            <u><a style="color:red" href="../rank.html#dim-basis">Visit Chapter</a></u> &nbsp;&rarr; <br>
+            
+            
+        </p>
+        <br>        
+        <button class="btn" onclick="window.location.href = 'rank-full.html#popup';">&larr; Full rank matrix</button>
+        <button style="float: right;" class="btn" onclick="window.location.href = '../rank.html';">Visit Chapter&rarr;</button>
+        <a href="../index.html#rank" class="link-2"></a>
+    </div>
+</div>
+</body>
+</html>

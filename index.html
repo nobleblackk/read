@@ -20,7 +20,51 @@
         <script type="text/javascript" async
         src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
+<style>
+    #toc_container {
+        /*background: #f9f9f9 none repeat scroll 0 0;*/
+        background: #fff none repeat scroll 0 0;
+        /*border: 1px solid #aaa;*/
+        display: table;
+        font-size: 100%;
+        margin-bottom: 1em;
+        padding: 20px;
+        width: auto;
+    }
+    
+    .toc_title {
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    #toc_container li, #toc_container ul, #toc_container ul li{
+        list-style: outside none none !important;
+    }
+</style>
 
+				<style>
+			.logo-nav{
+				background-color: #cfedff; 
+				border-radius: 5px; 
+				position: relative; 
+				top: 3px;
+			}
+			.logo-nav:hover{
+				background-color: #6cc7ff; 
+			}
+			.slack-nav{
+				color: blue;
+				border-bottom-color: transparent;
+				background-color: #cfedff; 
+				border-radius: 	5px;	
+				padding-right: 	3px;
+				padding-left:  	3px;
+				padding-top: 	2px;
+				padding-bottom: 1px;
+				top: 			0px;
+				
+			}
+		</style>
 		<title>Linear Algebra</title>
         <style>
             .dropdown {
@@ -31,7 +75,7 @@
             .dropdown-content {
                 display: none;
                 position: absolute;
-                background-color: #f1f1f1;
+                background-color: #ECF1F6;
                 min-width: 160px;
                 z-index: 1;
             }
@@ -43,18 +87,60 @@
                 display: block;
             }
 
-            .dropdown-content a:hover {background-color: #666666;}
+            .dropdown-content a:hover {background-color: #B3C7DB;}
 
             .dropdown:hover .dropdown-content {display: block;}
 
             .dropdown:hover .dropbtn {background-color: #3e8e41;}
-        </style>
+		</style>
+		<style>
+			.slack-discuss {
+				font-family: Arial, Helvetica, sans-serif;
+				font-weight: 600;
+				font-size: 16px;
+				text-align: center;
+
+				background-color: white;
+				box-shadow: .1rem .1rem 1.2rem .1rem #467AAC;
+				width: 100%;
+				cursor: pointer;
+				border-radius: 20px;
+
+			}
+
+			.slack-discuss:hover {
+				box-shadow: .2rem .2rem 2.4rem .2rem #467AAC;
+			}
+		</style>
+		<style>
+			.logo-nav{
+				background-color: #cfedff; 
+				border-radius: 5px; 
+				position: relative; 
+				top: 3px;
+			}
+			.logo-nav:hover{
+				background-color: #6cc7ff; 
+			}
+			.slack-nav{
+				color: blue;
+				border-bottom-color: transparent;
+				background-color: #cfedff; 
+				border-radius: 	5px;	
+				padding-right: 	3px;
+				padding-left:  	3px;
+				padding-top: 	2px;
+				padding-bottom: 1px;
+				top: 			0px;
+				
+			}
+		</style>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="data/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="data/assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+	<link rel="icon" href="data/img/icon.png" type="image/png" sizes="16x16">
+</head>	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
@@ -62,7 +148,7 @@
 				<!-- Intro -->
 					<div id="intro">
 						<h1>Linear Algebra</h1>
-						<p>Open resource on Linear Algebra, Inspired by <b><a style="color:blue" href="https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/">MIT Linear Algebra Course</a></b> </p>
+						<p>Inspired by <b><a style="color: darkorange" href="https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/">MIT Linear Algebra Course</a></b> </p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
@@ -77,12 +163,14 @@
 					<nav id="nav">
 						<ul class="links">
 							<li class="active"><a href="index.html">Linear Algebra</a></li>
-							<li><a href="data/discussion.html">General Discussion</a></li>
-                            <li><a href="data/contribution.html">Contribution</a></li>
-                            <li><a href="data/thanks.html">Thanks</a></li>
+							<!--<li><a href="data/discussion.html">General Discussion</a></li>
+                            <li><a href="data/contribution.html">Contribution</a></li>-->
+                            <li><a href="thanks.html">Thanks</a></li>
 						</ul>
 						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://www.quantml.org" style="border-bottom-color: transparent;"><img style="margin-right: 5px; margin-left: 5px;" class="logo-nav" src="data/img/icon.png" alt="logo" width="20" height="20"></a></li>
+							<li><a href="https://join.slack.com/t/quantml-workspace/shared_invite/zt-hcmbg7fr-jPbVAUT_tjGPaKWU50qMYQ" class="fab fa-slack slack-nav" style="color: blue;"><span class="label"></span></a></li>
+                            <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
 							<li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 						</ul>
 					</nav>
@@ -90,114 +178,285 @@
 				<!-- Main -->
 					<div id="main">
 					<section class="post">
-					<h2>Table of Content</h2>
-                        <div class="dropdown">
-                            <button  style="font-family: inherit; margin-top:5px;" onclick="window.location.href = 'data/index/linear-algebra-prereq/vector-space.html';">Vector Space &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x25BC;</button>
-                            <a href="data/index/linear-algebra-prereq/summary/vector-space.html#popup" class="fa fa-info-circle" style="font-size:36px"></a><br>
-                            <div class="dropdown-content">
-                                    <a href="data/index/linear-algebra-prereq/vector-space.html#main">Vector Space</a>
-                                    <a href="data/index/linear-algebra-prereq/vector-space.html#properties">Vector Space Properties</a>
-                            </div>
-                        </div>
-                        
-                        <div class="dropdown">
-                            <button style="font-family: inherit; margin-top:5px;" onclick="window.location.href = 'data/index/linear-algebra-prereq/column-space.html';">Column Space &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x25BC;</button>
-                            <a href="data/index/linear-algebra-prereq/summary/column-space.html#popup" class="fa fa-info-circle" style="font-size:36px"></a><br>
-                            <div class="dropdown-content">
-                                    <a href="data/index/linear-algebra-prereq/column-space.html#main">Column Space</a>
-                                    <a href="data/index/linear-algebra-prereq/column-space.html#r3">Example in \(\mathbb{R}^3\)</a>
-                                    <a href="data/index/linear-algebra-prereq/column-space.html#r4">Example in \(\mathbb{R}^4\)</a>
-                                    <a href="data/index/linear-algebra-prereq/column-space.html#matrix-notation">Matrix Notation</a>
-                                    <a href="data/index/linear-algebra-prereq/column-space.html#dependency">Dependency</a>
-                            </div>
-                        </div>
+						<div onclick="location.href = 'https://join.slack.com/t/quantml-workspace/shared_invite/zt-hcmbg7fr-jPbVAUT_tjGPaKWU50qMYQ';" class="slack-discuss" style="color: #406b94; width: 100%;">Join our Slack <i class="fab fa-slack"> </i>  discussion forum</div>
+						<br>
+					
+                    <h2 style="text-align-last: center;">Table of Content</h2>
+                    
+                    <div id="toc_container">
+                        <ul class="toc_list">
 
-                        <div class="dropdown">
-                            <button  style="font-family: inherit; margin-top:5px;" onclick="window.location.href = 'data/index/linear-algebra-prereq/null-space.html';">Null Space \((A\vec{x}=\vec{0})\) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x25BC;</button>
-                            <a href="data/index/linear-algebra-prereq/summary/null-space.html#popup" class="fa fa-info-circle" style="font-size:36px"></a><br>
-                            <div class="dropdown-content">
-                                    <a href="data/index/linear-algebra-prereq/null-space.html#main">Null Space</a>
-                                    <a href="data/index/linear-algebra-prereq/null-space.html#r4">Example in \(\mathbb{R}^4\)</a>
-                                    <a href="data/index/linear-algebra-prereq/null-space.html#ax=0">&#x25B6; Is \(A\vec{x}=0\) a vector space?</a>
-                                    <a href="data/index/linear-algebra-prereq/null-space.html#elimination">&#x25B6; Elimination Technique</a>
-                                    <a href="data/index/linear-algebra-prereq/null-space.html#pivot-free-columns">&#x25B6; pivot column/free columns</a>
-                                    <a href="data/index/linear-algebra-prereq/null-space.html#special-solution">&#x25B6; Finding special solution</a>
-                                    <a href="data/index/linear-algebra-prereq/null-space.html#num-of-special-sol">&#x25B6; # special solutions</a>
-                                    <a href="data/index/linear-algebra-prereq/null-space.html#rref">&#x25B6; Reduced Row Echelon Form</a>
-                            </div>
-                        </div>
+                            <li id="vector-space"><a style="color: darkred" href="vector-space.html">\(1)\) Vector Space </a>
+                                <a href="summary/vector-space.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+                                    <li><a style="color:darkorchid" href="vector-space.html#main">\(1.0\) &nbsp;&nbsp;&nbsp;&nbsp; Introduction</a></li>
+                                    <li><a style="color:darkorchid" href="vector-space.html#properties">\(1.1\) Vector Space Properties</a></li>
+                                </ul>
+                            </li>
 
-                        <div class="dropdown">
-                            <button  style="font-family: inherit; margin-top:5px;" onclick="window.location.href = 'data/index/linear-algebra-prereq/complete-space.html';">Solving \(A\vec{x}=\vec{b}\) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x25BC;</button>
-                            <a href="data/index/linear-algebra-prereq/summary/complete-space.html#popup" class="fa fa-info-circle" style="font-size:36px"></a><br>
-                            <div class="dropdown-content">
-                                    <a href="data/index/linear-algebra-prereq/complete-space.html#main">Solving \(A\vec{x}=\vec{b}\)</a>
-                                    <a href="data/index/linear-algebra-prereq/complete-space.html#ax=b">Find \(\vec{x}\) that solves \(A\vec{x}=\vec{b}\)?</a>
-                                    <a href="data/index/linear-algebra-prereq/complete-space.html#main">Elimination Technique</a>
-                            </div>
-                        </div>
+                            <li id="column-space"><a style="color: darkred" href="column-space.html">\(2)\) Column Space </a>
+                                <a href="summary/column-space.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+                                    <li><a style="color:darkorchid" href="column-space.html#main">\(2.0\) &nbsp;&nbsp;&nbsp;&nbsp; Introduction</a></li>
+                                    <li><a style="color:darkorchid" href="column-space.html#r3">\(2.1\) &nbsp;&nbsp;&nbsp;&nbsp; Example in \(\mathbb{R}^3\)</a></li>
+                                    <li><a style="color:darkorchid" href="column-space.html#r4">\(2.2\) &nbsp;&nbsp;&nbsp;&nbsp; Example in \(\mathbb{R}^4\)</a></li>
+                                    <li><a style="color:darkorchid" href="column-space.html#matrix-notation">\(2.3\) &nbsp;&nbsp;&nbsp;&nbsp; Matrix Notation</a></li>
+                                    <li><a style="color:darkorchid" href="column-space.html#dependency">\(2.4\) &nbsp;&nbsp;&nbsp;&nbsp; Dependency</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li id="null-space"><a style="color: darkred" href="null-space.html">\(3)\) Null Space \((A\vec{x}=\vec{0})\)</a>
+                                <a href="summary/null-space.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+                                    <li><a style="color:darkorchid" href="null-space.html#main">\(3.0\) &nbsp;&nbsp;&nbsp;&nbsp; Introduction</a></li>
+                                    <li><a style="color:darkorchid" href="null-space.html#r4">\(3.1\) &nbsp;&nbsp;&nbsp;&nbsp; Example in \(\mathbb{R}^4\)</a></li>
+                                    <li><a style="color:darkorchid" href="null-space.html#ax=0">\(3.2\) &nbsp;&nbsp;&nbsp;&nbsp; Is \(A\vec{x}=0\) a vector space?</a></li>
+                                    <li><a style="color:darkorchid" href="null-space.html#elimination">\(3.3\) &nbsp;  Elimination Technique</a></li>
+                                    <li><a style="color:darkorchid" href="null-space.html#pivot-free-columns">\(3.4\) &nbsp;  pivot column/free columns</a></li>
+                                    <li><a style="color:darkorchid" href="null-space.html#special-solution">\(3.5\) &nbsp;  Finding special solution</a></li>
+                                    <li><a style="color:darkorchid" href="null-space.html#num-of-special-sol">\(3.6\) &nbsp;  # special solutions</a></li>
+                                    <li><a style="color:darkorchid" href="null-space.html#rref">\(3.7\) &nbsp; Reduced Row Echelon Form</a></li>
+                                </ul>
+                            </li>
 
-                        <div class="dropdown">
-                           <button  style="font-family: inherit; margin-top:5px;" onclick="window.location.href = 'data/index/linear-algebra-prereq/rank.html';">Rank Of a Matrix &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x25BC;</button>
-                           <a href="data/index/linear-algebra-prereq/summary/rank.html#popup" class="fa fa-info-circle" style="font-size:36px"></a><br>
-                            <div class="dropdown-content">
-                                    <a href="data/index/linear-algebra-prereq/rank.html#main">Rank Of a Matrix</a>
-                                    <a href="data/index/linear-algebra-prereq/rank.html#col">Full column rank matrix</a>
-                                    <a href="data/index/linear-algebra-prereq/rank.html#row">Full row rank matrix</a>
-                                    <a href="data/index/linear-algebra-prereq/rank.html#full">Full rank matrix</a>
-                                    <a href="data/index/linear-algebra-prereq/rank.html#dim-basis">Dimensions and Basis</a>
-                                    <a href="data/index/linear-algebra-prereq/rank.html#cs">&#x25B6; &nbsp;Column Space</a>
-                                    <a href="data/index/linear-algebra-prereq/rank.html#ns">&#x25B6; &nbsp;Null Space</a>
-                            </div>
-                        </div>
+                            <li id="complete-space"><a style="color:darkred" href="complete-space.html">\(4)\) Solving \(A\vec{x}=\vec{b}\) </a>
+                                <a href="summary/complete-space.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+									<li><a style="color:darkorchid" href="complete-space.html#main">\(4.0\) &nbsp;&nbsp;&nbsp;&nbsp; Introduction</a></li>
+									<li><a style="color:darkorchid" href="complete-space.html#ax=b">\(4.1\) &nbsp;&nbsp;&nbsp;&nbsp; Find \(\vec{x}\) that solves \(A\vec{x}=\vec{b}\)?</a></li>
+									<div style="margin-left: 30px;">
+										<li><a style="color:darkorchid" href="complete-space.html#main">\(4.1.1\) &nbsp; Elimination Technique</a></li>
+									</div>
+                                </ul>
+                            </li>
+							
+                            <li id="rank"><a style="color: darkred" href="rank.html">\(5)\) Rank Of a Matrix  </a>
+                                <a href="summary/rank.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+									<li><a style="color:darkorchid" href="rank.html#main">\(5.0\) &nbsp;&nbsp;&nbsp;&nbsp; Introduction</a></li>
+									<li><a style="color:darkorchid" href="rank.html#col">\(5.1\) &nbsp;&nbsp;&nbsp;&nbsp; Full column rank matrix</a></li>
+									<li><a style="color:darkorchid" href="rank.html#row">\(5.2\) &nbsp;&nbsp;&nbsp;&nbsp; Full row rank matrix</a></li>
+									<li><a style="color:darkorchid" href="rank.html#full">\(5.3\) &nbsp;&nbsp;&nbsp;&nbsp; Full rank matrix</a></li>
+									<li><a style="color:darkorchid" href="rank.html#dim-basis">\(5.4\) &nbsp;&nbsp;&nbsp;&nbsp; Dimensions and Basis</a></li>
+									<div style="margin-left: 30px;">
+										<li><a style="color:royalblue" href="rank.html#cs">\(5.4.1\) &nbsp; Column Space</a></li>
+										<li><a style="color:royalblue" href="rank.html#ns">\(5.4.2\) &nbsp; Null Space</a></li>
+									</div>
+                                </ul>
+                            </li>
+							
+                            <li id="fundamental-subspaces"><a style="color: darkred" href="fundamental-subspaces.html">\(6)\) \(\mathbf{4}\) fundamental subspaces </a>
+                                <a href="summary/fundamental-subspaces.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+									<li><a style="color:darkorchid" href="fundamental-subspaces.html#main">\(6.0\) &nbsp;&nbsp;&nbsp;&nbsp; Introduction</a></li>
+									<li><a style="color:darkorchid" href="fundamental-subspaces.html#row-space">\(6.1\) &nbsp;&nbsp;&nbsp;&nbsp; Row Space</a></li>
+									<li><a style="color:darkorchid" href="fundamental-subspaces.html#left-null-space">\(6.2\) &nbsp;&nbsp;&nbsp;&nbsp; Left Null Space</a></li>
+									<ul style="margin-top: 10px;">
+										<li id="fundamental-subspaces-dim"><a style="color: darkred" href="fundamental-subspaces.html#dim">\(6A)\) &nbsp;&nbsp;&nbsp;&nbsp; Dimensions of fundamental spaces</a> 
+											<a href="summary/fundamental-subspaces-dim.html#popup" class="fa fa-info-circle" style="font-size:24px"></a></li>
+										<ul>
+											<li><a style="color:darkorchid" href="fundamental-subspaces.html#dim-column-space">\(6A.1\) &nbsp;&nbsp;&nbsp;&nbsp;  Dimensions of Column space</a></li>
+											<li><a style="color:darkorchid" href="fundamental-subspaces.html#dim-null-space">\(6A.2\) &nbsp;&nbsp;&nbsp;&nbsp;  Dimensions of Null space</a></li>
+											<li><a style="color:darkorchid" href="fundamental-subspaces.html#dim-row-space">\(6A.3\) &nbsp;&nbsp;&nbsp;&nbsp;  Dimensions of Row space</a></li>
+											<li><a style="color:darkorchid" href="fundamental-subspaces.html#dim-left-null-space">\(6A.4\) &nbsp;&nbsp;&nbsp;&nbsp;  Dimensions of Left Null space</a></li>
+										</ul>											
+									</ul>
+									
+									<ul>
+										<li  id="fundamental-subspaces-basis"><a style="color: darkred" href="fundamental-subspaces.html#basis">\(6B)\) &nbsp;&nbsp;&nbsp;&nbsp; Basis of fundamental spaces</a> 
+											<a href="summary/fundamental-subspaces-basis.html#popup" class="fa fa-info-circle" style="font-size:24px"></a></li>
+										<ul>
+											<li><a style="color:darkorchid" href="fundamental-subspaces.html#basis-column">\(6B.1\) &nbsp;&nbsp;&nbsp;&nbsp;  Basis of Column space</a></li>
+											<li><a style="color:darkorchid" href="fundamental-subspaces.html#basis-null">\(6B.2\) &nbsp;&nbsp;&nbsp;&nbsp;  Basis of Null space</a></li>
+											<li><a style="color:darkorchid" href="fundamental-subspaces.html#basis-row">\(6B.3\) &nbsp;&nbsp;&nbsp;&nbsp;  Basis of Row space</a></li>
+											<li><a style="color:darkorchid" href="fundamental-subspaces.html#Basis">\(6B.4\) &nbsp;&nbsp;&nbsp;&nbsp;  Basis of Left Null space</a></li>
+										</ul>											
+									</ul>
+                                </ul>
+                            </li>
+							
+                            <li><a style="color: darkred" href="matrix-space.html">\(7)\) Matrix Space  </a>
+                                <a href="summary/matrix.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+									<li><a style="color:darkorchid" href="matrix-space.html#main">\(7.1\) &nbsp;&nbsp;&nbsp;&nbsp; Matrix</a></li>
+									<li><a style="color:darkorchid" href="matrix-space.html#vector-interpretation">\(7.2\) &nbsp;&nbsp;&nbsp;&nbsp; Vector Interpretation</a></li>
+									<li><a style="color:darkorchid" href="matrix-space.html#matrix-interpretation">\(7.3\) &nbsp;&nbsp;&nbsp;&nbsp; Matrix Interpretation</a></li>
+									<li><a style="color:darkorchid" href="matrix-space.html#matrix-as-vector">\(7.4\) &nbsp;&nbsp;&nbsp;&nbsp; Vector interpretation of a Matrix</a></li>
+									<li><a style="color:darkorchid" href="matrix-space.html#matrix-space">\(7.5\) &nbsp;&nbsp;&nbsp;&nbsp; Matrix space</a></li>
+									<div style="margin-left: 30px;">
+										<li><a style="color:royalblue" href="matrix-space.html#lower-triangular">\(7.5.1\) &nbsp; Lower Triangular</a></li>
+										<li><a style="color:royalblue" href="matrix-space.html#symmetric-matrix">\(7.5.2\) &nbsp; Symmetric Matrix</a></li>
+									</div>
+									<ul style="margin-top: 20px;">
+										<li><a style="color: darkred" href="matrix-space-dim.html">\(7A)\) Dimensions and Basis</a>
+											<a href="summary/matrix-dim.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+											<ul>
+												<li><a style="color:darkorchid" href="matrix-space-dim.html#basis-3x3">\(7A.1\) &nbsp;&nbsp;&nbsp;&nbsp; Basis of all \(3\times 3\) matrices</a></li>
+												<div style="margin-left: 30px;">
+													<li><a style="color:royalblue" href="matrix-space-dim.html#basis-3x3-up">\(7A.1.1\) &nbsp;&nbsp;&nbsp;&nbsp;  Lower Triangular</a></li>
+													<li><a style="color:royalblue" href="matrix-space-dim.html#basis-3x3-sym">\(7A.1.1\) &nbsp;&nbsp;&nbsp;&nbsp;  Symmetric Matrix</a></li>
+												</div>
+											</ul>
+										</li>									
+									</ul>
 
-                        <div class="dropdown">
-                           <button  style="font-family: inherit; margin-top:5px;" onclick="window.location.href = 'data/index/linear-algebra-prereq/matrix-space.html';">Matrix Space &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x25BC;</button>
-                           <a href="data/index/linear-algebra-prereq/summary/matrix.html#popup" class="fa fa-info-circle" style="font-size:36px"></a><br>
-                            <div class="dropdown-content">
-                                    <a href="data/index/linear-algebra-prereq/matrix-space.html#main">Matrix</a>
-                                    <a href="data/index/linear-algebra-prereq/matrix-space.html#vector-interpretation">Vector Interpretation</a>
-                                    <a href="data/index/linear-algebra-prereq/matrix-space.html#matrix-interpretation">Matrix Interpretation</a>
-                                    <a href="data/index/linear-algebra-prereq/matrix-space.html#matrix-as-vector">Vector interpretation of a Matrix</a>
-                                    <a href="data/index/linear-algebra-prereq/matrix-space.html#matrix-space">Matrix space</a>
-                                    <a href="data/index/linear-algebra-prereq/matrix-space.html#lower-triangular">&#x25B6; &nbsp;Lower Triangular</a>
-                                    <a href="data/index/linear-algebra-prereq/matrix-space.html#symmetric-matrix">&#x25B6; &nbsp;Symmetric Matrix</a>
-                            </div>
-                        </div>
+									<ul>
+										<li><a style="color: darkred" href="matrix-space-ops.html">\(7B)\) Operations on Subspaces</a>
+											<a href="summary/matrix-ops.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+											<ul>
+												<li><a style="color:darkorchid" href="matrix-space-ops.html#intersaction">\(7B.1\) &nbsp;&nbsp;&nbsp;&nbsp; \(\mathcal{S} \cap \mathcal{U}\)</a></li>
+												<li><a style="color:darkorchid" href="matrix-space-ops.html#union">\(7B.2\) &nbsp;&nbsp;&nbsp;&nbsp; \(\mathcal{S} \cup \mathcal{U}\)</a></li>
+												<li><a style="color:darkorchid" href="matrix-space-ops.html#addition">\(7B.3\) &nbsp;&nbsp;&nbsp;&nbsp; \(\mathcal{S} + \mathcal{U}\)</a></li>
+											</ul>
+										</li>									
+									</ul>
 
-                            <dl><dd>
-                                <div class="dropdown">
-                                   \(\bullet\) &nbsp;&nbsp;<button  style="font-family: inherit; margin-top:5px;" onclick="window.location.href = 'data/index/linear-algebra-prereq/matrix-space-dim.html';">DIMENSION AND BASIS &emsp;&emsp;&nbsp;&#x25BC;</button>
-                                   <a href="data/index/linear-algebra-prereq/summary/matrix-dim.html#popup" class="fa fa-info-circle" style="font-size:36px"></a><br>
-                                    <div style="margin-left: 2%;" class="dropdown-content">
-                                        <a href="data/index/linear-algebra-prereq/matrix-space-dim.html#basis-3x3">Basis of all \(3\times 3\) matrices</a>
-                                        <a href="data/index/linear-algebra-prereq/matrix-space-dim.html#basis-3x3-up">&#x25B6; &nbsp;Lower Triangular</a>
-                                        <a href="data/index/linear-algebra-prereq/matrix-space-dim.html#basis-3x3-sym">&#x25B6; &nbsp;Symmetric Matrix</a>
-                                    </div>
-                                </div>
-                                
-                                <div class="dropdown">
-                                   \(\bullet\) &nbsp;&nbsp;<button  style="font-family: inherit; margin-top:5px;" onclick="window.location.href = 'data/index/linear-algebra-prereq/matrix-space-ops.html';">OPERATION ON SUBSPACES &#x25BC;</button>
-                                   <a href="data/index/linear-algebra-prereq/summary/matrix-ops.html#popup" class="fa fa-info-circle" style="font-size:36px"></a><br>
-                                    <div style="margin-left: 2%;" class="dropdown-content">
-                                        <a href="data/index/linear-algebra-prereq/matrix-space-ops.html#intersaction">\(\mathcal{S} \cap \mathcal{U}\)</a>
-                                        <a href="data/index/linear-algebra-prereq/matrix-space-ops.html#union">\(\mathcal{S} \cup \mathcal{U}\)</a>
-                                        <a href="data/index/linear-algebra-prereq/matrix-space-ops.html#addition">\(\mathcal{S} + \mathcal{U}\)</a>
-                                    </div>
-                                </div>
+									<ul>
+										<li><a style="color: darkred" href="matrix-space-ex.html">\(7C)\) More Examples</a>
+											<ul>
+												<li><a style="color:darkorchid" href="matrix-space-ex.html#examples">\(7C.1\) &nbsp;&nbsp;&nbsp;&nbsp; More Examples on Matrix Space</a></li>
+											</ul>
+										</li>									
+									</ul>
 
-                                <div class="dropdown">
-                                   \(\bullet\) &nbsp;&nbsp;<button  style="font-family: inherit; margin-top:5px;" onclick="window.location.href = 'data/index/linear-algebra-prereq/matrix-space-ex.html';">MORE EXAMPLES  &emsp;&emsp;&nbsp;&emsp;&nbsp;&emsp;&nbsp;&nbsp;&nbsp;&#x25BC;</button><br>
-                                    <div style="margin-left: 2%;" class="dropdown-content">
-                                        <a href="data/index/linear-algebra-prereq/matrix-space-ex.html#examples">More Examples on Matrix Space</a>
-                                    </div>
-                                </div>
-                                
-                                
-                            </dd></dl>
+									
+                                </ul>
+                            </li>
 
+                            <li id="orthogonal-subspaces"><a style="color: darkred" href="orthogonal-subspaces.html">\(8)\) Orthogonal Subspaces </a>
+                                <a href="summary/orthogonal-subspaces.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+									<li><a style="color:darkorchid" href="orthogonal-subspaces.html#main">\(8.0\) &nbsp;&nbsp;&nbsp;&nbsp; Introduction</a></li>
+									<li><a style="color:darkorchid" href="orthogonal-subspaces.html#orthogonal-vector">\(8.1\) &nbsp;&nbsp;&nbsp;&nbsp; Orthogonal Vector</a></li>
+									<li><a style="color:darkorchid" href="orthogonal-subspaces.html#orthogonal-subspaces">\(8.2\) &nbsp;&nbsp;&nbsp;&nbsp; Orthogonal Subspaces</a></li>
+									<li><a style="color:darkorchid" href="orthogonal-subspaces.html#row-null">\(8.3\) &nbsp;&nbsp;&nbsp;&nbsp; Row space is orthogonal to null space</a></li>
+									<li><a style="color:darkorchid" href="orthogonal-subspaces.html#column-leftnull">\(8.4\) &nbsp;&nbsp;&nbsp;&nbsp; Column space is orthogonal to left null space</a></li>
+                                </ul>
+                            </li>
 
-                        <br><br><br><br><br><br><br><br><br>
+                            <li id="projection"><a style="color: darkred" href="projection.html">\(9)\) Projection </a>
+                                <a href="summary/projection.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+									<li><a style="color:darkorchid" href="projection.html#main">\(9.0\) &nbsp;&nbsp;&nbsp;&nbsp; Introduction</a></li>
+									<li><a style="color:darkorchid" href="projection.html#vec-proj">\(9.1\) &nbsp;&nbsp;&nbsp;&nbsp; Vector Projection</a></li>
+									<div style="margin-left: 30px;">
+										<li><a style="color:royalblue" href="projection.html#vector-projection-matrix">\(9.1.1\) &nbsp;  Projection Matrix of a vector</a></li>
+									</div>
+									<li><a style="color:darkorchid" href="projection.html#why-project">\(9.2\) &nbsp;&nbsp;&nbsp;&nbsp; Why are we doing projection?</a></li>
+									<li><a style="color:darkorchid" href="projection.html#matrix-projection">\(9.3\) &nbsp;&nbsp;&nbsp;&nbsp; Matrix Projection</a></li>
+									<div style="margin-left: 30px;">
+										<li><a style="color:royalblue" href="projection.html#matrix-projection-column">\(9.3.1\) &nbsp;  Projection onto the column space of a matrix</a></li>
+									</div>
+									<li><a style="color:darkorchid" href="least-squares.html#main">\(9.4\) &nbsp;&nbsp;&nbsp;&nbsp; Least Squares(Application of projection)</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a style="color: darkred" href="orthonormal-vectors.html">\(10)\) Orthonormal column Vectors </a>
+                                <a href="summary/orthonormal-vectors.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+									<li><a style="color:darkorchid" href="orthonormal-vectors.html#main">\(10.0\) &nbsp;&nbsp;&nbsp;&nbsp; Introduction</a></li>
+									<li><a style="color:darkorchid" href="orthonormal-vectors.html#why-orthogonal">\(10.1\) &nbsp;&nbsp;&nbsp;&nbsp; What is the benefit of orthonormal column vector</a></li>
+									<li><a style="color:darkorchid" href="orthonormal-vectors.html#gram-schmidt">\(10.2\) &nbsp;&nbsp;&nbsp;&nbsp; Gram Schmidt</a></li>
+                                </ul>
+                            </li>
+
+                            <li id="eigenvalues-eigenvectors"><a style="color: darkred" href="eigenvalues-eigenvectors.html">\(11)\) Eigenvalues and Eigenvectors </a>
+                                <a href="summary/eigenvalues-eigenvectors.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+									<li><a style="color:darkorchid" href="eigenvalues-eigenvectors.html#main">\(11.0\) &nbsp;&nbsp;&nbsp;&nbsp; Introduction</a></li>
+									<li><a style="color:darkorchid" href="eigenvalues-eigenvectors.html#solving">\(11.1\) &nbsp;&nbsp;&nbsp;&nbsp; Solving \(A\vec{x}=\lambda\vec{x}\)</a></li>
+                                </ul>
+                            </li>
+
+                            <li id="diagonalization"><a style="color: darkred" href="diagonalization.html">\(12)\) Diagonalization and Power of a Matrix </a>
+                                <a href="summary/diagonalization.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+									<li><a style="color:darkorchid" href="diagonalization.html#main">\(12.1\) &nbsp;&nbsp;&nbsp;&nbsp; Diagonalization of a Matrix</a></li>
+									<li><a style="color:darkorchid" href="diagonalization.html#power">\(12.2\) &nbsp;&nbsp;&nbsp;&nbsp; Power of a matrix</a></li>
+									<li><a style="color:darkorchid" href="diagonalization.html#fibonacci">\(12.3\) &nbsp;&nbsp;&nbsp;&nbsp; Fibonacci example</a></li>
+                                </ul>
+                            </li>
+
+                            <li id="differential-equation"><a style="color: darkred" href="differential-equation.html">\(13)\) Differential Equation </a>
+                                <a href="summary/differential-equation.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+									<li><a style="color:darkorchid" href="differential-equation.html#main">\(13.1\) &nbsp;&nbsp;&nbsp;&nbsp; Matrix Exponential</a></li>
+									<li><a style="color:darkorchid" href="differential-equation.html#diff">\(13.2\) &nbsp;&nbsp;&nbsp;&nbsp; Differential Equation</a></li>
+									<li><a style="color:darkorchid" href="differential-equation.html#states">\(13.3\) &nbsp;&nbsp;&nbsp;&nbsp; States</a></li>
+                                </ul>
+                            </li>
+
+                            <li id="markov-matrix"><a style="color: darkred" href="markov-matrix.html">\(14)\) Markov Matrix & Fourier Series </a>
+                                <a href="summary/markov-matrix.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+									<li><a style="color:darkorchid" href="markov-matrix.html#main">\(14.0\) &nbsp;&nbsp;&nbsp;&nbsp; Introduction</a></li>
+									<li><a style="color:darkorchid" href="markov-matrix.html#example">\(14.1\) &nbsp;&nbsp;&nbsp;&nbsp; Example of Markov Matrices</a></li>
+									<li><a style="color:darkorchid" href="markov-matrix.html#expansion">\(14.2\) &nbsp;&nbsp;&nbsp;&nbsp; Expansion with Orthogonal basis</a></li>
+									<li><a style="color:darkorchid" href="markov-matrix.html#fourier">\(14.3\) &nbsp;&nbsp;&nbsp;&nbsp; Fourier Series</a></li>
+                                </ul>
+                            </li>
+
+                            <li id="symmetric-matrices"><a style="color: darkred" href="symmetric-matrices.html">\(15)\) Symmetric Matrices Properties </a>
+                                <a href="summary/symmetric-matrices.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+									<li><a style="color:darkorchid" href="symmetric-matrices.html#main">\(15.0\) &nbsp;&nbsp;&nbsp;&nbsp; Introduction</a></li>
+									<li><a style="color:darkorchid" href="symmetric-matrices.html#properties">\(15.1\) &nbsp;&nbsp;&nbsp;&nbsp; Properties</a></li>
+                                </ul>
+                            </li>
+
+                            <li id="cmfft"><a style="color: darkred" href="cmfft.html">\(16)\) Complex Matrix & Fast Fourier Transform </a>
+                                <a href="summary/cmfft.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+									<li><a style="color:darkorchid" href="cmfft.html#main">\(16.1\) &nbsp;&nbsp;&nbsp;&nbsp; Complex Matrices</a></li>
+									<div style="margin-left: 30px;">
+										<li><a style="color:royalblue" href="cmfft.html#complex-symmetric-matrices">\(16.1.1\) &nbsp;  Complex symmetric matrices</a></li>
+										<li><a style="color:royalblue" href="cmfft.html#complex-orthogonal-matrices">\(16.1.2\) &nbsp;  Complex Orthogonal Matrices</a></li>
+									</div>
+									<li><a style="color:darkorchid" href="cmfft.html#fft">\(16.2\) &nbsp;&nbsp;&nbsp;&nbsp; Fast Fourier Transform</a></li>
+                                </ul>
+                            </li>
+
+                            <li id="positive-definite-matrices"><a style="color: darkred" href="positive-definite-matrices.html">\(17)\) Positive Definite Matrices </a>
+                                <a href="summary/positive-definite-matrices.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+									<li><a style="color:darkorchid" href="positive-definite-matrices.html#main">\(17.1\) &nbsp;&nbsp;&nbsp;&nbsp; Properties</a></li>
+									<li><a style="color:darkorchid" href="positive-definite-matrices.html#examples">\(17.2\) &nbsp;&nbsp;&nbsp;&nbsp;  Examples</a></li>
+                                </ul>
+                            </li>
+
+                            <li id="similar-matrices"><a style="color: darkred" href="similar-matrices.html">\(18)\) Similar Matrices </a>
+                                <a href="summary/similar-matrices.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+									<li><a style="color:darkorchid" href="similar-matrices.html#main">\(18.1\) &nbsp;&nbsp;&nbsp;&nbsp; Properties/Examples </a></li>
+                                </ul>
+                            </li>
+
+                            <li id="svd"><a style="color: darkred" href="svd.html">\(19)\) Singular Value Decomposition </a>
+                                <a href="summary/svd.html#popup" class="fa fa-info-circle" style="font-size:24px"></a>
+                                <ul>
+									<li><a style="color:darkorchid" href="svd.html#main">\(19.0\) &nbsp;&nbsp;&nbsp;&nbsp; Introduction</a></li>
+									<div style="margin-left: 30px;">
+										<li><a style="color: royalblue" href="svd.html#row-space">\(19.0.1\) &nbsp; Row Space </a></li>
+										<li><a style="color: royalblue" href="svd.html#null-space">\(19.0.2\) &nbsp; Null Space </a></li>
+										<li><a style="color: royalblue" href="svd.html#column-space">\(19.0.3\) &nbsp; Column Space </a></li>
+										<li><a style="color: royalblue" href="svd.html#left-null-space">\(19.0.4\) &nbsp; Left Null Space </a></li>
+										<li><a style="color: royalblue" href="svd.html#terminologies">\(19.0.5\) &nbsp; Terminologies </a></li>
+									</div>
+									<li><a style="color:darkorchid" href="svd.html#full-svd">\(19.1\) &nbsp;&nbsp;&nbsp;&nbsp; Full SVD </a></li>
+									<li><a style="color:darkorchid" href="svd.html#reduced-svd">\(19.2\) &nbsp;&nbsp;&nbsp;&nbsp; Reduced SVD </a></li>
+									<li><a style="color:darkorchid" href="svd.html#find-U-and-V">\(19.3\) &nbsp;&nbsp;&nbsp;&nbsp; Finding \(V\) and \(U\) Orthonormal matrix </a></li>
+									<div style="margin-left: 30px;">
+										<li><a style="color: royalblue" href="svd.html#prop-ATA">\(19.3.1\) &nbsp; Row space of \(A\) is same as Row space of \(A^TA\) </a></li>
+										<li><a style="color: royalblue" href="svd.html#prop-AAT">\(19.3.2\) &nbsp; Column Space of \(A\) is same as Column Space of \(AA^T\) </a></li>
+									</div>
+									<li><a style="color:darkorchid" href="svd.html#V">\(19.4\) &nbsp;&nbsp;&nbsp;&nbsp; Finding orthonormal Row vectors\((V)\) for matrix \(A\) </a></li>
+									<li><a style="color:darkorchid" href="svd.html#U">\(19.5\) &nbsp;&nbsp;&nbsp;&nbsp; Finding orthonormal Column Vectors\((U)\) for matrix \(A\) </a></li>
+									<!--<li><a style="color:darkorchid" href="svd.html#">\(19.1\) &nbsp; Introduction </a></li>-->
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+<!-- QQQ--------------------------------------------------------------------------------------------- -->                        <br><br><br><br><br><br><br><br><br>
                     </section>
 					</div>
 

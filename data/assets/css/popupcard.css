@@ -14,6 +14,8 @@ body {
   flex-direction: column;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif;
   min-height: 100vh;
+  background-color: lightblue;
+  background-image: linear-gradient(120deg, #000000 0%, #003d61 50%,  #000000 100%);
 }
 a,
 a:link {
@@ -36,18 +38,19 @@ a:link {
 }
 .modal {
   width: 60rem;
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   border-radius: .8rem;
-  color: hsl(0, 0%, 100%);
-  background: linear-gradient(to right bottom, gray, black);
-  box-shadow: .4rem .4rem 2.4rem .2rem hsla(236, 50%, 50%, 0.3);
+  color: black;
+  background-color: white;
+  /*background: linear-gradient(to right bottom, white, lightblue);*/
+  box-shadow: .4rem .4rem 2.4rem .2rem black;
   position: relative;
   overflow: hidden;
 }
 .details {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid hsla(0, 0%, 100%, .4);
+  border-bottom: 1.5px solid black;
 }
 .title {
   font-size: 3.2rem;
@@ -67,13 +70,13 @@ a:link {
           transform: translate(-50%, -50%);
   width: 18rem;
   height: 18rem;
-  border: 1px solid hsla(0, 0%, 100%, .2);
+  /*border: 1px solid hsla(0, 0%, 100%, .2);*/
   border-radius: 100rem;
   pointer-events: none;
 }
 .btn {
   padding: 1rem 1.6rem;
-  border: 1px solid hsla(0, 0%, 100%, .4);
+  border: 1.5px solid black;
   border-radius: 100rem;
   color: inherit;
   background: transparent;
@@ -85,7 +88,8 @@ a:link {
 }
 .btn:hover,
 .btn:focus {
-  border-color: hsla(0, 0%, 100%, .6);
+  border-color: royalblue;
+  color: royalblue;
   -webkit-transform: translateY(-.2rem);
           transform: translateY(-.2rem);
 }
@@ -93,7 +97,7 @@ a:link {
 .link-2 {
   width: 4rem;
   height: 4rem;
-  border: 1px solid hsla(0, 0%, 100%, .4);
+  border: 1px solid grey;
   border-radius: 100rem;
   color: inherit;
   font-size: 2.2rem;
@@ -113,7 +117,8 @@ a:link {
 }
 .link-2:hover,
 .link-2:focus {
-  border-color: hsla(0, 0%, 100%, .6);
+  border-color: blue;
+  color: blue; 
   -webkit-transform: translateY(-.2rem);
           transform: translateY(-.2rem);
 }
