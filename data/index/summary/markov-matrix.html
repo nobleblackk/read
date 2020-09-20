@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--Code By Webdevtrick ( https://webdevtrick.com )-->
+<html lang="en" >
+<head>
+    <!--MathJax-->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        config: ["MMLorHTML.js"],
+        extensions: ["mml2jax.js"],
+        jax: ["input/MathML"]
+    });
+
+    </script>
+    <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <!-- Adding a scrollbar in math formula-->
+    <style>
+        .math-container {
+        overflow-x: auto;
+        display: block;
+    }
+    </style>
+    <style>
+        .bb {
+            padding-left: 10px;
+            padding-right: 10px; 
+            padding-top: 3px; 
+            padding-bottom: 3px; 
+            background-color: #f6f8fa;
+            border:1px rgb(194, 199, 204) solid;
+            border-radius: 6px;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>Summary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="../data/assets/css/popupcard.css">
+<link rel="icon" href="../data/img/icon.png" type="image/png" sizes="16x16">
+</head><body>
+
+<div class="container" id="popup">
+    <div class="modal">
+        <div class="details">
+            <p class="description">
+            <b><i>Markov Matrix</i></b><br>
+            </p>
+        </div>
+
+        <p class="txt">
+            \(\bullet\) &nbsp; A \(n\times n\) matrix whose elements are <b>non-negative</b> and every column vector sums to \(1\) 
+            is known as <b>Markov Matrix</b>(aka <b>stochastic matrix</b>).<br>
+            \(\bullet\) &nbsp; Markov matrix always have one of the eigenvalues \(=1\)<br>
+            <br>
+            Assume a \(n\times n\) markov matrix \(M\) and a vector \(\vec{u}\in\mathbb{R}^n\) and \(\vec{u}_{t=k+1}=M\vec{u}_{t=k};\quad k\in\{0,1,2,3,\cdots\}\)<br>
+            The <i>eigenvalues</i> of \(M\) are \(\lambda_1\) and \(\lambda_2\) and <i>eigenvectos</i> of \(M\) are \(x_1\) and \(x_2\) , So<br>
+            \[\displaystyle \vec{u}_{t=k}=c_1\lambda_1^k\vec{u}_{t=0} + c_2\lambda_2^k\vec{u}_{t=0} \]
+        </p>
+
+        <div class="details">
+            <p class="description">
+            <b><i>Expansion with Orthogonal basis</i></b><br>
+            </p>
+        </div>
+
+        <p class="txt">
+            Assume a vector \(\vec{v}\in\mathbb{R}^n\) in this \(n\) dimensional vector space, 
+            and \(\vec{q}_1, \vec{q}_2, \cdots, \vec{q}_n\) are the <b>orthogonal basis</b> for that \(n\) dimensional vector space.<br>
+            <span class="bb">\(\vec{v}=x_1\vec{q}_1 + x_2\vec{q}_2 + \cdots + x_n\vec{q}_n\)</span>, then we can get \(x_i\)'s as,<br>
+            \[\displaystyle x_i=\vec{v}^T\vec{q}_i;\quad\forall i\in\{1,2,\cdots, n\}\]
+        </p>
+
+        <br>        
+        <button class="btn" onclick="window.location.href = '../markov-matrix.html';">Visit Chapter &rarr;</button>
+
+        <a href="../index.html#markov-matrix" class="link-2"></a>
+
+    </div>
+</div>
+</body>
+</html>
