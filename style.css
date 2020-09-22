@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900");
+
+* {
+	box-sizing: border-box;
+}
+
+
+body {
+	/*background-image: linear-gradient(45deg, #7175da, #9790F2);*/
+	background-image: linear-gradient(120deg, #000000 0%, #003d61 50%,  #000000 100%);
+	font-family: Arial, Helvetica, sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	min-height: 100vh;
+	font-size: 20px;
+	margin: 0;
+}
+
+.book {
+	overflow: hidden;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: .1rem .1rem 2rem .1rem rgba(202, 210, 255, 0.699);
+	display: flex;
+	max-width: 60%;
+	margin: 20px;
+	width: 700px;	
+}
+
+.book p {
+	margin: 0;
+	letter-spacing: 0.5px;
+}
+
+.book-info {
+	padding: 30px;
+	position: relative;
+	width: 100%;
+}
+
+.btn-disabled {
+	background-color: lightslategray;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px white;
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+	letter-spacing: 1px;
+}
+
+.btn {
+	background-color: #212f3c;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px white;
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: lightslategrey;
+	color: black;
+}
+
+.topnav {
+  overflow: hidden;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  margin-left: 5px;
+  text-decoration: none;
+  font-size: 24px;
+  border-radius: 12px;
+}
+
+.topnav a:hover {
+  background-color:rgba(202, 210, 255, 0.699);
+  color: black;
+}
+
+.topnav a.active {
+  background-color: rgba(202, 210, 255, 0.699);
+  color: black;
+}
