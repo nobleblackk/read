@@ -8,100 +8,41 @@
 <html>
     <head>
         <!-- Code Render-->
-        <link rel="stylesheet" href="data/syntaxhighlighter/shCore.css">
-        <link rel="stylesheet" href="data/syntaxhighlighter/shThemeDefault.css">
-        <script type="text/javascript" src="data/syntaxhighlighter/shCore.js"></script>
-        <script type="text/javascript" src="data/syntaxhighlighter/shBrushPython.js"></script>
+        <link rel="stylesheet" href="../data/syntaxhighlighter/shCore.css">
+        <link rel="stylesheet" href="../data/syntaxhighlighter/shThemeDefault.css">
+        <script type="text/javascript" src="../data/syntaxhighlighter/shCore.js"></script>
+        <script type="text/javascript" src="../data/syntaxhighlighter/shBrushPython.js"></script>
 
         <!--MathJax-->
-        <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-                    config: ["MMLorHTML.js"],
-    extensions: ["mml2jax.js"],
-    jax: ["input/MathML"]
+            <script type="text/x-mathjax-config">
+                    MathJax.Hub.Config({
+                                            config: ["MMLorHTML.js"],
+                                            extensions: ["mml2jax.js"],
+                                            jax: ["input/MathML"]
+                                    });
+            </script>
 
-        });
-
-        </script>
-        <script type="text/javascript" async
-        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-        </script>
-        <style>
-            .math-container {
-            overflow-x: auto;
-            display: block;
-        }
-        </style>
-        <style>
-        .new_image {
-            width:100%;
-        }
-        img {
-            max-width:100%;
-        }
-        </style>
-
-<style>
-.slack-discuss {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    text-align: center;
-
-    background-color: white;
-    box-shadow: .1rem .1rem 1.2rem .1rem #467AAC;
-    width: 100%;
-    cursor: pointer;
-    border-radius: 20px;
-
-}
-
-.slack-discuss:hover {
-    box-shadow: .2rem .2rem 2.4rem .2rem #467AAC;
-}
-</style>
-<style>
-    .bb {
-        padding-left: 10px;
-        padding-right: 10px; 
-        padding-top: 5px; 
-        padding-bottom: 5px; 
-        background-color: #f6f8fa;
-        border:1px rgb(194, 199, 204) solid;
-        border-radius: 6px;
-    }
-</style>
+            <script type="text/javascript" async
+            src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+            </script>
+            
+            <style>
+                .math-container {
+                overflow-x: auto;
+                display: block;
+            }
+            </style>        
     
-        		<style>
-			.logo-nav{
-				background-color: #cfedff; 
-				border-radius: 5px; 
-				position: relative; 
-				top: 3px;
-			}
-			.logo-nav:hover{
-				background-color: #6cc7ff; 
-			}
-			.slack-nav{
-				color: blue;
-				border-bottom-color: transparent;
-				background-color: #cfedff; 
-				border-radius: 	5px;	
-				padding-right: 	3px;
-				padding-left:  	3px;
-				padding-top: 	2px;
-				padding-bottom: 1px;
-				top: 			0px;
-				
-			}
-		</style>
+
 		<title>DIFFERENTIAL EQUATION</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="data/assets/css/main.css" />
-        <noscript><link rel="stylesheet" href="data/assets/css/noscript.css" /></noscript>
-    <link rel="icon" href="data/img/icon.png" type="image/png" sizes="16x16">
-</head>    <body class="is-preload">
+        <link rel="stylesheet" href="../data/assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="../data/assets/css/noscript.css" /></noscript>
+        <link rel="icon" href="../data/icon.png" type="image/png" sizes="16x16">
+    </head>    
+    
+    <body class="is-preload">
 
         <!-- Wrapper -->
             <div id="wrapper">
@@ -117,7 +58,7 @@
                             <li class="active"><a href="differential-equation.html">Differential Equation</a></li>
                         </ul>
                         <ul class="icons">
-                            <li><a href="https://quantml.org/" style="border-bottom-color: transparent;"><img style="margin-right: 5px; margin-left: 5px;" class="logo-nav" src="data/img/icon.png" alt="logo" width="20" height="20"></a></li>
+                            <li><a href="https://quantml.org/" style="border-bottom-color: transparent;"><img style="margin-right: 5px; margin-left: 5px;" class="logo-nav" src="../data/icon.png" alt="logo" width="20" height="20"></a></li>
 							<li><a href="https://join.slack.com/t/quantml-org/shared_invite/zt-hcmbg7fr-jPbVAUT_tjGPaKWU50qMYQ" class="fab fa-slack slack-nav" style="color: blue;"><span class="label"></span></a></li>
                             <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
                             <li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
@@ -555,32 +496,14 @@ Anti Symmetric matrix will give us pure Complex eigenvalue, and
                 SyntaxHighlighter.all()
             </script>
 
-            <!-- Accordions -->
-
-<script>
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-        } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-    });
-}
-</script>
         <!-- Scripts -->
-            <script src="data/assets/js/jquery.min.js"></script>
-            <script src="data/assets/js/jquery.scrollex.min.js"></script>
-            <script src="data/assets/js/jquery.scrolly.min.js"></script>
-            <script src="data/assets/js/browser.min.js"></script>
-            <script src="data/assets/js/breakpoints.min.js"></script>
-            <script src="data/assets/js/util.js"></script>
-            <script src="data/assets/js/main.js"></script>
+            <script src="../data/assets/js/jquery.min.js"></script>
+            <script src="../data/assets/js/jquery.scrollex.min.js"></script>
+            <script src="../data/assets/js/jquery.scrolly.min.js"></script>
+            <script src="../data/assets/js/browser.min.js"></script>
+            <script src="../data/assets/js/breakpoints.min.js"></script>
+            <script src="../data/assets/js/util.js"></script>
+            <script src="../data/assets/js/main.js"></script>
 
     </body>
 </html>

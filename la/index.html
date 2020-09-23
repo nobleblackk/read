@@ -9,137 +9,42 @@
 	<head>
 	    <!--MathJax-->
         <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-                    config: ["MMLorHTML.js"],
-    extensions: ["mml2jax.js"],
-    jax: ["input/MathML"]
-
-        });
+                MathJax.Hub.Config({
+                                        config: ["MMLorHTML.js"],
+                                        extensions: ["mml2jax.js"],
+                                        jax: ["input/MathML"]
+                                   });
 
         </script>
         <script type="text/javascript" async
         src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
-<style>
-    #toc_container {
-        /*background: #f9f9f9 none repeat scroll 0 0;*/
-        background: #fff none repeat scroll 0 0;
-        /*border: 1px solid #aaa;*/
-        display: table;
-        font-size: 100%;
-        margin-bottom: 1em;
-        padding: 20px;
-        width: auto;
-    }
-    
-    .toc_title {
-        font-weight: 700;
-        text-align: center;
-    }
-    
-    #toc_container li, #toc_container ul, #toc_container ul li{
-        list-style: outside none none !important;
-    }
-</style>
-
-				<style>
-			.logo-nav{
-				background-color: #cfedff; 
-				border-radius: 5px; 
-				position: relative; 
-				top: 3px;
-			}
-			.logo-nav:hover{
-				background-color: #6cc7ff; 
-			}
-			.slack-nav{
-				color: blue;
-				border-bottom-color: transparent;
-				background-color: #cfedff; 
-				border-radius: 	5px;	
-				padding-right: 	3px;
-				padding-left:  	3px;
-				padding-top: 	2px;
-				padding-bottom: 1px;
-				top: 			0px;
-				
-			}
-		</style>
-		<title>Linear Algebra</title>
-        <style>
-            .dropdown {
-                position: relative;
-                display:contents;
-            }
-
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #ECF1F6;
-                min-width: 160px;
-                z-index: 1;
-            }
-
-            .dropdown-content a {
-                color: black;
-                padding: 4px 8px;
-                text-decoration: none;
-                display: block;
-            }
-
-            .dropdown-content a:hover {background-color: #B3C7DB;}
-
-            .dropdown:hover .dropdown-content {display: block;}
-
-            .dropdown:hover .dropbtn {background-color: #3e8e41;}
-		</style>
 		<style>
-			.slack-discuss {
-				font-family: Arial, Helvetica, sans-serif;
-				font-weight: 600;
-				font-size: 16px;
+			#toc_container {
+				background: #fff none repeat scroll 0 0;
+				display: table;
+				font-size: 100%;
+				margin-bottom: 1em;
+				padding: 20px;
+				width: auto;
+			}
+			
+			.toc_title {
+				font-weight: 700;
 				text-align: center;
-
-				background-color: white;
-				box-shadow: .1rem .1rem 1.2rem .1rem #467AAC;
-				width: 100%;
-				cursor: pointer;
-				border-radius: 20px;
-
 			}
-
-			.slack-discuss:hover {
-				box-shadow: .2rem .2rem 2.4rem .2rem #467AAC;
+			
+			#toc_container li, #toc_container ul, #toc_container ul li{
+				list-style: outside none none !important;
 			}
 		</style>
-		<style>
-			.logo-nav{
-				background-color: #cfedff; 
-				border-radius: 5px; 
-				position: relative; 
-				top: 3px;
-			}
-			.logo-nav:hover{
-				background-color: #6cc7ff; 
-			}
-			.slack-nav{
-				color: blue;
-				border-bottom-color: transparent;
-				background-color: #cfedff; 
-				border-radius: 	5px;	
-				padding-right: 	3px;
-				padding-left:  	3px;
-				padding-top: 	2px;
-				padding-bottom: 1px;
-				top: 			0px;
-				
-			}
-		</style>
+
+		<title>Linear Algebra</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="data/assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="data/assets/css/noscript.css" /></noscript>
-	<link rel="icon" href="data/img/icon.png" type="image/png" sizes="16x16">
+		<link rel="stylesheet" href="../data/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../data/assets/css/noscript.css" /></noscript>
+	<link rel="icon" href="../data/icon.png" type="image/png" sizes="16x16">
 </head>	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -168,7 +73,7 @@
                             <li><a href="thanks.html">Thanks</a></li>
 						</ul>
 						<ul class="icons">
-							<li><a href="https://quantml.org/" style="border-bottom-color: transparent;"><img style="margin-right: 5px; margin-left: 5px;" class="logo-nav" src="data/img/icon.png" alt="logo" width="20" height="20"></a></li>
+							<li><a href="https://quantml.org/" style="border-bottom-color: transparent;"><img style="margin-right: 5px; margin-left: 5px;" class="logo-nav" src="../data/icon.png" alt="logo" width="20" height="20"></a></li>
 							<li><a href="https://join.slack.com/t/quantml-org/shared_invite/zt-hcmbg7fr-jPbVAUT_tjGPaKWU50qMYQ" class="fab fa-slack slack-nav" style="color: blue;"><span class="label"></span></a></li>
                             <li><a href="https://www.linkedin.com/in/yuvraj97/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
 							<li><a href="https://github.com/yuvraj97/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
@@ -463,13 +368,13 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="data/assets/js/jquery.min.js"></script>
-			<script src="data/assets/js/jquery.scrollex.min.js"></script>
-			<script src="data/assets/js/jquery.scrolly.min.js"></script>
-			<script src="data/assets/js/browser.min.js"></script>
-			<script src="data/assets/js/breakpoints.min.js"></script>
-			<script src="data/assets/js/util.js"></script>
-			<script src="data/assets/js/main.js"></script>
+			<script src="../data/assets/js/jquery.min.js"></script>
+			<script src="../data/assets/js/jquery.scrollex.min.js"></script>
+			<script src="../data/assets/js/jquery.scrolly.min.js"></script>
+			<script src="../data/assets/js/browser.min.js"></script>
+			<script src="../data/assets/js/breakpoints.min.js"></script>
+			<script src="../data/assets/js/util.js"></script>
+			<script src="../data/assets/js/main.js"></script>
 
 	</body>
 </html>
