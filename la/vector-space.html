@@ -76,7 +76,7 @@
 Consider a vector \(\vec{v}\in\mathbb{R}^d\), here \(\vec{v}\) lives in \(d\) dimensional space this space is a <b>vector space</b>.<br>
 For example for \(d=3\),
 <br>
-<img src="data/img/1.png" width="557" height="334" alt="">
+<img style="max-width: 100%;" src="data/img/1.png" width="557" height="334" alt="">
 <br>
 
 Vector shown in the blue is a vector \(\vec{x}\in\mathbb{R}^3\). All the space surrounding this vector is \(3\)-dimensional vector space.<br>
@@ -103,7 +103,7 @@ Say the resulting vector is \(\vec{v}'\) then we can say \(\vec{v}' = c \vec{v} 
 Here you can see that \(\vec{v}'\) has it's own space inside that \(d\) dimensional space, it's a vector space inside a vector space.<br>
 Example for \(d=3\)
 <br>
-<img src="data/img/2.png" width="557" height="334" alt="">
+<img style="max-width: 100%;" src="data/img/2.png" width="557" height="334" alt="">
 <br>
 Here you can see the vector \(\vec{x}\in\mathbb{R}^3\) has it's own vector space that is that line.<br>
 <details><summary><b><span class="bb" style="cursor:pointer; color:royalblue; background-color: lightyellow;">Code To plot this vector (python)</span></b></summary>
@@ -125,7 +125,7 @@ You can get this MultiVariable class <a style="color:royalblue" href="data/Multi
 <br>
 Now Consider a plane(passing through origin) inside a \(3\)-dimensional space, so that plane lives inside \(3\)-dimensional vector space, but it has it's own vector space.<br>
 <br>
-<img src="data/img/3.png" width="557" height="334" alt="">
+<img style="max-width: 100%;" src="data/img/3.png" width="557" height="334" alt="">
 <br>
 <details><summary><b><span class="bb" style="cursor:pointer; color:royalblue; background-color: lightyellow;">Code To plot this plane (python)</span></b></summary>
 <pre  class="brush: python">
@@ -153,9 +153,9 @@ Well it depends, on how  \(\vec{v}\) and \(\vec{w}\) are oriented.<br>
 If \(\vec{v}\) and \(\vec{w}\) are parallel then \(\vec{w}= c \vec{v};\quad c\in\mathbb{R}\), So vector space is just a line.<br>
 Example for \(d=3\):<br>
 Say the vectors are \(\vec{v} = \begin{bmatrix} 1 \\ 1\\ 1\\ \end{bmatrix}\) and \(\vec{w} = \begin{bmatrix} 2 \\ 2\\ 2\\ \end{bmatrix}\)<br>
-<img src="data/img/6.png" width="600" height="350" alt=""><br>
+<img style="max-width: 100%;" src="data/img/6.png" width="600" height="350" alt=""><br>
 Then the vector space is just a line passing through these vectors.<br>
-<img src="data/img/7.png" width="600" height="350" alt=""><br>
+<img style="max-width: 100%;" src="data/img/7.png" width="600" height="350" alt=""><br>
 <details><summary><b><span class="bb" style="cursor:pointer; color:royalblue; background-color: lightyellow;">Code To plot this (python)</span></b></summary>
 <pre  class="brush: python">
 import MultiVariable as mvar
@@ -185,9 +185,9 @@ If \(\vec{v}\) and \(\vec{w}\) are not parallel then the vector space of <b>line
 Example for \(d=3\):<br>
 Say the vectors are \(\vec{v} = \begin{bmatrix} 2 \\ -1\\ -1\\ \end{bmatrix}\) and \(\vec{w} = \begin{bmatrix} -1 \\ 2\\ -1\\ \end{bmatrix}\)
 <br>
-<img src="data/img/4.png" width="600" height="350" alt=""><br>
+<img style="max-width: 100%;" src="data/img/4.png" width="600" height="350" alt=""><br>
 Then the vector space is the plane passing through these vectors.<br>
-<img src="data/img/5.png" width="600" height="350" alt=""><br>
+<img style="max-width: 100%;" src="data/img/5.png" width="600" height="350" alt=""><br>
 <details><summary><b><span class="bb" style="cursor:pointer; color:royalblue; background-color: lightyellow;">Code To plot this (python)</span></b></summary>
 <pre  class="brush: python">
 import MultiVariable as mvar
@@ -221,12 +221,12 @@ A space is a <b>vector space</b> if it full fill these conditions:<br>
 </ol>
 Let's see an example of a space which is <b>not a vector space</b>.<br>
 Think of a 2 dimensional space where \(x\gt0\) and \(y\gt0\)<br>
-<img src="data/img/9.png" width="600" height="300" alt=""><br>
+<img style="max-width: 100%;" src="data/img/9.png" width="600" height="300" alt=""><br>
 We can add vector safely and we don't go out of the space.<br>
 What about multiplying a constant to a vector, take a vector in that space \(\vec{v}=\begin{bmatrix} 4 \\ 3\\  \end{bmatrix}\).<br>
-<img src="data/img/10.png" width="600" height="300" alt=""><br>
+<img style="max-width: 100%;" src="data/img/10.png" width="600" height="300" alt=""><br>
 if we multiply \(\vec{v}\)  by \(-1\) then if goes out of space.<br>
-<img src="data/img/11.png" width="600" height="300" alt=""><br>
+<img style="max-width: 100%;" src="data/img/11.png" width="600" height="300" alt=""><br>
 <details><summary><b><span class="bb" style="cursor:pointer; color:royalblue; background-color: lightyellow;">Code To plot this (python)</span></b></summary>
 <pre  class="brush: python">
 import MultiVariable as mvar
