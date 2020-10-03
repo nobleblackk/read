@@ -1,5 +1,5 @@
 # [quantml.org](https://quantml.org)
-This repository contains all the guides that you can read on [read.quantml.org](read.quantml.org).
+This repository contains all the guides that you can read at [read.quantml.org](read.quantml.org).
 
 Currently, you can read the [guide](https://read.quantml.org/la/) for **Linear Algebra**. 
 
